@@ -1,0 +1,23 @@
+.ukuran {
+    line-height: 106px;
+}
+
+.image {
+    clip-path: circle();
+}
+
+.createContainer h5{
+    margin: 0;
+    display: inline-block;
+    line-height: 106px;
+}
+
+.btnCircle {
+    width: 50px;
+    clip-path: circle();
+}
+
+.btnCircle span {
+    text-align: center;
+    font-size: 33pt;
+}
