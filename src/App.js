@@ -1,14 +1,13 @@
 import {BrowserRouter} from "react-router-dom"
-import { Provider } from "react-redux";
-import Routers from "./"
+import Routers from "./routes/route"
+
 
 function App() {
   return (
-    <Provider>
+    
     <BrowserRouter>
         <Routers />
     </BrowserRouter>
-    </Provider>
   );
 }
 
