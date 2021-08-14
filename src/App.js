@@ -1,16 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
-import Topic from './components/Topic';
-import CreatePost from './components/CreatePost';
-import SmallCardMyEvent from './components/SmallCardMyEvent';
+import {BrowserRouter} from "react-router-dom"
+import Routers from "./routes/route"
 
 
 function App() {
   return (
-    <>
-      <CreatePost/>
-      <SmallCardMyEvent/>
-    </>
+    
+    <BrowserRouter>
+        <Routers />
+    </BrowserRouter>
   );
 }
 

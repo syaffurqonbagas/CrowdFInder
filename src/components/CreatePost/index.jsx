@@ -12,10 +12,8 @@ function CreatePost() {
                         <img src={profilDummy} style={{width: '74px' }} className="image ms-3" alt="" />
                         <h5 className="ms-3">Create Post or Events</h5>
                     </div>
-                    <div>
-                        <Button className="btnCircle me-3">
-                            <span>+</span>
-                        </Button>
+                    <div className="align-items-center">
+                        <i className="fas fa-plus-circle me-4 mt-auto fa-3x"></i>
                     </div>
                 </div>
             </Card>

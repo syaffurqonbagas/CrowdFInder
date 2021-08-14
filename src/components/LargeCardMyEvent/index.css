@@ -1,0 +1,66 @@
+
+.profilePic{
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+
+.headText-badge{
+    padding : 0 10px;
+    color: rgb(148, 4, 117);
+    border: 2px solid rgb(148, 4, 117) ;
+    /* border-radius: 20%/50%; */
+   
+}
+
+.fontSize{
+    font-size: 10pt;
+}
+
+.imageSize{
+    width: 20rem;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+
+.btnGroup button{
+    background-color: #fff; 
+    color: #4F4F4F;
+    font-size: 11pt;
+    border-top: 1px solid rgb(224, 224, 224);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    padding: 10px 24px; 
+    cursor: pointer; 
+    float: left; 
+}
+
+.btnGroup button:hover{
+    background-color: rgb(226, 226, 226);
+    transition: 0.4s;
+    animation: ease-in;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    -webkit-animation: ease-in;
+}
+
+.btnGroup button:not(:last-child){
+    border-right: 1px solid rgb(224, 224, 224);
+    
+}
+
+.btnGroup i{
+    color: #4F4F4F;
+    margin-right: 5px;
+}
