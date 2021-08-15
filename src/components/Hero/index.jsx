@@ -5,12 +5,12 @@ import './index.scss'
 
 function Hero() {
     return (
-        <Container>
-            <div className='hero d-flex justify-content-center'>
-                <div className="image-hero" style={{ backgroundImage: `url(${hero})` }}>
-                </div>
+
+        <div className='hero d-flex justify-content-center'>
+            <div className="image-hero" style={{ backgroundImage: `url(${hero})` }}>
             </div>
-        </Container >
+        </div>
+
     )
 }
 
