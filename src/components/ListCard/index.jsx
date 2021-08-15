@@ -5,7 +5,7 @@ import './index.scss'
 
 function ListCard() {
     return (
-        <Container>
+        <div className='pb-3'>
             <Card className='ListCard' style={{ borderRadius: '10px' }}>
                 <Card.Body className='d-flex justify-content-between align-items-center'>
                     <div className="user-detail d-flex ms-1 ">
@@ -22,7 +22,8 @@ function ListCard() {
                     </div>
                 </Card.Body>
             </Card>
-        </Container>
+        </div>
+
     )
 }
 
