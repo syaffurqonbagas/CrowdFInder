@@ -1,15 +1,28 @@
 import React from "react";
-import { Navbar, Container, Nav, FormControl, Form } from "react-bootstrap";
+import {
+  Navbar,
+  Container,
+  Nav,
+  FormControl,
+  Form,
+  NavDropdown,
+} from "react-bootstrap";
 import LogoCrowdFinder from "../../Asset/LogoCrowdFinder";
 import "./header.css";
 
 const Header = () => {
+
+  const logout = () => {
+    localStorage.clear();
+    window.location.replace("/");
+  };
+
   return (
     <>
       <div className="header ">
         <Navbar>
           <Container>
-            <Navbar.Brand className="header-logo" href="/signin">
+            <Navbar.Brand className="header-logo" href="/profile">
               <LogoCrowdFinder />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -25,6 +38,20 @@ const Header = () => {
                 </Form>
                 <Nav.Link href="#">Feeds</Nav.Link>
                 <Nav.Link href="#">Notification</Nav.Link>
+              </Nav>
+              {/* {} */}
+
+              <Nav>
+                <div className="text-center">
+                  <img className="rounded" alt="..." />
+                </div>
+                <NavDropdown title={`Hi, user`} id="collasible-nav-dropdown">
+                  <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item onClick={logout} href="/">
+                    Sign Out
+                  </NavDropdown.Item>
+                </NavDropdown>
               </Nav>
             </Navbar.Collapse>
           </Container>
