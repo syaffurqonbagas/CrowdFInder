@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "react-router-dom"
 import { Card, Container, Button } from "react-bootstrap"
 import './index.scss'
 import user from '../../image/user.png'
@@ -20,7 +21,8 @@ function AvatarCard() {
                 <Button className='my-4' variant="primary" size="lg">
                     Profile Setting
                 </Button>
-                <h5>LogOut</h5>
+                <h5>
+                <Link to="/">LogOut</Link></h5>
             </Card.Body>
         </Card>
 
