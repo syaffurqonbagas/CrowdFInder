@@ -10,7 +10,7 @@ import './index.scss'
 
 function MyProfile(props) {
 
-    const [isAddAbout, setIsAddAbout] = useState(true)
+    const [isAbout, setIsAbout] = useState(true)
 
     return (
         <Container>
@@ -22,10 +22,11 @@ function MyProfile(props) {
                     </Col>
                     <Col>
                         <div className="button-menu d-flex">
-                            <h5 onClick={() => setIsAddAbout(true)} >About</h5>
-                            <h5 onClick={() => setIsAddAbout(false)} >Activities</h5>
+
+                            <h5 className={`${isAbout ? "is-active" : ""} `} onClick={() => setIsAbout(true)} >About</h5>
+                            <h5 className={`${!isAbout ? "is-active" : ""} `} onClick={() => setIsAbout(false)} >Activities</h5>
                         </div>
-                        {isAddAbout ? <About /> : <Activities />}
+                        {isAbout ? <About /> : <Activities />}
                     </Col>
                 </Row>
             </div>

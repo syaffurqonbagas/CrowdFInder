@@ -10,7 +10,7 @@ import { RiGroupFill } from 'react-icons/ri'
 function LargeCrowdFinderCard() {
     return (
 
-        <div className='lrg-crwd'>
+        <div className='lrg-crwd mb-3'>
             <div className="title py-3">
                 <div className="avatar-post d-flex align-items-center">
                     <div className="image mb-3">
