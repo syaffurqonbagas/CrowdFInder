@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import AvatarCard from '../../components/AvatarCard';
-import Bio from '../../components/Bio';
 import Hero from '../../components/Hero';
-import InterstTopic from '../../components/InterestTopic';
-import ListCard from '../../components/ListCard';
+import About from './about';
+import Activities from './activities';
+
+
 import './index.scss'
 
 function MyProfile(props) {
+
+    const [isAddAbout, setIsAddAbout] = useState(true)
+
     return (
         <Container>
             <div className="Profile-page">
@@ -18,21 +22,10 @@ function MyProfile(props) {
                     </Col>
                     <Col>
                         <div className="button-menu d-flex">
-                            <h5>About</h5>
-                            <h5>Activities</h5>
+                            <h5 onClick={() => setIsAddAbout(true)} >About</h5>
+                            <h5 onClick={() => setIsAddAbout(false)} >Activities</h5>
                         </div>
-                        <Bio />
-                        <hr />
-                        <InterstTopic />
-                        <hr />
-                        <div className="myCrowd d-flex justify-content-between py-3">
-                            <h5>My Crowd</h5>
-                            <h5>See detail</h5>
-                        </div>
-                        <ListCard />
-                        <ListCard />
-                        <ListCard />
-
+                        {isAddAbout ? <About /> : <Activities />}
                     </Col>
                 </Row>
             </div>
