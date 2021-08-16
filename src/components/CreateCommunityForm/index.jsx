@@ -1,12 +1,11 @@
 import React from 'react'
-import './index.css'
-import { InputGroup, FormControl, Card, Button, FormSelect, FloatingLabel } from 'react-bootstrap'
+import { Card,Button, InputGroup, FormControl } from 'react-bootstrap'
 
-function FormCreateEvent() {
+function CreateCommunityForm() {
     return (
         <>
             <div className="container">
-                <h5>Create an event</h5>
+                <h5>Create a community</h5>
                 <p>Put your awesome photo to get more people!</p>
 
                 <Card className="cardSize mb-3">
@@ -15,45 +14,35 @@ function FormCreateEvent() {
 
                 <InputGroup className="mb-3">
                     <FormControl
-                    placeholder="How do you call this event?"
-                    aria-label="How do you call this event?"
+                    placeholder="What is your community name?"
+                    aria-label="What is your community name?"
                     aria-describedby="basic-addon1"
                     />
                 </InputGroup>
 
                 <InputGroup className="mb-3">
                     <FormControl
-                    placeholder="What date?"
-                    aria-label="What date?"
+                    placeholder="What is the category?"
+                    aria-label="What is the category?"
                     aria-describedby="basic-addon2"
                     />
                 </InputGroup>
 
                 <InputGroup className="mb-3">
                     <FormControl
-                    placeholder="&#xf133; What time?"
-                    aria-label="What time?"
+                    placeholder="What is your role?"
+                    aria-label="What is your role?"
                     aria-describedby="basic-addon3"
                     />
                 </InputGroup>
 
                 <InputGroup className="mb-3">
                     <FormControl
-                    placeholder="&#xf133; Where?"
-                    aria-label="Where?"
+                    placeholder="Add People (type a username)"
+                    aria-label="Add People (type a username)"
                     aria-describedby="basic-addon4"
                     />
                 </InputGroup>
-
-                    <FloatingLabel className="mb-3" controlId="floatingSelect" label="What Category This Event Is?" >
-                        <FormSelect aria-label="Floating label select example">
-                            <option></option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </FormSelect>
-                    </FloatingLabel> 
-               
 
                 <InputGroup className="mb-3" controlId="exampleForm.ControlTextarea1">
                     <FormControl 
@@ -63,11 +52,11 @@ function FormCreateEvent() {
                     />
                 </InputGroup>
 
-                <Button className="float-end">Post event</Button>
+                <Button className="float-end" variant="secondary">Post event</Button>
 
             </div>
         </>
     )
 }
 
-export default FormCreateEvent
+export default CreateCommunityForm

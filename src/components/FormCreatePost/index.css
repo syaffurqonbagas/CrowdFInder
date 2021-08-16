@@ -1,7 +1,7 @@
 .headText-badge{
     padding : 0 10px;
-    color: rgb(148, 4, 117);
-    border: 2px solid rgb(148, 4, 117) ;
+    color: #D82671;
+    border: 2px solid #D82671;
     /* border-radius: 20%/50%; */
    
 }
@@ -17,8 +17,8 @@
     -moz-border-radius:100px;
     -ms-border-radius:100px;
     -o-border-radius:100px;
-    color: rgb(148, 4, 117);
-    border: 2px solid rgb(148, 4, 117) ;
+    color: #D82671;
+    border: 2px solid #D82671;
     background-color: #fff;
 }
 

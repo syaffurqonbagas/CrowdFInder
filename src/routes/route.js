@@ -3,6 +3,7 @@ import FormCreateEvent from "../components/FormCreateEvent";
 import SignUp from "../components/SignUp";
 import HomePage from "../pages/HomePage";
 import FormCreatePost from "../components/FormCreatePost";
+import CreateCommunityForm from "../components/CreateCommunityForm";
 
 
 const Routers = () => {
@@ -11,9 +12,10 @@ const Routers = () => {
         <Switch>
           <Route exact path="/">
             {/* <SignUp /> */}
-            <HomePage/>
+            {/* <HomePage/> */}
             {/* <FormCreateEvent/> */}
             {/* <FormCreatePost/> */}
+            <CreateCommunityForm/>
           </Route>
           <Route path="*">
               <h1>
