@@ -4,6 +4,7 @@ import SignIn from "../components/Main/SIgnin";
 import Header from "../components/Header/header";
 import Footer from "../components/Footer/footer";
 import MyProfile from "../pages/MyProfile";
+import HomePage from "../pages/HomePage";
 
 const Routers = () => {
   return (
@@ -15,6 +16,9 @@ const Routers = () => {
         </Route>
         <Route exact path="/signin">
           <SignIn />
+        </Route>
+        <Route exact path="/home">
+          <HomePage />
         </Route>
         <Route exact path="/profile">
           <MyProfile />
