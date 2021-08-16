@@ -37,12 +37,12 @@ function TopicMe() {
                                 <label class="form-check-label">Events near me</label>
                             </div>
                             <div className="d-flex mb-5">
-                                <input class="form-check-input me-1" type="checkbox" value=""/>
+                                <input class="form-check-input me-1 secondary" type="checkbox" value=""/>
                                 <label class="form-check-label">Events from community I’ve followed</label>
                             </div>
                         </div>
                         
-                        <Button className="d-block mx-auto w-100">Update</Button>
+                        <Button className="d-block mx-auto w-100" variant="secondary">Update</Button>
                     </ListGroup.Item>
                 </ListGroup>
                 
