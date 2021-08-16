@@ -1,6 +1,6 @@
 import React from 'react'
 import './index.css'
-import { InputGroup, FormControl, Button } from 'react-bootstrap'
+import { InputGroup, FormControl, Button, Form } from 'react-bootstrap'
 
 function FormCreatePost() {
     return (
@@ -12,7 +12,13 @@ function FormCreatePost() {
                         <h5>Create a post</h5>
                         <div className="headText-main d-flex mb-3">
                             <p className="m-0 flex-grow-1">What would you like to share today?</p>
-                            <div className="headText-badge rounded-pill ms-3">Design</div>
+                            {/* <div className="headText-badge rounded-pill ms-3">Design</div> */}
+                            <select className="MyBadge flex-end">
+                                <option value="volvo">Design</option>
+                                <option value="saab">Art</option>
+                                <option value="fiat">Politic</option>
+                                <option value="audi">Sport</option>
+                            </select>
                         </div>
                         <InputGroup className="mb-3" controlId="exampleForm.ControlTextarea1">
                             <FormControl 

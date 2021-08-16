@@ -2,10 +2,10 @@ import React from 'react'
 import { Button, Card, Container, ListGroup } from 'react-bootstrap'
 
 
-function Topic() {
+function TopicMe() {
     return (
         <>
-            <Card style={{ width: '18rem' }}>
+            <Card style={{ height: '35rem' }}>
                 <ListGroup variant="flush">
                     <ListGroup.Item className="part-1 mt-2">
                         <h6>What topic would you like to see now?</h6>
@@ -42,7 +42,7 @@ function Topic() {
                             </div>
                         </div>
                         
-                        <Button className="d-block mx-auto" style={{ width: '15rem' }}>Update</Button>
+                        <Button className="d-block mx-auto w-100">Update</Button>
                     </ListGroup.Item>
                 </ListGroup>
                 
@@ -51,4 +51,4 @@ function Topic() {
     )
 }
 
-export default Topic
+export default TopicMe

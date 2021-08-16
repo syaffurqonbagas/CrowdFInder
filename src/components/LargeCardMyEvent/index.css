@@ -14,7 +14,6 @@
     padding : 0 10px;
     color: rgb(148, 4, 117);
     border: 2px solid rgb(148, 4, 117) ;
-    /* border-radius: 20%/50%; */
    
 }
 
@@ -63,4 +62,10 @@
 .btnGroup i{
     color: #4F4F4F;
     margin-right: 5px;
+}
+
+.divider{
+    border-bottom: 2px solid #F4EEE8;
+    border-radius: 5px;
+    
 }

@@ -6,7 +6,7 @@ import ImgDummy from '../../img/cardImgDummy.jpeg'
 function SmallCardMyEvent() {
     return (
         <>
-            <Card style={{ width: '18rem' }}>
+            <Card style={{ width: '17rem' }} className="mx-1">
                 <Card.Img variant="top" src={ImgDummy} />
                 <Card.Body>
                     <h6 className="font mb-3">Festival Makanan Nusantara (Bintang tamu 3 juri masterchef)</h6>

@@ -7,7 +7,7 @@ function FormCreateEvent() {
         <>
             <div className="container">
                 <h5>Create an event</h5>
-                <p>Put your awsome photo to get more people!</p>
+                <p>Put your awesome photo to get more people!</p>
 
                 <Card className="cardSize mb-3">
                     <Button className="rounded-pill my-auto mx-auto" variant="light"><i class="far fa-image me-2"></i>Add Image</Button>

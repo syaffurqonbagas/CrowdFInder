@@ -6,7 +6,7 @@ import profilDummy from '../../img/profilDummy.jpeg'
 function CreatePost() {
     return (
         <>
-            <Card className="mt-3 ukuran">
+            <Card className="ukuran">
                 <div className="d-flex">
                     <div className="d-flex createContainer flex-grow-1">
                         <img src={profilDummy} style={{width: '74px' }} className="image ms-3" alt="" />

@@ -8,6 +8,7 @@ import image from '../../img/largeCardDummy.jpeg'
 function LargeCardMyEvent() {
     return (
         <>
+            <div className="divider my-3"></div>
             <div className="head-container container">
 
                 <div className="d-flex">

@@ -1,6 +1,8 @@
 import {Switch, Route} from "react-router-dom"
-import FormCreatePost from "../components/FormCreatePost";
+import FormCreateEvent from "../components/FormCreateEvent";
 import SignUp from "../components/SignUp";
+import HomePage from "../pages/HomePage";
+import FormCreatePost from "../components/FormCreatePost";
 
 
 const Routers = () => {
@@ -9,7 +11,9 @@ const Routers = () => {
         <Switch>
           <Route exact path="/">
             {/* <SignUp /> */}
-            <FormCreatePost/>
+            <HomePage/>
+            {/* <FormCreateEvent/> */}
+            {/* <FormCreatePost/> */}
           </Route>
           <Route path="*">
               <h1>
