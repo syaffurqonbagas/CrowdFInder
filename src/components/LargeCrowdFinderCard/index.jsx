@@ -1,58 +1,69 @@
 import React from "react"
 import { Card, Col, Container, Row } from "react-bootstrap"
-import './index.scss'
 import user from '../../image/user.png'
 import { HiOutlineDotsHorizontal } from 'react-icons/hi';
 import post from '../../image/postexamp.jpeg'
 import { AiFillCalendar, AiFillClockCircle } from "react-icons/ai";
 import { RiGroupFill } from 'react-icons/ri'
 
+import './index.css'
+
 function LargeCrowdFinderCard() {
     return (
-        <Container>
-            <div className='lrg-crwd'>
-                <div className="title py-3">
-                    <div className="avatar-post d-flex align-items-center">
-                        <div className="image mb-3">
-                            <img src={user} />
+
+        <>
+            <div className="divider my-3 mb-3"></div>
+            <div className="head-container">
+
+                <div className="d-flex">
+                    <div className="image-avatar">
+                        <img src={user} />
+                    </div>
+                    <div className="headText container-fluid d-block">
+                        <p className="d-flex justify-content-end m-0">...</p>
+                        <div className="headText-main d-flex">
+                            <div className="my-auto me"><h5>Inoki Ardhi</h5></div>
+                            <h5>Posted an event</h5>
                         </div>
-                        <div className="avatar-title ms-3 ">
-                            <div className="user-posted d-flex ">
-                                <h5>Anpaman</h5>
-                                <h5 className='post ms-3' >Posted an event</h5>
-                                <HiOutlineDotsHorizontal class="icon-edit" />
-                            </div>
-                            <p>3h ago</p>
-                        </div>
+                        <p>1 hours ago</p>
                     </div>
                 </div>
-                <Card className='body p-2'>
 
-                    <div className="image-post" style={{ backgroundImage: `url(${post})` }}>
-                    </div>
+                <div>
+                    <Card>
+                        <div className="me-3 ms-3 mt-3 mb-4">
+                            <div className="image-hero" style={{ backgroundImage: `url(${post})` }}>
+                            </div>
+                            <h5 className='my-3'>Festival Makanan Nusantara (Bintang tamu 3 juri masterchef)</h5>
+                            <div className="time-event my-3 d-flex ">
+                                <div className="calender d-flex align-items-center">
+                                    <h4> <AiFillCalendar className='me-3' style={{ color: 'grey' }} /></h4> <h5>22/09/2021</h5>
+                                </div>
 
-                    <Row>
-                        <h6>Festival Makanan Nusantara (Bintang tamu 3 juri Master Cheff)</h6>
-                    </Row>
-                    <Row>
-                        <Col><p><AiFillCalendar /> 22/09/2021</p></Col>
-                        <Col><p><AiFillClockCircle /> 09.00 AM</p></Col>
-                    </Row>
-                    <Row>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, nesciunt ad assumenda temporibus, voluptatibus deleniti dolorem vitae aliquam nam exercitationem eveniet eaque nihil non vero?</p>
-                    </Row>
-                    <Row className='mb-3'>
-                        <Col md={5} ><RiGroupFill />129 people attend this</Col>
-                        <Col md={{ span: 3, offset: 4 }}
-                            style={{ textAlign: 'right' }}
-                        ><a href='#'>See Detail</a></Col>
-                    </Row>
+                                <div className="time d-flex align-items-center ">
+                                    <h4> <AiFillClockCircle className='me-3' style={{ color: 'grey' }} /></h4> <h5>09:00 AM</h5>
+                                </div>
+                            </div>
+                            <p className="fontSize">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed quaerat commodi reprehenderit similique ad soluta omnis nesciunt minima, sequi numquam et officia suscipit iusto minus libero ea reiciendis distinctio odit?</p>
+                            <div className="people-event mt-3 d-flex justify-content-between ">
+                                <div className="people-attend d-flex align-items-center">
+                                    <h4> <RiGroupFill className='me-3' style={{ color: 'grey' }} /></h4> <h5>129 people attend this</h5>
+                                </div>
+
+                                <div className="time d-flex align-items-center ">
+                                    <a href='#'>See Details</a>
+                                </div>
+                            </div>
+                        </div>
 
 
 
-                </Card>
+                    </Card>
+
+                </div>
             </div>
-        </Container >
+        </>
+
     )
 }
 

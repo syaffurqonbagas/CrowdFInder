@@ -69,6 +69,15 @@
 
 }
 
+.image-hero {
+    height: 214px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
 .image-avatar {
     width: 84px;
     height: 84px;
@@ -83,4 +92,8 @@
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
+}
+
+.calender {
+    margin-right: 50px;
 }
