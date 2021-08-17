@@ -1,5 +1,4 @@
-
-.profilePic{
+.profilePic {
     width: 84px;
     height: 84px;
     border-radius: 50%;
@@ -10,18 +9,18 @@
 }
 
 
-.headText-badge{
-    padding : 0 10px;
+.headText-badge {
+    padding: 0 10px;
     color: rgb(148, 4, 117);
-    border: 2px solid rgb(148, 4, 117) ;
-   
+    border: 2px solid rgb(148, 4, 117);
+
 }
 
-.fontSize{
+.fontSize {
     font-size: 10pt;
 }
 
-.imageSize{
+.imageSize {
     width: 20rem;
     border-radius: 6px;
     -webkit-border-radius: 6px;
@@ -30,20 +29,20 @@
     -o-border-radius: 6px;
 }
 
-.btnGroup button{
-    background-color: #fff; 
+.btnGroup button {
+    background-color: #fff;
     color: #4F4F4F;
     font-size: 11pt;
     border-top: 1px solid rgb(224, 224, 224);
     border-left: none;
     border-right: none;
     border-bottom: none;
-    padding: 10px 24px; 
-    cursor: pointer; 
-    float: left; 
+    padding: 10px 24px;
+    cursor: pointer;
+    float: left;
 }
 
-.btnGroup button:hover{
+.btnGroup button:hover {
     background-color: rgb(226, 226, 226);
     transition: 0.4s;
     animation: ease-in;
@@ -54,18 +53,18 @@
     -webkit-animation: ease-in;
 }
 
-.btnGroup button:not(:last-child){
+.btnGroup button:not(:last-child) {
     border-right: 1px solid rgb(224, 224, 224);
-    
+
 }
 
-.btnGroup i{
+.btnGroup i {
     color: #4F4F4F;
     margin-right: 5px;
 }
 
-.divider{
+.divider {
     border-bottom: 2px solid #F4EEE8;
     border-radius: 5px;
-    
+
 }

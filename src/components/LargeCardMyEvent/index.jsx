@@ -1,6 +1,7 @@
 import React from 'react'
 import './index.css'
-import user from '../../img/user.png'
+// import user from '../../img/user.png'
+import user from '../../image/user.png'
 import { Card, ButtonGroup, Button } from 'react-bootstrap'
 import image from '../../img/largeCardDummy.jpeg'
 
@@ -12,7 +13,9 @@ function LargeCardMyEvent() {
             <div className="head-container">
 
                 <div className="d-flex">
-                    <img src={user} alt="" className="profilePic" />
+                    <div className="image-avatar">
+                        <img src={user} />
+                    </div>
                     <div className="headText container-fluid d-block">
                         <p className="d-flex justify-content-end m-0">...</p>
                         <div className="headText-main d-flex">

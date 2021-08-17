@@ -1,0 +1,23 @@
+.footer{
+    background-color: rgba(216, 38, 113, 0.9);
+    justify-content: center;
+    height: 200px;
+    margin-top: 1rem;
+}
+
+.logo{
+    margin: 5em 4em 4em 0;
+}
+
+.list-unstyled{
+    margin-top: 2rem;
+    color: #FFFF;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li{
+    margin-bottom: 5px;
+}
