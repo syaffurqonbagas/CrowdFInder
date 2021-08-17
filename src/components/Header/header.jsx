@@ -36,8 +36,8 @@ const Header = () => {
                     aria-label="Search"
                   />
                 </Form>
-                <Nav.Link href="#">Feeds</Nav.Link>
-                <Nav.Link href="#">Notification</Nav.Link>
+                <Nav.Link href="#"><i class="fas fa-home"></i>Feeds</Nav.Link>
+                <Nav.Link href="#"><i class="fas fa-bell"></i>Notification</Nav.Link>
               </Nav>
               {/* {} */}
 

@@ -5,6 +5,8 @@ import Header from "../components/Header/header";
 import Footer from "../components/Footer/footer";
 import MyProfile from "../pages/MyProfile";
 import HomePage from "../pages/HomePage";
+import City from "../components/MultiStepForm/City"
+import ChooseInterest from "../components/MultiStepForm/ChooseInterest";
 
 const Routers = () => {
   return (
@@ -22,6 +24,10 @@ const Routers = () => {
         </Route>
         <Route exact path="/profile">
           <MyProfile />
+        </Route>
+        <Route exact path="/interest">
+          {/* <City/> */}
+          <ChooseInterest/>
         </Route>
         <Route path="*">
           <h1>Page Not Found</h1>
