@@ -1,13 +1,25 @@
 .Topic {
+    font-family: 'Mulish', sans-serif;
+    color: #4F4F4F;
 
+    .title {
+        h5 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+    }
 
     .body {
         line-height: 25px;
         word-spacing: 2px;
 
+
+
         .topicuser {
             font-size: 16px;
             padding: 10px 15px;
+            font-weight: 400;
+            background-color: #189AB0;
         }
     }
 }

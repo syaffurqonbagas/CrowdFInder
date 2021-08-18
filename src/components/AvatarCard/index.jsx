@@ -18,11 +18,10 @@ function AvatarCard() {
             </Card.Body>
 
             <Card.Body className='cardbody d-flex align-items-center flex-column'>
-                <Button className='my-4' style={{ width: '100%' }} variant="primary" size="lg">
+                <Button className='my-4' style={{ width: '70%', fontSize: '16px', fontWeight: '700' }} variant="secondary" size="lg">
                     Profile Setting
                 </Button>
-                <h5>
-                    <Link to="/">LogOut</Link></h5>
+                <h5 >  <Link style={{ color: '#D82671', fontWeight: '700', textDecoration: 'none', fontSize: '16px' }} to="/">Logout</Link></h5>
             </Card.Body>
         </Card>
 

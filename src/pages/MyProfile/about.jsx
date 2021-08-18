@@ -1,7 +1,8 @@
 import React from 'react';
 import Bio from '../../components/Bio';
 import InterstTopic from '../../components/InterestTopic';
-import ListCard from '../../components/ListCard';
+import ListCardPeople from '../../components/ListCardPeople';
+
 
 
 function About(props) {
@@ -15,9 +16,7 @@ function About(props) {
                 <h5>My Crowd</h5>
                 <h5>See detail</h5>
             </div>
-            <ListCard />
-            <ListCard />
-            <ListCard />
+            <ListCardPeople />
         </div>
     );
 }

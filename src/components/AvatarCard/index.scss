@@ -1,5 +1,5 @@
 .AvatarCard {
-
+    font-family: 'Mulish', sans-serif;
     text-align: center;
     width: 344px;
     height: 457px;
@@ -7,7 +7,21 @@
     border-radius: 10px;
 
     .title {
-        margin-top: 100px;
+        margin-top: 90px;
+
+        h4 {
+            font-size: 20px;
+            color: #4F4F4F;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        h5 {
+            font-size: 18px;
+            font-weight: 400;
+            color: #828282;
+
+        }
     }
 
     .image-avatar {

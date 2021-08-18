@@ -3,7 +3,7 @@ import { Card, Image, Button, Container } from "react-bootstrap"
 import user from '../../image/user.png'
 import './index.scss'
 
-function ListCard() {
+function ListCardPeople() {
     return (
         <div className='pb-3'>
             <Card className='ListCard' style={{ borderRadius: '10px' }}>
@@ -13,12 +13,12 @@ function ListCard() {
                             <img src={user} />
                         </div>
                         <div className="user-title ms-4">
-                            <h5>Comunity Name</h5>
+                            <h5>Siska kohl</h5>
                             <p>Comunity Manager</p>
                         </div>
                     </div>
                     <div>
-                        <Button size='lg' variant="primary">Mannage</Button>
+                        <Button style={{ fontSize: '14px', fontWeight: '700' }} size='lg' variant="secondary">Unfollow</Button>
                     </div>
                 </Card.Body>
             </Card>
@@ -28,4 +28,4 @@ function ListCard() {
 }
 
 
-export default ListCard
+export default ListCardPeople

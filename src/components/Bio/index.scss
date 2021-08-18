@@ -1,7 +1,18 @@
 .bio {
+    font-family: 'Mulish', sans-serif;
+    color: #4F4F4F;
 
+    .title {
+        h5 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+    }
 
     .body {
+        text-align: justify;
+        font-size: 16px;
+        font-weight: 400;
         line-height: 25px;
         word-spacing: 2px;
     }
