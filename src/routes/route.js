@@ -5,8 +5,7 @@ import Header from "../components/Header/header";
 import Footer from "../components/Footer/footer";
 import MyProfile from "../pages/MyProfile";
 import HomePage from "../pages/HomePage";
-import City from "../components/MultiStepForm/City"
-import ChooseInterest from "../components/MultiStepForm/ChooseInterest";
+import ComunityProfile from "../pages/CommunityProfile";
 
 const Routers = () => {
   return (
@@ -25,9 +24,8 @@ const Routers = () => {
         <Route exact path="/profile">
           <MyProfile />
         </Route>
-        <Route exact path="/interest">
-          {/* <City/> */}
-          <ChooseInterest/>
+        <Route exact path="/comunity-profile">
+          <ComunityProfile />
         </Route>
         <Route path="*">
           <h1>Page Not Found</h1>

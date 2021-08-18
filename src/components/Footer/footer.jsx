@@ -13,20 +13,20 @@ const Footer = () => {
             <img src={LogoCrowdFinder} alt="Logo" width="200" />
             </div>
           </Col>
-          <Col className="list-unstyled">
+          <Col className="list-unstyled mt-3">
             <h4>Menu</h4>
-            <ul>
+            <ul className="m-0 p-0 mb-2">
               <li>Message</li>
               <li>Profile</li>
               <li>Profile setting</li>
               <li>Terms and condition</li>
             </ul>
           </Col>
-          <Col className="list-unstyled">
+          <Col className="list-unstyled  mt-3">
             <h4>Our Office</h4>
             <p>Jl. Hayam wuruk no 88, West Jakarta</p>
           </Col>
-          <Col className="list-unstyled">
+          <Col className="list-unstyled  mt-3">
             <h4>Contact us</h4>
             <p>E-mail : help@washme.co.id</p>
           </Col>

@@ -10,10 +10,10 @@
 
 .left {
   background-color: rgba(216, 38, 113, 0.9);
-  background-size: cover;
   text-align: center;
   justify-content: center;
   height: 35rem;
+  width: 100%;
 }
 
 .Fullbgimage-left h2 {
@@ -32,12 +32,16 @@
 
 }
 .Right {
-  background-color: #FFF;
+  background-color: rgba(255, 255, 255, 0.9);
   background-size: cover;
   text-align: center;
   justify-content: center;
-  opacity: 95%;
-  width: 90%;
-  margin-left: 2rem;
-  margin-right: 2rem;
+  height: 35rem;
+  width: 100%;
+
+}
+
+.box {
+  background-color: rgb(255, 255, 255);
+ 
 }

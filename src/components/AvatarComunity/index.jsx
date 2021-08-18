@@ -1,11 +1,11 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { Card, Container, Button } from "react-bootstrap"
+import { Card, Container, Button, Badge } from "react-bootstrap"
 import './index.scss'
 import user from '../../image/user.png'
 import { TiLocation } from 'react-icons/ti';
 
-function AvatarCard() {
+function AvatarComunity() {
     return (
 
         <Card className='AvatarCard'>
@@ -13,16 +13,18 @@ function AvatarCard() {
                 <img src={user} />
             </div>
             <Card.Body className='title'>
-                <h4>Username</h4>
+                <h4>Comunity Name</h4>
+                <div className="comunity-badge my-2">
+                    <h5>Comunity</h5>
+                </div>
                 <h5><TiLocation />Jakarta</h5>
             </Card.Body>
 
-            <Card.Body className='cardbody d-flex align-items-center flex-column'>
+            <Card.Body className='cardbody d-flex align-items-center flex-column justify-content-lg-end'>
                 <Button className='my-4' style={{ width: '100%' }} variant="primary" size="lg">
-                    Profile Setting
+                    Follow
                 </Button>
-                <h5>
-                    <Link to="/">LogOut</Link></h5>
+
             </Card.Body>
         </Card>
 
@@ -30,4 +32,4 @@ function AvatarCard() {
 }
 
 
-export default AvatarCard
+export default AvatarComunity

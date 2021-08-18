@@ -34,7 +34,7 @@ const Signin = () => {
               </Button>
               <p className="mt-5 text-muted text-center signFoot">
                 don't have an account?{" "}
-                <Link to="/" className="text-danger">
+                <Link to="/">
                   Sign Up
                 </Link>
               </p>

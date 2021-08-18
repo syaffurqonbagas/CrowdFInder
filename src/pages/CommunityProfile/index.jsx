@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import AvatarCard from '../../components/AvatarCard';
+import AvatarComunity from '../../components/AvatarComunity';
 import Hero from '../../components/Hero';
 import About from './about';
-import Activities from './activities';
-
-
 import './index.scss'
+import Post from './Post';
 
-function MyProfile(props) {
+function ComunityProfile(props) {
 
     const [isAbout, setIsAbout] = useState(true)
 
@@ -18,15 +17,16 @@ function MyProfile(props) {
                 <Hero />
                 <Row>
                     <Col xl={4}>
-                        <AvatarCard />
+                        <AvatarComunity />
                     </Col>
                     <Col>
                         <div className="button-menu d-flex">
 
                             <h5 className={`${isAbout ? "is-active" : ""} `} onClick={() => setIsAbout(true)} >About</h5>
-                            <h5 className={`${!isAbout ? "is-active" : ""} `} onClick={() => setIsAbout(false)} >Activities</h5>
+                            <h5 className={`${!isAbout ? "is-active" : ""} `} onClick={() => setIsAbout(false)} >Events</h5>
+                            <h5 className={`${!isAbout ? "is-active" : ""} `} onClick={() => setIsAbout(false)} >Post</h5>
                         </div>
-                        {isAbout ? <About /> : <Activities />}
+                        {isAbout ? <About /> : <Post />}
                     </Col>
                 </Row>
             </div>
@@ -36,4 +36,4 @@ function MyProfile(props) {
     );
 }
 
-export default MyProfile;
+export default ComunityProfile;
