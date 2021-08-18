@@ -1,6 +1,10 @@
 .Profile-page {
     height: 1980px;
 
+    .not-active {
+        color: #B7B7B7;
+    }
+
     .is-active {
         color: #D82671;
         border-bottom: solid 5px #D82671;

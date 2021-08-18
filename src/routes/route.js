@@ -7,6 +7,8 @@ import MyProfile from "../pages/MyProfile";
 import HomePage from "../pages/HomePage";
 import ComunityProfile from "../pages/CommunityProfile";
 import MyCrowd from "../pages/MyCrowd";
+import UserProfile from "../pages/UserProfile";
+import EventDetail from "../pages/EventDetail";
 
 const Routers = () => {
   return (
@@ -25,13 +27,19 @@ const Routers = () => {
         <Route exact path="/profile">
           <MyProfile />
         </Route>
+        <Route exact path="/user-profile">
+          <UserProfile />
+        </Route>
         <Route exact path="/comunity-profile">
           <ComunityProfile />
         </Route>
         <Route exact path="/mycrowd">
           <MyCrowd />
-
         </Route>
+        <Route exact path="/eventdetail">
+          <EventDetail />
+        </Route>
+
 
 
         <Route path="*">

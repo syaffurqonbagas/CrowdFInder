@@ -6,7 +6,7 @@ function Post(props) {
     return (
         <div>
             <LargeCrowdFinderCard />
-            <LargeCardMyEvent />
+
         </div>
     );
 }

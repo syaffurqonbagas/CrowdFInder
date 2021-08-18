@@ -22,7 +22,11 @@
 }
 
 .fontSize {
-    font-size: 10pt;
+    color: #828282;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    text-align: justify;
+    font-size: 18px;
 }
 
 .imageSize {
@@ -101,4 +105,21 @@
 
 .calender {
     margin-right: 50px;
+
+}
+
+.title-event {
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.time-event {
+
+    color: #454545;
+}
+
+.time-event h5 {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
 }
