@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import AvatarCard from '../../components/AvatarCard';
 import Hero from '../../components/Hero';
+import UserProfileCard from '../../components/UserProfileCard';
 import About from './about';
 import Activities from './activities';
 
 
 import './index.scss'
 
-function MyProfile(props) {
+function UserProfile(props) {
 
     const [isAbout, setIsAbout] = useState(true)
 
@@ -18,7 +19,7 @@ function MyProfile(props) {
                 <Hero />
                 <Row>
                     <Col xl={4}>
-                        <AvatarCard />
+                        <UserProfileCard />
                     </Col>
                     <Col>
                         <div className="button-menu d-flex">
@@ -36,4 +37,4 @@ function MyProfile(props) {
     );
 }
 
-export default MyProfile;
+export default UserProfile;

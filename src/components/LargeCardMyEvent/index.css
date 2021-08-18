@@ -10,6 +10,8 @@
 
 
 .headText-badge {
+    font-weight: 400;
+    font-size: 14px;
     padding: 0 10px;
     color: rgb(148, 4, 117);
     border: 2px solid rgb(148, 4, 117);
@@ -17,7 +19,11 @@
 }
 
 .fontSize {
-    font-size: 10pt;
+    color: #828282;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    text-align: justify;
+    font-size: 18px;
 }
 
 .imageSize {
@@ -83,4 +89,10 @@
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
+}
+
+.button-card {
+    font-size: 16px;
+    font-weight: 400;
+    color: #4F4F4F;
 }
