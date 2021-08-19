@@ -10,6 +10,7 @@ import MultiStep from "../components/MultiStepForm/index"
 import MyCrowd from "../pages/MyCrowd";
 import UserProfile from "../pages/UserProfile";
 import EventDetail from "../pages/EventDetail";
+import ManageComunity from "../pages/ManageComunity";
 
 const Routers = () => {
   return (
@@ -35,13 +36,16 @@ const Routers = () => {
           <ComunityProfile />
         </Route>
         <Route exact path="/multistep">
-          <MultiStep/>
+          <MultiStep />
         </Route>
         <Route exact path="/mycrowd">
           <MyCrowd />
         </Route>
         <Route exact path="/eventdetail">
           <EventDetail />
+        </Route>
+        <Route exact path="/manage-comunity">
+          <ManageComunity />
         </Route>
 
 
