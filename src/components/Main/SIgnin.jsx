@@ -25,6 +25,7 @@ const Signin = () => {
             </Form.Group>
 
             <Form.Group>
+              <Link to="/profile">
               <Button
                 className="mt-4 width-nokay"
                 variant="primary"
@@ -32,6 +33,7 @@ const Signin = () => {
               >
                 Login
               </Button>
+              </Link>
               <p className="mt-5 text-muted text-center signFoot">
                 don't have an account?{" "}
                 <Link to="/">

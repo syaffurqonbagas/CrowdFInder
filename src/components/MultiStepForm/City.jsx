@@ -1,7 +1,7 @@
 import React from "react";
 import { Form, Container, Button } from "react-bootstrap";
 
-const City = () => {
+const City = (props) => {
   return (
     <div className="mt-3 justify-content-center">
       <Container>
@@ -19,8 +19,8 @@ const City = () => {
 
                 <div className="d-flex justify-content-center">
                   <Button
+                  onClick={props.onClick}
                     className="button"
-                    type="text"
                     style={{ width: "20rem" }}
                   >
                     Next

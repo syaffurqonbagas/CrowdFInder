@@ -64,13 +64,15 @@ const SignUp = () => {
                       </Form.Group>
 
                       <Form.Group>
+                        <Link to="/multistep">
                         <Button
                           className="mt-4 width-nokay"
                           variant="primary"
                           type="submit"
                         >
-                          REGISTER
+                          Create Account
                         </Button>
+                        </Link>
                         <p className="text-center mt-3">
                           Already have an account ?{" "}
                           <Link to="/signin">Sign in</Link>

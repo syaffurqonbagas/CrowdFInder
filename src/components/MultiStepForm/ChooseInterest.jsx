@@ -1,7 +1,8 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import {Link} from "react-router-dom"
 
-const ChooseInterest = () => {
+const ChooseInterest = (props) => {
   return (
     <Container>
       <div className="mt-3 justify-content-center">
@@ -125,11 +126,18 @@ const ChooseInterest = () => {
         <div className="justify-content-center">
         <div className="">
           <p>You can choose as much as you want</p>
-          <div className="d-flex justify-content-end">
-            <Button className="button" type="text" style={{ width: "10rem" }}>
-              Next
+          <div className="d-flex justify-content-start">
+            <Button className="button" onClick={props.onClick} style={{ width: "10rem" }}>
+              Prev
             </Button>
           </div>
+           <div className="d-flex justify-content-end">
+             <Link to="/profile">
+          <Button className="button" style={{ width: "10rem" }}>
+              Submit
+            </Button>
+            </Link>
+            </div>
           </div>
           </div>
       </div>

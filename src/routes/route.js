@@ -6,6 +6,7 @@ import Footer from "../components/Footer/footer";
 import MyProfile from "../pages/MyProfile";
 import HomePage from "../pages/HomePage";
 import ComunityProfile from "../pages/CommunityProfile";
+import MultiStep from "../components/MultiStepForm/index"
 
 const Routers = () => {
   return (
@@ -26,6 +27,9 @@ const Routers = () => {
         </Route>
         <Route exact path="/comunity-profile">
           <ComunityProfile />
+        </Route>
+        <Route exact path="/multistep">
+          <MultiStep/>
         </Route>
         <Route path="*">
           <h1>Page Not Found</h1>
