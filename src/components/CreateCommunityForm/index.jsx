@@ -1,7 +1,23 @@
 import React from 'react'
+import './index.css'
 import { Card,Button, InputGroup, FormControl } from 'react-bootstrap'
+import { useState } from 'react'
 
 function CreateCommunityForm() {
+    const [img, setImg] = useState('')
+
+    const imageHandler = (e) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        if(reader.readyState === 2){
+          setImg(reader.result)
+        } else if(reader.readyState === null){
+            setImg('')
+        }
+      }
+      reader.readAsDataURL(e.target.files[0])
+    }
+
     return (
         <>
             <div className="container">
@@ -9,7 +25,10 @@ function CreateCommunityForm() {
                 <p>Put your awesome photo to get more people!</p>
 
                 <Card className="cardSize mb-3">
-                    <Button className="rounded-pill my-auto mx-auto" variant="light"><i class="far fa-image me-2"></i>Add Image</Button>
+                    <img src={img} alt="" />
+                    <input type="file" name="image-upload" id="input" accept="image/*" onChange={imageHandler} />
+                    <label className="rounded-pill btnStyle centeringBtn" htmlFor="input"><i class="far fa-image me-2"></i>Add Image</label>
+                    {/* <Button className="rounded-pill centeringBtn" htmlFor="input" variant="light"><i class="far fa-image me-2"></i>Add Image</Button> */}
                 </Card>
 
                 <InputGroup className="mb-3">

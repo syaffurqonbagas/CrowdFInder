@@ -9,3 +9,15 @@ label {
 i{
     color: #BDBDBD;
 }
+
+.sizeCard{
+    width: 15rem;
+}
+
+.boxinoki{
+    width: 300px;
+    min-width: 300px;
+    height: 200px;
+    background-color: rgb(80, 80, 80);
+    margin-right: 5px;
+}

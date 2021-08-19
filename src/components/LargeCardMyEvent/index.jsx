@@ -14,7 +14,7 @@ function LargeCardMyEvent() {
 
                 <div className="d-flex">
                     <div className="image-avatar">
-                        <img src={user} />
+                        <img src={user}/>
                     </div>
                     <div className="headText container-fluid d-block">
                         <p className="d-flex justify-content-end m-0">...</p>

@@ -1,0 +1,13 @@
+.wrapper{
+   max-height: 300px;
+   border: 1px solid black;
+   display: flex;
+   justify-content: space-between;
+   overflow-x: scroll;
+   width: 800px;
+
+}
+
+.floatLeft{
+    
+}
