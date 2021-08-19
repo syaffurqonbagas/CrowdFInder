@@ -6,6 +6,7 @@ import Footer from "../components/Footer/footer";
 import MyProfile from "../pages/MyProfile";
 import HomePage from "../pages/HomePage";
 import ComunityProfile from "../pages/CommunityProfile";
+import MultiStep from "../components/MultiStepForm/index"
 import MyCrowd from "../pages/MyCrowd";
 import UserProfile from "../pages/UserProfile";
 import EventDetail from "../pages/EventDetail";
@@ -32,6 +33,9 @@ const Routers = () => {
         </Route>
         <Route exact path="/comunity-profile">
           <ComunityProfile />
+        </Route>
+        <Route exact path="/multistep">
+          <MultiStep/>
         </Route>
         <Route exact path="/mycrowd">
           <MyCrowd />
