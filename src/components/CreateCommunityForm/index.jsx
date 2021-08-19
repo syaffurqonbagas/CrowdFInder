@@ -4,18 +4,22 @@ import { Card,Button, InputGroup, FormControl } from 'react-bootstrap'
 import { useState } from 'react'
 
 function CreateCommunityForm() {
-    const [img, setImg] = useState('')
+    const [img, setImg] = useState(null);
+    const [error, setError] = useState(false);
+
 
     const imageHandler = (e) => {
-      const reader = new FileReader();
-      reader.onload = () => {
-        if(reader.readyState === 2){
-          setImg(reader.result)
-        } else if(reader.readyState === null){
-            setImg('')
-        }
+      const selected = e.target.files[0];
+      const allowedTypes = ["image/png", "image/jpeg", "image/jpg"];
+      if(selected && allowedTypes.includes(selected.type)){
+          let reader = new FileReader();
+          reader.onloadend = () => {
+            setImg(reader.result);
+          }
+          reader.readAsDataURL(selected);
+      }else {
+          setError(true);
       }
-      reader.readAsDataURL(e.target.files[0])
     }
 
     return (
@@ -25,9 +29,9 @@ function CreateCommunityForm() {
                 <p>Put your awesome photo to get more people!</p>
 
                 <Card className="cardSize mb-3">
-                    <img src={img} alt="" />
+                    {img ? <img src={img} alt="" /> : <div></div> }
                     <input type="file" name="image-upload" id="input" accept="image/*" onChange={imageHandler} />
-                    <label className="rounded-pill btnStyle centeringBtn" htmlFor="input"><i class="far fa-image me-2"></i>Add Image</label>
+                    {img ? <button className="rounded-pill btnStyle centeringBtn" onClick={() => setImg(null)}><i class="far fa-image me-2"></i>remove image</button> : <label className="rounded-pill btnStyle centeringBtn" htmlFor="input"><i class="far fa-image me-2"></i>Add Image</label>}
                     {/* <Button className="rounded-pill centeringBtn" htmlFor="input" variant="light"><i class="far fa-image me-2"></i>Add Image</Button> */}
                 </Card>
 
