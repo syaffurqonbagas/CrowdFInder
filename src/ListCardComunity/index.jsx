@@ -1,9 +1,9 @@
 import React from "react"
 import { Card, Image, Button, Container } from "react-bootstrap"
-import user from '../../image/user.png'
+import user from '../image/user.png'
 import './index.scss'
 
-function ListCard() {
+function ListCardComunity() {
     return (
         <div className='pb-3'>
             <Card className='ListCard' style={{ borderRadius: '10px' }}>
@@ -18,7 +18,7 @@ function ListCard() {
                         </div>
                     </div>
                     <div>
-                        <Button size='lg' variant="primary">Mannage</Button>
+                        <Button style={{ fontSize: '14px', fontWeight: '700' }} size='lg' variant="secondary">Manage</Button>
                     </div>
                 </Card.Body>
             </Card>
@@ -28,4 +28,4 @@ function ListCard() {
 }
 
 
-export default ListCard
+export default ListCardComunity

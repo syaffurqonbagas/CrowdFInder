@@ -25,7 +25,7 @@ const Signin = () => {
             </Form.Group>
 
             <Form.Group>
-              <Link to="/profile">
+              <Link to="/home">
               <Button
                 className="mt-4 width-nokay"
                 variant="primary"

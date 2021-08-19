@@ -1,4 +1,5 @@
 .AvatarCard {
+    font-family: 'Mulish', sans-serif;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -13,6 +14,21 @@
         justify-content: center;
         align-items: center;
         margin-top: 80px;
+
+
+        h4 {
+            font-size: 20px;
+            color: #4F4F4F;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        h5 {
+            font-size: 18px;
+            font-weight: 400;
+            color: #828282;
+
+        }
 
         .comunity-badge {
             width: 50%;

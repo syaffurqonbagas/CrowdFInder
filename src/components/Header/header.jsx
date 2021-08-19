@@ -22,7 +22,7 @@ const Header = () => {
       <div className="header ">
         <Navbar>
           <Container>
-            <Navbar.Brand className="header-logo" href="/profile">
+            <Navbar.Brand className="header-logo" href="/home">
               <LogoCrowdFinder />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />

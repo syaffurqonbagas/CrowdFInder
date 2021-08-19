@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import AvatarCard from '../../components/AvatarCard';
 import Hero from '../../components/Hero';
-import About from './about';
-import Activities from './activities';
+import Comunity from './comunity';
 
 
 import './index.scss'
+import People from './people';
 
-function MyProfile(props) {
+function MyCrowd(props) {
 
     const [isAbout, setIsAbout] = useState(true)
 
@@ -23,10 +23,10 @@ function MyProfile(props) {
                     <Col>
                         <div className="button-menu d-flex">
 
-                            <h5 className={`${isAbout ? "is-active" : "not-active"} `} onClick={() => setIsAbout(true)} >About</h5>
-                            <h5 className={`${!isAbout ? "is-active" : "not-active"} `} onClick={() => setIsAbout(false)} >Activities</h5>
+                            <h5 className={`${isAbout ? "is-active" : "not-active"} `} onClick={() => setIsAbout(true)} >Comunity</h5>
+                            <h5 className={`${!isAbout ? "is-active" : "not-active"} `} onClick={() => setIsAbout(false)} >People</h5>
                         </div>
-                        {isAbout ? <About /> : <Activities />}
+                        {isAbout ? <Comunity /> : <People />}
                     </Col>
                 </Row>
             </div>
@@ -36,4 +36,4 @@ function MyProfile(props) {
     );
 }
 
-export default MyProfile;
+export default MyCrowd;

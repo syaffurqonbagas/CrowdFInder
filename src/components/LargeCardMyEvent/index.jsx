@@ -19,11 +19,12 @@ function LargeCardMyEvent() {
                     <div className="headText container-fluid d-block">
                         <p className="d-flex justify-content-end m-0">...</p>
                         <div className="headText-main d-flex">
-                            <div className="my-auto"><h5>Inoki Ardhi</h5></div>
+                            <div className="my-auto">
+                                <h5 className='me-3' style={{ fontSize: '20px', fontWeight: '700' }}>Inoki Ardhi</h5></div>
                             <div className="headText-badge rounded-pill ms-3 me-auto">Design</div>
-                            <div><i class="fas fa-map-marker-alt ms-auto me-0"></i> Sumbawa</div>
+                            <div style={{ fontSize: '18px', fontWeight: '400', color: '#828282' }} ><i class="fas fa-map-marker-alt ms-auto me-0"></i> Sumbawa</div>
                         </div>
-                        <p>1 hours ago</p>
+                        <p style={{ fontSize: '16px', fontWeight: '400', color: '#4F4F4F' }}>1 hours ago</p>
                     </div>
                 </div>
 
@@ -35,9 +36,9 @@ function LargeCardMyEvent() {
                         </div>
 
                         <div className="btnGroup d-inline-flex">
-                            <button className="flex-grow-1"><i class="fas fa-thumbs-up"></i>Like(10)</button>
-                            <button className="flex-grow-1"><i class="fas fa-comment-dots"></i>Comment(15)</button>
-                            <button className="flex-grow-1"><i class="fas fa-share-alt"></i>Share</button>
+                            <button className="button-card flex-grow-1"><i class="fas fa-thumbs-up"></i>Like(10)</button>
+                            <button className="button-card flex-grow-1"><i class="fas fa-comment-dots"></i>Comment(15)</button>
+                            <button className="button-card flex-grow-1"><i class="fas fa-share-alt"></i>Share</button>
                         </div>
 
                     </Card>

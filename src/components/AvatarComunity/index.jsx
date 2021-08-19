@@ -21,7 +21,7 @@ function AvatarComunity() {
             </Card.Body>
 
             <Card.Body className='cardbody d-flex align-items-center flex-column justify-content-lg-end'>
-                <Button className='my-4' style={{ width: '100%' }} variant="primary" size="lg">
+                <Button className='my-4' style={{ width: '90%', fontSize: '16px', fontWeight: '700' }} variant="secondary" size="lg">
                     Follow
                 </Button>
 

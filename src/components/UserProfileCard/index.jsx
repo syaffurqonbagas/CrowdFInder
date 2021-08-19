@@ -5,7 +5,7 @@ import './index.scss'
 import user from '../../image/user.png'
 import { TiLocation } from 'react-icons/ti';
 
-function AvatarCard() {
+function UserProfileCard() {
     return (
 
         <Card className='AvatarCard'>
@@ -17,11 +17,10 @@ function AvatarCard() {
                 <h5><TiLocation />Jakarta</h5>
             </Card.Body>
 
-            <Card.Body className='cardbody d-flex align-items-center flex-column'>
+            <Card.Body className='cardbody d-flex align-items-center flex-column justify-content-end'>
                 <Button className='my-4' style={{ width: '70%', fontSize: '16px', fontWeight: '700' }} variant="secondary" size="lg">
-                    Profile Setting
+                    Follow
                 </Button>
-                <h5 >  <Link style={{ color: '#D82671', fontWeight: '700', textDecoration: 'none', fontSize: '16px' }} to="/">Logout</Link></h5>
             </Card.Body>
         </Card>
 
@@ -29,4 +28,4 @@ function AvatarCard() {
 }
 
 
-export default AvatarCard
+export default UserProfileCard

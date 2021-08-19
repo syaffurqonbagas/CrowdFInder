@@ -132,7 +132,7 @@ const ChooseInterest = (props) => {
             </Button>
           </div>
            <div className="d-flex justify-content-end">
-             <Link to="/profile">
+             <Link to="/home">
           <Button className="button" style={{ width: "10rem" }}>
               Submit
             </Button>
