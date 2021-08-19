@@ -1,4 +1,4 @@
-import { Form, Button, Col, Row, Container } from "react-bootstrap";
+import { Form, Button, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./SignUp.css";
 import Logo from "../../Asset/logo.png";
@@ -8,7 +8,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const SignUp = () => {
   return (
-    <Container>
       <div className="container-signup">
         <Row>
           <Col className="p-0" >
@@ -65,13 +64,15 @@ const SignUp = () => {
                       </Form.Group>
 
                       <Form.Group>
+                        <Link to="/multistep">
                         <Button
                           className="mt-4 width-nokay"
                           variant="primary"
                           type="submit"
                         >
-                          REGISTER
+                          Create Account
                         </Button>
+                        </Link>
                         <p className="text-center mt-3">
                           Already have an account ?{" "}
                           <Link to="/signin">Sign in</Link>
@@ -80,13 +81,11 @@ const SignUp = () => {
                     </div>
                   </Form>
                 </div>
-
               </div>
             </div>
           </Col>
         </Row>
       </div>
-    </Container>
   );
 };
 

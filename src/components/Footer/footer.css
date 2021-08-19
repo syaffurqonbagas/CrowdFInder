@@ -10,13 +10,10 @@
 }
 
 .list-unstyled{
-    margin-top: 2rem;
     color: #FFFF;
 }
-ul {
+ul{
     list-style-type: none;
-    margin: 0;
-    padding: 0;
 }
 li{
     margin-bottom: 5px;

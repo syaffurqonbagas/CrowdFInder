@@ -22,7 +22,7 @@ const Header = () => {
       <div className="header ">
         <Navbar>
           <Container>
-            <Navbar.Brand className="header-logo" href="/profile">
+            <Navbar.Brand className="header-logo" href="/home">
               <LogoCrowdFinder />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -36,8 +36,8 @@ const Header = () => {
                     aria-label="Search"
                   />
                 </Form>
-                <Nav.Link href="#">Feeds</Nav.Link>
-                <Nav.Link href="#">Notification</Nav.Link>
+                <Nav.Link href="#"><i class="fas fa-home"></i>Feeds</Nav.Link>
+                <Nav.Link href="#"><i class="fas fa-bell"></i>Notification</Nav.Link>
               </Nav>
               {/* {} */}
 
