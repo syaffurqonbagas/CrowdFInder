@@ -5,7 +5,7 @@ import { Button, Card, Container, ListGroup } from 'react-bootstrap'
 function TopicMe() {
     return (
         <>
-            <Card style={{ height: '35rem' }}>
+            <Card style={{ height: '35rem', minWidth: '16rem' }}>
                 <ListGroup variant="flush">
                     <ListGroup.Item className="part-1 mt-2">
                         <h6>What topic would you like to see now?</h6>

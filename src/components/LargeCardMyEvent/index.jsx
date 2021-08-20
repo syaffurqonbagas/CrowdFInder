@@ -13,15 +13,15 @@ function LargeCardMyEvent() {
             <div className="head-container">
 
                 <div className="d-flex">
-                    <div className="image-avatar">
-                        <img src={user} />
+                    <div className="imageAvatar">
+                        <img src={user}/>
                     </div>
                     <div className="headText container-fluid d-block">
                         <p className="d-flex justify-content-end m-0">...</p>
                         <div className="headText-main d-flex">
-                            <div className="my-auto">
-                                <h5 className='me-3' style={{ fontSize: '20px', fontWeight: '700' }}>Inoki Ardhi</h5></div>
-                            <div className="headText-badge rounded-pill ms-3 me-auto">Design</div>
+                            <div className="my-auto" style={{ fontSize: '20px', fontWeight: '700' }}>
+                                Inoki Ardhi</div>
+                            <div className="headTextBadge rounded-pill ms-3 me-auto">Design</div>
                             <div style={{ fontSize: '18px', fontWeight: '400', color: '#828282' }} ><i class="fas fa-map-marker-alt ms-auto me-0"></i> Sumbawa</div>
                         </div>
                         <p style={{ fontSize: '16px', fontWeight: '400', color: '#4F4F4F' }}>1 hours ago</p>
