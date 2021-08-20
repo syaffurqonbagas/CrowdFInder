@@ -28,8 +28,9 @@
     padding: 5px 8px;
     background-color: #fff;
     cursor: pointer;
+    font-size: 14px;
 }
 
-.btnStyle:focus{
-    border: 3px solid black;
+.btnStyle:active{
+    background-color: rgb(230, 230, 230);
 }
