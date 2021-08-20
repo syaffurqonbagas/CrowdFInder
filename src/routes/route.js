@@ -6,7 +6,7 @@ import Footer from "../components/Footer/footer";
 import MyProfile from "../pages/MyProfile";
 import HomePage from "../pages/HomePage";
 import ComunityProfile from "../pages/CommunityProfile";
-import MultiStep from "../components/MultiStepForm/index"
+import MultiStep from "../components/MultiStepForm/index";
 import MyCrowd from "../pages/MyCrowd";
 import UserProfile from "../pages/UserProfile";
 import EventDetail from "../pages/EventDetail";
@@ -14,7 +14,10 @@ import EventDetail from "../pages/EventDetail";
 const Routers = () => {
   return (
     <>
-      <Header />
+      {window.location.pathname !== "/" &&
+      window.location.pathname !== "/signin" &&
+      window.location.pathname !== "/multistep" ? 
+        (<Header />): null}
       <Switch>
         <Route exact path="/">
           <SignUp />
@@ -35,7 +38,7 @@ const Routers = () => {
           <ComunityProfile />
         </Route>
         <Route exact path="/multistep">
-          <MultiStep/>
+          <MultiStep />
         </Route>
         <Route exact path="/mycrowd">
           <MyCrowd />
@@ -43,14 +46,14 @@ const Routers = () => {
         <Route exact path="/eventdetail">
           <EventDetail />
         </Route>
-
-
-
         <Route path="*">
           <h1>Page Not Found</h1>
         </Route>
       </Switch>
-      <Footer />
+      {window.location.pathname !== "/" &&
+      window.location.pathname !== "/signin" &&
+      window.location.pathname !== "/multistep" ? 
+        (<Footer/>) : null}
     </>
   );
 };
