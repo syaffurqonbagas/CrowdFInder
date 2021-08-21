@@ -18,6 +18,10 @@
 
 }
 
+.headTextMain{
+    line-height: 30px;
+}
+
 .fontSize {
     color: #828282;
     font-family: 'Lato', sans-serif;
@@ -99,4 +103,17 @@
     font-size: 16px;
     font-weight: 400;
     color: #4F4F4F;
+}
+
+
+.positionRelative{
+    position: relative;
+}
+
+.position-absolute{
+    top: 15px;
+}
+
+.fa-ellipsis-h:focus{
+    color: #D82671;
 }

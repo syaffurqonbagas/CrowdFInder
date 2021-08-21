@@ -3,7 +3,7 @@ import './index.css'
 import TopicMe from '../../components/TopicMe'
 import CreatePost from '../../components/CreatePost'
 import SmallCardMyEvent from '../../components/SmallCardMyEvent'
-import LargeCardMyEvent from '../../components/LargeCardMyEvent'
+import LargeCardMyEvent from '../../components/LargeCardMyEvent/LargeCardMyEvent.jsx'
 
 
 function HomePage() {
