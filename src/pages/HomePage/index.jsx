@@ -4,6 +4,7 @@ import TopicMe from '../../components/TopicMe'
 import CreatePost from '../../components/CreatePost'
 import SmallCardMyEvent from '../../components/SmallCardMyEvent'
 import LargeCardMyEvent from '../../components/LargeCardMyEvent/LargeCardMyEvent.jsx'
+import MyPagination from '../../components/MyPagination/MyPagination'
 
 
 function HomePage() {
@@ -36,6 +37,10 @@ function HomePage() {
                         </div>
 
                     </div>
+                </div>
+
+                <div className="text-center mt-5">
+                    <MyPagination/>
                 </div>
             </div>
         </>

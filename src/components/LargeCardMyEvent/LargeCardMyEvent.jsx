@@ -24,7 +24,7 @@ function LargeCardMyEvent() {
             <div className="headContainer">
 
                 <div className="d-flex">
-                    <div className="imageAvatar">
+                    <div className="imageAvatar mb-2">
                         <img src={user}/>
                     </div>
                     <div className="headText container-fluid d-block mb-2">

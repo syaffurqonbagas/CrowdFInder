@@ -24,6 +24,10 @@
 
 .fa-plus-circle:hover{
     cursor: pointer;
-    color: black;
+    color: #20BDE0;
 }
 
+.positionAbsolute{
+    top: -3px;
+    left: -50px;
+}
