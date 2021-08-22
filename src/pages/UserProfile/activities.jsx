@@ -1,6 +1,6 @@
 import React from 'react';
 import EventDetailCard from '../../components/EventDetailCard';
-import LargeCardMyEvent from '../../components/LargeCardMyEvent';
+import LargeCardMyEvent from '../../components/LargeCardMyEvent/LargeCardMyEvent';
 import LargeCrowdFinderCard from '../../components/LargeCrowdFinderCard';
 
 

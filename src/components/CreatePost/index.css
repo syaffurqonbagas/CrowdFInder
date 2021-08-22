@@ -21,3 +21,13 @@
     text-align: center;
     font-size: 33pt;
 }
+
+.fa-plus-circle:hover{
+    cursor: pointer;
+    color: #20BDE0;
+}
+
+.positionAbsolute{
+    top: -3px;
+    left: -50px;
+}

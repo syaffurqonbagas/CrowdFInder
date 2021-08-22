@@ -13,5 +13,18 @@
 }
 
 .wrapper::-webkit-scrollbar{
-   width: 0;
+  height: 8px;
 }
+
+.wrapper::-webkit-scrollbar-track {
+   background: #f1f1f1; 
+ }
+
+ .wrapper::-webkit-scrollbar-thumb {
+   background: #93bdc7;
+   border-radius: 5px;
+ }
+ 
+.wrapper::-webkit-scrollbar-thumb:hover {
+   background: #20BDE0; 
+ }
