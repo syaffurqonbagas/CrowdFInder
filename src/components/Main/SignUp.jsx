@@ -71,17 +71,17 @@ const SignUp = () => {
                           variant="primary"
                           type="submit"
                         >
-                          Create Account User
+                          Create Account as User
                         </Button>
                         </Link>
                         </Col>
-                        <Link to="/multistep">
+                        <Link to="/comunity-form">
                         <Button
                           className="mt-4 width-nokay"
                           variant="primary"
                           type="submit"
                         >
-                          Create Account Community
+                          Create Account as Community
                         </Button>
                         </Link>
                         <Col>

@@ -10,6 +10,7 @@ import MultiStep from "../components/MultiStepForm/index";
 import MyCrowd from "../pages/MyCrowd";
 import UserProfile from "../pages/UserProfile";
 import EventDetail from "../pages/EventDetail";
+import CreateCommunityForm from "../components/CreateCommunityForm/index"
 
 const Routers = () => {
   return (
@@ -45,6 +46,9 @@ const Routers = () => {
         </Route>
         <Route exact path="/eventdetail">
           <EventDetail />
+        </Route>
+        <Route exact path="/comunity-form">
+          <CreateCommunityForm/>
         </Route>
         <Route path="*">
           <h1>Page Not Found</h1>

@@ -68,15 +68,28 @@ const Signin = () => {
                     </Form.Group>
 
                     <Form.Group>
+                      <Col>
                       <Link to="/home">
                         <Button
                           className="mt-4 width-nokay"
                           variant="primary"
                           type="submit"
                         >
-                          Login
+                          Login as User
                         </Button>
                       </Link>
+                      </Col>
+                      <Col>
+                      <Link to="/comunity-profile">
+                        <Button
+                          className="mt-4 width-nokay"
+                          variant="primary"
+                          type="submit"
+                        >
+                          Login as Comunity
+                        </Button>
+                      </Link>
+                      </Col>
                       <p className="mt-5 text-muted text-center signFoot">
                         don't have an account? <Link to="/">Sign Up</Link>
                       </p>

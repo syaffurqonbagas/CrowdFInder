@@ -19,11 +19,6 @@ export default function MultiStep() {
     <div>
       {page === 1 && <City onClick={goNextPage} />}
       {page === 2 && <ChoseInterest onClick={goPrevPage} />}
-      {/* {page === 2 && (
-        <Button style={{ width: "10rem" }} onClick={goPrevPage}>
-          Prev
-        </Button>
-      )} */}
     </div>
   );
 }
