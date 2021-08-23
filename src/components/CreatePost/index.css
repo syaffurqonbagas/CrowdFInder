@@ -22,12 +22,38 @@
     font-size: 33pt;
 }
 
+.fa-plus-circle {
+    color: #D82671;
+}
+
 .fa-plus-circle:hover {
     cursor: pointer;
     color: #20BDE0;
+    transition: 0.5s;
+    animation: ease-in;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    -webkit-animation: ease-in;
 }
 
 .positionAbsolute {
-    top: -3px;
-    left: -50px;
+    top: -25px;
+    left: -160px;
+}
+
+.fontWeight-create {
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.positionAbsolute a {
+    text-decoration: none;
+    color: black;
+}
+
+.positionAbsolute a:hover {
+    color: white;
+    background-color: #D82671;
 }

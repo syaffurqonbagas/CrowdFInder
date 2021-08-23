@@ -17,11 +17,11 @@ function HomePage() {
                         <CreatePost />
 
                         <div>
-                            <div className="d-flex mt-3">
-                                <h5 className="flex-grow-1">Your Events</h5>
-                                <p>See All Events</p>
+                            <div className="d-flex mt-4 mb-3">
+                                <h5 className="flex-grow-1 my-auto" style={{ fontSize: '22px', fontWeight: '700' }}>Your Events</h5>
+                                <p className="my-auto" style={{ fontSize: '18px', fontWeight: '400' }}>See All Events</p>
                             </div>
-                            <div className="wrapper">
+                            <div className="wrapper mx-auto mb-5">
                                 <SmallCardMyEvent />
                                 <SmallCardMyEvent />
                                 <SmallCardMyEvent />

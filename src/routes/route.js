@@ -11,8 +11,10 @@ import MyCrowd from "../pages/MyCrowd";
 import UserProfile from "../pages/UserProfile";
 import EventDetail from "../pages/EventDetail";
 import CreateCommunityForm from "../components/CreateCommunityForm/index"
+import FormCreateEventPage from "../pages/FormCreateEventPage/FormCreateEventPage";
+import FormCreateAnnouncementPage from "../pages/FormCreateAnnouncementPage/FormCreateAnnouncementPage";
 import ManageComunity from "../pages/ManageComunity";
-import FormCreateEvent from "../components/FormCreateEvent";
+
 
 const Routers = () => {
   return (
@@ -30,6 +32,12 @@ const Routers = () => {
         </Route>
         <Route exact path="/home">
           <HomePage />
+        </Route>
+        <Route exact path="/create-announcement">
+          <FormCreateAnnouncementPage />
+        </Route>
+        <Route exact path="/create-event">
+          <FormCreateEventPage />
         </Route>
         <Route exact path="/profile">
           <MyProfile />
@@ -54,9 +62,6 @@ const Routers = () => {
         </Route>
         <Route exact path="/manage-comunity">
           <ManageComunity />
-        </Route>
-        <Route exact path="/create-event">
-          <FormCreateEvent />
         </Route>
         <Route path="*">
           <h1>Page Not Found</h1>

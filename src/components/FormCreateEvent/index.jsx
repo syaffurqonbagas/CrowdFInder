@@ -1,19 +1,56 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './index.css'
 import { InputGroup, FormControl, Card, Button, FormSelect, FloatingLabel } from 'react-bootstrap'
 
 function FormCreateEvent() {
+    const [img, setImg] = useState(null);
+    const [error, setError] = useState(false);
+  
+    const imageHandler = (e) => {
+      const selected = e.target.files[0];
+      const allowedTypes = ["image/png", "image/jpeg", "image/jpg"];
+      if (selected && allowedTypes.includes(selected.type)) {
+        let reader = new FileReader();
+        reader.onloadend = () => {
+          setImg(reader.result);
+        };
+        reader.readAsDataURL(selected);
+      } else {
+        setError(true);
+      }
+    };
+
     return (
         <>
-            <div className="container">
-                <h5>Create an event</h5>
-                <p>Put your awesome photo to get more people!</p>
+            <div className="container-fluid" style={{padding: '0 0'}}>
+                <h5 style={{fontSize:'22px', fontWeight:'700'}}>Create an event</h5>
+                <p style={{fontSize:'18px', fontWeight:'400'}}>Put your awesome photo to get more people!</p>
 
                 <Card className="cardSize mb-3">
-                    <Button className="rounded-pill my-auto mx-auto" variant="light"><i class="far fa-image me-2"></i>Add Image</Button>
+                    {img ? <img src={img} alt="" /> : <div></div>}
+                    <input
+                        type="file"
+                        name="image-upload"
+                        id="input"
+                        accept="image/*"
+                        onChange={imageHandler}
+                    />
+                    
+                    {img ? (
+                    <button
+                    className="rounded-pill btnStyle centeringBtn"
+                    onClick={() => setImg(null)}
+                    >
+                        <i class="far fa-image me-2"></i>remove image
+                    </button>
+                    ) : ( 
+                    <label className="rounded-pill btnStyle centeringBtn" htmlFor="input">
+                        <i class="far fa-image me-2"></i>Add Image
+                    </label>
+                    )}
                 </Card>
 
-                <InputGroup className="mb-3">
+                <InputGroup className="mb-3 fontWeightSize-formEvent">
                     <FormControl
                         placeholder="How do you call this event?"
                         aria-label="How do you call this event?"
@@ -64,7 +101,9 @@ function FormCreateEvent() {
                     />
                 </InputGroup>
 
-                <Button className="float-end">Post event</Button>
+                <div className="d-flex justify-content-end">
+                    <Button className="px-5" variant="secondary">Post event</Button>
+                </div>
 
             </div>
         </>
