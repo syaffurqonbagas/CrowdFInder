@@ -11,6 +11,9 @@ import MyCrowd from "../pages/MyCrowd";
 import UserProfile from "../pages/UserProfile";
 import EventDetail from "../pages/EventDetail";
 import CreateCommunityForm from "../components/CreateCommunityForm/index"
+import FormCreateEventPage from "../pages/FormCreateEventPage/FormCreateEventPage";
+import FormCreateAnnouncementPage from "../pages/FormCreateAnnouncementPage/FormCreateAnnouncementPage";
+
 
 const Routers = () => {
   return (
@@ -29,6 +32,12 @@ const Routers = () => {
         </Route>
         <Route exact path="/home">
           <HomePage />
+        </Route>
+        <Route exact path="/create-announcement">
+          <FormCreateAnnouncementPage/>
+        </Route>
+        <Route exact path="/create-event">
+          <FormCreateEventPage/>
         </Route>
         <Route exact path="/profile">
           <MyProfile />

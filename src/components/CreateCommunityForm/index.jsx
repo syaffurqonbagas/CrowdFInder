@@ -95,9 +95,7 @@ function CreateCommunityForm() {
           />
         </InputGroup>
         <div className="d-flex justify-content-end">
-            <Link to="/comunity-profile">
             <Button variant="secondary">Post event</Button>
-            </Link>
         </div>
       </div>
     </>
