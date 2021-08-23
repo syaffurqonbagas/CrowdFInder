@@ -70,13 +70,12 @@ const Signin = () => {
                     <Form.Group>
                       <Col>
                       <Link to="/home">
-                        <Button
-                          className="mt-3 width-nokay"
-                          variant="primary"
+                        <button
+                          className="button-signin mt-3 width-nokay"
                           type="submit"
                         >
-                          Login as User
-                        </Button>
+                          Login
+                        </button>
                       </Link>
                       </Col>
                       <p className="mt-4 text-muted text-center signFoot">

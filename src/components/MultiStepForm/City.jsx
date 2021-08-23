@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Container, Button } from "react-bootstrap";
+import { Form, Container, Dropdown } from "react-bootstrap";
 import "./City.css";
 import { Col, Row } from "react-bootstrap";
 
@@ -36,13 +36,31 @@ const City = (props) => {
                       </Form.Group>
 
                       <div className="d-flex justify-content-center">
-                        <Button
+                        {/* <Button
                           onClick={props.onClick}
                           className="button"
                           style={{ width: "20rem" }}
                         >
                           Next
-                        </Button>
+                        </Button> */}
+                        <Dropdown>
+                          <Dropdown.Toggle
+                            id="dropdown"
+                          >
+                            Create Account as
+                          </Dropdown.Toggle>
+
+                          <Dropdown.Menu>
+                            <Dropdown.Item
+                             onClick={props.onClick}
+                            >
+                              User
+                            </Dropdown.Item>
+                            <Dropdown.Item href="/comunity-form">
+                              Community
+                            </Dropdown.Item>
+                          </Dropdown.Menu>
+                        </Dropdown>
                       </div>
                     </div>
                   </div>

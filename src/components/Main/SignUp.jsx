@@ -1,4 +1,4 @@
-import { Form, Button, Col, Row } from "react-bootstrap";
+import { Form, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./SignUp.css";
 import Logo from "../../Asset/logo.png";
@@ -74,13 +74,12 @@ const SignUp = () => {
                     <Form.Group>
                       <Col>
                         <Link to="/multistep">
-                          <Button
-                            className="mt-3 width-nokay"
-                            variant="primary"
+                          <button
+                            className="button-signup mt-3 width-nokay"
                             type="submit"
                           >
-                            Create Account as User
-                          </Button>
+                            SignUp
+                          </button>
                         </Link>
                       </Col>
                       <p className="text-center mt-3">

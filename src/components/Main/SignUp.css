@@ -5,7 +5,6 @@
   background-size: cover;
   text-align: center;
 }
-
 .left {
   background-color: rgba(216, 38, 113, 0.9);
   text-align: center;
@@ -41,5 +40,12 @@
 
 .box {
   background-color: rgb(255, 255, 255);
- 
+}
+
+.button-signup{
+  background-color: #D82671;
+  border: none;
+  color:white;
+  height: 3rem;
+  width: 22rem;
 }
