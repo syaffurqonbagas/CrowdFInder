@@ -4,18 +4,37 @@ import './LargeCardMyEvent.css'
 import user from '../../image/user.png'
 import { Card, ButtonGroup, Button } from 'react-bootstrap'
 import image from '../../img/largeCardDummy.jpeg'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 
 function LargeCardMyEvent() {
     const [show, setShow] = useState(false);
-
-    const toggleDropDownClose = () => {
-        setShow(false);
-    }
+    const ref = useRef();
+    useOnClickOutside(ref, () => setShow(false));
 
     const toggleDropDown = () => {
         setShow(!show);
+    }
+
+    function useOnClickOutside(ref, handler) {
+        useEffect(
+            () => {
+                const listener = (event) => {
+                    if (!ref.current || ref.current.contains(event.target)) {
+                        return;
+                    }
+                    handler(event);
+                };
+                document.addEventListener("mousedown", listener);
+                document.addEventListener("touchstart", listener);
+                return () => {
+                    document.removeEventListener("mousedown", listener);
+                    document.removeEventListener("touchstart", listener);
+                };
+            },
+
+            [ref, handler]
+        );
     }
 
     return (
@@ -29,9 +48,8 @@ function LargeCardMyEvent() {
                     </div>
                     <div className="headText container-fluid d-block mb-2">
 
-                        <div className="d-flex justify-content-end m-0 positionRelative">
+                        <div ref={ref} className="d-flex justify-content-end m-0 positionRelative">
                             <i class="fas fa-ellipsis-h"
-                                onBlur={() => toggleDropDownClose()}
                                 onClick={() => toggleDropDown()}
                                 tabIndex="0"></i>
                             {show && (
@@ -49,7 +67,7 @@ function LargeCardMyEvent() {
                         </div>
                         <label style={{ fontSize: '16px', fontWeight: '400', color: '#4F4F4F' }}>1 hours ago</label>
                     </div>
-                </div>
+                </div >
 
                 <div>
                     <Card>
@@ -67,7 +85,7 @@ function LargeCardMyEvent() {
                     </Card>
 
                 </div>
-            </div>
+            </div >
         </>
     )
 }

@@ -1,8 +1,22 @@
-.header{
+.header {
     background-color: #D82671;
-    height: 70px;
+    /* height: 70px; */
 }
 
 .header-logo {
     margin-right: 2rem;
+}
+
+.avatar {
+    width: 61px;
+    height: 61px;
+    border-radius: 50%;
+    border: solid 3px white;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
