@@ -40,7 +40,7 @@ const Header = () => {
               </Nav>
               {/* {} */}
               <Nav className="Feed-Notification">
-              <Nav.Link href="#"><i class="fas fa-home fa-lg"></i><Col><p>Feeds</p></Col></Nav.Link>
+              <Nav.Link href="/home"><i class="fas fa-home fa-lg"></i><Col><p>Feeds</p></Col></Nav.Link>
                 <Nav.Link href="#"><i class="fas fa-bell fa-lg"></i><Col><p>Notification</p></Col></Nav.Link>
               </Nav>
               <Nav>

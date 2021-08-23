@@ -17,7 +17,8 @@ const Routers = () => {
     <>
       {window.location.pathname !== "/" &&
       window.location.pathname !== "/signin" &&
-      window.location.pathname !== "/multistep" ? 
+      window.location.pathname !== "/multistep" &&
+      window.location.pathname !== "/comunity-form" ? 
         (<Header />): null}
       <Switch>
         <Route exact path="/">
@@ -56,7 +57,8 @@ const Routers = () => {
       </Switch>
       {window.location.pathname !== "/" &&
       window.location.pathname !== "/signin" &&
-      window.location.pathname !== "/multistep" ? 
+      window.location.pathname !== "/multistep" &&
+      window.location.pathname !== "/comunity-form" ? 
         (<Footer/>) : null}
     </>
   );
