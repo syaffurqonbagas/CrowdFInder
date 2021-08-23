@@ -1,8 +1,30 @@
-import { GET_REGISTER_BEGIN } from "./type";
+import { REGISTER_SUCCESS, LOGIN_SUCCESS } from "./type";
 
-export const getRegister = (Token) => {
-    return {
-      type: GET_REGISTER_BEGIN,
-      Token,
-    };
+export const Register = (
+  email,
+  password,
+  username,
+  fullname,
+  location,
+  role,
+  interest
+) => {
+  return {
+    type: REGISTER_SUCCESS,
+    email,
+    password,
+    username,
+    fullname,
+    location,
+    role,
+    interest,
   };
+};
+
+export const Login = (email, password) => {
+  return {
+    type: LOGIN_SUCCESS,
+    email,
+    password,
+  };
+};
