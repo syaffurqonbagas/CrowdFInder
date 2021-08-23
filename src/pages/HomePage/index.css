@@ -1,11 +1,15 @@
+* {
+  font-family: 'Mulish', sans-serif;
+}
+
 .wrapper{
    max-height: 300px;
    border: 1px solid rgb(216, 216, 216);
    border-radius: 3px;
    display: flex;
+   max-width: 800px;
    justify-content: space-between;
    overflow-x: scroll;
-   width: 800px;
    -webkit-border-radius: 3px;
    -moz-border-radius: 3px;
    -ms-border-radius: 3px;
@@ -27,4 +31,8 @@
  
 .wrapper::-webkit-scrollbar-thumb:hover {
    background: #20BDE0; 
+ }
+
+ .lineHeight-homePage{
+   line-height: 15px;
  }
