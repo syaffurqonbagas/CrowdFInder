@@ -1,14 +1,12 @@
-.container-Signin {
-  margin-top: 1rem;
-}
 
-.Signinbg-left {
+
+.Citybgimage-left {
   background-image: url(../../Asset/background.png);
   background-size: cover;
   text-align: center;
 }
 
-.left-signin {
+.left-city {
   background-color: rgba(216, 38, 113, 0.9);
   text-align: center;
   justify-content: center;
@@ -16,22 +14,13 @@
   width: 100%;
 }
 
-.Signinbg-left h2 {
-  color: white;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 28px;
-  line-height: 53px;
-  letter-spacing: -0.24px;
-}
-
-.Signinbg-right {
+.Citybgimage-right {
   background-image: url(../../Asset/background.png);
   background-size: cover;
   text-align: center;
 
 }
-.Right-signin {
+.Right-City {
   background-color: rgba(255, 255, 255, 0.9);
   background-size: cover;
   text-align: center;
@@ -41,7 +30,15 @@
 
 }
 
-.box-signin {
+.content-form {
   background-color: rgb(255, 255, 255);
- 
+}
+
+.content-city{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  width: 40rem;
 }

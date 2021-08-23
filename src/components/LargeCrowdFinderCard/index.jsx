@@ -56,7 +56,7 @@ function LargeCrowdFinderCard() {
                                 </div>
 
                                 <div className="time d-flex align-items-center ">
-                                    <h5 >  <Link style={{ color: '#D82671', fontWeight: '400', fontSize: '16px' }} to="/">See Detail</Link></h5>
+                                    <h5 >  <Link style={{ color: '#D82671', fontWeight: '400', fontSize: '16px' }} to="/eventdetail">See Detail</Link></h5>
                                 </div>
                             </div>
                         </div>

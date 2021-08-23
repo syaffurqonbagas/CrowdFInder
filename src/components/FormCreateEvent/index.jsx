@@ -15,52 +15,52 @@ function FormCreateEvent() {
 
                 <InputGroup className="mb-3">
                     <FormControl
-                    placeholder="How do you call this event?"
-                    aria-label="How do you call this event?"
-                    aria-describedby="basic-addon1"
+                        placeholder="How do you call this event?"
+                        aria-label="How do you call this event?"
+                        aria-describedby="basic-addon1"
                     />
                 </InputGroup>
 
                 <InputGroup className="mb-3">
                     <FormControl
-                    placeholder="What date?"
-                    aria-label="What date?"
-                    aria-describedby="basic-addon2"
+                        placeholder="What date?"
+                        aria-label="What date?"
+                        aria-describedby="basic-addon2"
                     />
                 </InputGroup>
 
-                
-                <InputGroup className="mb-3">
-                    <FormControl
-                    placeholder="&#xf133; What time?"
-                    aria-label="What time?"
-                    aria-describedby="basic-addon3"
-                    />
-                </InputGroup>
 
                 <InputGroup className="mb-3">
                     <FormControl
-                    placeholder="&#xf133; Where?"
-                    aria-label="Where?"
-                    aria-describedby="basic-addon4"
+                        placeholder="&#xf133; What time?"
+                        aria-label="What time?"
+                        aria-describedby="basic-addon3"
                     />
                 </InputGroup>
 
-                    <FloatingLabel className="mb-3" controlId="floatingSelect" label="What Category This Event Is?" >
-                        <FormSelect aria-label="Floating label select example">
-                            <option></option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </FormSelect>
-                    </FloatingLabel> 
-               
+                <InputGroup className="mb-3">
+                    <FormControl
+                        placeholder="&#xf133; Where?"
+                        aria-label="Where?"
+                        aria-describedby="basic-addon4"
+                    />
+                </InputGroup>
+
+                <FloatingLabel className="mb-3" controlId="floatingSelect" label="What Category This Event Is?" >
+                    <FormSelect aria-label="Floating label select example">
+                        <option></option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </FormSelect>
+                </FloatingLabel>
+
 
                 <InputGroup className="mb-3" controlId="exampleForm.ControlTextarea1">
-                    <FormControl 
-                    as="textarea" 
-                    placeholder="Tell people more about this event"
-                    rows={3} 
+                    <FormControl
+                        as="textarea"
+                        placeholder="Tell people more about this event"
+                        rows={3}
                     />
                 </InputGroup>
 

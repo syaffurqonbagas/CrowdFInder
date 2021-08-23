@@ -1,13 +1,30 @@
 .wrapper{
    max-height: 300px;
-   border: 1px solid black;
+   border: 1px solid rgb(216, 216, 216);
+   border-radius: 3px;
    display: flex;
    justify-content: space-between;
    overflow-x: scroll;
    width: 800px;
-
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   -ms-border-radius: 3px;
+   -o-border-radius: 3px;
 }
 
-.floatLeft{
-    
+.wrapper::-webkit-scrollbar{
+  height: 8px;
 }
+
+.wrapper::-webkit-scrollbar-track {
+   background: #f1f1f1; 
+ }
+
+ .wrapper::-webkit-scrollbar-thumb {
+   background: #93bdc7;
+   border-radius: 5px;
+ }
+ 
+.wrapper::-webkit-scrollbar-thumb:hover {
+   background: #20BDE0; 
+ }

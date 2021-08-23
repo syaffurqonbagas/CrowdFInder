@@ -3,7 +3,8 @@ import './index.css'
 import TopicMe from '../../components/TopicMe'
 import CreatePost from '../../components/CreatePost'
 import SmallCardMyEvent from '../../components/SmallCardMyEvent'
-import LargeCardMyEvent from '../../components/LargeCardMyEvent'
+import LargeCardMyEvent from '../../components/LargeCardMyEvent/LargeCardMyEvent.jsx'
+import MyPagination from '../../components/MyPagination/MyPagination'
 
 
 function HomePage() {
@@ -11,9 +12,9 @@ function HomePage() {
         <>
             <div className="container">
                 <div className="d-flex mt-3">
-                    <TopicMe/>
+                    <TopicMe />
                     <div className="w-100 ms-4">
-                        <CreatePost/>
+                        <CreatePost />
 
                         <div>
                             <div className="d-flex mt-3">
@@ -21,22 +22,27 @@ function HomePage() {
                                 <p>See All Events</p>
                             </div>
                             <div className="wrapper">
-                                <SmallCardMyEvent/>
-                                <SmallCardMyEvent/>
-                                <SmallCardMyEvent/>
-                                <SmallCardMyEvent/>
-                                <SmallCardMyEvent/>
-                                <SmallCardMyEvent/>
+                                <SmallCardMyEvent />
+                                <SmallCardMyEvent />
+                                <SmallCardMyEvent />
+                                <SmallCardMyEvent />
+                                <SmallCardMyEvent />
+                                <SmallCardMyEvent />
                             </div>
                         </div>
 
                         <div>
-                            <LargeCardMyEvent/>
-                            <LargeCardMyEvent/>
+                            <LargeCardMyEvent />
+                            <LargeCardMyEvent />
+                            <div className="text-center my-5">
+                                <MyPagination />
+                            </div>
                         </div>
 
                     </div>
                 </div>
+
+
             </div>
         </>
     )

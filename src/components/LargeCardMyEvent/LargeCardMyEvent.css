@@ -9,13 +9,17 @@
 }
 
 
-.headText-badge {
+.headTextBadge {
     font-weight: 400;
     font-size: 14px;
     padding: 0 10px;
     color: #D82671;
     border: 2px solid #D82671;
 
+}
+
+.headTextMain{
+    line-height: 30px;
 }
 
 .fontSize {
@@ -75,24 +79,41 @@
 
 }
 
-.image-avatar {
+/* .imageAvatar {
     width: 84px;
     height: 84px;
     border-radius: 50%;
     border: solid 5px white;
     top: -100px;
     left: 80px;
-}
+} */
 
-.image-avatar img {
-    width: 100%;
-    height: 100%;
+.imageAvatar img {
+    width: 84px;
+    height: 84px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius:50% ;
+    -webkit-border-radius:50% ;
+    -moz-border-radius:50% ;
+    -ms-border-radius:50% ;
+    -o-border-radius:50% ;
 }
 
 .button-card {
     font-size: 16px;
     font-weight: 400;
     color: #4F4F4F;
+}
+
+
+.positionRelative{
+    position: relative;
+}
+
+.position-absolute{
+    top: 15px;
+}
+
+.fa-ellipsis-h:focus{
+    color: #D82671;
 }

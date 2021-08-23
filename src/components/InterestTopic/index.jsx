@@ -10,7 +10,7 @@ function InterstTopic() {
                 <h5>Interest Topic</h5>
                 <HiPencilAlt />
             </div>
-            <div className="body mt-2 d-flex wrapper">
+            <div className="body mt-2 d-flex">
                 <Badge className='topicuser' pill >
                     Culture exhange
                 </Badge>

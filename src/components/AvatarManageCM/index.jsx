@@ -12,7 +12,7 @@ function AvatarManageCm() {
             <div className="image-avatar">
                 <img src={user} />
             </div>
-            <Card.Body className='title'>
+            <Card.Body className='title-cm'>
                 <h4>Comunity Name</h4>
                 <div className="comunity-badge my-2">
                     <h5>Comunity</h5>
