@@ -10,6 +10,8 @@ import {
 } from "react-bootstrap";
 import LogoCrowdFinder from "../../Asset/LogoCrowdFinder";
 import "./header.css";
+import user from '../../image/user.png'
+
 
 const Header = () => {
 
@@ -44,10 +46,10 @@ const Header = () => {
                 <Nav.Link href="#"><i class="fas fa-bell fa-lg"></i><Col><p>Notification</p></Col></Nav.Link>
               </Nav>
               <Nav>
-                <div className="text-center">
-                  <img className="rounded" alt="..." />
-                </div>
-                <NavDropdown title={`Hi, user`} id="collasible-nav-dropdown">
+
+                < NavDropdown style={{ padding: '0px', width: '61px', height: '80px' }} title={<div className="text-center avatar">
+                  <img src={user} alt="..." />
+                </div>} id="collasible-nav-dropdown">
                   <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item onClick={logout} href="/">
@@ -58,7 +60,7 @@ const Header = () => {
             </Navbar.Collapse>
           </Container>
         </Navbar>
-      </div>
+      </div >
     </>
   );
 };

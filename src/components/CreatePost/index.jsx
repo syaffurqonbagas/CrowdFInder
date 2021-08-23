@@ -8,29 +8,29 @@ function CreatePost() {
     const ref = useRef();
     useOnClickOutside(ref, () => setShow(false));
     const [show, setShow] = useState(false);
-    
+
     function useOnClickOutside(ref, handler) {
         useEffect(
-          () => {
-            const listener = (event) => {
-              if (!ref.current || ref.current.contains(event.target)) {
-                return;
-              }
-              handler(event);
-            };
-            document.addEventListener("mousedown", listener);
-            document.addEventListener("touchstart", listener);
-            return () => {
-              document.removeEventListener("mousedown", listener);
-              document.removeEventListener("touchstart", listener);
-            };
-          },
-        
-          [ref, handler]
+            () => {
+                const listener = (event) => {
+                    if (!ref.current || ref.current.contains(event.target)) {
+                        return;
+                    }
+                    handler(event);
+                };
+                document.addEventListener("mousedown", listener);
+                document.addEventListener("touchstart", listener);
+                return () => {
+                    document.removeEventListener("mousedown", listener);
+                    document.removeEventListener("touchstart", listener);
+                };
+            },
+
+            [ref, handler]
         );
     }
 
-    const toggleDropDown =() => {
+    const toggleDropDown = () => {
         setShow(!show);
     }
     return (
@@ -43,9 +43,9 @@ function CreatePost() {
                     <div ref={ref} className="my-auto d-flex position-relative">
                         <i className="fas fa-plus-circle me-4 fa-3x"
                             onClick={() => toggleDropDown()}
-                            tabIndex="0"></i> 
+                            tabIndex="0"></i>
                         {show && (
-                            <div className="card position-absolute text-center positionAbsolute" style={{width: '9rem'}}>
+                            <div className="card position-absolute text-center positionAbsolute" style={{ width: '9rem' }}>
                                 <Link to="/create-announcement">Announcement</Link>
                                 <Link to="/create-event">Event</Link>
                             </div>
