@@ -1,48 +1,64 @@
 import React from "react";
 import "./LargeCardMyEvent.css";
 // import user from '../../img/user.png'
-import user from "../../image/user.png";
-import { Card, Form, ButtonGroup, Button } from "react-bootstrap";
-import image from "../../img/largeCardDummy.jpeg";
-import { useState } from "react";
+import user from '../../image/user.png'
+import { Card, ButtonGroup, Button, Form } from 'react-bootstrap'
+import image from '../../img/largeCardDummy.jpeg'
+import { useState, useEffect, useRef } from 'react'
+
 
 function LargeCardMyEvent() {
-  const [show, setShow] = useState(false);
+    const [show, setShow] = useState(false);
+    const ref = useRef();
+    useOnClickOutside(ref, () => setShow(false));
 
-  const toggleDropDownClose = () => {
-    setShow(false);
-  };
+    const toggleDropDown =() => {
+        setShow(!show);
+    }
 
-  const toggleDropDown = () => {
-    setShow(!show);
-  };
+    function useOnClickOutside(ref, handler) {
+        useEffect(
+          () => {
+            const listener = (event) => {
+              if (!ref.current || ref.current.contains(event.target)) {
+                return;
+              }
+              handler(event);
+            };
+            document.addEventListener("mousedown", listener);
+            document.addEventListener("touchstart", listener);
+            return () => {
+              document.removeEventListener("mousedown", listener);
+              document.removeEventListener("touchstart", listener);
+            };
+          },
+        
+          [ref, handler]
+        );
+    }
 
-  return (
-    <>
-      <div className="divider my-3 mb-3"></div>
-      <div className="headContainer">
-        <div className="d-flex">
-          <div className="imageAvatar mb-2">
-            <img src={user} />
-          </div>
-          <div className="headText container-fluid d-block mb-2">
-            <div className="d-flex justify-content-end m-0 positionRelative">
-              <i
-                class="fas fa-ellipsis-h"
-                onBlur={() => toggleDropDownClose()}
-                onClick={() => toggleDropDown()}
-                tabIndex="0"
-              ></i>
-              {show && (
-                <div
-                  className="card position-absolute text-center"
-                  style={{ width: "7rem" }}
-                >
-                  <div>Edit</div>
-                  <div>Delete</div>
-                </div>
-              )}
-            </div>
+    return (
+      <>
+          <div className="divider mt-5 mb-5"></div>
+          <div className="headContainer">
+
+              <div className="d-flex">
+                  <div className="imageAvatar mb-4 me-2">
+                      <img src={user}/>
+                  </div>
+                  <div className="headText container-fluid d-block mb-2">
+                      
+                      <div ref={ref} className="d-flex justify-content-end m-0 positionRelative">
+                          <i class="fas fa-ellipsis-h" 
+                          onClick={() => toggleDropDown()}
+                          tabIndex="0"></i>
+                          {show && (
+                              <div className="card position-absolute text-center" style={{width: '7rem'}}>
+                                  <div>Edit</div>
+                                  <div>Delete</div>
+                              </div>
+                          )}
+                      </div>
 
             <div className="headTextMain d-flex align-content-center">
               <label

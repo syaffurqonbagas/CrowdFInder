@@ -29,6 +29,28 @@ function* Register (actions) {
     }
   }
 
+  function* Login (actions) {
+    const { email, password } = actions;
+    try {
+      const res = yield axios.get(
+          `${BASE_URL_CROWDFINDER}`, {
+            headers: {
+                
+              },
+          });
+      yield put({
+        type: REGISTER_SUCCESS,
+        payload: res.data,
+        loading: false,
+        error: null,
+      });
+    } catch (error) {
+      yield put({
+        type: REGISTER_FAIL,
+        error: error,
+      });
+    }
+  }  
 
 
   export function* watchRegister() {
