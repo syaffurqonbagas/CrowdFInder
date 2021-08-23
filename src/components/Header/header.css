@@ -1,8 +1,27 @@
 .header{
     background-color: #D82671;
-    height: 70px;
+    height: 100%;
+    justify-content: center;
+    top: 50%;
+}
+.search-bar{
+    width: 35rem;
+    margin-left: 2rem;
+    max-height: 100%;
 }
 
 .header-logo {
     margin-right: 2rem;
+}
+
+.Feed-Notification{
+    padding-top: 1rem;
+    font-size: 15px;
+    margin-right:1rem;
+    color: white;
+    justify-content: center;
+}
+.Feed-Notification p{
+    margin-right: 1rem;
+    color: white;
 }

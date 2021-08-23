@@ -20,13 +20,13 @@ const City = (props) => {
         </Col>
       </Row>
       <div className="content-city">
-        <div className="city mt-3">
+        <div className="city">
           <Container>
             <div className="content-form d-flex justify-content-center">
-              <Form className="mt-5">
+              <Form className="mt-3">
                 <h2>Welcome to CrowdFinder</h2>
                 <h3>Helps you to find right community</h3>
-                <div className="interest ms-4">
+                <div className="interest ms-3">
                   <div className="content-interest justify-content-center">
                     <p>Where is city you live in?</p>
                     <p>Let people find you greate thoughts</p>

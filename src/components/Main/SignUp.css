@@ -1,6 +1,4 @@
-.container-signup {
-  margin-top: 1rem;
-}
+
 
 .Fullbgimage-left {
   background-image: url(../../Asset/background.png);
@@ -12,7 +10,7 @@
   background-color: rgba(216, 38, 113, 0.9);
   text-align: center;
   justify-content: center;
-  height: 35rem;
+  height: 40rem;
   width: 100%;
 }
 
@@ -36,7 +34,7 @@
   background-size: cover;
   text-align: center;
   justify-content: center;
-  height: 35rem;
+  height: 40rem;
   width: 100%;
 
 }
