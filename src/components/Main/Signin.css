@@ -1,6 +1,3 @@
-.container-Signin {
-  margin-top: 1rem;
-}
 
 .Signinbg-left {
   background-image: url(../../Asset/background.png);
@@ -12,7 +9,7 @@
   background-color: rgba(216, 38, 113, 0.9);
   text-align: center;
   justify-content: center;
-  height: 35rem;
+  height: 40rem;
   width: 100%;
 }
 
@@ -36,12 +33,19 @@
   background-size: cover;
   text-align: center;
   justify-content: center;
-  height: 35rem;
+  height: 40rem;
   width: 100%;
 
 }
 
 .box-signin {
   background-color: rgb(255, 255, 255);
- 
+}
+
+.button-signin{
+  background-color: #D82671;
+  border: none;
+  color:white;
+  height: 3rem;
+  width: 22rem;
 }

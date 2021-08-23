@@ -6,6 +6,7 @@ import {
   FormControl,
   Form,
   NavDropdown,
+  Col
 } from "react-bootstrap";
 import LogoCrowdFinder from "../../Asset/LogoCrowdFinder";
 import "./header.css";
@@ -19,7 +20,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="header ">
+      <div className="header">
         <Navbar>
           <Container>
             <Navbar.Brand className="header-logo" href="/home">
@@ -28,7 +29,7 @@ const Header = () => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
-                <Form className="d-flex search-bar">
+                <Form className="search-bar d-flex">
                   <FormControl
                     className="form-control me-2"
                     type="search"
@@ -36,11 +37,12 @@ const Header = () => {
                     aria-label="Search"
                   />
                 </Form>
-                <Nav.Link href="#"><i class="fas fa-home"></i>Feeds</Nav.Link>
-                <Nav.Link href="#"><i class="fas fa-bell"></i>Notification</Nav.Link>
               </Nav>
               {/* {} */}
-
+              <Nav className="Feed-Notification">
+              <Nav.Link href="/home"><i class="fas fa-home fa-lg"></i><Col><p>Feeds</p></Col></Nav.Link>
+                <Nav.Link href="#"><i class="fas fa-bell fa-lg"></i><Col><p>Notification</p></Col></Nav.Link>
+              </Nav>
               <Nav>
                 <div className="text-center">
                   <img className="rounded" alt="..." />
