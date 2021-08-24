@@ -1,3 +1,5 @@
+@import url(//db.onlinewebfonts.com/c/961a181da27e7cbc072ec2fb5bbfe2a9?family=Circular+Std+Bold);
+
 .profilePic {
     width: 84px;
     height: 84px;
@@ -22,12 +24,11 @@
     line-height: 25px;
 }
 
-.fontSize {
+.font-size {
     color: #828282;
-    font-family: 'Lato', sans-serif;
     font-weight: 400;
     text-align: justify;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .imageSize {
@@ -137,13 +138,32 @@
 
 .btnStyle-largeCard{
     position: absolute;
-    top: -3.7rem;
+    top: -2.7rem;
     left: 47.9rem;
     z-index: 10;
   
 }
 
-
 .sizeText{
     height: 3rem;
+}
+
+.commentCard{
+    border: 1px solid rgb(214, 214, 214);
+    border-top: 0;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+.hideComment{
+    height: 0;
+    overflow: hidden;
+    transition: height ease-out 0.4s;
+    -webkit-transition: height ease-out 0.4s;
+    -moz-transition: height ease-out 0.4s;
+    -ms-transition: height ease-out 0.4s;
+    -o-transition: height ease-out 0.4s;
 }

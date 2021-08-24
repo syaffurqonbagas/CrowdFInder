@@ -6,7 +6,7 @@
     clip-path: circle();
 }
 
-.createContainer h5{
+.createContainer h5 {
     margin: 0;
     display: inline-block;
     line-height: 106px;
@@ -22,11 +22,11 @@
     font-size: 33pt;
 }
 
-.fa-plus-circle{
+.fa-plus-circle {
     color: #D82671;
 }
 
-.fa-plus-circle:hover{
+.fa-plus-circle:hover {
     cursor: pointer;
     color: #20BDE0;
     transition: 0.5s;
@@ -38,7 +38,7 @@
     -webkit-animation: ease-in;
 }
 
-.positionAbsolute{
+.positionAbsolute {
     top: -4px;
     left: -160px;
 }
@@ -48,12 +48,12 @@
     font-size: 18px;
 }
 
-.positionAbsolute a{
+.positionAbsolute a {
     text-decoration: none;
     color: black;
 }
 
-.positionAbsolute a:hover{
+.positionAbsolute a:hover {
     color: white;
     background-color: #D82671;
 }

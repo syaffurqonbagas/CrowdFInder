@@ -13,15 +13,17 @@ import EventDetail from "../pages/EventDetail";
 import CreateCommunityForm from "../components/CreateCommunityForm/index"
 import FormCreateEventPage from "../pages/FormCreateEventPage/FormCreateEventPage";
 import FormCreateAnnouncementPage from "../pages/FormCreateAnnouncementPage/FormCreateAnnouncementPage";
+import ManageComunity from "../pages/ManageComunity";
 
 
 const Routers = () => {
   return (
     <>
       {window.location.pathname !== "/" &&
-      window.location.pathname !== "/signin" &&
-      window.location.pathname !== "/multistep" ? 
-        (<Header />): null}
+        window.location.pathname !== "/signin" &&
+        window.location.pathname !== "/multistep" &&
+        window.location.pathname !== "/comunity-form" ?
+        (<Header />) : null}
       <Switch>
         <Route exact path="/">
           <SignUp />
@@ -33,10 +35,10 @@ const Routers = () => {
           <HomePage />
         </Route>
         <Route exact path="/create-announcement">
-          <FormCreateAnnouncementPage/>
+          <FormCreateAnnouncementPage />
         </Route>
         <Route exact path="/create-event">
-          <FormCreateEventPage/>
+          <FormCreateEventPage />
         </Route>
         <Route exact path="/profile">
           <MyProfile />
@@ -57,16 +59,20 @@ const Routers = () => {
           <EventDetail />
         </Route>
         <Route exact path="/comunity-form">
-          <CreateCommunityForm/>
+          <CreateCommunityForm />
+        </Route>
+        <Route exact path="/manage-comunity">
+          <ManageComunity />
         </Route>
         <Route path="*">
           <h1>Page Not Found</h1>
         </Route>
       </Switch>
       {window.location.pathname !== "/" &&
-      window.location.pathname !== "/signin" &&
-      window.location.pathname !== "/multistep" ? 
-        (<Footer/>) : null}
+        window.location.pathname !== "/signin" &&
+        window.location.pathname !== "/multistep" &&
+        window.location.pathname !== "/comunity-form" ?
+        (<Footer />) : null}
     </>
   );
 };

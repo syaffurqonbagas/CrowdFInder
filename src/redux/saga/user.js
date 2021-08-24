@@ -1,37 +1,58 @@
 import axios from "axios"
 import {
-    GET_REGISTER_BEGIN,
-    GET_REGISTER_SUCCESS,
-    GET_REGISTER_FAIL,
-    BASE_URL_SIGNUP_CROWDFINDER
+    REGISTER_SUCCESS,
+    REGISTER_FAIL,
+    BASE_URL_CROWDFINDER
 } from "../action/type"
 import { put, takeEvery } from "redux-saga/effects";
 
-function* getRegister (actions) {
-    const { error, Token } = actions;
+function* Register (actions) {
+    const { error,  } = actions;
     try {
       const res = yield axios.get(
-          `${BASE_URL_SIGNUP_CROWDFINDER}`, {
+          `${BASE_URL_CROWDFINDER}`, {
             headers: {
-                Authorization: `Bearer ${Token}`,
+                
               },
           });
       yield put({
-        type: GET_REGISTER_SUCCESS,
+        type: REGISTER_SUCCESS,
         payload: res.data,
         loading: false,
         error: null,
       });
     } catch (err) {
       yield put({
-        type: GET_REGISTER_FAIL,
+        type: REGISTER_FAIL,
         error: error,
       });
     }
   }
 
+  function* Login (actions) {
+    const { email, password } = actions;
+    try {
+      const res = yield axios.get(
+          `${BASE_URL_CROWDFINDER}`, {
+            headers: {
+                
+              },
+          });
+      yield put({
+        type: REGISTER_SUCCESS,
+        payload: res.data,
+        loading: false,
+        error: null,
+      });
+    } catch (error) {
+      yield put({
+        type: REGISTER_FAIL,
+        error: error,
+      });
+    }
+  }  
 
 
-  export function* watchGetRegister() {
-    yield takeEvery(GET_REGISTER_BEGIN, getRegister);
+  export function* watchRegister() {
+    yield takeEvery(REGISTER_SUCCESS, Register);
   }
