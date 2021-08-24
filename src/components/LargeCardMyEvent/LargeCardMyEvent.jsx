@@ -2,7 +2,7 @@ import React from 'react'
 import './LargeCardMyEvent.css'
 // import user from '../../img/user.png'
 import user from '../../image/user.png'
-import { Card, ButtonGroup, Button } from 'react-bootstrap'
+import { Card, InputGroup, FormControl, Button } from 'react-bootstrap'
 import image from '../../img/largeCardDummy.jpeg'
 import { useState, useEffect, useRef } from 'react'
 
@@ -82,6 +82,18 @@ function LargeCardMyEvent() {
                             <button className="button-card flex-grow-1"><i class="fas fa-share-alt"></i>Share</button>
                         </div>
 
+                    </Card>
+                    <Card>
+                        <InputGroup className="my-3 fontWeightSize-formEvent">
+                          <FormControl 
+                          className="mx-3 rounded-pill sizeText"
+                          placeholder="Tell people more about this event"
+                          rows={1} 
+                          />
+                        </InputGroup>
+                        <div className="position-relative toTheLeft">
+                          <Button className="rounded-circle btnStyle-largeCard" variant="secondary"><i class="far fa-paper-plane fa-sm"></i></Button>
+                        </div>
                     </Card>
 
                 </div>
