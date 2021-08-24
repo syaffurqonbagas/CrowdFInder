@@ -63,7 +63,7 @@ function LargeCardMyEvent() {
                                 onClick={() => toggleDropDown()}
                                 tabIndex="0"></i>
                             {show && (
-                                <div className="card position-absolute text-center" style={{ width: '7rem' }}>
+                                <div className="card position-absolute text-center stylingHover" style={{ width: '7rem' }}>
                                     <div>Edit</div>
                                     <div>Delete</div>
                                 </div>
