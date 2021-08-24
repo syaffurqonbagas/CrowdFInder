@@ -73,7 +73,7 @@ function LargeCardMyEvent() {
                         <div className="headTextMain d-flex align-content-center">
                             <label
                                 className="my-auto"
-                                style={{ fontSize: "20px", fontWeight: "700" }}
+                                style={{ fontSize: "20px", fontWeight: "400" }}
                             >
                                 Inoki Ardhi
                             </label>
@@ -87,7 +87,7 @@ function LargeCardMyEvent() {
                                     color: "#828282",
                                 }}
                             >
-                                <i class="fas fa-map-marker-alt ms-auto me-0"></i> Sumbawa
+                                <i class="fas fa-map-marker-alt ms-auto me-0 fa-xs"></i> Sumbawa
                             </label>
                         </div>
                         <label
