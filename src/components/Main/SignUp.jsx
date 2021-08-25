@@ -42,7 +42,7 @@ const SignUp = () => {
             <div className="Right d-flex justify-content-center">
               <div
                 className="box my-auto"
-                style={{ height: "30rem", width: "25rem" }}
+                style={{width: "25rem" }}
               >
                 <Form>
                   <div>
@@ -52,6 +52,11 @@ const SignUp = () => {
 
                     <Form.Group className="mb-3 mx-4" controlId="formBasicName">
                       <Form.Label>Full Name</Form.Label>
+                      <Form.Control />
+                    </Form.Group>
+
+                    <Form.Group className="mb-3 mx-4" controlId="formBasicName">
+                      <Form.Label>Username</Form.Label>
                       <Form.Control />
                     </Form.Group>
 

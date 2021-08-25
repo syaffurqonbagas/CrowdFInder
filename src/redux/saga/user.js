@@ -1,58 +1,91 @@
-import axios from "axios"
+import axios from "axios";
 import {
-    REGISTER_SUCCESS,
-    REGISTER_FAIL,
-    BASE_URL_CROWDFINDER
-} from "../action/type"
+  REGISTER_SUCCESS,
+  REGISTER_FAIL,
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
+  BASE_URL_CROWDFINDER,
+  LOGOUT,
+  GET_USER,
+  GET_USER_CROWDFINDER,
+} from "../action/type";
 import { put, takeEvery } from "redux-saga/effects";
 
-function* Register (actions) {
-    const { error,  } = actions;
-    try {
-      const res = yield axios.get(
-          `${BASE_URL_CROWDFINDER}`, {
-            headers: {
-                
-              },
-          });
-      yield put({
-        type: REGISTER_SUCCESS,
-        payload: res.data,
-        loading: false,
-        error: null,
+function* Register(actions) {
+  const { email, password, username, fullname, location, role, interest } =
+    actions;
+  try {
+    const res = yield axios
+      .post(`${BASE_URL_CROWDFINDER}/user/signup`, {
+        email,
+        password,
+        username,
+        fullname,
+        location,
+        role,
+        interest,
+      })
+      .then((response) => {
+        localStorage.setItem("user", JSON.stringify(response));
       });
-    } catch (err) {
-      yield put({
-        type: REGISTER_FAIL,
-        error: error,
-      });
-    }
+    yield put({
+      type: REGISTER_SUCCESS,
+      payload: res.data,
+      loading: false,
+      error: null,
+    });
+  } catch (error) {
+    yield put({
+      type: REGISTER_FAIL,
+      error: error,
+    });
   }
+}
 
-  function* Login (actions) {
-    const { email, password } = actions;
-    try {
-      const res = yield axios.get(
-          `${BASE_URL_CROWDFINDER}`, {
-            headers: {
-                
-              },
-          });
-      yield put({
-        type: REGISTER_SUCCESS,
-        payload: res.data,
-        loading: false,
-        error: null,
-      });
-    } catch (error) {
-      yield put({
-        type: REGISTER_FAIL,
-        error: error,
-      });
-    }
-  }  
-
-
-  export function* watchRegister() {
-    yield takeEvery(REGISTER_SUCCESS, Register);
+function* Login(actions) {
+  const { email, password } = actions;
+  try {
+    const res = yield axios.post(`${BASE_URL_CROWDFINDER}/user/signin`, {
+      email,
+      password,
+    });
+    yield localStorage.setItem("user", JSON.stringify(res));
+    yield put({
+      type: LOGIN_SUCCESS,
+      payload: res.data,
+    });
+  } catch (error) {
+    yield put({
+      type: LOGIN_FAIL,
+      error: error,
+    });
   }
+}
+
+function* getUser() {
+  const res = yield axios.get(`${GET_USER_CROWDFINDER}`);
+  yield put({
+    type: GET_USER,
+    payload: res.data,
+  });
+}
+
+function* Logout() {
+  yield localStorage.removeItem("user");
+}
+
+export function* watchRegister() {
+  yield takeEvery(REGISTER_SUCCESS, Register);
+}
+
+export function* watchLogin() {
+  yield takeEvery(LOGIN_SUCCESS, Login);
+}
+
+export function* watchLogout() {
+  yield takeEvery(LOGOUT, Logout);
+}
+
+export function* watchGetUser() {
+  yield takeEvery(GET_USER, getUser);
+}
