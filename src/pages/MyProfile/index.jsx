@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import AvatarCard from '../../components/AvatarCard';
 import Hero from '../../components/Hero';
+import { getUser } from '../../redux/action/user';
+
+
 import About from './about';
 import Activities from './activities';
 
@@ -9,8 +15,19 @@ import Activities from './activities';
 import './index.scss'
 
 function MyProfile(props) {
-
+    // const user = useSelector((state) => state.userData)
     const [isAbout, setIsAbout] = useState(true)
+    const dispatch = useDispatch()
+    const Token = localStorage.getItem('Token')
+
+    useEffect(() => {
+        dispatch(getUser());
+        console.log('yuhu')
+    }, [])
+
+    // console.log('data')
+    // console.log(user)
+
 
     return (
         <Container>

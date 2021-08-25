@@ -8,5 +8,8 @@ export const LOGOUT = "LOGOUT"
 
 export const GET_USER = "GET_USER";
 
+export const GET_USER_ID = "GET_USER_ID"
+
 export const BASE_URL_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/api"
 export const GET_USER_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/api/user/me"
+export const GET_USER_DETAIL_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/user"

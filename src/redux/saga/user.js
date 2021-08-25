@@ -8,6 +8,8 @@ import {
   LOGOUT,
   GET_USER,
   GET_USER_CROWDFINDER,
+  GET_USER_DETAIL_CROWDFINDER,
+  GET_USER_ID,
 } from "../action/type";
 import { put, takeEvery } from "redux-saga/effects";
 
@@ -63,11 +65,25 @@ function* Login(actions) {
 }
 
 function* getUser() {
-  const res = yield axios.get(`${GET_USER_CROWDFINDER}`);
+  const Token = yield localStorage.getItem('Token')
+  try {
+    const res = yield axios.get('https://crowdfinder.gabatch13.my.id/api/user/me', { headers: { Authorization: `Bearer ${Token}` } });
+    yield put({
+      type: GET_USER,
+      payload: res.data,
+    });
+  } catch (error) {
+    yield console.log(error)
+  }
+
+}
+
+function* getUserDetail() {
+  const res = yield axios.get(`${GET_USER_DETAIL_CROWDFINDER}`)
   yield put({
-    type: GET_USER,
+    type: GET_USER_ID,
     payload: res.data,
-  });
+  })
 }
 
 function* Logout() {
@@ -88,4 +104,8 @@ export function* watchLogout() {
 
 export function* watchGetUser() {
   yield takeEvery(GET_USER, getUser);
+}
+
+export function* watchGetUserDetail() {
+  yield takeEvery(GET_USER_ID, getUserDetail)
 }

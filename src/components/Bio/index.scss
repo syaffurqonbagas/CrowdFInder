@@ -7,6 +7,32 @@
             font-size: 18px;
             font-weight: 700;
         }
+
+        .button-edit {
+            color: #4F4F4F;
+
+
+        }
+
+        .modal-edit {
+            top: -56px;
+            left: -500px;
+            background-color: rgba(255, 255, 255, 0.8);
+            font-family: 'Mulish', sans-serif;
+
+            .modal-body {
+                border-radius: 10px;
+
+                .modal-textarea {
+
+                    font-family: 'Mulish', sans-serif;
+                    width: 500px;
+                    height: 100px;
+                }
+
+
+            }
+        }
     }
 
     .body {
