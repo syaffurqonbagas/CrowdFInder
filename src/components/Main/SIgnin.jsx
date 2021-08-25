@@ -1,13 +1,29 @@
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Login } from "../../redux/action/user";
 import { Form, Col, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, } from "react-router-dom";
 import Logo from "../../Asset/logo.png";
 import PlayStore from "../../Asset/GogglePlayStore.png";
 import AppStore from "../../Asset/AppStore.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Signin.css";
-// import Logo from "../../Asset/logo.png";
 
 const Signin = () => {
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const dispatch = useDispatch();
+  const { isLoggendIn } = useSelector((state) => state.userData);
+
+  if (isLoggendIn) {
+    return <Link to="/home"/>;
+  }
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    dispatch(Login(email, password));
+  };
+
   return (
     <div className="container-Signin">
       <Row>
@@ -43,9 +59,9 @@ const Signin = () => {
             <div className="Right-signin d-flex justify-content-center">
               <div
                 className="box-signin my-auto"
-                style={{ height: "30rem", width: "25rem" }}
+                style={{width: "25rem" }}
               >
-                <Form>
+                <Form onSubmit={(e) => handleLogin(e)}>
                   <div>
                     <Form.Group className="d-flex mt-3 justify-content-center">
                       <h2 className="mt-auto">Login</h2>
@@ -56,7 +72,11 @@ const Signin = () => {
                       controlId="formBasicEmail"
                     >
                       <Form.Label>Email address</Form.Label>
-                      <Form.Control />
+                      <Form.Control
+                        onChange={(e) => setEmail(...email, e.target.value)}
+                        type="email"
+                        placeholder="email@example.com"
+                      />
                     </Form.Group>
 
                     <Form.Group
@@ -64,19 +84,23 @@ const Signin = () => {
                       controlId="formBasicPassword"
                     >
                       <Form.Label>Password</Form.Label>
-                      <Form.Control />
+                      <Form.Control onChange={(e) => setPassword(...password, e.target.value)}
+                        type="password"
+                        placeholder="Password"/>
                     </Form.Group>
 
                     <Form.Group>
                       <Col>
-                      <Link to="/home">
-                        <button
-                          className="button-signin mt-3 width-nokay"
-                          type="submit"
-                        >
-                          Login
-                        </button>
-                      </Link>
+                        {/* <Link to="/home"> */}
+                          <button
+                            disabled={!email || !password}
+                            className="button-signin mt-3 width-nokay"
+                            type="submit"
+                            onClick={handleLogin}
+                          >
+                            Login
+                          </button>
+                        {/* </Link> */}
                       </Col>
                       <p className="mt-4 text-muted text-center signFoot">
                         don't have an account? <Link to="/">Sign Up</Link>

@@ -6,5 +6,7 @@ export const LOGIN_FAIL = "USER_FAIL";
 
 export const LOGOUT = "LOGOUT"
 
+export const GET_USER = "GET_USER";
 
-export const BASE_URL_ROWDFINDER = "https://crowdfinder.gabatch13.my.id"
+export const BASE_URL_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/api"
+export const GET_USER_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/api/user/me"
