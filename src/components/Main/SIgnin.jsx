@@ -26,36 +26,35 @@ const Signin = () => {
 
   return (
     <div className="container-Signin">
-      <Row>
-        <Col className="p-0">
-          <div className="Signinbg-left">
-            <div className="left-signin">
-              <img
-                className="Logo-Cf mt-5 justify-content-center"
-                src={Logo}
-                alt="logo"
-              />
-              <h2>Let’s make your own crowd!</h2>
-              <img
-                src={PlayStore}
-                alt="playstore"
-                width="175"
-                height="55"
-                className="d-inline-block align-top"
-              />
-              <img
-                src={AppStore}
-                alt="appstore"
-                width="175"
-                height="65"
-                className="d-inline-block align-top mt-1"
-              />
+      <div className="d-flex">
+          <div className="Signinbg-left w-100">
+            <div className="left-signin d-flex align-items-center">
+              <div>
+                <img
+                  className="Logo-Cf justify-content-center"
+                  src={Logo}
+                  alt="logo"
+                />
+                <h2>Let’s make your own crowd!</h2>
+                <img
+                  src={PlayStore}
+                  alt="playstore"
+                  width="175"
+                  height="55"
+                  className="d-inline-block align-top"
+                />
+                <img
+                  src={AppStore}
+                  alt="appstore"
+                  width="175"
+                  height="65"
+                  className="d-inline-block align-top mt-1"
+                />
+              </div>
             </div>
           </div>
-        </Col>
 
-        <Col className="p-0">
-          <div className="Signinbg-right justify-content-center">
+          <div className="Signinbg-right justify-content-center w-100">
             <div className="Right-signin d-flex justify-content-center">
               <div
                 className="box-signin my-auto"
@@ -73,7 +72,7 @@ const Signin = () => {
                     >
                       <Form.Label>Email address</Form.Label>
                       <Form.Control
-                        onChange={(e) => setEmail(...email, e.target.value)}
+                        onChange={(e) => setEmail(e.target.value)}
                         type="email"
                         placeholder="email@example.com"
                       />
@@ -84,7 +83,7 @@ const Signin = () => {
                       controlId="formBasicPassword"
                     >
                       <Form.Label>Password</Form.Label>
-                      <Form.Control onChange={(e) => setPassword(...password, e.target.value)}
+                      <Form.Control onChange={(e) => setPassword(e.target.value)}
                         type="password"
                         placeholder="Password"/>
                     </Form.Group>
@@ -111,8 +110,7 @@ const Signin = () => {
               </div>
             </div>
           </div>
-        </Col>
-      </Row>
+      </div>
     </div>
   );
 };

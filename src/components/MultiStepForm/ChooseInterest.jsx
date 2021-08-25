@@ -6,19 +6,19 @@ import "./ChooseInterest.css";
 const ChooseInterest = (props) => {
   return (
     <div className="container-interest">
-      <Row>
-        <Col className="p-0">
+      <div className="d-flex">
+        <div className="w-100">
           <div className="bgimage-left">
             <div className="left-interest"></div>
           </div>
-        </Col>
+        </div>
 
-        <Col className="p-0">
+        <div className="w-100">
           <div className="bgimage-right justify-content-center">
             <div className="Right-interest d-flex justify-content-center"></div>
           </div>
-        </Col>
-      </Row>
+        </div>
+      </div>
 
       <div className="yes">
         <div className="choose-interest">

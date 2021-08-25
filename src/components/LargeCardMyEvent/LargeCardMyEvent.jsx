@@ -59,7 +59,7 @@ function LargeCardMyEvent() {
                     <div className="headText container-fluid d-block mb-2">
 
                         <div ref={ref} className="d-flex justify-content-end m-0 positionRelative">
-                            <i class="fas fa-ellipsis-h"
+                            <i class="fa fa-ellipsis-h"
                                 onClick={() => toggleDropDown()}
                                 tabIndex="0"></i>
                             {show && (
