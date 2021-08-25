@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Container, Dropdown } from "react-bootstrap";
+import { Form, Container, Button } from "react-bootstrap";
 import "./City.css";
 import { Col, Row } from "react-bootstrap";
 
@@ -23,44 +23,67 @@ const City = (props) => {
         <div className="city">
           <Container>
             <div className="content-form d-flex justify-content-center">
-              <Form className="mt-3">
+              <Form className="mt-5 mb-5">
                 <h2>Welcome to CrowdFinder</h2>
                 <h3>Helps you to find right community</h3>
                 <div className="interest ms-3">
                   <div className="content-interest justify-content-center">
-                    <p>Where is city you live in?</p>
+                    <p>
+                      <i class="fas fa-map-marker-alt"></i>  Where is city you
+                      live in?
+                    </p>
                     <p>Let people find you greate thoughts</p>
-                    <div style={{ height: "10rem", width: "85%" }}>
+                    <div style={{ width: "85%" }}>
                       <Form.Group className="mb-3" controlId="interest">
                         <Form.Control placeholder="Type a city’s name" />
                       </Form.Group>
-
+                      <p>Create Acount as :</p>
+                      <div
+                        className="btn-group mb-3"
+                        role="group"
+                        aria-label="Basic radio toggle button group"
+                      >
+                        <Row>
+                          <Col>
+                            <input
+                              type="radio"
+                              class="btn-check"
+                              name="btnradio"
+                              id="user"
+                              autocomplete="off"
+                            />
+                            <label
+                              className="btn btn-outline-primary"
+                              for="user"
+                            >
+                              User
+                            </label>
+                          </Col>
+                          <Col>
+                            <input
+                              type="radio"
+                              class="btn-check"
+                              name="btnradio"
+                              id="comunity"
+                              autocomplete="off"
+                            />
+                            <label
+                              class="btn btn-outline-primary"
+                              for="comunity"
+                            >
+                              Comunity
+                            </label>
+                          </Col>
+                        </Row>
+                      </div>
                       <div className="d-flex justify-content-center">
-                        {/* <Button
+                        <Button
                           onClick={props.onClick}
                           className="button"
                           style={{ width: "20rem" }}
                         >
                           Next
-                        </Button> */}
-                        <Dropdown>
-                          <Dropdown.Toggle
-                            id="dropdown"
-                          >
-                            Create Account as
-                          </Dropdown.Toggle>
-
-                          <Dropdown.Menu>
-                            <Dropdown.Item
-                             onClick={props.onClick}
-                            >
-                              User
-                            </Dropdown.Item>
-                            <Dropdown.Item href="/comunity-form">
-                              Community
-                            </Dropdown.Item>
-                          </Dropdown.Menu>
-                        </Dropdown>
+                        </Button>
                       </div>
                     </div>
                   </div>

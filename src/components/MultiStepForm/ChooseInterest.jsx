@@ -203,25 +203,35 @@ const ChooseInterest = (props) => {
                     </div>
                   </Col>
                 </Row>
-                <div className="justify-content-center">
-                  <div className="">
-                    <p>You can choose as much as you want</p>
-                    <div className="d-flex justify-content-start">
+                <div className="">
+                  <p>You can choose Max 5 Interest</p>
+                  <div className="button-choseiterest">
+                  <Row>
+                    {/* <Col>
+                  <div>
+                    <Button
+                      className="button"
+                      onClick={props.onClick}
+                      style={{ width: "10rem" }}
+                    >
+                      Prev
+                    </Button>
+                  </div>
+                  </Col> */}
+                  <Col>
+                  <div>
+                    <Link to="/home">
                       <Button
-                        className="button"
+                        className="button mb-4"
                         onClick={props.onClick}
                         style={{ width: "10rem" }}
                       >
-                        Prev
+                        Next
                       </Button>
-                    </div>
-                    <div className="d-flex justify-content-end">
-                      <Link to="/home">
-                        <Button className="button mb-4" style={{ width: "10rem" }}>
-                          Submit
-                        </Button>
-                      </Link>
-                    </div>
+                    </Link>
+                  </div>
+                  </Col>
+                  </Row>
                   </div>
                 </div>
               </div>

@@ -1,4 +1,4 @@
-import { REGISTER_SUCCESS, LOGIN_SUCCESS } from "./type";
+import { REGISTER_SUCCESS, LOGIN_SUCCESS, LOGOUT, GET_USER } from "./type";
 
 export const Register = (
   email,
@@ -28,3 +28,15 @@ export const Login = (email, password) => {
     password,
   };
 };
+
+export const logout = () =>{
+    return {
+        type:LOGOUT
+    }
+}
+
+export const getUser = () => {
+ return {
+   type:GET_USER
+ }
+}

@@ -1,4 +1,7 @@
+import { useEffect } from "react";
 import React from "react";
+import {logout, getUser} from "../../redux/action/user";
+import { useSelector, useDispatch } from "react-redux";
 import {
   Navbar,
   Container,
@@ -10,15 +13,20 @@ import {
 } from "react-bootstrap";
 import LogoCrowdFinder from "../../Asset/LogoCrowdFinder";
 import "./header.css";
-import user from '../../image/user.png'
 
 
 const Header = () => {
-
-  const logout = () => {
-    localStorage.clear();
+  const {isLoggedIn, user} = useSelector((state) => state.userData)
+  const dispatch = useDispatch
+  const Logout = (e) => {
+    e.preventDefault();
+    // dispatch(logout());
     window.location.replace("/");
   };
+
+ useEffect(()=>{
+   getUser();
+ },[dispatch])
 
   return (
     <>
@@ -30,7 +38,9 @@ const Header = () => {
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav className="me-auto">
+              {isLoggedIn ? (
+                <>
+                <Nav className="me-auto">
                 <Form className="search-bar d-flex">
                   <FormControl
                     className="form-control me-2"
@@ -46,17 +56,18 @@ const Header = () => {
                 <Nav.Link href="#"><i class="fas fa-bell fa-lg"></i><Col><p>Notification</p></Col></Nav.Link>
               </Nav>
               <Nav>
-
                 < NavDropdown style={{ padding: '0px', width: '61px', height: '80px' }} title={<div className="text-center avatar">
-                  <img src={user} alt="..." />
+                  <img src={`https://ui-avatars.com/api/?name=${user?.data?.fullname}&background=random&length=1&rounded=true&size=35`} alt="..." />
                 </div>} id="collasible-nav-dropdown">
                   <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item onClick={logout} href="/">
+                  <NavDropdown.Item onClick={Logout}>
                     Sign Out
                   </NavDropdown.Item>
                 </NavDropdown>
               </Nav>
+                </>
+              ): null }
             </Navbar.Collapse>
           </Container>
         </Navbar>
