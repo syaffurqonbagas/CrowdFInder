@@ -14,6 +14,7 @@ import {
 import LogoCrowdFinder from "../../Asset/LogoCrowdFinder";
 import "./header.css";
 
+
 const Header = () => {
   const {isLoggedIn, user} = useSelector((state) => state.userData)
   const dispatch = useDispatch
@@ -55,12 +56,9 @@ const Header = () => {
                 <Nav.Link href="#"><i class="fas fa-bell fa-lg"></i><Col><p>Notification</p></Col></Nav.Link>
               </Nav>
               <Nav>
-                <div className="text-center">
-                  <img 
-                  src={`https://ui-avatars.com/api/?name=${user?.data?.fullname}&background=random&length=1&rounded=true&size=35`}
-                  className="rounded" alt="..." />
-                </div>
-                <NavDropdown title={`Hi, ${user?.data?.fullname}`} id="collasible-nav-dropdown">
+                < NavDropdown style={{ padding: '0px', width: '61px', height: '80px' }} title={<div className="text-center avatar">
+                  <img src={`https://ui-avatars.com/api/?name=${user?.data?.fullname}&background=random&length=1&rounded=true&size=35`} alt="..." />
+                </div>} id="collasible-nav-dropdown">
                   <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item onClick={Logout}>
@@ -73,7 +71,7 @@ const Header = () => {
             </Navbar.Collapse>
           </Container>
         </Navbar>
-      </div>
+      </div >
     </>
   );
 };
