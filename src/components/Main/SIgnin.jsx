@@ -73,7 +73,7 @@ const Signin = () => {
                     >
                       <Form.Label>Email address</Form.Label>
                       <Form.Control
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={(e) => setEmail(...email, e.target.value)}
                         type="email"
                         placeholder="email@example.com"
                       />
@@ -84,7 +84,7 @@ const Signin = () => {
                       controlId="formBasicPassword"
                     >
                       <Form.Label>Password</Form.Label>
-                      <Form.Control onChange={(e) => setPassword(e.target.value)}
+                      <Form.Control onChange={(e) => setPassword(...password, e.target.value)}
                         type="password"
                         placeholder="Password"/>
                     </Form.Group>

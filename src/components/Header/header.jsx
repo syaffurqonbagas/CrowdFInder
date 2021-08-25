@@ -20,7 +20,7 @@ const Header = () => {
   const dispatch = useDispatch
   const Logout = (e) => {
     e.preventDefault();
-    dispatch(logout());
+    // dispatch(logout());
     window.location.replace("/");
   };
 
