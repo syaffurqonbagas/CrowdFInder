@@ -17,7 +17,7 @@ import "./header.css";
 
 const Header = () => {
   const { isLoggedIn, user } = useSelector((state) => state.userData)
-  const dispatch = useDispatch
+  const dispatch = useDispatch()
   const Logout = (e) => {
     e.preventDefault();
     // dispatch(logout());
@@ -25,8 +25,9 @@ const Header = () => {
   };
 
   useEffect(() => {
-    getUser();
-  }, [dispatch])
+    dispatch(getUser());
+    console.log('ini', user)
+  }, [])
 
   return (
     <>
@@ -57,7 +58,7 @@ const Header = () => {
                   </Nav>
                   <Nav>
                     < NavDropdown style={{ padding: '0px', width: '61px', height: '80px' }} title={<div className="text-center avatar">
-                      <img src={`https://ui-avatars.com/api/?name=${user?.data?.fullname}&background=random&length=1&rounded=true&size=35`} alt="..." />
+                      <img src={`https://ui-avatars.com/api/?name=${user?.data?.username}&background=random&length=1&rounded=true&size=35`} alt="..." />
                     </div>} id="collasible-nav-dropdown">
                       <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
                       <NavDropdown.Divider />

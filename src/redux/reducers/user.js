@@ -8,11 +8,9 @@ import {
   GET_USER_ID,
 } from "../action/type";
 
-const users = JSON.parse(localStorage.getItem("user"));
+// const users = JSON.parse(localStorage.getItem("user"));
 
-const initialState = users
-  ? { isLoggedIn: true, user: users }
-  : { isLoggedIn: false, user: null };
+const initialState = { isLoggedIn: false, user: null };
 
 const userData = (state = initialState, action) => {
   const { type, payload } = action;

@@ -2,6 +2,7 @@ import axios from "axios";
 import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
+  LOGIN_BEGIN,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   BASE_URL_CROWDFINDER,
@@ -28,7 +29,7 @@ function* Register(actions) {
         interest,
       })
       .then((response) => {
-        localStorage.setItem("user", JSON.stringify(response));
+        localStorage.setItem("user", response.data.token);
       });
     yield put({
       type: REGISTER_SUCCESS,
@@ -51,11 +52,12 @@ function* Login(actions) {
       email,
       password,
     });
-    yield localStorage.setItem("user", JSON.stringify(res));
+    yield localStorage.setItem("user", res.data.token);
     yield put({
       type: LOGIN_SUCCESS,
-      payload: res.data,
+      payload: res.data.token,
     });
+    yield window.location.replace("/home")
   } catch (error) {
     yield put({
       type: LOGIN_FAIL,
@@ -95,7 +97,7 @@ export function* watchRegister() {
 }
 
 export function* watchLogin() {
-  yield takeEvery(LOGIN_SUCCESS, Login);
+  yield takeEvery(LOGIN_BEGIN, Login);
 }
 
 export function* watchLogout() {

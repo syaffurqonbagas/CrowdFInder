@@ -15,18 +15,16 @@ import Activities from './activities';
 import './index.scss'
 
 function MyProfile(props) {
-    // const user = useSelector((state) => state.userData)
+    const user = useSelector((state) => state.userData)
     const [isAbout, setIsAbout] = useState(true)
     const dispatch = useDispatch()
     const Token = localStorage.getItem('Token')
 
     useEffect(() => {
         dispatch(getUser());
-        console.log('yuhu')
+        console.log('yuhu', user)
     }, [])
 
-    // console.log('data')
-    // console.log(user)
 
 
     return (

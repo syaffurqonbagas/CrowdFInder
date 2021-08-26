@@ -1,6 +1,7 @@
-export const REGISTER_SUCCESS = "USER_SUCCESS";
-export const REGISTER_FAIL = "USER_FAIL";
+export const REGISTER_SUCCESS = "USER_REGISTER_SUCCESS";
+export const REGISTER_FAIL = "USER_REGISTER_FAIL";
 
+export const LOGIN_BEGIN = "USER_LOGIN"
 export const LOGIN_SUCCESS = "USER_SUCCESS";
 export const LOGIN_FAIL = "USER_FAIL";
 
