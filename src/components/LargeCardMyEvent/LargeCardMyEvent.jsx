@@ -59,7 +59,7 @@ function LargeCardMyEvent() {
                     <div className="headText container-fluid d-block mb-2">
 
                         <div ref={ref} className="d-flex justify-content-end m-0 positionRelative">
-                            <i class="fas fa-ellipsis-h"
+                            <i class="fa fa-ellipsis-h"
                                 onClick={() => toggleDropDown()}
                                 tabIndex="0"></i>
                             {show && (
@@ -87,7 +87,7 @@ function LargeCardMyEvent() {
                                     color: "#828282",
                                 }}
                             >
-                                <i class="fas fa-map-marker-alt ms-auto me-0 fa-xs"></i> Sumbawa
+                                <i class="fa fa-map-marker ms-auto me-0 fa-xs"></i> Sumbawa
                             </label>
                         </div>
                         <label
@@ -112,13 +112,13 @@ function LargeCardMyEvent() {
 
                         <div className="btnGroup d-inline-flex">
                             <button className="button-card flex-grow-1">
-                                <i class="fas fa-thumbs-up"></i>Like(10)
+                                <i class="fa fa-thumbs-o-up"></i>Like(10)
                             </button>
                             <button className="button-card flex-grow-1" onClick={() => toggleComment()}>
-                                <i class="fas fa-comment-dots"></i>Comment(15)
+                                <i class="fa fa-commenting-o"></i>Comment(15)
                             </button>
                             <button className="button-card flex-grow-1">
-                                <i class="fas fa-share-alt"></i>Share
+                                <i class="fa fa-share-alt"></i>Share
                             </button>
                         </div>
                     </Card>
@@ -133,7 +133,7 @@ function LargeCardMyEvent() {
                             />
                             </InputGroup>
                             <div className="position-relative toTheLeft">
-                            <Button className="rounded-circle btnStyle-largeCard" variant="secondary"><i class="far fa-paper-plane fa-sm"></i></Button>
+                            <Button className="rounded-circle btnStyle-largeCard" variant="secondary"><i class="fa fa-paper-plane"></i></Button>
                             </div>
                         </div>
 

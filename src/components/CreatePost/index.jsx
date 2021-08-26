@@ -41,7 +41,7 @@ function CreatePost() {
                         <h5 className="ms-3">Create Announcement or Events</h5>
                     </div>
                     <div ref={ref} className="my-auto d-flex position-relative">
-                        <i className="fas fa-plus-circle me-4 fa-3x"
+                        <i className="fa fa-plus-circle me-4 fa-3x"
                             onClick={() => toggleDropDown()}
                             tabIndex="0"></i>
                         {show && (

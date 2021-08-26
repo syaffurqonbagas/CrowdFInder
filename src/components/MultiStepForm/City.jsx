@@ -6,19 +6,19 @@ import { Col, Row } from "react-bootstrap";
 const City = (props) => {
   return (
     <div className="container-city">
-      <Row>
-        <Col className="p-0">
+      <div className="d-flex">
+        <div className="w-100">
           <div className="Citybgimage-left">
             <div className="left-city"></div>
           </div>
-        </Col>
+        </div>
 
-        <Col className="p-0">
+        <div className="w-100">
           <div className="Citybgimage-right justify-content-center">
             <div className="Right-City d-flex justify-content-center"></div>
           </div>
-        </Col>
-      </Row>
+        </div>
+      </div>
       <div className="content-city">
         <div className="city">
           <Container>

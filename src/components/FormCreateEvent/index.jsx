@@ -41,11 +41,11 @@ function FormCreateEvent() {
                     className="rounded-pill btnStyle centeringBtn"
                     onClick={() => setImg(null)}
                     >
-                        <i class="far fa-image me-2"></i>remove image
+                        <i class="fa fa-picture-o  me-2"></i>remove image
                     </button>
                     ) : ( 
                     <label className="rounded-pill btnStyle centeringBtn" htmlFor="input">
-                        <i class="far fa-image me-2"></i>Add Image
+                        <i class="fa fa-picture-o  me-2"></i>Add Image
                     </label>
                     )}
                 </Card>
@@ -60,7 +60,8 @@ function FormCreateEvent() {
 
                 <InputGroup className="mb-3">
                     <FormControl
-                        placeholder="What date?"
+                        style={{fontFamily: 'Mulish, FontAwesome, sans-serif'}}
+                        placeholder="&#xf133; What date?"
                         aria-label="What date?"
                         aria-describedby="basic-addon2"
                     />
@@ -69,7 +70,7 @@ function FormCreateEvent() {
 
                 <InputGroup className="mb-3">
                     <FormControl
-                        placeholder="&#xf133; What time?"
+                        placeholder=" What time?"
                         aria-label="What time?"
                         aria-describedby="basic-addon3"
                     />
@@ -77,7 +78,8 @@ function FormCreateEvent() {
 
                 <InputGroup className="mb-3">
                     <FormControl
-                        placeholder="&#xf133; Where?"
+                        style={{fontFamily: 'Mulish, FontAwesome, sans-serif'}}
+                        placeholder="&#xf041; Where?"
                         aria-label="Where?"
                         aria-describedby="basic-addon4"
                     />

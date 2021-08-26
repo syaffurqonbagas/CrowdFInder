@@ -12,11 +12,11 @@ function SmallCardMyEvent() {
                     <h6 className="font mb-3" style={{fontSize: '14px', fontWeight:'700'}}>Festival Makanan Nusantara (Bintang tamu 3 juri masterchef)</h6>
                     <div className="mx-2 d-flex dateTime">
                         <div className="flex-grow-1">
-                            <i class="fas fa-calendar me-3"></i>
+                            <i class="fa fa-calendar me-3"></i>
                             <label>11/12/2020</label>
                         </div>
                         <div>
-                            <i class="fas fa-clock me-3"></i>
+                            <i class="fa  fa-clock-o me-3"></i>
                             <label>20.00 PM</label>
                         </div>
                     </div>

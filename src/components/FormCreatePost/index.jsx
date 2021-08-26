@@ -64,7 +64,7 @@ function FormCreateAnnouncement() {
                             </button>
                             ) : ( 
                             <label className="rounded-pill btnStyle-announcement btnCenter" htmlFor="input">
-                                <i class="far fa-image me-2"></i>Add Image
+                                <i class="fa fa-picture-o me-2"></i>Add Image
                             </label>
                         )}
                         </Card>
