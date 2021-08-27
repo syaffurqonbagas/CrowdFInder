@@ -5,9 +5,29 @@ import CreatePost from '../../components/CreatePost'
 import SmallCardMyEvent from '../../components/SmallCardMyEvent'
 import LargeCardMyEvent from '../../components/LargeCardMyEvent/LargeCardMyEvent.jsx'
 import MyPagination from '../../components/MyPagination/MyPagination'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect, useState } from 'react'
+import { getPost } from '../../redux/action/post'
 
 
 function HomePage() {
+    const dispatch = useDispatch()
+    const posts = useSelector((state) => state.posts.listPost);
+    
+
+    useEffect(() => {
+        dispatch(getPost())
+    }, [dispatch]);
+
+    console.log(posts)
+
+    const user = localStorage.getItem('user');
+    // const token = user.data.token;
+    console.log('tes', user)  ;
+
+
+    console.log('data', posts)
+
     return (
         <>
             <div className="container mt-5">
