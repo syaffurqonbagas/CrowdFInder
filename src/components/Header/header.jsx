@@ -28,6 +28,7 @@ const Header = () => {
    getUser();
  },[dispatch])
 
+ console.log('testing',user)
   return (
     <>
       <div className="header">

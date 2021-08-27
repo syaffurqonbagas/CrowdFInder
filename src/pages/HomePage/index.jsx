@@ -19,7 +19,7 @@ function HomePage() {
         dispatch(getPost())
     }, [dispatch]);
 
-    console.log(posts)
+    // console.log(posts)
 
     const user = localStorage.getItem('user');
     // const token = user.data.token;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Switch, Route, useLocation } from "react-router-dom";
-import SignUp from "../components/Main/SignUp";
+import SignUp from "../components/MultiStepForm/SignUp";
 import SignIn from "../components/Main/SIgnin";
 import Header from "../components/Header/header";
 import Footer from "../components/Footer/footer";
