@@ -1,4 +1,4 @@
-import { REGISTER_SUCCESS, LOGIN_BEGIN, LOGOUT, GET_USER } from "./type";
+import { REGISTER_SUCCESS, LOGIN_BEGIN, LOGOUT, GET_USER, GET_USER_ID, GET_USER_BEGIN } from "./type";
 
 export const Register = (
   email,
@@ -29,14 +29,21 @@ export const Login = (email, password) => {
   };
 };
 
-export const logout = () =>{
-    return {
-        type:LOGOUT
-    }
+export const logout = () => {
+  return {
+    type: LOGOUT
+  }
 }
 
-export const getUser = () => {
- return {
-   type:GET_USER
- }
+export const getCurrentUser = () => {
+  return {
+    type: GET_USER_BEGIN
+  }
+}
+
+
+export const getUserDetail = () => {
+  return {
+    type: GET_USER_ID
+  }
 }

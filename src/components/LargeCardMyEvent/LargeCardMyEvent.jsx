@@ -112,43 +112,43 @@ function LargeCardMyEvent() {
 
                         <div className="btnGroup d-inline-flex">
                             <button className="button-card flex-grow-1">
-                                <i class="fa fa-thumbs-o-up"></i>Like(10)
+                                <i className="fa fa-thumbs-o-up"></i>Like(10)
                             </button>
                             <button className="button-card flex-grow-1" onClick={() => toggleComment()}>
-                                <i class="fa fa-commenting-o"></i>Comment(15)
+                                <i className="fa fa-commenting-o"></i>Comment(15)
                             </button>
                             <button className="button-card flex-grow-1">
-                                <i class="fa fa-share-alt"></i>Share
+                                <i className="fa fa-share-alt"></i>Share
                             </button>
                         </div>
                     </Card>
 
-                    <div className="hideComment" ref={commentRef} style={ showComment ? {height : commentRef.current.scrollHeight + 'px'} : {height: '0px'}}>
+                    <div className="hideComment" ref={commentRef} style={showComment ? { height: commentRef.current.scrollHeight + 'px' } : { height: '0px' }}>
                         <div className="commentCard py-3">
                             <InputGroup className="fontWeightSize-formEvent">
-                            <FormControl 
-                            className="mx-3 rounded-pill sizeText"
-                            placeholder="Type your comment"
-                            rows={1} 
-                            />
+                                <FormControl
+                                    className="mx-3 rounded-pill sizeText"
+                                    placeholder="Type your comment"
+                                    rows={1}
+                                />
                             </InputGroup>
                             <div className="position-relative toTheLeft">
-                            <Button className="rounded-circle btnStyle-largeCard" variant="secondary"><i class="fa fa-paper-plane"></i></Button>
+                                <Button className="rounded-circle btnStyle-largeCard" variant="secondary"><i class="fa fa-paper-plane"></i></Button>
                             </div>
                         </div>
 
-                        <div className="commentCard py-3 text-center" style={{fontWeight: '400', fontSize: '16px'}}>
+                        <div className="commentCard py-3 text-center" style={{ fontWeight: '400', fontSize: '16px' }}>
                             <Link className="text-decoration-none text-secondary">Load more comment</Link>
                         </div>
 
                         <div className="commentCard py-3 px-3">
-                            <div className="d-flex mb-2 fontCircular" style={{fontWeight: '450', fontSize: '18px'}}>
+                            <div className="d-flex mb-2 fontCircular" style={{ fontWeight: '450', fontSize: '18px' }}>
                                 <div className="flex-grow-1" >Bagas Louphe Semuach</div>
-                                <div style={{color: '#828282'}}>3h ago</div>
+                                <div style={{ color: '#828282' }}>3h ago</div>
                             </div>
-                            <div style={{fontWeight: '400', fontSize: '16px'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae sint obcaecati laudantium quo quod aspernatur ea sed praesentium debitis ipsum enim, accusamus eveniet, inventore vitae possimus adipisci nostrum soluta! Laboriosam.</div>
+                            <div style={{ fontWeight: '400', fontSize: '16px' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae sint obcaecati laudantium quo quod aspernatur ea sed praesentium debitis ipsum enim, accusamus eveniet, inventore vitae possimus adipisci nostrum soluta! Laboriosam.</div>
                         </div>
-                    </div> 
+                    </div>
 
                 </div>
             </div>

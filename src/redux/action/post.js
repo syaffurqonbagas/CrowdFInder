@@ -6,5 +6,5 @@ export const getPost = (page = 1) => {
       page,
     };
   };
-  
+
 

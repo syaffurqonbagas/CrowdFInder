@@ -9,16 +9,8 @@ function FormCreateEventPage() {
     return (
         <>
             <div className="container">
-                <div className="d-flex mt-3">
-                    <TopicMe/>
-                    <div className="w-100 ms-4">
-                        <CreatePost/>
-
-                        <div className="mt-4 mb-5">
-                           <FormCreateEvent/>
-                        </div>
-
-                    </div>
+                <div className="mt-4 mb-5">
+                   <FormCreateEvent/>
                 </div>
             </div>
         </>

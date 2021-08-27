@@ -5,6 +5,7 @@ import {
   REGISTER_FAIL,
   GET_USER,
   LOGOUT,
+  GET_USER_ID,
 } from "../action/type";
 
 // const users = JSON.parse(localStorage.getItem("user"));
@@ -50,6 +51,12 @@ const userData = (state = initialState, action) => {
         isLoggedIn: true,
         user: payload,
       };
+    case GET_USER_ID:
+      return {
+        ...state,
+        isLoggedIn: true,
+        user: payload,
+      }
     default:
       return state;
   }
