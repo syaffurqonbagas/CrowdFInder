@@ -1,5 +1,6 @@
-import { Switch, Route } from "react-router-dom";
-import SignUp from "../components/MultiStepForm/SignUp";
+import { useEffect, useState } from "react";
+import { Switch, Route, useLocation } from "react-router-dom";
+import SignUp from "../components/Main/SignUp";
 import SignIn from "../components/Main/SIgnin";
 import Header from "../components/Header/header";
 import Footer from "../components/Footer/footer";
@@ -16,14 +17,28 @@ import FormCreateAnnouncementPage from "../pages/FormCreateAnnouncementPage/Form
 import ManageComunity from "../pages/ManageComunity";
 
 
+
 const Routers = () => {
+  const [isHeader, setIsHeader] = useState(false);
+  let location = useLocation();
+
+
+  useEffect(() => {
+   switch (location.pathname) {
+     case ("/") :
+     case ("/signin") :
+     case ("/multistep") :
+     case ("/comunity-form") :
+       setIsHeader(false)
+       break
+     default :
+      setIsHeader(true)
+   }
+  }, [location.pathname]);
+  
   return (
     <>
-      {window.location.pathname !== "/" &&
-        window.location.pathname !== "/signin" &&
-        window.location.pathname !== "/multistep" &&
-        window.location.pathname !== "/comunity-form" ?
-        (<Header />) : null}
+      {isHeader && (<Header />)}
       <Switch>
         <Route exact path="/">
           <SignUp />
@@ -68,11 +83,7 @@ const Routers = () => {
           <h1>Page Not Found</h1>
         </Route>
       </Switch>
-      {window.location.pathname !== "/" &&
-        window.location.pathname !== "/signin" &&
-        window.location.pathname !== "/multistep" &&
-        window.location.pathname !== "/comunity-form" ?
-        (<Footer />) : null}
+      {isHeader && (<Footer />)}
     </>
   );
 };
