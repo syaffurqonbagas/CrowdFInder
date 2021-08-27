@@ -13,20 +13,20 @@ function TopicMe() {
                         <p>You will only see topics you selected. Go to Account menu to add more topics.</p>
                         <div>
                             <div className="d-flex mb-1">
-                                <input class="form-check-input me-1" type="checkbox" value=""/>
-                                <label class="form-check-label">Social</label>
+                                <input className="form-check-input me-1" type="checkbox" value="" />
+                                <label className="form-check-label">Social</label>
                             </div>
                             <div className="d-flex mb-1">
-                                <input class="form-check-input me-1" type="checkbox" value=""/>
-                                <label class="form-check-label">Business</label>
+                                <input className="form-check-input me-1" type="checkbox" value="" />
+                                <label className="form-check-label">Business</label>
                             </div>
                             <div className="d-flex mb-1">
-                                <input class="form-check-input me-1" type="checkbox" value=""/>
-                                <label class="form-check-label">Politics</label>
+                                <input className="form-check-input me-1" type="checkbox" value="" />
+                                <label className="form-check-label">Politics</label>
                             </div>
                             <div className="d-flex mb-1">
-                                <input class="form-check-input me-1" type="checkbox" value=""/>
-                                <label class="form-check-label">Art</label>
+                                <input className="form-check-input me-1" type="checkbox" value="" />
+                                <label className="form-check-label">Art</label>
                             </div>
                         </div>
                     </ListGroup.Item>
@@ -34,19 +34,19 @@ function TopicMe() {
                         <h6>Which events would you like to see?</h6>
                         <div>
                             <div className="d-flex mb-1">
-                                <input class="form-check-input me-1" type="checkbox" value=""/>
-                                <label class="form-check-label">Events near me</label>
+                                <input className="form-check-input me-1" type="checkbox" value="" />
+                                <label className="form-check-label">Events near me</label>
                             </div>
                             <div className="d-flex mb-5">
-                                <input class="form-check-input me-1 secondary" type="checkbox" value=""/>
-                                <label class="form-check-label">Events from community I’ve followed</label>
+                                <input className="form-check-input me-1 secondary" type="checkbox" value="" />
+                                <label className="form-check-label">Events from community I’ve followed</label>
                             </div>
                         </div>
-                        
+
                         <Button className="d-block mx-auto w-100" variant="secondary">Update</Button>
                     </ListGroup.Item>
                 </ListGroup>
-                
+
             </Card>
         </>
     )

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Switch, Route, useLocation } from "react-router-dom";
-import SignUp from "../components/Main/SignUp";
 import SignIn from "../components/Main/SIgnin";
 import Header from "../components/Header/header";
 import Footer from "../components/Footer/footer";
@@ -15,6 +14,7 @@ import CreateCommunityForm from "../components/CreateCommunityForm/index"
 import FormCreateEventPage from "../pages/FormCreateEventPage/FormCreateEventPage";
 import FormCreateAnnouncementPage from "../pages/FormCreateAnnouncementPage/FormCreateAnnouncementPage";
 import ManageComunity from "../pages/ManageComunity";
+import SignUp from "../components/MultiStepForm/SignUp";
 
 
 
@@ -24,18 +24,18 @@ const Routers = () => {
 
 
   useEffect(() => {
-   switch (location.pathname) {
-     case ("/") :
-     case ("/signin") :
-     case ("/multistep") :
-     case ("/comunity-form") :
-       setIsHeader(false)
-       break
-     default :
-      setIsHeader(true)
-   }
+    switch (location.pathname) {
+      case ("/"):
+      case ("/signin"):
+      case ("/multistep"):
+      case ("/comunity-form"):
+        setIsHeader(false)
+        break
+      default:
+        setIsHeader(true)
+    }
   }, [location.pathname]);
-  
+
   return (
     <>
       {isHeader && (<Header />)}
@@ -47,7 +47,7 @@ const Routers = () => {
           <SignIn />
         </Route>
         <Route exact path="/home">
-          <HomePage/>
+          <HomePage />
         </Route>
         <Route exact path="/create-announcement">
           <FormCreateAnnouncementPage />

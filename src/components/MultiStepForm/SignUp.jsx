@@ -10,29 +10,29 @@ const SignUp = () => {
   return (
     <div className="container-signup">
       <div className="d-flex">
-          <div className="Fullbgimage-left w-100">
-            <div className="left d-flex align-items-center">
-              <div>
-                <img
-                  className="Logo justify-content-center"
-                  src={Logo}
-                  alt="logo"
-                />
-                <h2>Let’s make your own crowd!</h2>
-                <img
-                  src={PlayStore}
-                  alt="playstore"
-                  width="175"
-                  height="55"
-                  className="d-inline-block align-top"
-                />
-                <img
-                  src={AppStore}
-                  alt="appstore"
-                  width="175"
-                  height="65"
-                  className="d-inline-block align-top"
-                />
+        <div className="Fullbgimage-left w-100">
+          <div className="left d-flex align-items-center">
+            <div>
+              <img
+                className="Logo justify-content-center"
+                src={Logo}
+                alt="logo"
+              />
+              <h2>Let’s make your own crowd!</h2>
+              <img
+                src={PlayStore}
+                alt="playstore"
+                width="175"
+                height="55"
+                className="d-inline-block align-top"
+              />
+              <img
+                src={AppStore}
+                alt="appstore"
+                width="175"
+                height="65"
+                className="d-inline-block align-top"
+              />
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@ const SignUp = () => {
           <div className="Right d-flex justify-content-center">
             <div
               className="box my-auto"
-              style={{width: "25rem" }}
+              style={{ width: "25rem" }}
             >
               <Form>
                 <div>

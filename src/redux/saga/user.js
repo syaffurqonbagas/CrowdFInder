@@ -9,8 +9,12 @@ import {
   LOGOUT,
   GET_USER,
   GET_USER_CROWDFINDER,
+  GET_USER_DETAIL_CROWDFINDER,
+  GET_USER_ID,
+  GET_USER_BEGIN,
 } from "../action/type";
-import { put, takeEvery } from "redux-saga/effects";
+import { put, takeEvery, takeLatest } from "redux-saga/effects";
+import { getUserAction } from "../action/user";
 
 function* Register(actions) {
   const { email, password, username, fullname, location, role, interest } =
@@ -27,7 +31,7 @@ function* Register(actions) {
         interest,
       })
       .then((response) => {
-        localStorage.setItem("user",response.data.token);
+        localStorage.setItem("user", response.data.token);
       });
     yield put({
       type: REGISTER_SUCCESS,
@@ -50,7 +54,7 @@ function* Login(actions) {
       email,
       password,
     });
-    yield localStorage.setItem("user", JSON.stringify(res.data.token));
+    yield localStorage.setItem("user", res.data.token);
     yield put({
       type: LOGIN_SUCCESS,
       payload: res.data.token,
@@ -65,11 +69,27 @@ function* Login(actions) {
 }
 
 function* getUser() {
-  const res = yield axios.get(`${GET_USER_CROWDFINDER}`);
+  const Token = yield localStorage.getItem('user')
+  try {
+    const res = yield axios.get('https://crowdfinder.gabatch13.my.id/api/user/me', { headers: { Authorization: `Bearer ${Token}` } });
+    yield console.log('ini data', res.data)
+    yield put({
+      type: GET_USER,
+      payload: res.data,
+    });
+
+  } catch (error) {
+    yield console.log(error)
+  }
+
+}
+
+function* getUserDetail() {
+  const res = yield axios.get(`${GET_USER_DETAIL_CROWDFINDER}`)
   yield put({
-    type: GET_USER,
+    type: GET_USER_ID,
     payload: res.data,
-  });
+  })
 }
 
 function* Logout() {
@@ -81,7 +101,7 @@ export function* watchRegister() {
 }
 
 export function* watchLogin() {
-  yield takeEvery(LOGIN_BEGIN, Login);
+  yield takeLatest(LOGIN_BEGIN, Login);
 }
 
 export function* watchLogout() {
@@ -89,5 +109,9 @@ export function* watchLogout() {
 }
 
 export function* watchGetUser() {
-  yield takeEvery(GET_USER, getUser);
+  yield takeLatest(GET_USER_BEGIN, getUser);
+}
+
+export function* watchGetUserDetail() {
+  yield takeEvery(GET_USER_ID, getUserDetail)
 }
