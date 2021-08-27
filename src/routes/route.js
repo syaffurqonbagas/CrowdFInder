@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { Switch, Route, useLocation } from "react-router-dom";
-import SignUp from "../components/MultiStepForm/SignUp";
+import SignUp from "../components/MultiStepForm/index"
 import SignIn from "../components/Main/SIgnin";
 import Header from "../components/Header/header";
 import Footer from "../components/Footer/footer";
 import MyProfile from "../pages/MyProfile";
 import HomePage from "../pages/HomePage";
 import ComunityProfile from "../pages/CommunityProfile";
-import MultiStep from "../components/MultiStepForm/index";
 import MyCrowd from "../pages/MyCrowd";
 import UserProfile from "../pages/UserProfile";
 import EventDetail from "../pages/EventDetail";
@@ -28,7 +27,6 @@ const Routers = () => {
     switch (location.pathname) {
       case ("/"):
       case ("/signin"):
-      case ("/multistep"):
       case ("/comunity-form"):
         setIsHeader(false)
         break
@@ -65,9 +63,9 @@ const Routers = () => {
         <Route exact path="/comunity-profile">
           <ComunityProfile />
         </Route>
-        <Route exact path="/multistep">
+        {/* <Route exact path="/multistep">
           <MultiStep />
-        </Route>
+        </Route> */}
         <Route exact path="/mycrowd">
           <MyCrowd />
         </Route>

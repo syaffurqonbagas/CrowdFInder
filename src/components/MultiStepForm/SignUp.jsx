@@ -6,7 +6,8 @@ import PlayStore from "../../Asset/GogglePlayStore.png";
 import AppStore from "../../Asset/AppStore.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const SignUp = () => {
+const SignUp = (props) => {
+  // const {next} = navigator
   return (
     <div className="container-signup">
       <div className="d-flex">
@@ -39,10 +40,7 @@ const SignUp = () => {
 
         <div className="Fullbgimage-right justify-content-center w-100">
           <div className="Right d-flex justify-content-center">
-            <div
-              className="box my-auto"
-              style={{ width: "25rem" }}
-            >
+            <div className="box my-auto" style={{ width: "25rem" }}>
               <Form>
                 <div>
                   <Form.Group className="d-flex mt-3 justify-content-center">
@@ -56,10 +54,7 @@ const SignUp = () => {
                     <Form.Label>Username</Form.Label>
                     <Form.Control />
                   </Form.Group>
-                  <Form.Group
-                    className="mb-3 mx-4"
-                    controlId="formBasicEmail"
-                  >
+                  <Form.Group className="mb-3 mx-4" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control />
                   </Form.Group>
@@ -72,14 +67,13 @@ const SignUp = () => {
                   </Form.Group>
                   <Form.Group>
                     <Col>
-                      <Link to="/multistep">
-                        <button
-                          className="button-signup mt-3 width-nokay"
-                          type="submit"
-                        >
-                          SignUp
-                        </button>
-                      </Link>
+                      <button
+                        className="button-signup mt-3 width-nokay"
+                        type="submit"
+                        onClick={props.onClick}
+                      >
+                        SignUp
+                      </button>
                     </Col>
                     <p className="text-center mt-3">
                       Already have an account ?{" "}
