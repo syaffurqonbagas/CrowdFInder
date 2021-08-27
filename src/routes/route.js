@@ -18,24 +18,25 @@ import ManageComunity from "../pages/ManageComunity";
 
 
 
+
 const Routers = () => {
   const [isHeader, setIsHeader] = useState(false);
   let location = useLocation();
 
 
   useEffect(() => {
-   switch (location.pathname) {
-     case ("/") :
-     case ("/signin") :
-     case ("/multistep") :
-     case ("/comunity-form") :
-       setIsHeader(false)
-       break
-     default :
-      setIsHeader(true)
-   }
+    switch (location.pathname) {
+      case ("/"):
+      case ("/signin"):
+      case ("/multistep"):
+      case ("/comunity-form"):
+        setIsHeader(false)
+        break
+      default:
+        setIsHeader(true)
+    }
   }, [location.pathname]);
-  
+
   return (
     <>
       {isHeader && (<Header />)}
@@ -47,7 +48,7 @@ const Routers = () => {
           <SignIn />
         </Route>
         <Route exact path="/home">
-          <HomePage/>
+          <HomePage />
         </Route>
         <Route exact path="/create-announcement">
           <FormCreateAnnouncementPage />
