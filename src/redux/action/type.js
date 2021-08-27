@@ -8,7 +8,7 @@ export const LOGIN_FAIL = "USER_FAIL";
 export const LOGOUT = "LOGOUT"
 
 export const GET_USER = "GET_USER";
-
+export const GET_USER_BEGIN = "GET_USER_BEGIN"
 export const GET_USER_ID = "GET_USER_ID"
 
 export const BASE_URL_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/api"

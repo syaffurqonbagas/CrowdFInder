@@ -40,7 +40,7 @@ function Bio() {
                 <h5>Bio</h5>
 
                 <div ref={ref} className="my-auto d-flex position-relative">
-                    <i className="button-edit fas fa-edit"
+                    <i className="button-edit fa fa-edit"
                         onClick={() => toggleDropDown()}
                         tabIndex="0"></i>
                     {show && (
@@ -50,8 +50,8 @@ function Bio() {
                                     <Form.Label style={{ fontWeight: '700' }}>Bio Edit</Form.Label>
                                     <Form.Control className='modal-textarea' as="textarea" />
                                 </Form.Group>
-                                <Button variant="primary" type="submit">
-                                    Submit
+                                <Button variant="secondary" type="submit">
+                                    save
                                 </Button>
                             </div>
                         </Form>
