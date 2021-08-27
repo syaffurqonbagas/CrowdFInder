@@ -47,7 +47,7 @@ const Routers = () => {
           <SignIn />
         </Route>
         <Route exact path="/home">
-          <HomePage />
+          <HomePage/>
         </Route>
         <Route exact path="/create-announcement">
           <FormCreateAnnouncementPage />

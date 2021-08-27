@@ -90,7 +90,7 @@ const Signin = () => {
 
                     <Form.Group>
                       <Col>
-                        {/* <Link to="/home"> */}
+                        <Link to="/home">
                           <button
                             disabled={!email || !password}
                             className="button-signin mt-3 width-nokay"
@@ -99,7 +99,7 @@ const Signin = () => {
                           >
                             Login
                           </button>
-                        {/* </Link> */}
+                        </Link>
                       </Col>
                       <p className="mt-4 text-muted text-center signFoot">
                         don't have an account? <Link to="/">Sign Up</Link>
