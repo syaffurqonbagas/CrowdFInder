@@ -1,4 +1,4 @@
-import { REGISTER_SUCCESS, LOGIN_BEGIN, LOGOUT, GET_USER } from "./type";
+import { REGISTER_BEGIN, LOGIN_BEGIN, LOGOUT, GET_USER } from "./type";
 
 export const Register = (
   email,
@@ -10,7 +10,7 @@ export const Register = (
   interest
 ) => {
   return {
-    type: REGISTER_SUCCESS,
+    type: REGISTER_BEGIN,
     email,
     password,
     username,

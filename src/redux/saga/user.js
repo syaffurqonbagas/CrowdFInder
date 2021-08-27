@@ -1,5 +1,6 @@
 import axios from "axios";
 import {
+  REGISTER_BEGIN,
   REGISTER_SUCCESS,
   REGISTER_FAIL,
   LOGIN_BEGIN,
@@ -77,7 +78,7 @@ function* Logout() {
 }
 
 export function* watchRegister() {
-  yield takeEvery(REGISTER_SUCCESS, Register);
+  yield takeEvery(REGISTER_BEGIN, Register);
 }
 
 export function* watchLogin() {
