@@ -49,7 +49,7 @@ function* Login(actions) {
       email,
       password,
     });
-    yield localStorage.setItem("user", JSON.stringify(res));
+    yield localStorage.setItem("user", JSON.stringify(res.data.token));
     yield put({
       type: LOGIN_SUCCESS,
       payload: res.data,
