@@ -17,7 +17,6 @@ import ManageComunity from "../pages/ManageComunity";
 
 
 
-
 const Routers = () => {
   const [isHeader, setIsHeader] = useState(false);
   let location = useLocation();
