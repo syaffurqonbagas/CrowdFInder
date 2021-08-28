@@ -17,6 +17,8 @@ export const GET_POST_FAIL = "GET_POST_FAIL"
 
 export const POST_EVENT = "POST_EVENT"
 
+export const POST_ANNOUNCEMENT = "POST_ANNOUNCEMENT"
+
 export const BASE_URL_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/api"
 export const GET_USER_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/api/user/me"
 export const GET_USER_DETAIL_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/user"

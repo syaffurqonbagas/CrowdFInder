@@ -2,7 +2,7 @@ import { POST_EVENT } from "../action/type";
 
 
 const initialState = {
-    event : []
+    listPost : []
 }
 
 const events = (state = initialState, action) => {
@@ -11,7 +11,7 @@ const events = (state = initialState, action) => {
         case POST_EVENT:
             return {
                 ...state,
-                event : payload,
+                listPost : payload,
             };
         default :
             return {
