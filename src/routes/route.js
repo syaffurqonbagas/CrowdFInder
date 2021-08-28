@@ -63,9 +63,6 @@ const Routers = () => {
         <Route exact path="/comunity-profile">
           <ComunityProfile />
         </Route>
-        {/* <Route exact path="/multistep">
-          <MultiStep />
-        </Route> */}
         <Route exact path="/mycrowd">
           <MyCrowd />
         </Route>
