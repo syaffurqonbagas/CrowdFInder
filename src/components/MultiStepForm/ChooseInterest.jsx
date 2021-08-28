@@ -42,50 +42,50 @@ const ChooseInterest = (props) => {
                         <input
                           class="form-check-input"
                           type="checkbox"
-                          value=""
+                          value="sports"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                          Design
+                          sports
                         </label>
                       </div>
                       <div class="form-check">
                         <input
                           class="form-check-input"
                           type="checkbox"
-                          value=""
+                          value="finance"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                          Automotive
+                        finance
                         </label>
                       </div>
                       <div class="form-check">
                         <input
                           class="form-check-input"
                           type="checkbox"
-                          value=""
+                          value="automotive"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                          Culture and Language
+                        automotivee
                         </label>
                       </div>
                       <div class="form-check">
                         <input
                           class="form-check-input"
                           type="checkbox"
-                          value=""
+                          value="politics"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                          Business
+                        politics
                         </label>
                       </div>
                       <div class="form-check">
                         <input
                           class="form-check-input"
                           type="checkbox"
-                          value=""
+                          value="design"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                          Politics
+                        design
                         </label>
                       </div>
                     </div>
@@ -98,50 +98,50 @@ const ChooseInterest = (props) => {
                         <input
                           class="form-check-input"
                           type="checkbox"
-                          value=""
+                          value="cook"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                          Food and Beverage
+                        cook
                         </label>
                       </div>
                       <div class="form-check">
                         <input
                           class="form-check-input"
                           type="checkbox"
-                          value=""
+                          value="tech"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                          Tourism
+                        tech
                         </label>
                       </div>
                       <div class="form-check">
                         <input
                           class="form-check-input"
                           type="checkbox"
-                          value=""
+                          value="religion"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                          Tech
+                        religion
                         </label>
                       </div>
                       <div class="form-check">
                         <input
                           class="form-check-input"
                           type="checkbox"
-                          value=""
+                          value="art"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                          Bike
+                        art
                         </label>
                       </div>
                       <div class="form-check">
                         <input
                           class="form-check-input"
                           type="checkbox"
-                          value=""
+                          value="music"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                          Fashion
+                        music
                         </label>
                       </div>
                     </div>
@@ -154,50 +154,50 @@ const ChooseInterest = (props) => {
                         <input
                           class="form-check-input"
                           type="checkbox"
-                          value=""
+                          value="business"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                          Science
+                        business
                         </label>
                       </div>
                       <div class="form-check">
                         <input
                           class="form-check-input"
                           type="checkbox"
-                          value=""
+                          value="psychology"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                          Flora and Fauna
+                        psychology
                         </label>
                       </div>
                       <div class="form-check">
                         <input
                           class="form-check-input"
                           type="checkbox"
-                          value=""
+                          value="tourism"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                          Psycology
+                        tourism
                         </label>
                       </div>
                       <div class="form-check">
                         <input
                           class="form-check-input"
                           type="checkbox"
-                          value=""
+                          value="bike"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                          Finance
+                        bike
                         </label>
                       </div>
                       <div class="form-check">
                         <input
                           class="form-check-input"
                           type="checkbox"
-                          value=""
+                          value="science"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                          Social
+                        science
                         </label>
                       </div>
                     </div>
@@ -207,17 +207,6 @@ const ChooseInterest = (props) => {
                   <p>You can choose Max 5 Interest</p>
                   <div className="button-choseiterest">
                   <Row>
-                    {/* <Col>
-                  <div>
-                    <Button
-                      className="button"
-                      onClick={props.onClick}
-                      style={{ width: "10rem" }}
-                    >
-                      Prev
-                    </Button>
-                  </div>
-                  </Col> */}
                   <Col>
                   <div>
                     <Link to="/home">

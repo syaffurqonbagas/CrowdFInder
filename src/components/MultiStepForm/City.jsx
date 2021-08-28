@@ -3,7 +3,9 @@ import { Form, Container, Button } from "react-bootstrap";
 import "./City.css";
 import { Col, Row } from "react-bootstrap";
 
-const City = (props) => {
+const City = ({ state, setState, setPage }) => {
+  const { location, role } = state;
+  const { next } = setPage;
   return (
     <div className="container-city">
       <div className="d-flex">
@@ -29,13 +31,19 @@ const City = (props) => {
                 <div className="interest ms-3">
                   <div className="content-interest justify-content-center">
                     <p>
-                      <i class="fas fa-map-marker-alt"></i>  Where is city you
+                      <i class="fas fa-map-marker-alt"></i> Where is city you
                       live in?
                     </p>
                     <p>Let people find you greate thoughts</p>
                     <div style={{ width: "85%" }}>
                       <Form.Group className="mb-3" controlId="interest">
-                        <Form.Control placeholder="Type a city’s name" />
+                        <Form.Control
+                          label="Location"
+                          name="location"
+                          value={location}
+                          onChange={setState}
+                          placeholder="Type a city’s name"
+                        />
                       </Form.Group>
                       <p>Create Acount as :</p>
                       <div
@@ -78,7 +86,7 @@ const City = (props) => {
                       </div>
                       <div className="d-flex justify-content-center">
                         <Button
-                          onClick={props.onClick}
+                          onClick={next}
                           className="button"
                           style={{ width: "20rem" }}
                         >

@@ -1,3 +1,4 @@
+export const REGISTER_BEGIN = "USER_REGISTER_BEGIN";
 export const REGISTER_SUCCESS = "USER_REGISTER_SUCCESS";
 export const REGISTER_FAIL = "USER_REGISTER_FAIL";
 
@@ -5,10 +6,11 @@ export const LOGIN_BEGIN = "USER_LOGIN"
 export const LOGIN_SUCCESS = "USER_SUCCESS";
 export const LOGIN_FAIL = "USER_FAIL";
 
-export const LOGOUT = "LOGOUT"
+export const LOGOUT = "LOGOUT";
 
-export const GET_USER = "GET_USER";
-export const GET_USER_BEGIN = "GET_USER_BEGIN"
+export const GET_USER_BEGIN = "GET_USER_BEGIN";
+export const GET_USER_SUCCESS = "GET_USER_SUCCESS";
+export const GET_USER_FAIL = "GET_USER_FAIL"
 export const GET_USER_ID = "GET_USER_ID"
 
 export const GET_POST_BEGIN = "GET_POST_BEGIN"

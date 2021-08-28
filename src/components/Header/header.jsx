@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import React from "react";
-import { logout, getUser, getUserAction, getCurrentUser } from "../../redux/action/user";
+import { logout, getCurrentUser } from "../../redux/action/user";
 import { useSelector, useDispatch } from "react-redux";
 import {
   Navbar,
@@ -18,16 +18,15 @@ import "./header.css";
 const Header = () => {
   const { isLoggedIn, user } = useSelector((state) => state.userData)
   const dispatch = useDispatch()
-  const { currentUser, setCurrentUser } = useState(null)
+  const { CurrentUser, setCurrentUser } = useState(null)
   const Logout = (e) => {
     e.preventDefault();
-    // dispatch(logout());
+    dispatch(logout());
     window.location.replace("/");
   };
 
   useEffect(() => {
     dispatch(getCurrentUser());
-
   }, [])
 
 
