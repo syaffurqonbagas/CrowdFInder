@@ -23,7 +23,7 @@ function HomePage() {
 
     const user = localStorage.getItem('user');
     // const token = user.data.token;
-    console.log('tes', user)  ;
+    console.log('tes' + user)  ;
 
 
     console.log('data', posts)

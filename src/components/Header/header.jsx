@@ -42,7 +42,7 @@ const Header = () => {
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-              {isLoggedIn ? (
+              {isLoggedIn && (
                 <>
                   <Nav className="me-auto">
                     <Form className="search-bar d-flex">
@@ -71,7 +71,7 @@ const Header = () => {
                     </NavDropdown>
                   </Nav>
                 </>
-              ) : null}
+              )}
             </Navbar.Collapse>
           </Container>
         </Navbar>
