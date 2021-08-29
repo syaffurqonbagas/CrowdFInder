@@ -2,7 +2,9 @@ import React, {useState} from 'react'
 import './index.css'
 import { InputGroup, FormControl, Card, Button, FormSelect, FloatingLabel } from 'react-bootstrap'
 
-function FormCreateEvent() {
+function FormCreateEvent(props) {
+    const {title, image, location, interest, content, date, onClick} = props;
+
     const [img, setImg] = useState(null);
     const [error, setError] = useState(false);
   
@@ -27,7 +29,7 @@ function FormCreateEvent() {
                 <p style={{fontSize:'18px', fontWeight:'400'}}>Put your awesome photo to get more people!</p>
 
                 <Card className="cardSize mb-3">
-                    {img ? <img src={img} alt="" /> : <div></div>}
+                    {img && <img src={img} alt="" />}
                     <input
                         type="file"
                         name="image-upload"
@@ -55,6 +57,7 @@ function FormCreateEvent() {
                         placeholder="How do you call this event?"
                         aria-label="How do you call this event?"
                         aria-describedby="basic-addon1"
+                        onChange={title}
                     />
                 </InputGroup>
 
@@ -64,6 +67,7 @@ function FormCreateEvent() {
                         placeholder="&#xf133; What date?"
                         aria-label="What date?"
                         aria-describedby="basic-addon2"
+                        onChange={date}
                     />
                 </InputGroup>
 
@@ -73,6 +77,7 @@ function FormCreateEvent() {
                         placeholder=" What time?"
                         aria-label="What time?"
                         aria-describedby="basic-addon3"
+
                     />
                 </InputGroup>
 
@@ -82,15 +87,16 @@ function FormCreateEvent() {
                         placeholder="&#xf041; Where?"
                         aria-label="Where?"
                         aria-describedby="basic-addon4"
+                        onChange={location}
                     />
                 </InputGroup>
 
-                <FloatingLabel className="mb-3" controlId="floatingSelect" label="What Category This Event Is?" >
+                <FloatingLabel className="mb-3" controlId="floatingSelect" label="What Category This Event Is?" onChange={interest}>
                     <FormSelect aria-label="Floating label select example">
                         <option></option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="sports">sport</option>
+                        <option value="art">art</option>
+                        <option value="bike">bike</option>
                     </FormSelect>
                 </FloatingLabel>
 
@@ -100,11 +106,12 @@ function FormCreateEvent() {
                         as="textarea"
                         placeholder="Tell people more about this event"
                         rows={3}
+                        onChange={content}
                     />
                 </InputGroup>
 
                 <div className="d-flex justify-content-end">
-                    <Button className="px-5" variant="secondary">Post event</Button>
+                    <Button className="px-5" variant="secondary" onClick={onClick}>Post event</Button>
                 </div>
 
             </div>
