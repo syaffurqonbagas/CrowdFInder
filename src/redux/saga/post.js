@@ -1,5 +1,9 @@
 import axios from "axios";
-import { GET_POST_BEGIN, GET_POST_SUCCESS, GET_POST_FAIL } from "../action/type";
+import {
+  GET_POST_BEGIN,
+  GET_POST_SUCCESS,
+  GET_POST_FAIL,
+} from "../action/type";
 import { BASE_URL_CROWDFINDER } from "../action/type";
 import { put, takeEvery } from "@redux-saga/core/effects";
 
@@ -23,5 +27,5 @@ function* getPosts(actions) {
 };
 
 export function* watchGetPosts() {
-    yield takeEvery(GET_POST_BEGIN, getPosts);
+  yield takeEvery(GET_POST_BEGIN, getPosts);
 }

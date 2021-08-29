@@ -6,7 +6,8 @@ import PlayStore from "../../Asset/GogglePlayStore.png";
 import AppStore from "../../Asset/AppStore.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const SignUp = () => {
+const SignUp = ({ state, setState, props }) => {
+  const { fullname, username, email, password } = state;
   return (
     <div className="container-signup">
       <div className="d-flex">
@@ -39,10 +40,7 @@ const SignUp = () => {
 
         <div className="Fullbgimage-right justify-content-center w-100">
           <div className="Right d-flex justify-content-center">
-            <div
-              className="box my-auto"
-              style={{ width: "25rem" }}
-            >
+            <div className="box my-auto" style={{ width: "25rem" }}>
               <Form>
                 <div>
                   <Form.Group className="d-flex mt-3 justify-content-center">
@@ -50,36 +48,52 @@ const SignUp = () => {
                   </Form.Group>
                   <Form.Group className="mb-3 mx-4" controlId="formBasicName">
                     <Form.Label>Full Name</Form.Label>
-                    <Form.Control />
+                    <Form.Control
+                      label="Full Name"
+                      name="fullname"
+                      value={fullname}
+                      onChange={setState}
+                    />
                   </Form.Group>
                   <Form.Group className="mb-3 mx-4" controlId="formBasicName">
                     <Form.Label>Username</Form.Label>
-                    <Form.Control />
+                    <Form.Control
+                      label="User Name"
+                      name="username"
+                      value={username}
+                      onChange={setState}
+                    />
                   </Form.Group>
-                  <Form.Group
-                    className="mb-3 mx-4"
-                    controlId="formBasicEmail"
-                  >
+                  <Form.Group className="mb-3 mx-4" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control />
+                    <Form.Control
+                      label="Email"
+                      name="email"
+                      value={email}
+                      onChange={setState}
+                    />
                   </Form.Group>
                   <Form.Group
                     className="mb-3 mx-4"
                     controlId="formBasicPassword"
                   >
                     <Form.Label>Password</Form.Label>
-                    <Form.Control />
+                    <Form.Control
+                      label="Password"
+                      name="password"
+                      value={password}
+                      onChange={setState}
+                    />
                   </Form.Group>
                   <Form.Group>
                     <Col>
-                      <Link to="/multistep">
-                        <button
-                          className="button-signup mt-3 width-nokay"
-                          type="submit"
-                        >
-                          SignUp
-                        </button>
-                      </Link>
+                      <button
+                        className="button-signup mt-3 width-nokay"
+                        type="submit"
+                        onClick={props}
+                      >
+                        SignUp
+                      </button>
                     </Col>
                     <p className="text-center mt-3">
                       Already have an account ?{" "}

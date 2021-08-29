@@ -1,5 +1,6 @@
 import axios from "axios";
 import {
+  REGISTER_BEGIN,
   REGISTER_SUCCESS,
   REGISTER_FAIL,
   LOGIN_BEGIN,
@@ -7,14 +8,14 @@ import {
   LOGIN_FAIL,
   BASE_URL_CROWDFINDER,
   LOGOUT,
-  GET_USER,
+  GET_USER_SUCCESS,
   GET_USER_CROWDFINDER,
   GET_USER_DETAIL_CROWDFINDER,
   GET_USER_ID,
   GET_USER_BEGIN,
+  GET_USER_FAIL,
 } from "../action/type";
 import { put, takeEvery, takeLatest } from "redux-saga/effects";
-import { getUserAction } from "../action/user";
 
 function* Register(actions) {
   const { email, password, username, fullname, location, role, interest } =
@@ -59,7 +60,7 @@ function* Login(actions) {
       type: LOGIN_SUCCESS,
       payload: res.data.token,
     });
-    yield window.location.replace("/home")
+    yield window.location.replace("/home");
   } catch (error) {
     yield put({
       type: LOGIN_FAIL,
@@ -69,27 +70,30 @@ function* Login(actions) {
 }
 
 function* getUser() {
-  const Token = yield localStorage.getItem('user')
+  const Token = yield localStorage.getItem("user");
   try {
-    const res = yield axios.get('https://crowdfinder.gabatch13.my.id/api/user/me', { headers: { Authorization: `Bearer ${Token}` } });
-    yield console.log('ini data', res.data)
+    const res = yield axios.get(`${GET_USER_CROWDFINDER}`, {
+      headers: { Authorization: `Bearer ${Token}` },
+    });
+    yield console.log("ini data", res.data);
     yield put({
-      type: GET_USER,
+      type: GET_USER_SUCCESS,
       payload: res.data,
     });
-
   } catch (error) {
-    yield console.log(error)
+    yield put({
+      type: GET_USER_FAIL,
+      error: error,
+    });
   }
-
 }
 
 function* getUserDetail() {
-  const res = yield axios.get(`${GET_USER_DETAIL_CROWDFINDER}`)
+  const res = yield axios.get(`${GET_USER_DETAIL_CROWDFINDER}`);
   yield put({
     type: GET_USER_ID,
     payload: res.data,
-  })
+  });
 }
 
 function* Logout() {
@@ -97,7 +101,7 @@ function* Logout() {
 }
 
 export function* watchRegister() {
-  yield takeEvery(REGISTER_SUCCESS, Register);
+  yield takeEvery(REGISTER_BEGIN, Register);
 }
 
 export function* watchLogin() {
@@ -113,5 +117,5 @@ export function* watchGetUser() {
 }
 
 export function* watchGetUserDetail() {
-  yield takeEvery(GET_USER_ID, getUserDetail)
+  yield takeEvery(GET_USER_ID, getUserDetail);
 }
