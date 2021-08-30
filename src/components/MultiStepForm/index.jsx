@@ -215,46 +215,24 @@ export default function MultiStep() {
                             />
                           </Form.Group>
                           <p>Create Acount as :</p>
-                          <div
-                            className="btn-group mb-3"
-                            role="group"
-                            aria-label="Basic radio toggle button group"
-                          >
-                            <Row>
-                              <Col>
-                                <input
-                                  type="radio"
-                                  class="btn-check"
-                                  name="btnradio"
-                                  value={form.role}
-                                  autocomplete="off"
-                                  onChange={(e) => changeForm(e)}
-                                />
-                                <label
-                                  className="btn btn-outline-primary"
-                                  for="user"
-                                >
-                                  User
-                                </label>
-                              </Col>
-                              <Col>
-                                <input
-                                  type="radio"
-                                  class="btn-check"
-                                  name="btnradio"
-                                  value={form.role}
-                                  autocomplete="off"
-                                  onChange={(e) => changeForm(e)}
-                                />
-                                <label
-                                  class="btn btn-outline-primary"
-                                  for="comunity"
-                                >
-                                  Comunity
-                                </label>
-                              </Col>
-                            </Row>
-                          </div>
+                          <Form.Group className="mb-3">
+                            <Col>
+                              <Form.Check
+                                type="radio"
+                                label="User"
+                                name="formHorizontalRadios"
+                                value={form.role}
+                                onChange={(e) => changeForm(e)}
+                              />
+                              <Form.Check
+                                type="radio"
+                                label="Comunity"
+                                name="formHorizontalRadios"
+                                value={form.role}
+                                onChange={(e) => changeForm(e)}
+                              />
+                            </Col>
+                          </Form.Group>
                           <div className="d-flex justify-content-center">
                             <Button
                               onClick={() => changeStep("prev")}
