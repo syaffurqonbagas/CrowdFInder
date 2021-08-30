@@ -31,7 +31,7 @@ const Header = () => {
 
 
 
- console.log('testing',user)
+  console.log('testing', user)
   return (
     <>
       <div className="header">

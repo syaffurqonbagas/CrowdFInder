@@ -17,8 +17,7 @@ import './index.scss'
 function MyProfile(props) {
     const user = useSelector((state) => state.userData.user)
     const [isAbout, setIsAbout] = useState(true)
-    const dispatch = useDispatch()
-    const Token = localStorage.getItem('user')
+
 
     console.log('ini', user)
 
