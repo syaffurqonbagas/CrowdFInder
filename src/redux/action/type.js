@@ -13,6 +13,9 @@ export const GET_USER_SUCCESS = "GET_USER_SUCCESS";
 export const GET_USER_FAIL = "GET_USER_FAIL"
 export const GET_USER_ID = "GET_USER_ID"
 
+export const UPDATE_USER_PROFILE = "UPDATE_USER_PROFILE"
+
+
 export const GET_POST_BEGIN = "GET_POST_BEGIN"
 export const GET_POST_SUCCESS = "GET_POST_SUCCESS"
 export const GET_POST_FAIL = "GET_POST_FAIL"
@@ -23,4 +26,4 @@ export const POST_ANNOUNCEMENT = "POST_ANNOUNCEMENT"
 
 export const BASE_URL_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/api"
 export const GET_USER_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/api/user/me"
-export const GET_USER_DETAIL_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/user"
+export const GET_USER_DETAIL_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/api/user"

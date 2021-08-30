@@ -18,8 +18,13 @@ function AvatarManageCm() {
                     <h5>Comunity</h5>
                 </div>
                 <h5><TiLocation />Jakarta</h5>
-            </Card.Body>
 
+            </Card.Body>
+            <Card.Body className='cardbody d-flex align-items-center flex-column'>
+                <Button className='my-4' style={{ width: '70%', fontSize: '16px', fontWeight: '700' }} variant="secondary" size="lg">
+                    Comunity Setting
+                </Button>
+            </Card.Body>
 
         </Card>
 

@@ -1,24 +1,29 @@
 import React from 'react';
-import Bio from '../../components/Bio';
-import InterstTopic from '../../components/InterestTopic';
+
 import ListCardPeople from '../../components/ListCardPeople';
 import { Link } from "react-router-dom"
-
+import BioNoEdit from '../../components/Bio/bioNoedit';
 import './index.scss'
+import InterstTopicNoEdit from '../../components/InterestTopic/InterestTopicnoEdit';
+import MyPagination from '../../components/MyPagination/MyPagination';
+
 
 
 function About(props) {
     return (
         <div>
-            <Bio />
+            <BioNoEdit bio='pp' />
             <hr />
-            <InterstTopic />
+            <InterstTopicNoEdit list='sport' />
             <hr />
             <div className="myCrowd d-flex justify-content-between py-3">
                 <h5>Community</h5>
-                <h5 >  <Link style={{ color: '#D82671', fontWeight: '400', textDecoration: 'none', fontSize: '16px' }} to="/">See Detail</Link></h5>
+
             </div>
             <ListCardPeople />
+            <div className="pagination justify-content-center mt-5">
+                <MyPagination />
+            </div>
         </div>
     );
 }
