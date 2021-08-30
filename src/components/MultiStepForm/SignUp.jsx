@@ -24,7 +24,7 @@ const SignUp = ({ state, setState, props }) => {
                 src={PlayStore}
                 alt="playstore"
                 width="175"
-                height="55"
+                height="60"
                 className="d-inline-block align-top"
               />
               <img
@@ -32,7 +32,7 @@ const SignUp = ({ state, setState, props }) => {
                 alt="appstore"
                 width="175"
                 height="65"
-                className="d-inline-block align-top"
+                className="d-inline-block align-top marginTop"
               />
             </div>
           </div>

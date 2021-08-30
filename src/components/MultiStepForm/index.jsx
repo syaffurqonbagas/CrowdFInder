@@ -71,20 +71,22 @@ export default function MultiStep() {
                     alt="logo"
                   />
                   <h2>Let’s make your own crowd!</h2>
-                  <img
-                    src={PlayStore}
-                    alt="playstore"
-                    width="175"
-                    height="55"
-                    className="d-inline-block align-top"
-                  />
-                  <img
-                    src={AppStore}
-                    alt="appstore"
-                    width="175"
-                    height="65"
-                    className="d-inline-block align-top"
-                  />
+                  
+                    <img
+                      src={PlayStore}
+                      alt="playstore"
+                      width="175"
+                      height="60"
+                      className="d-inline-block"
+                    />
+                    <img
+                      src={AppStore}
+                      alt="appstore"
+                      width="175"
+                      height="62"
+                      className="d-inline-block marginTop"
+                    />
+                 
                 </div>
               </div>
             </div>
