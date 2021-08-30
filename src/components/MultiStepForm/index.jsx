@@ -313,7 +313,7 @@ export default function MultiStep() {
                             />
                             <label
                               class="form-check-label"
-                              for="flexCheckDefault"
+                              
                             >
                               sports
                             </label>
@@ -337,7 +337,7 @@ export default function MultiStep() {
                             />
                             <label
                               class="form-check-label"
-                              for="flexCheckDefault"
+                              
                             >
                               finance
                             </label>
@@ -361,7 +361,7 @@ export default function MultiStep() {
                             />
                             <label
                               class="form-check-label"
-                              for="flexCheckDefault"
+                              
                             >
                               automotive
                             </label>
@@ -385,7 +385,7 @@ export default function MultiStep() {
                             />
                             <label
                               class="form-check-label"
-                              for="flexCheckDefault"
+                              
                             >
                               politics
                             </label>
@@ -409,7 +409,7 @@ export default function MultiStep() {
                             />
                             <label
                               class="form-check-label"
-                              for="flexCheckDefault"
+                              
                             >
                               design
                             </label>
@@ -439,7 +439,7 @@ export default function MultiStep() {
                             />
                             <label
                               class="form-check-label"
-                              for="flexCheckDefault"
+                              
                             >
                               cook
                             </label>
@@ -463,7 +463,7 @@ export default function MultiStep() {
                             />
                             <label
                               class="form-check-label"
-                              for="flexCheckDefault"
+                              
                             >
                               tech
                             </label>
@@ -487,7 +487,7 @@ export default function MultiStep() {
                             />
                             <label
                               class="form-check-label"
-                              for="flexCheckDefault"
+                              
                             >
                               religion
                             </label>
@@ -511,7 +511,7 @@ export default function MultiStep() {
                             />
                             <label
                               class="form-check-label"
-                              for="flexCheckDefault"
+                              
                             >
                               art
                             </label>
@@ -535,7 +535,7 @@ export default function MultiStep() {
                             />
                             <label
                               class="form-check-label"
-                              for="flexCheckDefault"
+                              
                             >
                               music
                             </label>
@@ -565,7 +565,7 @@ export default function MultiStep() {
                             />
                             <label
                               class="form-check-label"
-                              for="flexCheckDefault"
+                              
                             >
                               business
                             </label>
@@ -589,7 +589,7 @@ export default function MultiStep() {
                             />
                             <label
                               class="form-check-label"
-                              for="flexCheckDefault"
+                              
                             >
                               psychology
                             </label>
@@ -613,7 +613,7 @@ export default function MultiStep() {
                             />
                             <label
                               class="form-check-label"
-                              for="flexCheckDefault"
+                              
                             >
                               tourism
                             </label>
@@ -637,7 +637,7 @@ export default function MultiStep() {
                             />
                             <label
                               class="form-check-label"
-                              for="flexCheckDefault"
+                              
                             >
                               bike
                             </label>
@@ -661,7 +661,7 @@ export default function MultiStep() {
                             />
                             <label
                               class="form-check-label"
-                              for="flexCheckDefault"
+                              
                             >
                               science
                             </label>
