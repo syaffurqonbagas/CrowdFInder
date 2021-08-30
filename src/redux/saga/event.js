@@ -1,28 +1,28 @@
 import axios from "axios";
-import { POST_EVENT } from "../action/type";
+import { POST_EVENT_BEGIN, POST_EVENT_SUCCESS, POST_EVENT_FAIL} from "../action/type";
 import { BASE_URL_CROWDFINDER } from "../action/type";
 import { put, takeEvery } from "@redux-saga/core/effects";
 
 function* PostEvents (actions) {
     const Token = localStorage.getItem('user');
-
-    const { title, image, location, interest, content, date } = actions;
+    const {data} = actions;
     // console.log("ini")
+    // console.log('actions', actions)
     try {
-        // const res = yield axios.get(`${BASE_URL_CROWDFINDER}/post?page=${page}&limit=9`, {headers: {Authorization : `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoiNjEyMzkzNTgxODg1ZmY4ZTE3NWZlY2IzIiwiaWF0IjoxNjI5ODYzOTY0LCJleHAiOjE2MzA0Njg3NjR9.H1dJ6RQiVTzxzwQxTVa5TbSBWLf09KLtwAAoIEwGirs`}});
-        const res = yield axios.post(`${BASE_URL_CROWDFINDER}/post/event`,{title, image, location, interest, content, date} , {headers: {Authorization : `Bearer ${Token}`}});
+        const res = yield axios.post(`${BASE_URL_CROWDFINDER}/post/event`,data , {headers: {Authorization : `Bearer ${Token}`}});
         console.log('form',res)
         yield put ({
-            type : POST_EVENT,
+            type : POST_EVENT_SUCCESS,
             payload : res.data,
         });
     } catch (err) {
         yield put ({
+            type : POST_EVENT_FAIL,
             error : err,
         })
     }
 };
 
 export function* watchPostEvents() {
-    yield takeEvery(POST_EVENT, PostEvents);
+    yield takeEvery(POST_EVENT_BEGIN, PostEvents);
 }

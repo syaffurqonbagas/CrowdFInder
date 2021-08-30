@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import './index.css'
 import { InputGroup, FormControl, Card, Button, FormSelect, FloatingLabel } from 'react-bootstrap'
+import axios from 'axios';
 
 function FormCreateEvent(props) {
     const {title, image, location, interest, content, date, onClick} = props;
@@ -35,7 +36,7 @@ function FormCreateEvent(props) {
                         name="image-upload"
                         id="input"
                         accept="image/*"
-                        onChange={imageHandler}
+                        onChange={image}
                     />
                     
                     {img ? (

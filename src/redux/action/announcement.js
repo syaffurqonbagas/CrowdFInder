@@ -1,11 +1,9 @@
-import { POST_ANNOUNCEMENT } from "./type";
+import { POST_ANNOUNCEMENT_BEGIN } from "./type";
 
-export const postAnnouncement = (
-    announcement, image
-  ) => {
+export const postAnnouncement = (data) => {
+  console.log(data)
     return {
-      type: POST_ANNOUNCEMENT,
-      announcement, 
-      image,
+      type: POST_ANNOUNCEMENT_BEGIN,
+      data
     };
   };
