@@ -28,32 +28,35 @@ const Signin = () => {
   return (
     <div className="container-Signin">
       <div className="d-flex">
-          <div className="Signinbg-left w-100">
-            <div className="left-signin d-flex align-items-center">
-              <div>
-                <img
-                  className="Logo-Cf justify-content-center"
-                  src={Logo}
-                  alt="logo"
-                />
-                <h2>Let’s make your own crowd!</h2>
-                <img
-                  src={PlayStore}
-                  alt="playstore"
-                  width="175"
-                  height="55"
-                  className="d-inline-block align-top"
-                />
-                <img
-                  src={AppStore}
-                  alt="appstore"
-                  width="175"
-                  height="65"
-                  className="d-inline-block align-top mt-1"
-                />
+      <div className="Fullbgimage-left w-100">
+              <div className="left d-flex align-items-center">
+                <div>
+                  <img
+                    className="Logo justify-content-center"
+                    src={Logo}
+                    alt="logo"
+                  />
+                  <h2>Let’s make your own crowd!</h2>
+                  
+                    <img
+                      src={PlayStore}
+                      alt="playstore"
+                      width="175"
+                      height="60"
+                      className="d-inline-block"
+                    />
+                    <img
+                      src={AppStore}
+                      alt="appstore"
+                      width="175"
+                      height="62"
+                      className="d-inline-block marginTop"
+                    />
+                 
+                </div>
               </div>
             </div>
-          </div>
+
 
           <div className="Signinbg-right justify-content-center w-100">
             <div className="Right-signin d-flex justify-content-center">
