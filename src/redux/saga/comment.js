@@ -4,9 +4,9 @@ import { POST_COMMENT_BEGIN, POST_COMMENT_SUCCESS, POST_COMMENT_FAIL } from "../
 import { BASE_URL_CROWDFINDER } from "../action/type";
 import { put, takeEvery } from "@redux-saga/core/effects";
 
-function* getComments (actions) {
+function* getComments(actions) {
     const { id } = actions;
-    
+
     try {
         const res = yield axios.get(`${BASE_URL_CROWDFINDER}/comment/${id}`);
         yield console.log('ini', res.data.data)

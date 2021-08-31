@@ -14,7 +14,7 @@ function About(props) {
         <div>
             <Bio bio={user.bio} />
             <hr />
-            <InterstTopic list={user.interest} />
+            <InterstTopic userInterest={user.interest} />
             <hr />
             <div className="myCrowd d-flex justify-content-between py-3">
                 <h5>My Crowd</h5>

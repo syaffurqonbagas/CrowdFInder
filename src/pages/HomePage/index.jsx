@@ -1,4 +1,4 @@
-import React,{ useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import './index.css'
 import TopicMe from '../../components/TopicMe'
@@ -37,9 +37,9 @@ function HomePage() {
                                 <p className="my-auto text-secondary" style={{ fontSize: '18px', fontWeight: '400' }}>See All Events</p>
                             </div>
                             <div className="wrapper mx-auto mb-5">
-                            {listPost?.filter(post => post.type[0] === 'event').filter((post, idx) => idx < 10).map((post, id) => (
-                                <SmallCardMyEvent key={id} title={post.title}/>
-                            ))}
+                                {listPost?.filter(post => post.type[0] === 'event').filter((post, idx) => idx < 10).map((post, id) => (
+                                    <SmallCardMyEvent key={id} title={post.title} />
+                                ))}
                             </div>
                         </div>
 

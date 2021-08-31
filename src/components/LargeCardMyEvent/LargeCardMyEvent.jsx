@@ -10,6 +10,7 @@ import { getComment, postComment } from "../../redux/action/comment";
 
 
 function LargeCardMyEvent(props) {
+
     const {
         contentCard, image, interest, location, like, userName, idPost
     } = props;
@@ -55,7 +56,7 @@ function LargeCardMyEvent(props) {
     //get all post
     // const dispatch = useDispatch()
     // const {listPost, loading} = useSelector((state) => state.posts);
-    
+
     // useEffect(() => {
     //     dispatch(getPost())
     // }, [dispatch]);
