@@ -1,32 +1,27 @@
-import React from 'react'
+import React,{ useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import './index.css'
 import TopicMe from '../../components/TopicMe'
 import CreatePost from '../../components/CreatePost'
 import SmallCardMyEvent from '../../components/SmallCardMyEvent'
 import LargeCardMyEvent from '../../components/LargeCardMyEvent/LargeCardMyEvent.jsx'
 import MyPagination from '../../components/MyPagination/MyPagination'
-import { useDispatch, useSelector } from 'react-redux'
-import { useEffect, useState } from 'react'
 import { getPost } from '../../redux/action/post'
+import { getComment } from '../../redux/action/comment'
 
 
 function HomePage() {
     const dispatch = useDispatch()
-    const posts = useSelector((state) => state.posts.listPost);
-
-
+    const {listPost, loading} = useSelector((state) => state.posts);
+    const comment = useSelector((state) => state.comments);
+    
     useEffect(() => {
         dispatch(getPost())
+        dispatch(getComment())
     }, [dispatch]);
 
-    // console.log(posts)
-
-    const user = localStorage.getItem('user');
-    // const token = user.data.token;
-    console.log('tes' + user);
-
-
-    console.log('data', posts)
+    console.log('comment',comment)
+    // console.log('data', listPost)
 
     return (
         <>
@@ -42,18 +37,16 @@ function HomePage() {
                                 <p className="my-auto text-secondary" style={{ fontSize: '18px', fontWeight: '400' }}>See All Events</p>
                             </div>
                             <div className="wrapper mx-auto mb-5">
-                                <SmallCardMyEvent />
-                                <SmallCardMyEvent />
-                                <SmallCardMyEvent />
-                                <SmallCardMyEvent />
-                                <SmallCardMyEvent />
-                                <SmallCardMyEvent />
+                            {listPost?.filter(post => post.type[0] === 'event').filter((post, idx) => idx < 10).map((post, id) => (
+                                <SmallCardMyEvent key={id} title={post.title}/>
+                            ))}
                             </div>
                         </div>
 
                         <div>
-                            <LargeCardMyEvent />
-                            <LargeCardMyEvent />
+                            {listPost?.filter(post => post.type[0] === 'announcement').map((post, id) => (
+                                <LargeCardMyEvent key={id} content={post.content} image={post.image} interest={post.interest} location={post.location} like={post.like.length} userName={post.user_id.fullname} />
+                            ))}
                             <div className="text-center my-5">
                                 <MyPagination />
                             </div>

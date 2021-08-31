@@ -1,15 +1,9 @@
-import { POST_EVENT } from "./type";
+import { POST_EVENT_BEGIN } from "./type";
 
-export const postEvent = (
-    title, image, location, interest, content, date
-  ) => {
+export const postEvent = (data) => {
+    console.log(data)
     return {
-      type: POST_EVENT,
-      title,
-      image,
-      location,
-      interest,
-      content,
-      date,
+      type: POST_EVENT_BEGIN,
+      data
     };
   };

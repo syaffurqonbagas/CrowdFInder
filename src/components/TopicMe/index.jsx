@@ -1,9 +1,18 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import './index.css'
 import { Button, Card, Container, ListGroup } from 'react-bootstrap'
+import { getCurrentUser } from '../../redux/action/user';
 
 
-function TopicMe() {
+
+function TopicMe(props) {
+    const dispatch = useDispatch();
+    const userInterest = useSelector((state) => state.userData.user.interest);
+
+    useEffect(() => {
+        dispatch(getCurrentUser());
+    }, [dispatch]);
     return (
         <>
             <Card className="fontWeight-topic" style={{ maxHeight: '32rem', minWidth: '16rem', width: '16rem' }}>
@@ -12,11 +21,13 @@ function TopicMe() {
                         <h6>What topic would you like to see now?</h6>
                         <p>You will only see topics you selected. Go to Account menu to add more topics.</p>
                         <div>
+                            {userInterest?.map((interest, index) => (
                             <div className="d-flex mb-1">
                                 <input className="form-check-input me-1" type="checkbox" value="" />
-                                <label className="form-check-label">Social</label>
+                                <label key={index} className="form-check-label">{interest}</label>
                             </div>
-                            <div className="d-flex mb-1">
+                            ))}
+                            {/* <div className="d-flex mb-1">
                                 <input className="form-check-input me-1" type="checkbox" value="" />
                                 <label className="form-check-label">Business</label>
                             </div>
@@ -27,7 +38,7 @@ function TopicMe() {
                             <div className="d-flex mb-1">
                                 <input className="form-check-input me-1" type="checkbox" value="" />
                                 <label className="form-check-label">Art</label>
-                            </div>
+                            </div> */}
                         </div>
                     </ListGroup.Item>
                     <ListGroup.Item className="part-2  mb-3">

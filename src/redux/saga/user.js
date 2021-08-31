@@ -77,7 +77,7 @@ function* getUser() {
     const res = yield axios.get(`${GET_USER_CROWDFINDER}`, {
       headers: { Authorization: `Bearer ${Token}` },
     });
-    yield console.log("ini data", res.data);
+    // yield console.log("ini data", res.data);
     yield put({
       type: GET_USER_SUCCESS,
       payload: res.data,

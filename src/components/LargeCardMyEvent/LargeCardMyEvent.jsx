@@ -1,51 +1,41 @@
-import React from "react";
-import "./LargeCardMyEvent.css";
-// import user from '../../img/user.png'
-import user from '../../image/user.png'
-import { Card, InputGroup, FormControl, Button } from 'react-bootstrap'
-import image from '../../img/largeCardDummy.jpeg'
-import { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef }  from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import useOnClickOutside from "./useOnClickOutside";
+import { Card, InputGroup, FormControl, Button } from 'react-bootstrap'
+import "./LargeCardMyEvent.css";
+import user from '../../image/user.png'
+// import image from '../../img/largeCardDummy.jpeg'
+import { getPost } from "../../redux/action/post";
 
 
-function LargeCardMyEvent() {
+function LargeCardMyEvent(props) {
+    const {
+        content, image, interest, location, like, userName
+    } = props;
+    // hide and show ellipsis menu
     const [show, setShow] = useState(false);
-    const [showComment, setShowComment] = useState(false);
-
     const ref = useRef();
     useOnClickOutside(ref, () => setShow(false));
 
+    //hide and show comment
+    const [showComment, setShowComment] = useState(false);
     const commentRef = useRef();
-
-
     const toggleComment = () => {
         setShowComment(!showComment);
-    }
-
+    };
     const toggleDropDown = () => {
         setShow(!show);
-    }
+    };
 
-    function useOnClickOutside(ref, handler) {
-        useEffect(
-            () => {
-                const listener = (event) => {
-                    if (!ref.current || ref.current.contains(event.target)) {
-                        return;
-                    }
-                    handler(event);
-                };
-                document.addEventListener("mousedown", listener);
-                document.addEventListener("touchstart", listener);
-                return () => {
-                    document.removeEventListener("mousedown", listener);
-                    document.removeEventListener("touchstart", listener);
-                };
-            },
+    //get all post
+    // const dispatch = useDispatch()
+    // const {listPost, loading} = useSelector((state) => state.posts);
+    
+    // useEffect(() => {
+    //     dispatch(getPost())
+    // }, [dispatch]);
 
-            [ref, handler]
-        );
-    }
 
     return (
         <>
@@ -75,10 +65,10 @@ function LargeCardMyEvent() {
                                 className="my-auto"
                                 style={{ fontSize: "20px", fontWeight: "400" }}
                             >
-                                Inoki Ardhi
+                                {userName}
                             </label>
                             <label className="headTextBadge rounded-pill ms-3 me-auto">
-                                Design
+                                {interest}
                             </label>
                             <label
                                 style={{
@@ -87,7 +77,7 @@ function LargeCardMyEvent() {
                                     color: "#828282",
                                 }}
                             >
-                                <i class="fa fa-map-marker ms-auto me-0 fa-xs"></i> Sumbawa
+                                <i class="fa fa-map-marker ms-auto me-0 fa-xs"></i> {location}
                             </label>
                         </div>
                         <label
@@ -102,17 +92,14 @@ function LargeCardMyEvent() {
                     <Card>
                         <div className="w-75 ms-3 mt-3 mb-4">
                             <p className="font-size">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed
-                                quaerat commodi reprehenderit similique ad soluta omnis nesciunt
-                                minima, sequi numquam et officia suscipit iusto minus libero ea
-                                reiciendis distinctio odit?
+                               {content}
                             </p>
                             <img className="imageSize" src={image} alt="" />
                         </div>
 
                         <div className="btnGroup d-inline-flex">
                             <button className="button-card flex-grow-1">
-                                <i className="fa fa-thumbs-o-up"></i>Like(10)
+                                <i className="fa fa-thumbs-o-up"></i>Like({like})
                             </button>
                             <button className="button-card flex-grow-1" onClick={() => toggleComment()}>
                                 <i className="fa fa-commenting-o"></i>Comment(15)
