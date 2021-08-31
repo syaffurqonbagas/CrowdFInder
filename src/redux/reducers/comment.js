@@ -1,4 +1,5 @@
 import { GET_COMMENT_BEGIN, GET_COMMENT_SUCCESS, GET_COMMENT_FAIL } from "../action/type";
+import { POST_COMMENT_BEGIN, POST_COMMENT_SUCCESS, POST_COMMENT_FAIL } from "../action/type";
 
 const initialState = {
     listComment : [],
@@ -18,11 +19,29 @@ const comments = (state = initialState, action) => {
         case GET_COMMENT_SUCCESS :
             return {
                 ...state,
-                listComment : payload,
+                listComment : [...payload, ...state.listComment],
                 loading : false,
                 error : null,
             };
         case GET_COMMENT_FAIL :
+            return {
+                ...state,
+                loading : false,
+                error : error,
+            }
+        case POST_COMMENT_BEGIN :
+            return {
+                ...state,
+                loading : true,
+            };
+        case POST_COMMENT_SUCCESS :
+            return {
+                ...state,
+                listComment : payload,
+                loading : false,
+                error : null,
+            };
+        case POST_COMMENT_FAIL :
             return {
                 ...state,
                 loading : false,
