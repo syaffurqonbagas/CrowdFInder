@@ -19,17 +19,17 @@ import {
 import { put, takeEvery, takeLatest } from "redux-saga/effects";
 
 function* Register(actions) {
-  const { email, password, username, fullname, location, role, interest } =
+  const { role, email, password, username, fullname, location, interest } =
     actions;
   try {
     const res = yield axios
       .post(`${BASE_URL_CROWDFINDER}/user/signup`, {
+        role,
         email,
         password,
         username,
         fullname,
         location,
-        role,
         interest,
       })
       .then((response) => {
@@ -41,6 +41,7 @@ function* Register(actions) {
       loading: false,
       error: null,
     });
+    yield window.location.replace("/signin");
   } catch (error) {
     yield put({
       type: REGISTER_FAIL,

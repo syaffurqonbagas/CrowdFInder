@@ -1,22 +1,22 @@
 import { REGISTER_BEGIN, LOGIN_BEGIN, LOGOUT, GET_USER_BEGIN, GET_USER_ID, UPDATE_USER_PROFILE } from "./type";
 
 export const Register = (
+  role,
   email,
   password,
   username,
   fullname,
   location,
-  role,
-  interest
+  interest,
 ) => {
   return {
     type: REGISTER_BEGIN,
+    role,
     email,
     password,
     username,
     fullname,
     location,
-    role,
     interest,
   };
 };
