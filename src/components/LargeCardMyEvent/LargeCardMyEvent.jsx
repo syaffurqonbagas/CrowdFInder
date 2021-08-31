@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef }  from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import useOnClickOutside from "./useOnClickOutside";
@@ -7,11 +7,19 @@ import "./LargeCardMyEvent.css";
 import user from '../../image/user.png'
 // import image from '../../img/largeCardDummy.jpeg'
 import { getPost } from "../../redux/action/post";
+import { getComment } from "../../redux/action/comment";
 
 
 function LargeCardMyEvent(props) {
+    const dispatch = useDispatch();
+    const { listComment, loading } = useSelector((state) => state.comments)
+
+    useEffect(() => {
+        dispatch(getComment(idComment))
+    }, [dispatch])
+
     const {
-        content, image, interest, location, like, userName
+        content, image, interest, location, like, userName, idComment
     } = props;
     // hide and show ellipsis menu
     const [show, setShow] = useState(false);
@@ -31,7 +39,7 @@ function LargeCardMyEvent(props) {
     //get all post
     // const dispatch = useDispatch()
     // const {listPost, loading} = useSelector((state) => state.posts);
-    
+
     // useEffect(() => {
     //     dispatch(getPost())
     // }, [dispatch]);
@@ -92,7 +100,7 @@ function LargeCardMyEvent(props) {
                     <Card>
                         <div className="w-75 ms-3 mt-3 mb-4">
                             <p className="font-size">
-                               {content}
+                                {content}
                             </p>
                             <img className="imageSize" src={image} alt="" />
                         </div>
@@ -127,14 +135,14 @@ function LargeCardMyEvent(props) {
                         <div className="commentCard py-3 text-center" style={{ fontWeight: '400', fontSize: '16px' }}>
                             <Link className="text-decoration-none text-secondary">Load more comment</Link>
                         </div>
-
-                        <div className="commentCard py-3 px-3">
+                        {listComment?.filter((item) => item.post_id === idComment).map((item) => (<div className="commentCard py-3 px-3">
                             <div className="d-flex mb-2 fontCircular" style={{ fontWeight: '450', fontSize: '18px' }}>
-                                <div className="flex-grow-1" >Bagas Louphe Semuach</div>
+                                <div className="flex-grow-1" >{item.user_id.fullname}</div>
                                 <div style={{ color: '#828282' }}>3h ago</div>
                             </div>
-                            <div style={{ fontWeight: '400', fontSize: '16px' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae sint obcaecati laudantium quo quod aspernatur ea sed praesentium debitis ipsum enim, accusamus eveniet, inventore vitae possimus adipisci nostrum soluta! Laboriosam.</div>
-                        </div>
+                            <div style={{ fontWeight: '400', fontSize: '16px' }}>{item.content}</div>
+                        </div>))}
+
                     </div>
 
                 </div>
