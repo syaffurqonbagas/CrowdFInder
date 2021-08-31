@@ -3,13 +3,14 @@ import { Card } from 'react-bootstrap'
 import './index.css'
 import ImgDummy from '../../img/cardImgDummy.jpeg'
 
-function SmallCardMyEvent() {
+function SmallCardMyEvent(props) {
+    const { title, image } = props;
     return (
         <>
             <Card className="mx-1 sizeCard mt-2" style={{ minWidth: '16rem' }}>
                 <Card.Img variant="top" src={ImgDummy} />
                 <Card.Body>
-                    <h6 className="font mb-3" style={{ fontSize: '14px', fontWeight: '700' }}>Festival Makanan Nusantara (Bintang tamu 3 juri masterchef)</h6>
+                    <h6 className="font mb-3" style={{ fontSize: '14px', fontWeight: '700' }}>{title}</h6>
                     <div className="mx-2 d-flex dateTime">
                         <div className="flex-grow-1">
                             <i className="fa fa-calendar me-3"></i>

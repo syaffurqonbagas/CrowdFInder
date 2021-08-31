@@ -1,8 +1,7 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import FormCreateEvent from '../../components/FormCreateEvent'
 import { postEvent } from '../../redux/action/event'
-
 
 
 function FormCreateEventPage() {
@@ -15,10 +14,17 @@ function FormCreateEventPage() {
     const [content, setContent] = useState();
     const [date, setDate] = useState();
 
-
   const handlePostEvent = (e) => {
       e.preventDefault();
-      dispatch(postEvent(title, image, location, interest, content, date));
+      const data = {
+        title, 
+        image, 
+        location, 
+        interest, 
+        content, 
+        date
+      }
+      dispatch(postEvent(data));
   }
 
     console.log(interest);

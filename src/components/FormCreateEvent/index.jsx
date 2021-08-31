@@ -1,25 +1,27 @@
 import React, { useState } from 'react'
 import './index.css'
 import { InputGroup, FormControl, Card, Button, FormSelect, FloatingLabel } from 'react-bootstrap'
+import axios from 'axios';
 
 function FormCreateEvent(props) {
     const { title, image, location, interest, content, date, onClick } = props;
 
-    const [img, setImg] = useState(null);
+    const [img, setImg] = useState("");
     const [error, setError] = useState(false);
 
     const imageHandler = (e) => {
-        const selected = e.target.files[0];
-        const allowedTypes = ["image/png", "image/jpeg", "image/jpg"];
-        if (selected && allowedTypes.includes(selected.type)) {
-            let reader = new FileReader();
-            reader.onloadend = () => {
-                setImg(reader.result);
-            };
-            reader.readAsDataURL(selected);
-        } else {
-            setError(true);
-        }
+    //   const selected = e.target.files[0];
+      const selected = {image};
+      const allowedTypes = ["image/png", "image/jpeg", "image/jpg"];
+      if (selected && allowedTypes.includes(selected.type)) {
+        let reader = new FileReader();
+        reader.onloadend = () => {
+          setImg(reader.result);
+        };
+        reader.readAsDataURL(selected);
+      } else {
+        setError(true);
+      }
     };
 
     return (
