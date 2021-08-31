@@ -13,7 +13,7 @@ import { getPost } from '../../redux/action/post'
 function HomePage() {
     const dispatch = useDispatch()
     const posts = useSelector((state) => state.posts.listPost);
-    
+
 
     useEffect(() => {
         dispatch(getPost())
@@ -23,7 +23,7 @@ function HomePage() {
 
     const user = localStorage.getItem('user');
     // const token = user.data.token;
-    console.log('tes' + user)  ;
+    console.log('tes' + user);
 
 
     console.log('data', posts)

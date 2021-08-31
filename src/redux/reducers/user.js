@@ -10,11 +10,12 @@ import {
   GET_USER_FAIL,
   LOGOUT,
   GET_USER_ID,
+  UPDATE_USER_PROFILE,
 } from "../action/type";
 
 // const users = JSON.parse(localStorage.getItem("user"));
 
-const initialState = { isLoggedIn: false, loading: false, user: [], error:null };
+const initialState = { isLoggedIn: false, loading: false, user: [], error: null };
 
 const userData = (state = initialState, action) => {
   const { type, payload, error } = action;
@@ -41,21 +42,21 @@ const userData = (state = initialState, action) => {
         user: [],
         error: error,
       };
-      case REGISTER_BEGIN:
-        return {
-          ...state,
-          isLoggedIn: false,
-          loading: true,
-          error: null,
-        };
-      case REGISTER_SUCCESS:
-        return {
-          ...state,
-          isLoggedIn: true,
-          loading: false,
-          user: payload,
-          error: null,
-        };
+    case REGISTER_BEGIN:
+      return {
+        ...state,
+        isLoggedIn: false,
+        loading: true,
+        error: null,
+      };
+    case REGISTER_SUCCESS:
+      return {
+        ...state,
+        isLoggedIn: true,
+        loading: false,
+        user: payload,
+        error: null,
+      };
     case REGISTER_FAIL:
       return {
         ...state,
@@ -78,27 +79,36 @@ const userData = (state = initialState, action) => {
         loading: true,
         error: null,
       };
-      case GET_USER_SUCCESS:
+    case GET_USER_SUCCESS:
       return {
         ...state,
         isLoggedIn: true,
         user: payload,
         error: null,
       };
-      case GET_USER_FAIL:
+    case GET_USER_FAIL:
       return {
         ...state,
         isLoggedIn: false,
         user: [],
-        error:error,
+        error: error,
       };
     case GET_USER_ID:
       return {
         ...state,
         isLoggedIn: true,
         user: payload,
-        error: null,
+        error: error,
       };
+    case UPDATE_USER_PROFILE:
+      return {
+        ...state,
+        isLoggedIn: true,
+        user: payload,
+        error: error,
+
+      }
+
     default:
       return state;
   }
