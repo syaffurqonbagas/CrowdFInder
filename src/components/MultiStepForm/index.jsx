@@ -327,10 +327,10 @@ export default function MultiStep() {
                                   form.interest.length < 5
                                     ? false
                                     : form.interest.filter(
-                                        (item) => item !== "sports"
-                                      ).length === 5
-                                    ? true
-                                    : false
+                                      (item) => item !== "sports"
+                                    ).length === 5
+                                      ? true
+                                      : false
                                 }
                               />
                               <label class="form-check-label">sports</label>
@@ -346,10 +346,10 @@ export default function MultiStep() {
                                   form.interest.length < 5
                                     ? false
                                     : form.interest.filter(
-                                        (item) => item !== "finance"
-                                      ).length === 5
-                                    ? true
-                                    : false
+                                      (item) => item !== "finance"
+                                    ).length === 5
+                                      ? true
+                                      : false
                                 }
                               />
                               <label class="form-check-label">finance</label>
@@ -365,10 +365,10 @@ export default function MultiStep() {
                                   form.interest.length < 5
                                     ? false
                                     : form.interest.filter(
-                                        (item) => item !== "automotive"
-                                      ).length === 5
-                                    ? true
-                                    : false
+                                      (item) => item !== "automotive"
+                                    ).length === 5
+                                      ? true
+                                      : false
                                 }
                               />
                               <label class="form-check-label">automotive</label>
@@ -384,10 +384,10 @@ export default function MultiStep() {
                                   form.interest.length < 5
                                     ? false
                                     : form.interest.filter(
-                                        (item) => item !== "politics"
-                                      ).length === 5
-                                    ? true
-                                    : false
+                                      (item) => item !== "politics"
+                                    ).length === 5
+                                      ? true
+                                      : false
                                 }
                               />
                               <label class="form-check-label">politics</label>
@@ -403,10 +403,10 @@ export default function MultiStep() {
                                   form.interest.length < 5
                                     ? false
                                     : form.interest.filter(
-                                        (item) => item !== "design"
-                                      ).length === 5
-                                    ? true
-                                    : false
+                                      (item) => item !== "design"
+                                    ).length === 5
+                                      ? true
+                                      : false
                                 }
                               />
                               <label class="form-check-label">design</label>
@@ -428,10 +428,10 @@ export default function MultiStep() {
                                   form.interest.length < 5
                                     ? false
                                     : form.interest.filter(
-                                        (item) => item !== "cook"
-                                      ).length === 5
-                                    ? true
-                                    : false
+                                      (item) => item !== "cook"
+                                    ).length === 5
+                                      ? true
+                                      : false
                                 }
                               />
                               <label class="form-check-label">cook</label>
@@ -447,10 +447,10 @@ export default function MultiStep() {
                                   form.interest.length < 5
                                     ? false
                                     : form.interest.filter(
-                                        (item) => item !== "tech"
-                                      ).length === 5
-                                    ? true
-                                    : false
+                                      (item) => item !== "tech"
+                                    ).length === 5
+                                      ? true
+                                      : false
                                 }
                               />
                               <label class="form-check-label">tech</label>
@@ -466,10 +466,10 @@ export default function MultiStep() {
                                   form.interest.length < 5
                                     ? false
                                     : form.interest.filter(
-                                        (item) => item !== "religion"
-                                      ).length === 5
-                                    ? true
-                                    : false
+                                      (item) => item !== "religion"
+                                    ).length === 5
+                                      ? true
+                                      : false
                                 }
                               />
                               <label class="form-check-label">religion</label>
@@ -485,10 +485,10 @@ export default function MultiStep() {
                                   form.interest.length < 5
                                     ? false
                                     : form.interest.filter(
-                                        (item) => item !== "art"
-                                      ).length === 5
-                                    ? true
-                                    : false
+                                      (item) => item !== "art"
+                                    ).length === 5
+                                      ? true
+                                      : false
                                 }
                               />
                               <label class="form-check-label">art</label>
@@ -504,10 +504,10 @@ export default function MultiStep() {
                                   form.interest.length < 5
                                     ? false
                                     : form.interest.filter(
-                                        (item) => item !== "music"
-                                      ).length === 5
-                                    ? true
-                                    : false
+                                      (item) => item !== "music"
+                                    ).length === 5
+                                      ? true
+                                      : false
                                 }
                               />
                               <label class="form-check-label">music</label>
@@ -529,10 +529,10 @@ export default function MultiStep() {
                                   form.interest.length < 5
                                     ? false
                                     : form.interest.filter(
-                                        (item) => item !== "business"
-                                      ).length === 5
-                                    ? true
-                                    : false
+                                      (item) => item !== "business"
+                                    ).length === 5
+                                      ? true
+                                      : false
                                 }
                               />
                               <label class="form-check-label">business</label>
@@ -548,10 +548,10 @@ export default function MultiStep() {
                                   form.interest.length < 5
                                     ? false
                                     : form.interest.filter(
-                                        (item) => item !== "psychology"
-                                      ).length === 5
-                                    ? true
-                                    : false
+                                      (item) => item !== "psychology"
+                                    ).length === 5
+                                      ? true
+                                      : false
                                 }
                               />
                               <label class="form-check-label">psychology</label>
@@ -567,10 +567,10 @@ export default function MultiStep() {
                                   form.interest.length < 5
                                     ? false
                                     : form.interest.filter(
-                                        (item) => item !== "tourism"
-                                      ).length === 5
-                                    ? true
-                                    : false
+                                      (item) => item !== "tourism"
+                                    ).length === 5
+                                      ? true
+                                      : false
                                 }
                               />
                               <label class="form-check-label">tourism</label>
@@ -586,10 +586,10 @@ export default function MultiStep() {
                                   form.interest.length < 5
                                     ? false
                                     : form.interest.filter(
-                                        (item) => item !== "bike"
-                                      ).length === 5
-                                    ? true
-                                    : false
+                                      (item) => item !== "bike"
+                                    ).length === 5
+                                      ? true
+                                      : false
                                 }
                               />
                               <label class="form-check-label">bike</label>
@@ -605,10 +605,10 @@ export default function MultiStep() {
                                   form.interest.length < 5
                                     ? false
                                     : form.interest.filter(
-                                        (item) => item !== "science"
-                                      ).length === 5
-                                    ? true
-                                    : false
+                                      (item) => item !== "science"
+                                    ).length === 5
+                                      ? true
+                                      : false
                                 }
                               />
                               <label class="form-check-label">science</label>
@@ -630,14 +630,14 @@ export default function MultiStep() {
                                   Prev
                                 </Button>
                                 {/* <Link to="/signin"> */}
-                                  <Button
-                                    type="submit"
-                                    className="mb-4"
-                                    style={{ width: "10rem" }}
-                                    onClick={handleRegister}
-                                  >
-                                    Next
-                                  </Button>
+                                <Button
+                                  type="submit"
+                                  className="mb-4"
+                                  style={{ width: "10rem" }}
+                                  onClick={handleRegister}
+                                >
+                                  Next
+                                </Button>
                                 {/* </Link> */}
                               </div>
                             </Col>
