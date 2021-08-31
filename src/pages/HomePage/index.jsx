@@ -12,16 +12,15 @@ import { getComment } from '../../redux/action/comment'
 
 function HomePage() {
     const dispatch = useDispatch()
-    const { listPost, loading } = useSelector((state) => state.posts);
-
-
+    const {listPost, loading} = useSelector((state) => state.posts);
+    // const {listComment} = useSelector((state) => state.comments);
+    
     useEffect(() => {
         dispatch(getPost())
-        console.log('ini masuk')
-
+        // dispatch(getComment('61262a29c4a06af9d724211a'))
     }, [dispatch]);
 
-
+    // console.log('comment',listComment)
     console.log('data', listPost)
 
     return (
@@ -46,7 +45,7 @@ function HomePage() {
 
                         <div>
                             {listPost?.filter(post => post.type[0] === 'announcement').map((post, id) => (
-                                <LargeCardMyEvent key={id} content={post.content} image={post.image} interest={post.interest} location={post.location} like={post.like.length} userName={post.user_id.fullname} idComment={post.id} />
+                                <LargeCardMyEvent key={id} contentCard={post.content} image={post.image} interest={post.interest} location={post.location} like={post.like.length} userName={post.user_id.fullname} idPost={post.id}/>
                             ))}
                             <div className="text-center my-5">
                                 <MyPagination />
