@@ -1,14 +1,14 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import './index.css'
 import { InputGroup, FormControl, Card, Button, FormSelect, FloatingLabel } from 'react-bootstrap'
 import axios from 'axios';
 
 function FormCreateEvent(props) {
-    const {title, image, location, interest, content, date, onClick} = props;
+    const { title, image, location, interest, content, date, onClick } = props;
 
     const [img, setImg] = useState("");
     const [error, setError] = useState(false);
-  
+
     const imageHandler = (e) => {
     //   const selected = e.target.files[0];
       const selected = {image};
@@ -26,9 +26,9 @@ function FormCreateEvent(props) {
 
     return (
         <>
-            <div className="container-fluid" style={{padding: '0 0'}}>
-                <h5 style={{fontSize:'22px', fontWeight:'700'}}>Create an event</h5>
-                <p style={{fontSize:'18px', fontWeight:'400'}}>Put your awesome photo to get more people!</p>
+            <div className="container-fluid" style={{ padding: '0 0' }}>
+                <h5 style={{ fontSize: '22px', fontWeight: '700' }}>Create an event</h5>
+                <p style={{ fontSize: '18px', fontWeight: '400' }}>Put your awesome photo to get more people!</p>
 
                 <Card className="cardSize mb-3">
                     {img && <img src={img} alt="" />}
@@ -39,18 +39,18 @@ function FormCreateEvent(props) {
                         accept="image/*"
                         onChange={imageHandler}
                     />
-                    
+
                     {img ? (
-                    <button
-                    className="rounded-pill btnStyle centeringBtn"
-                    onClick={() => setImg(null)}
-                    >
-                        <i class="fa fa-picture-o  me-2"></i>remove image
-                    </button>
-                    ) : ( 
-                    <label className="rounded-pill btnStyle centeringBtn" htmlFor="input">
-                        <i class="fa fa-picture-o  me-2"></i>Add Image
-                    </label>
+                        <button
+                            className="rounded-pill btnStyle centeringBtn"
+                            onClick={() => setImg(null)}
+                        >
+                            <i class="fa fa-picture-o  me-2"></i>remove image
+                        </button>
+                    ) : (
+                        <label className="rounded-pill btnStyle centeringBtn" htmlFor="input">
+                            <i class="fa fa-picture-o  me-2"></i>Add Image
+                        </label>
                     )}
                 </Card>
 
@@ -65,7 +65,7 @@ function FormCreateEvent(props) {
 
                 <InputGroup className="mb-3">
                     <FormControl
-                        style={{fontFamily: 'Mulish, FontAwesome, sans-serif'}}
+                        style={{ fontFamily: 'Mulish, FontAwesome, sans-serif' }}
                         placeholder="&#xf133; What date?"
                         aria-label="What date?"
                         aria-describedby="basic-addon2"
@@ -85,7 +85,7 @@ function FormCreateEvent(props) {
 
                 <InputGroup className="mb-3">
                     <FormControl
-                        style={{fontFamily: 'Mulish, FontAwesome, sans-serif'}}
+                        style={{ fontFamily: 'Mulish, FontAwesome, sans-serif' }}
                         placeholder="&#xf041; Where?"
                         aria-label="Where?"
                         aria-describedby="basic-addon4"

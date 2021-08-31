@@ -14,6 +14,7 @@ import {
   GET_USER_ID,
   GET_USER_BEGIN,
   GET_USER_FAIL,
+  UPDATE_USER_PROFILE,
 } from "../action/type";
 import { put, takeEvery, takeLatest } from "redux-saga/effects";
 
@@ -96,6 +97,25 @@ function* getUserDetail() {
   });
 }
 
+function* userUpdate(action) {
+  const Token = localStorage.getItem('user');
+
+  const { interest, fullname, username, email, location, image, bio } = action;
+  try {
+    const res = yield axios.put(`${GET_USER_DETAIL_CROWDFINDER}`, { interest, fullname, username, email, location, image, bio }, { headers: { Authorization: `Bearer ${Token}` } });
+    yield put({
+      type: UPDATE_USER_PROFILE,
+      payload: res.data,
+    })
+  } catch (error) {
+    yield put({
+      error: error,
+    })
+
+  }
+}
+
+
 function* Logout() {
   yield localStorage.removeItem("user");
 }
@@ -118,4 +138,8 @@ export function* watchGetUser() {
 
 export function* watchGetUserDetail() {
   yield takeEvery(GET_USER_ID, getUserDetail);
+}
+
+export function* watchUserUpdate() {
+  yield takeEvery(UPDATE_USER_PROFILE, userUpdate)
 }

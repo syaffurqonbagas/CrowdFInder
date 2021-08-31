@@ -23,10 +23,10 @@ function* PostAnnouncements (actions) {
     }
 };
 
-function* UpdateAnnouncement (actions) {
+function* UpdateAnnouncement (actions, id) {
     const {data} = actions;
     try {
-        const res = yield axios.put(`${BASE_URL_CROWDFINDER}/post/announcement/:id`, data, {headers: {Authorization : `Bearer ${Token}`}});
+        const res = yield axios.put(`${BASE_URL_CROWDFINDER}/post/announcement/${id}`, data, {headers: {Authorization : `Bearer ${Token}`}});
         yield put ({
             type : UPDATE_ANNOUNCEMENT_SUCCESS,
             payload : res.data,

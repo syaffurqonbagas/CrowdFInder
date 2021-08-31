@@ -4,8 +4,18 @@ import { Card, Container, Button } from "react-bootstrap"
 import './index.scss'
 import user from '../../image/user.png'
 import { TiLocation } from 'react-icons/ti';
+import { useDispatch } from "react-redux"
+import { logout } from "../../redux/action/user"
 
 function AvatarCard(props) {
+    const dispatch = useDispatch();
+
+    const Logout = (e) => {
+        e.preventDefault();
+        dispatch(logout());
+        window.location.replace("/")
+    }
+
     return (
 
         <Card className='AvatarCard'>
@@ -21,7 +31,7 @@ function AvatarCard(props) {
                 <Button className='my-4' style={{ width: '70%', fontSize: '16px', fontWeight: '700' }} variant="secondary" size="lg">
                     Profile Setting
                 </Button>
-                <h5 >  <Link style={{ color: '#D82671', fontWeight: '700', textDecoration: 'none', fontSize: '16px' }} to="/">Logout</Link></h5>
+                <h5 style={{ color: '#D82671', fontWeight: '700', textDecoration: 'none', fontSize: '16px' }} onClick={Logout}>  Logout</h5>
             </Card.Body>
         </Card>
 
