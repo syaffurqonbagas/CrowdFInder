@@ -1,29 +1,34 @@
-import React from 'react'
+import React,{ useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import './index.css'
 import TopicMe from '../../components/TopicMe'
 import CreatePost from '../../components/CreatePost'
 import SmallCardMyEvent from '../../components/SmallCardMyEvent'
 import LargeCardMyEvent from '../../components/LargeCardMyEvent/LargeCardMyEvent.jsx'
 import MyPagination from '../../components/MyPagination/MyPagination'
-import { useDispatch, useSelector } from 'react-redux'
-import { useEffect, useState } from 'react'
 import { getPost } from '../../redux/action/post'
+import { getCurrentUser } from '../../redux/action/user'
+
 
 
 function HomePage() {
     const dispatch = useDispatch()
     const posts = useSelector((state) => state.posts.listPost);
+    const userInterest = useSelector((state) => state.userData.user.interest);
     
 
     useEffect(() => {
         dispatch(getPost())
+        dispatch(getCurrentUser());
     }, [dispatch]);
 
-    // console.log(posts)
+    
+    console.log('user inoki',userInterest)
 
-    const user = localStorage.getItem('user');
+
+    const Token = localStorage.getItem('user');
     // const token = user.data.token;
-    console.log('tes' + user)  ;
+    console.log('tes' + Token)  ;
 
 
     console.log('data', posts)
@@ -32,7 +37,7 @@ function HomePage() {
         <>
             <div className="container mt-5">
                 <div className="d-flex mt-3">
-                    <TopicMe />
+                    {/* {userInterest.map((interest, id) => (<TopicMe key={id} interest={interest} />))} */}
                     <div className="w-100 ms-4">
                         <CreatePost />
 

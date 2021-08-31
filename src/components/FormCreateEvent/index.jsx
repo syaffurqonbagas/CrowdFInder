@@ -6,11 +6,12 @@ import axios from 'axios';
 function FormCreateEvent(props) {
     const {title, image, location, interest, content, date, onClick} = props;
 
-    const [img, setImg] = useState(null);
+    const [img, setImg] = useState("");
     const [error, setError] = useState(false);
   
     const imageHandler = (e) => {
-      const selected = e.target.files[0];
+    //   const selected = e.target.files[0];
+      const selected = {image};
       const allowedTypes = ["image/png", "image/jpeg", "image/jpg"];
       if (selected && allowedTypes.includes(selected.type)) {
         let reader = new FileReader();
@@ -36,7 +37,7 @@ function FormCreateEvent(props) {
                         name="image-upload"
                         id="input"
                         accept="image/*"
-                        onChange={image}
+                        onChange={imageHandler}
                     />
                     
                     {img ? (

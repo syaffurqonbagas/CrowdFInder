@@ -7,28 +7,51 @@ import { Form } from 'react-bootstrap'
 function FormCreateAnnouncementPage() {
     const dispatch = useDispatch()
     const announcement = useSelector((state) => state.announcements.listAnnouncement);
-    const [title, setTitle] = useState();
-    const [content, setContent] = useState();
-    const [interest, setInterest] = useState();
-    const [image, setImage] = useState();
+    // const [title, setTitle] = useState();
+    // const [content, setContent] = useState();
+    // const [interest, setInterest] = useState();
+    // const [image, setImage] = useState();
+    const [state, setState] = useState({
+        title : "",
+        content : "",
+        interest : "",
+        image : ""
+    });
+
     
     const handlePostAnnouncement = (e) => {
         e.preventDefault();
-        const data = {title, interest, content, image}
+        const data = state;
         dispatch(postAnnouncement(data));
     }
 
-    console.log(interest, content, image)
+    console.log(state)
+
+    
+    // const changeState = (e) => {
+    //     setState({
+    //         ...state,
+    //         [e.target.name] : e.target.value
+    //     })
+    // }
+    
+    // const handlePostAnnouncement = (e) => {
+    //     e.preventDefault();
+    //     const data = {...state}
+    //     dispatch(postAnnouncement(data));
+    // }
+
+    // console.log('state', state);
 
     return (
         <>
             <div className="container">
                 <div className="mt-4 mb-5">
                    <FormCreateAnnouncement
-                   title={(e) => setTitle(e.target.value)}
-                   content={(e) => setContent(e.target.value)}
-                   interest={(e) => setInterest(e.target.value)}
-                   image={(e) => setImage(e.target.value)}
+                   title={(e) => setState({...state, title: e.target.value})}
+                   content={(e) => setState({...state, content: e.target.value})}
+                   interest={(e) => setState({...state, interest: e.target.value})}
+                   image={(e) => setState({...state, image: e.target.value})}
                    onClick={(e) => handlePostAnnouncement(e)}/>
                 </div>
                 <div className="input-image">

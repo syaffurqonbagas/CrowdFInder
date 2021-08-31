@@ -3,7 +3,8 @@ import './index.css'
 import { Button, Card, Container, ListGroup } from 'react-bootstrap'
 
 
-function TopicMe() {
+function TopicMe(props) {
+    const {interest} = props;
     return (
         <>
             <Card className="fontWeight-topic" style={{ maxHeight: '32rem', minWidth: '16rem', width: '16rem' }}>
@@ -14,9 +15,9 @@ function TopicMe() {
                         <div>
                             <div className="d-flex mb-1">
                                 <input className="form-check-input me-1" type="checkbox" value="" />
-                                <label className="form-check-label">Social</label>
+                                <label className="form-check-label">{interest}</label>
                             </div>
-                            <div className="d-flex mb-1">
+                            {/* <div className="d-flex mb-1">
                                 <input className="form-check-input me-1" type="checkbox" value="" />
                                 <label className="form-check-label">Business</label>
                             </div>
@@ -27,7 +28,7 @@ function TopicMe() {
                             <div className="d-flex mb-1">
                                 <input className="form-check-input me-1" type="checkbox" value="" />
                                 <label className="form-check-label">Art</label>
-                            </div>
+                            </div> */}
                         </div>
                     </ListGroup.Item>
                     <ListGroup.Item className="part-2  mb-3">
