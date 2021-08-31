@@ -13,15 +13,15 @@ import { getComment } from '../../redux/action/comment'
 function HomePage() {
     const dispatch = useDispatch()
     const {listPost, loading} = useSelector((state) => state.posts);
-    const comment = useSelector((state) => state.comments);
+    const {listComment} = useSelector((state) => state.comments);
     
     useEffect(() => {
         dispatch(getPost())
-        dispatch(getComment())
+        dispatch(getComment('61262a29c4a06af9d724211a'))
     }, [dispatch]);
 
-    console.log('comment',comment)
-    // console.log('data', listPost)
+    console.log('comment',listComment)
+    console.log('data', listPost)
 
     return (
         <>
