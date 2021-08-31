@@ -31,7 +31,7 @@ function AvatarCard(props) {
                 <Button className='my-4' style={{ width: '70%', fontSize: '16px', fontWeight: '700' }} variant="secondary" size="lg">
                     Profile Setting
                 </Button>
-                <h5 style={{ color: '#D82671', fontWeight: '700', textDecoration: 'none', fontSize: '16px' }} onClick={Logout}>  Logout</h5>
+                <h5 style={{ color: '#D82671', fontWeight: '700', textDecoration: 'none', fontSize: '16px', cursor: 'pointer' }} onClick={Logout}>  Logout</h5>
             </Card.Body>
         </Card>
 
