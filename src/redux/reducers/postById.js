@@ -1,7 +1,7 @@
-import { GET_POST_BY_ID_BEGIN, GET_POST_BY_ID_FAIL } from "../action/type";
+import { GET_POST_BY_ID_SUCCESS, GET_POST_BY_ID_BEGIN, GET_POST_BY_ID_FAIL } from "../action/type";
 
 const initialState = {
-    postById: [],
+    postbyid: [],
     loading: false,
     error: null,
 
@@ -16,7 +16,7 @@ const postsId = (state = initialState, action) => {
                 ...state,
                 loading: true,
             };
-        case GET_POST_ID_SUCCESS:
+        case GET_POST_BY_ID_SUCCESS:
             return {
                 ...state,
                 postbyid: payload,

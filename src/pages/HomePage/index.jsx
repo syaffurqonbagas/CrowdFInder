@@ -19,8 +19,6 @@ function HomePage() {
 
     }, [dispatch]);
 
-
-    console.log('data', listPost)
     return (
         <>
             <div className="container mt-5">
