@@ -7,21 +7,14 @@ import "./LargeCardMyEvent.css";
 import user from '../../image/user.png'
 // import image from '../../img/largeCardDummy.jpeg'
 import { getComment, postComment } from "../../redux/action/comment";
+import { putLike } from "../../redux/action/like";
+import { getPost } from "../../redux/action/post";
 
 
 function LargeCardMyEvent(props) {
-
     const {
-        contentCard, image, interest, location, like, userName, idPost
+        contentCard, image, interest, location, like, comment, userName, idPost
     } = props;
-
-    const [body, setBody] = useState({
-        content : "",
-    });
-
-    const changeComment = (e) => {
-        setBody({ ...body, [e.target.name]: e.target.value });
-      };
 
     const dispatch = useDispatch();
     const {listComment, loading} = useSelector((state) => state.comments);
@@ -30,13 +23,32 @@ function LargeCardMyEvent(props) {
         dispatch(getComment(idPost))
     }, [dispatch]);
 
+    //post comment
+    const [body, setBody] = useState({
+        content : "",
+    });
+
+    const changeComment = (e) => {
+        setBody({ ...body, content: e.target.value });
+      };
+
     const handlePostComment = (e) => {
         e.preventDefault();
         dispatch(postComment(idPost ,body));
       };
 
-    console.log('body gaes', body)
-    // console.log('listcomment', listComment)
+    //like post
+    const likes = useSelector((state) => state.likes.like);
+
+    const handleLikes = (e) => {
+        // e.preventDefault();
+        dispatch(putLike(idPost))
+    }
+
+    useEffect(() => {
+        dispatch(getPost(like))
+    }, [dispatch, like])
+    // console.log('ini id post',idPost)
 
     // hide and show ellipsis menu
     const [show, setShow] = useState(false);
@@ -53,18 +65,9 @@ function LargeCardMyEvent(props) {
         setShow(!show);
     };
 
-    //get all post
-    // const dispatch = useDispatch()
-    // const {listPost, loading} = useSelector((state) => state.posts);
-
-    // useEffect(() => {
-    //     dispatch(getPost())
-    // }, [dispatch]);
-
-    // const {comment, loading} = useSelector(
-    //     (state) => state.
-    // )
-
+    // console.log('likes', likes)
+    // console.log('body gaes', body)
+    // console.log('listcomment', listComment)
     return (
         <>
             <div className="divider mt-5 mb-5"></div>
@@ -126,11 +129,11 @@ function LargeCardMyEvent(props) {
                         </div>
 
                         <div className="btnGroup d-inline-flex">
-                            <button className="button-card flex-grow-1">
-                                <i className="fa fa-thumbs-o-up"></i>Like({like})
+                            <button className="button-card flex-grow-1" onClick={() => handleLikes()}>
+                                <i className="fa fa-thumbs-o-up" ></i>Like({like})
                             </button>
                             <button className="button-card flex-grow-1" onClick={() => toggleComment()}>
-                                <i className="fa fa-commenting-o"></i>Comment(15)
+                                <i className="fa fa-commenting-o"></i>Comment({comment})
                             </button>
                             <button className="button-card flex-grow-1">
                                 <i className="fa fa-share-alt"></i>Share
@@ -140,7 +143,7 @@ function LargeCardMyEvent(props) {
 
                     <div className="hideComment" ref={commentRef} style={showComment ? { height: commentRef.current.scrollHeight + 'px' } : { height: '0px' }}>
                         <div className="commentCard py-3">
-                            <InputGroup className="fontWeightSize-formEvent" onSubmit={(e) => handlePostComment()}>
+                            <InputGroup className="fontWeightSize-formEvent" onSubmit={() => handlePostComment()}>
                                 <FormControl
                                     className="mx-3 rounded-pill sizeText"
                                     placeholder="Type your comment"
@@ -154,11 +157,11 @@ function LargeCardMyEvent(props) {
                             </div>
                         </div>
 
-                        <div className="commentCard py-3 text-center" style={{ fontWeight: '400', fontSize: '16px' }}>
+                        {/* <div className="commentCard py-3 text-center" style={{ fontWeight: '400', fontSize: '16px' }}>
                             <Link className="text-decoration-none text-secondary">Load more comment</Link>
-                        </div>
+                        </div> */}
 
-                        {listComment?.filter((item) => item.post_id === idPost).map(item => (
+                        {listComment.length > 0 && listComment?.filter((item) => item.post_id === idPost).map(item => (
                             <div className="commentCard py-3 px-3">
                                 <div className="d-flex mb-2 fontCircular" style={{ fontWeight: '450', fontSize: '18px' }}>
                                     <div className="flex-grow-1" >{item.user_id.fullname}</div>
