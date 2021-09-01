@@ -52,7 +52,7 @@ export default function MultiStep() {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    dispatch(
+    if (dispatch(
       Register(
         form.role,
         form.email,
@@ -62,9 +62,10 @@ export default function MultiStep() {
         form.location,
         form.interest
       )
-    );
-    alert("register successfully");
-    window.location.replace("/signin");
+    )) {
+      alert("register successfully");
+      window.location.replace("/signin");
+    }
   };
 
   console.log("form", form);
