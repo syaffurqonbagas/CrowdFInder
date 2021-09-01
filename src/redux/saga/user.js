@@ -99,23 +99,25 @@ function* getUserDetail() {
 }
 
 function* userUpdate(action) {
-  const Token = localStorage.getItem('user');
+  const Token = localStorage.getItem("user");
 
   const { interest, fullname, username, email, location, image, bio } = action;
   try {
-    const res = yield axios.put(`${GET_USER_DETAIL_CROWDFINDER}`, { interest, fullname, username, email, location, image, bio }, { headers: { Authorization: `Bearer ${Token}` } });
+    const res = yield axios.put(
+      `${GET_USER_DETAIL_CROWDFINDER}`,
+      { interest, fullname, username, email, location, image, bio },
+      { headers: { Authorization: `Bearer ${Token}` } }
+    );
     yield put({
       type: UPDATE_USER_PROFILE,
       payload: res.data,
-    })
+    });
   } catch (error) {
     yield put({
       error: error,
-    })
-
+    });
   }
 }
-
 
 function* Logout() {
   yield localStorage.removeItem("user");
@@ -142,5 +144,5 @@ export function* watchGetUserDetail() {
 }
 
 export function* watchUserUpdate() {
-  yield takeEvery(UPDATE_USER_PROFILE, userUpdate)
+  yield takeEvery(UPDATE_USER_PROFILE, userUpdate);
 }
