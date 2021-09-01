@@ -5,7 +5,7 @@ import { put, takeEvery } from "@redux-saga/core/effects";
 
 function* getComments (actions) {
     const { id } = actions;
-    console.log('ini')
+    // console.log('ini')
     try {
         const res = yield axios.get(`${BASE_URL_CROWDFINDER}/comment/${id}`);
         yield put({
