@@ -4,6 +4,7 @@ import { watchGetComments, watchPostComments } from "./comment";
 import { watchPostEvents } from "./event";
 import { watchGetPosts } from "./post";
 import { watchRegister, watchLogin, watchLogout, watchGetUser, watchUserUpdate } from "./user";
+import { watchPutLikes } from "./like";
 
 export default function* rootSaga() {
   yield all([
@@ -17,5 +18,7 @@ export default function* rootSaga() {
     watchPostAnnouncements(), 
     watchGetComments(),
     watchPostComments(),
+    watchPutLikes(),
+    
   ]);
 }

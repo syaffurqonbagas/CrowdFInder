@@ -8,7 +8,6 @@ function* getComments(actions) {
     const { id } = actions;
     try {
         const res = yield axios.get(`${BASE_URL_CROWDFINDER}/comment/${id}`);
-        yield console.log('ini', res.data.data)
         yield put({
             type: GET_COMMENT_SUCCESS,
             payload: res.data.data,

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import FormCreateAnnouncement from '../../components/FormCreatePost'
+import FormUpdateAnnouncement from '../../components/FormUpdateAnnouncement'
 import { postAnnouncement } from '../../redux/action/announcement'
 import { Form } from 'react-bootstrap'
 
@@ -22,14 +22,10 @@ function FormCreateAnnouncementPage() {
     const handlePostAnnouncement = (e) => {
         e.preventDefault();
         const data = state;
-        if(dispatch(postAnnouncement(data))) {
-            alert('waw anda berhasil');
-            window.location.replace("/home");
-        };
-        
-    };
+        dispatch(postAnnouncement(data));
+    }
 
-    console.log(state);
+    console.log(state)
 
     
     // const changeState = (e) => {
@@ -52,7 +48,7 @@ function FormCreateAnnouncementPage() {
             <div className="container">
                 <div className="mt-4 mb-5">
                 {/* <h5 style={{ fontSize: '22px', fontWeight: '700' }}>Create a announcement</h5> */}
-                   <FormCreateAnnouncement
+                   <FormUpdateAnnouncement
                    title={(e) => setState({...state, title: e.target.value})}
                    content={(e) => setState({...state, content: e.target.value})}
                    interest={(e) => setState({...state, interest: e.target.value})}
