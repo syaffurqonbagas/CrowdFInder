@@ -61,6 +61,9 @@ function LargeCardMyEvent(props) {
     //     dispatch(getPost())
     // }, [dispatch]);
 
+    // const {comment, loading} = useSelector(
+    //     (state) => state.
+    // )
 
     return (
         <>
