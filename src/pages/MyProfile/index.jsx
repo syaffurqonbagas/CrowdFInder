@@ -19,7 +19,6 @@ function MyProfile(props) {
     const [isAbout, setIsAbout] = useState(true)
 
 
-    console.log('ini', user)
 
 
 

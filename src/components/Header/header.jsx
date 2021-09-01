@@ -13,9 +13,11 @@ import {
 } from "react-bootstrap";
 import LogoCrowdFinder from "../../Asset/LogoCrowdFinder";
 import "./header.css";
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
+  const userrole = useSelector((state) => state.userData.user)
   const { isLoggedIn, user } = useSelector((state) => state.userData)
   const dispatch = useDispatch()
   const { CurrentUser, setCurrentUser } = useState(null)
@@ -31,7 +33,7 @@ const Header = () => {
 
 
 
-//  console.log('testing',user)
+  //  console.log('testing',user)
   return (
     <>
       <div className="header">
@@ -56,14 +58,16 @@ const Header = () => {
                   </Nav>
                   {/* {} */}
                   <Nav className="Feed-Notification">
-                    <Nav.Link href="/home"><i class="fa fa-home fa-lg"></i><Col><p>Feeds</p></Col></Nav.Link>
+                    <Nav.Link><Link to="/home" style={{ textDecoration: 'none', color: 'black' }} ><i class="fa fa-home fa-lg"></i><Col><p>Feeds</p></Col></Link></Nav.Link>
                     <Nav.Link href="#"><i class="fa fa-bell fa-lg"></i><Col><p>Notification</p></Col></Nav.Link>
                   </Nav>
                   <Nav>
                     < NavDropdown style={{ padding: '0px', width: '61px', height: '80px' }} title={<div className="text-center avatar">
                       <img src={`https://ui-avatars.com/api/?name=${user?.fullname}&background=random&length=1&rounded=true&size=35`} alt="..." />
                     </div>} id="collasible-nav-dropdown">
-                      <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+                      {userrole.role === "community" ?
+                        <NavDropdown.Item><Link to="/manage-comunity" style={{ textDecoration: 'none', color: 'black' }} >Profile cm</Link></NavDropdown.Item> :
+                        <NavDropdown.Item><Link to="/profile" style={{ textDecoration: 'none', color: 'black' }} >Profile</Link></NavDropdown.Item>}
                       <NavDropdown.Divider />
                       <NavDropdown.Item onClick={Logout}>
                         Sign Out

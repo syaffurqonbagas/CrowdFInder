@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 import AvatarCard from '../../components/AvatarCard';
 import AvatarManageCm from '../../components/AvatarManageCM';
 
@@ -10,7 +11,7 @@ import './index.scss'
 import Post from './Post';
 
 function ManageComunity(props) {
-
+    const user = useSelector((state) => state.userData.user)
     const [isAbout, setIsAbout] = useState(1)
 
     const toggle = (index) => {
@@ -23,7 +24,7 @@ function ManageComunity(props) {
                 <Hero />
                 <Row>
                     <Col xl={4}>
-                        <AvatarManageCm />
+                        <AvatarManageCm comunityname={user.username} location={user.location} />
                     </Col>
                     <Col>
                         <div className="button-menu d-flex">

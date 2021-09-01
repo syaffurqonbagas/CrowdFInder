@@ -1,28 +1,29 @@
-import { GET_POST_BEGIN, GET_POST_SUCCESS, GET_POST_FAIL } from "../action/type";
+import { GET_POST_BY_ID_BEGIN, GET_POST_BY_ID_FAIL } from "../action/type";
 
 const initialState = {
-    listPost: [],
+    postById: [],
     loading: false,
     error: null,
 
 }
 
-const posts = (state = initialState, action) => {
+const postsId = (state = initialState, action) => {
     const { type, payload, error } = action;
     switch (type) {
-        case GET_POST_BEGIN:
+
+        case GET_POST_BY_ID_BEGIN:
             return {
                 ...state,
                 loading: true,
             };
-        case GET_POST_SUCCESS:
+        case GET_POST_ID_SUCCESS:
             return {
                 ...state,
-                listPost: payload,
+                postbyid: payload,
                 loading: false,
                 error: null,
-            };
-        case GET_POST_FAIL:
+            }
+        case GET_POST_BY_ID_FAIL:
             return {
                 ...state,
                 loading: false,
@@ -35,4 +36,4 @@ const posts = (state = initialState, action) => {
     }
 }
 
-export default posts;
+export default postsId;

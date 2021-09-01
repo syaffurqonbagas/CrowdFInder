@@ -9,7 +9,6 @@ function* getComments(actions) {
 
     try {
         const res = yield axios.get(`${BASE_URL_CROWDFINDER}/comment/${id}`);
-        yield console.log('ini', res.data.data)
         yield put({
             type: GET_COMMENT_SUCCESS,
             payload: res.data.data,
@@ -22,11 +21,11 @@ function* getComments(actions) {
     }
 };
 
-function* postComments (actions) {
+function* postComments(actions) {
     const { post_id, body } = actions;
     const Token = localStorage.getItem('user');
     try {
-        const res = yield axios.post(`${BASE_URL_CROWDFINDER}/comment/${post_id}`, body, {headers: {Authorization : `Bearer ${Token}`}});
+        const res = yield axios.post(`${BASE_URL_CROWDFINDER}/comment/${post_id}`, body, { headers: { Authorization: `Bearer ${Token}` } });
         yield put({
             type: POST_COMMENT_SUCCESS,
             payload: res.data,

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect }  from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import useOnClickOutside from "./useOnClickOutside";
@@ -16,15 +16,15 @@ function LargeCardMyEvent(props) {
     } = props;
 
     const [body, setBody] = useState({
-        content : "",
+        content: "",
     });
 
     const changeComment = (e) => {
         setBody({ ...body, [e.target.name]: e.target.value });
-      };
+    };
 
     const dispatch = useDispatch();
-    const {listComment, loading} = useSelector((state) => state.comments);
+    const { listComment, loading } = useSelector((state) => state.comments);
 
     useEffect(() => {
         dispatch(getComment(idPost))
@@ -32,11 +32,8 @@ function LargeCardMyEvent(props) {
 
     const handlePostComment = (e) => {
         e.preventDefault();
-        dispatch(postComment(idPost ,body));
-      };
-
-    console.log('body gaes', body)
-    // console.log('listcomment', listComment)
+        dispatch(postComment(idPost, body));
+    };
 
     // hide and show ellipsis menu
     const [show, setShow] = useState(false);
@@ -117,7 +114,7 @@ function LargeCardMyEvent(props) {
                     <Card>
                         <div className="w-75 ms-3 mt-3 mb-4">
                             <p className="font-size">
-                               {contentCard}
+                                {contentCard}
                             </p>
                             <img className="imageSize" src={image} alt="" />
                         </div>
