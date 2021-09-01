@@ -19,9 +19,9 @@ function InterstTopic(props) {
                 </div>
             </div>
             <div className="body mt-2 d-flex">
-                <Badge className='topicuser' pill >
-                    {props.list}
-                </Badge>
+                {props.userInterest?.map((interest) => (<Badge className='topicuser' pill >
+                    {interest}
+                </Badge>))}
             </div>
             {show ?
                 <div className='modal-edit mt-5'>

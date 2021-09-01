@@ -55,7 +55,7 @@ const ChooseInterest = (props) => {
                           value="finance"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                        finance
+                          finance
                         </label>
                       </div>
                       <div class="form-check">
@@ -65,7 +65,7 @@ const ChooseInterest = (props) => {
                           value="automotive"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                        automotivee
+                          automotivee
                         </label>
                       </div>
                       <div class="form-check">
@@ -75,7 +75,7 @@ const ChooseInterest = (props) => {
                           value="politics"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                        politics
+                          politics
                         </label>
                       </div>
                       <div class="form-check">
@@ -85,7 +85,7 @@ const ChooseInterest = (props) => {
                           value="design"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                        design
+                          design
                         </label>
                       </div>
                     </div>
@@ -101,7 +101,7 @@ const ChooseInterest = (props) => {
                           value="cook"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                        cook
+                          cook
                         </label>
                       </div>
                       <div class="form-check">
@@ -111,7 +111,7 @@ const ChooseInterest = (props) => {
                           value="tech"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                        tech
+                          tech
                         </label>
                       </div>
                       <div class="form-check">
@@ -121,7 +121,7 @@ const ChooseInterest = (props) => {
                           value="religion"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                        religion
+                          religion
                         </label>
                       </div>
                       <div class="form-check">
@@ -131,7 +131,7 @@ const ChooseInterest = (props) => {
                           value="art"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                        art
+                          art
                         </label>
                       </div>
                       <div class="form-check">
@@ -141,7 +141,7 @@ const ChooseInterest = (props) => {
                           value="music"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                        music
+                          music
                         </label>
                       </div>
                     </div>
@@ -157,7 +157,7 @@ const ChooseInterest = (props) => {
                           value="business"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                        business
+                          business
                         </label>
                       </div>
                       <div class="form-check">
@@ -167,7 +167,7 @@ const ChooseInterest = (props) => {
                           value="psychology"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                        psychology
+                          psychology
                         </label>
                       </div>
                       <div class="form-check">
@@ -177,7 +177,7 @@ const ChooseInterest = (props) => {
                           value="tourism"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                        tourism
+                          tourism
                         </label>
                       </div>
                       <div class="form-check">
@@ -187,7 +187,7 @@ const ChooseInterest = (props) => {
                           value="bike"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                        bike
+                          bike
                         </label>
                       </div>
                       <div class="form-check">
@@ -197,7 +197,7 @@ const ChooseInterest = (props) => {
                           value="science"
                         />
                         <label class="form-check-label" for="flexCheckDefault">
-                        science
+                          science
                         </label>
                       </div>
                     </div>
@@ -206,21 +206,21 @@ const ChooseInterest = (props) => {
                 <div className="">
                   <p>You can choose Max 5 Interest</p>
                   <div className="button-choseiterest">
-                  <Row>
-                  <Col>
-                  <div>
-                    <Link to="/home">
-                      <Button
-                        className="button mb-4"
-                        onClick={props.onClick}
-                        style={{ width: "10rem" }}
-                      >
-                        Next
-                      </Button>
-                    </Link>
-                  </div>
-                  </Col>
-                  </Row>
+                    <Row>
+                      <Col>
+                        <div>
+                          <Link to="/home">
+                            <Button
+                              className="button mb-4"
+                              onClick={props.onClick}
+                              style={{ width: "10rem" }}
+                            >
+                              Next
+                            </Button>
+                          </Link>
+                        </div>
+                      </Col>
+                    </Row>
                   </div>
                 </div>
               </div>

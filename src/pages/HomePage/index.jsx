@@ -1,4 +1,4 @@
-import React,{ useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import './index.css'
 import TopicMe from '../../components/TopicMe'
@@ -13,14 +13,14 @@ import { getComment } from '../../redux/action/comment'
 function HomePage() {
     const dispatch = useDispatch()
     const {listPost, loading} = useSelector((state) => state.posts);
-    const {listComment} = useSelector((state) => state.comments);
+    // const {listComment} = useSelector((state) => state.comments);
     
     useEffect(() => {
         dispatch(getPost())
-        dispatch(getComment('61262a29c4a06af9d724211a'))
+        // dispatch(getComment('61262a29c4a06af9d724211a'))
     }, [dispatch]);
 
-    console.log('comment',listComment)
+    // console.log('comment',listComment)
     console.log('data', listPost)
 
     return (
@@ -37,15 +37,15 @@ function HomePage() {
                                 <p className="my-auto text-secondary" style={{ fontSize: '18px', fontWeight: '400' }}>See All Events</p>
                             </div>
                             <div className="wrapper mx-auto mb-5">
-                            {listPost?.filter(post => post.type[0] === 'event').filter((post, idx) => idx < 10).map((post, id) => (
-                                <SmallCardMyEvent key={id} title={post.title}/>
-                            ))}
+                                {listPost?.filter(post => post.type[0] === 'event').filter((post, idx) => idx < 10).map((post, id) => (
+                                    <SmallCardMyEvent key={id} title={post.title} />
+                                ))}
                             </div>
                         </div>
 
                         <div>
                             {listPost?.filter(post => post.type[0] === 'announcement').map((post, id) => (
-                                <LargeCardMyEvent key={id} content={post.content} image={post.image} interest={post.interest} location={post.location} like={post.like.length} userName={post.user_id.fullname} />
+                                <LargeCardMyEvent key={id} contentCard={post.content} image={post.image} interest={post.interest} location={post.location} like={post.like.length} userName={post.user_id.fullname} idPost={post.id}/>
                             ))}
                             <div className="text-center my-5">
                                 <MyPagination />
