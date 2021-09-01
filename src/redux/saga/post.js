@@ -18,6 +18,7 @@ function* getPosts(actions) {
             type: GET_POST_SUCCESS,
             payload: res.data.data,
         });
+        // yield window.location.replace("/home")<
     } catch (err) {
         yield put({
             type: GET_POST_FAIL,
