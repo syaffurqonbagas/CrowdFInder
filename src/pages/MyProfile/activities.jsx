@@ -25,7 +25,8 @@ function Activities(props) {
         <div>
             {show ?
                 [
-                    postbyid.filter((item) => item.type[0] === "event").map((item) => (<LargeCrowdFinderCard username={item.user_id.fullname} title={item.title} content={item.content} action={() => setShow(false)} eventId={item.id} />)),
+                    postbyid.filter((item) => item.type[0] === "event").map((item) => (<LargeCrowdFinderCard username={item.user_id.fullname} title={item.title} content={item.content}
+                        action={() => setShow(false)} eventId={item.id} />)),
                     postbyid.map((item) => (<LargeCardMyEvent contentCard={item.content} image={item.image} interest={item.interest} location={item.location} like={item.like.length} userName={item.user_id.fullname} idPost={item.id} />)),
                     <div className="pagination justify-content-center mt-5">
                         <MyPagination />
