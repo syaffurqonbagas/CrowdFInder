@@ -35,13 +35,13 @@ function* Register(actions) {
       .then((response) => {
         localStorage.setItem("user", response.data.token);
       });
+    yield window.location.replace("/signin");
     yield put({
       type: REGISTER_SUCCESS,
       payload: res.data,
       loading: false,
       error: null,
     });
-    yield window.location.replace("/signin");
   } catch (error) {
     yield put({
       type: REGISTER_FAIL,
