@@ -1,22 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import AvatarCard from '../../components/AvatarCard';
 import AvatarManageCm from '../../components/AvatarManageCM';
 
 import Hero from '../../components/Hero';
+import { getPostById } from '../../redux/action/postById';
 import About from './about';
 import Event from './Event';
 import './index.scss'
 import Post from './Post';
 
 function ManageComunity(props) {
+    const dispatch = useDispatch()
     const user = useSelector((state) => state.userData.user)
     const [isAbout, setIsAbout] = useState(1)
 
     const toggle = (index) => {
         setIsAbout(index);
     }
+
+    useEffect(() => {
+        dispatch(getPostById(1, user.id))
+        console.log(user.id)
+    })
+
 
     return (
         <Container>

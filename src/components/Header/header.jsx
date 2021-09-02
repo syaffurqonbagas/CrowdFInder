@@ -14,6 +14,7 @@ import {
 import LogoCrowdFinder from "../../Asset/LogoCrowdFinder";
 import "./header.css";
 import { Link } from "react-router-dom";
+import { getPostById } from "../../redux/action/postById";
 
 
 const Header = () => {
@@ -29,9 +30,10 @@ const Header = () => {
 
   useEffect(() => {
     dispatch(getCurrentUser());
+    dispatch(getPostById(1, user.id))
   }, [])
 
-
+  console.log("hmmm", user.id)
 
   //  console.log('testing',user)
   return (

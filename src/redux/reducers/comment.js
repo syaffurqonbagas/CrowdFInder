@@ -19,9 +19,9 @@ const comments = (state = initialState, action) => {
         case GET_COMMENT_SUCCESS:
             return {
                 ...state,
-                listComment : [...payload, ...state.listComment],
-                loading : false,
-                error : null,
+                listComment: [...payload, ...state.listComment],
+                loading: false,
+                error: null,
             };
         case GET_COMMENT_FAIL:
             return {
@@ -29,25 +29,25 @@ const comments = (state = initialState, action) => {
                 loading: false,
                 error: error,
             }
-        case POST_COMMENT_BEGIN :
+        case POST_COMMENT_BEGIN:
             return {
                 ...state,
-                loading : true,
+                loading: true,
             };
-        case POST_COMMENT_SUCCESS :
+        case POST_COMMENT_SUCCESS:
             return {
                 ...state,
-                listComment : payload,
-                loading : false,
-                error : null,
+                listComment: payload,
+                loading: false,
+                error: null,
             };
-        case POST_COMMENT_FAIL :
+        case POST_COMMENT_FAIL:
             return {
                 ...state,
-                loading : false,
-                error : error,
+                loading: false,
+                error: error,
             }
-        default :
+        default:
             return {
                 ...state,
             };

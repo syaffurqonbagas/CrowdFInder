@@ -43,7 +43,7 @@ function LargeCrowdFinderCard(props) {
     return (
 
         <>
-            <div className="divider my-3 mb-3"></div>
+            <div className="divider my-3 mb-5"></div>
             <div className="head-container">
 
                 <div className="d-flex">

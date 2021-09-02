@@ -3,7 +3,7 @@ import { Card, Image, Button, Container } from "react-bootstrap"
 import user from '../../image/user.png'
 import './index.scss'
 
-function ListCardPeople() {
+function ListCardPeople(props) {
     return (
         <div className='pb-3'>
             <Card className='ListCard' style={{ borderRadius: '10px' }}>
@@ -13,7 +13,7 @@ function ListCardPeople() {
                             <img src={user} />
                         </div>
                         <div className="user-title ms-4">
-                            <h5>Siska kohl</h5>
+                            <h5>{props.fullname}</h5>
                             <p>Comunity Manager</p>
                         </div>
                     </div>

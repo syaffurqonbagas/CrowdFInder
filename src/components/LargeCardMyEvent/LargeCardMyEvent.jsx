@@ -70,7 +70,7 @@ function LargeCardMyEvent(props) {
     // console.log('listcomment', listComment)
     return (
         <>
-            <div className="divider mt-5 mb-5"></div>
+            <div className="divider  my-3 mb-5"></div>
             <div className="headContainer">
 
                 <div onClick={action} className="d-flex">

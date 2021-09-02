@@ -8,6 +8,7 @@ import LargeCardMyEvent from '../../components/LargeCardMyEvent/LargeCardMyEvent
 import MyPagination from '../../components/MyPagination/MyPagination'
 import { getPost } from '../../redux/action/post'
 import { getComment } from '../../redux/action/comment'
+import { getPostById } from '../../redux/action/postById'
 
 
 function HomePage() {
@@ -15,7 +16,6 @@ function HomePage() {
     const { listPost, loading } = useSelector((state) => state.posts);
     useEffect(() => {
         dispatch(getPost())
-
 
     }, [dispatch]);
 

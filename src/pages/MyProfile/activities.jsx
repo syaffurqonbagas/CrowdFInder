@@ -15,9 +15,6 @@ function Activities(props) {
     const dispatch = useDispatch(true)
     const [show, setShow] = useState(true)
 
-    useEffect(() => {
-        dispatch(getPostById(1, user.id))
-    }, [dispatch])
 
     console.log('ini type', postbyid[0].id)
 
