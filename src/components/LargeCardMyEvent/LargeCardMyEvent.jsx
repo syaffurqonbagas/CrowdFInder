@@ -8,7 +8,7 @@ import user from '../../image/user.png'
 // import image from '../../img/largeCardDummy.jpeg'
 import { getComment, postComment } from "../../redux/action/comment";
 import { putLike } from "../../redux/action/like";
-import { getPost } from "../../redux/action/post";
+import { deletePost, getPost } from "../../redux/action/post";
 
 
 function LargeCardMyEvent(props) {
@@ -16,14 +16,25 @@ function LargeCardMyEvent(props) {
         contentCard, image, interest, location, like, comment, userName, idPost
     } = props;
 
+    const [state, setState] = useState({
+        contentCard: contentCard,
+        image: image,
+        interest: interest,
+        location: location,
+        like: like,
+        comment: comment,
+        userName: userName,
+        idPost: idPost,
+    })
+
     const dispatch = useDispatch();
     const {listComment, loading} = useSelector((state) => state.comments);
 
     useEffect(() => {
-        dispatch(getComment(idPost))
+        dispatch(getComment(state.idPost))
     }, [dispatch]);
 
-    //post comment
+    //post comment========================================
     const [body, setBody] = useState({
         content : "",
     });
@@ -34,28 +45,25 @@ function LargeCardMyEvent(props) {
 
     const handlePostComment = (e) => {
         e.preventDefault();
-        dispatch(postComment(idPost ,body));
+        dispatch(postComment(state.idPost ,body));
       };
 
-    //like post
-    const likes = useSelector((state) => state.likes.like);
-
+    //like post===========================================
     const handleLikes = (e) => {
-        // e.preventDefault();
         dispatch(putLike(idPost))
     }
 
-    useEffect(() => {
-        dispatch(getPost(like))
-    }, [dispatch, like])
-    // console.log('ini id post',idPost)
+    //delete post=========================================
+    const handleDelete = () => {
+        dispatch(deletePost(idPost))
+    }
 
-    // hide and show ellipsis menu
+    // hide and show ellipsis menu========================
     const [show, setShow] = useState(false);
     const ref = useRef();
     useOnClickOutside(ref, () => setShow(false));
 
-    //hide and show comment
+    //hide and show comment================================
     const [showComment, setShowComment] = useState(false);
     const commentRef = useRef();
     const toggleComment = () => {
@@ -85,8 +93,8 @@ function LargeCardMyEvent(props) {
                                 tabIndex="0"></i>
                             {show && (
                                 <div className="card position-absolute text-center stylingHover" style={{ width: '7rem' }}>
-                                    <div>Edit</div>
-                                    <div>Delete</div>
+                                    <label>Edit</label>
+                                    <label onClick={() => handleDelete()}>Delete</label>
                                 </div>
                             )}
                         </div>
@@ -96,10 +104,10 @@ function LargeCardMyEvent(props) {
                                 className="my-auto"
                                 style={{ fontSize: "20px", fontWeight: "400" }}
                             >
-                                {userName}
+                                {state.userName}
                             </label>
                             <label className="headTextBadge rounded-pill ms-3 me-auto">
-                                {interest}
+                                {state.interest}
                             </label>
                             <label
                                 style={{
@@ -108,7 +116,7 @@ function LargeCardMyEvent(props) {
                                     color: "#828282",
                                 }}
                             >
-                                <i class="fa fa-map-marker ms-auto me-0 fa-xs"></i> {location}
+                                <i class="fa fa-map-marker ms-auto me-0 fa-xs"></i> {state.location}
                             </label>
                         </div>
                         <label
@@ -123,17 +131,17 @@ function LargeCardMyEvent(props) {
                     <Card>
                         <div className="w-75 ms-3 mt-3 mb-4">
                             <p className="font-size">
-                               {contentCard}
+                               {state.contentCard}
                             </p>
-                            <img className="imageSize" src={image} alt="" />
+                            <img className="imageSize" src={state.image} alt="" />
                         </div>
 
                         <div className="btnGroup d-inline-flex">
                             <button className="button-card flex-grow-1" onClick={() => handleLikes()}>
-                                <i className="fa fa-thumbs-o-up" ></i>Like({like})
+                                <i className="fa fa-thumbs-o-up" ></i>Like({state.like})
                             </button>
                             <button className="button-card flex-grow-1" onClick={() => toggleComment()}>
-                                <i className="fa fa-commenting-o"></i>Comment({comment})
+                                <i className="fa fa-commenting-o"></i>Comment({state.comment})
                             </button>
                             <button className="button-card flex-grow-1">
                                 <i className="fa fa-share-alt"></i>Share

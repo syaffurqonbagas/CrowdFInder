@@ -1,4 +1,4 @@
-import { GET_POST_BEGIN } from "./type";
+import { GET_POST_BEGIN, DELETE_POST_BEGIN } from "./type";
 
 export const getPost = (page = 1) => {
     return {
@@ -7,4 +7,10 @@ export const getPost = (page = 1) => {
     };
   };
 
+  export const deletePost = (id) => {
+    return {
+      type: DELETE_POST_BEGIN,
+      id,
+    };
+  };
 

@@ -1,4 +1,11 @@
-import { GET_POST_BEGIN, GET_POST_SUCCESS, GET_POST_FAIL } from "../action/type";
+import { 
+    GET_POST_BEGIN, 
+    GET_POST_SUCCESS, 
+    GET_POST_FAIL, 
+    DELETE_POST_BEGIN, 
+    DELETE_POST_SUCCESS, 
+    DELETE_POST_FAIL 
+} from "../action/type";
 
 const initialState = {
     listPost : [],
@@ -23,6 +30,24 @@ const posts = (state = initialState, action) => {
                 error : null,
             };
         case GET_POST_FAIL :
+            return {
+                ...state,
+                loading : false,
+                error : error,
+            }
+        case DELETE_POST_BEGIN :
+            return {
+                ...state,
+                loading : true,
+            };
+        case DELETE_POST_SUCCESS :
+            return {
+                ...state,
+                listPost : payload,
+                loading : false,
+                error : null,
+            };
+        case DELETE_POST_FAIL :
             return {
                 ...state,
                 loading : false,
