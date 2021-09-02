@@ -29,29 +29,8 @@ function* getPosts(actions) {
     }
 };
 
-function* getPostById(action) {
-    const Token = localStorage.getItem('user');
-    const { page, id } = action;
-    try {
-        const res = yield axios.get(`${BASE_URL_CROWDFINDER}/post/user/${id}?page=${page}&limit=0`, { headers: { Authorization: `Bearer ${Token}` } });
-        yield put({
-            type: GET_POST_BY_ID_SUCCESS,
-            payload: res.data.data
-        });
-    }
-    catch (error) {
-        yield put({
-            type: GET_POST_BY_ID_FAIL,
-            error: error
-        })
-    }
-}
-
 
 export function* watchGetPosts() {
     yield takeEvery(GET_POST_BEGIN, getPosts);
 }
 
-export function* watchGetPostById() {
-    yield takeEvery(GET_POST_BY_ID_BEGIN, getPostById)
-}

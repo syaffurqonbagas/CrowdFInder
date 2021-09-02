@@ -5,6 +5,7 @@ import postsId from "./postById";
 import events from "./event";
 import announcements from "./announcement";
 import comments from "./comment";
+import likes from "./like";
 
 export default combineReducers({
     userData,
@@ -13,4 +14,5 @@ export default combineReducers({
     events,
     announcements,
     comments,
+    likes,
 });

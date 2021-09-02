@@ -8,18 +8,20 @@ import { RiGroupFill } from 'react-icons/ri'
 import { TiLocation } from 'react-icons/ti'
 
 import './index.css'
+import { useSelector } from "react-redux";
 
-function EventDetailCard() {
+function EventDetailCard(props) {
+
     return (
 
         <>
-            <div className="head-container">
+            <div onClick={props.action} className="head-container">
                 <div>
                     <Card>
                         <div className="me-3 ms-3 mt-3 mb-4">
                             <div className="image-hero" style={{ backgroundImage: `url(${post})` }}>
                             </div>
-                            <h5 className='title-event my-4'>Festival Makanan Nusantara (Bintang tamu 3 juri masterchef)</h5>
+                            <h5 className='title-event my-4'>{props.title}</h5>
                             <Row className="time-event my-3 d-flex ">
                                 <Col xs={4}>
                                     <div className="calender d-flex align-items-center">
@@ -48,8 +50,8 @@ function EventDetailCard() {
 
                             <h5 className='title-event my-4'>Description</h5>
 
-                            <p className="content-text mb-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed quaerat commodi reprehenderit similique ad soluta omnis nesciunt minima, sequi numquam et officia suscipit iusto minus libero ea reiciendis distinctio odit?</p>
-                            <p className="content-text mb-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed quaerat commodi reprehenderit similique ad soluta omnis nesciunt minima, sequi numquam et officia suscipit iusto minus libero ea reiciendis distinctio odit?</p>
+                            <p className="content-text mb-3">{props.content}</p>
+
 
                             <Button className='my-4' style={{ width: '100%' }} variant="secondary" size="lg">
                                 Join This Event

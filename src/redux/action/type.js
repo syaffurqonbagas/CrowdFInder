@@ -55,6 +55,10 @@ export const POST_COMMENT_BEGIN = "POST_COMMENT_BEGIN"
 export const POST_COMMENT_SUCCESS = "POST_COMMENT_SUCCESS"
 export const POST_COMMENT_FAIL = "POST_COMMENT_FAIL"
 
+export const PUT_LIKE_BEGIN = "PUT_LIKE_BEGIN"
+export const PUT_LIKE_SUCCESS = "PUT_LIKE_SUCCESS"
+export const PUT_LIKE_FAIL = "PUT_LIKE_FAIL"
+
 export const BASE_URL_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/api"
 export const GET_USER_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/api/user/me"
 export const GET_USER_DETAIL_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/api/user"
