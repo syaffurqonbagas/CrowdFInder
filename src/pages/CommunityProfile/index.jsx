@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import AvatarCard from '../../components/AvatarCard';
 import AvatarComunity from '../../components/AvatarComunity';
-
+import { useSelector } from 'react-redux';
 import Hero from '../../components/Hero';
 import About from './about';
 import Event from './Event';
@@ -10,7 +10,7 @@ import './index.scss'
 import Post from './Post';
 
 function ComunityProfile(props) {
-
+    const user = useSelector((state) => state.userData.user)
     const [isAbout, setIsAbout] = useState(1)
 
     const toggle = (index) => {
@@ -23,7 +23,7 @@ function ComunityProfile(props) {
                 <Hero />
                 <Row>
                     <Col xl={4}>
-                        <AvatarComunity />
+                        <AvatarComunity comunityname={user.username} location={user.location} />
                     </Col>
                     <Col>
                         <div className="button-menu d-flex">

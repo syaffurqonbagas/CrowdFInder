@@ -9,8 +9,9 @@ import { Link } from "react-router-dom";
 
 import './index.css'
 
-function LargeCrowdFinderCard() {
+function LargeCrowdFinderCard(props) {
     const [show, setShow] = useState(false);
+    const eventid = props
     const ref = useRef();
     useOnClickOutside(ref, () => setShow(false));
 
@@ -42,7 +43,7 @@ function LargeCrowdFinderCard() {
     return (
 
         <>
-            <div className="divider my-3 mb-3"></div>
+            <div className="divider my-3 mb-5"></div>
             <div className="head-container">
 
                 <div className="d-flex">
@@ -64,7 +65,7 @@ function LargeCrowdFinderCard() {
                         </div>
                         <div className="headText-main d-flex">
                             <div className="my-auto">
-                                <h5 className='me-3' style={{ fontSize: '20px', fontWeight: '400' }}>Inoki Ardhi</h5></div>
+                                <h5 className='me-3' style={{ fontSize: '20px', fontWeight: '400' }}>{props.username}</h5></div>
                             <h5 style={{ fontSize: '20px', fontWeight: '400' }}>Posted an event</h5>
                         </div>
                         <p style={{ fontSize: '16px', fontWeight: '400', color: '#4F4F4F' }}>1 hours ago</p>
@@ -76,7 +77,7 @@ function LargeCrowdFinderCard() {
                         <div className="me-3 ms-3 mt-3 mb-4">
                             <div className="image-hero" style={{ backgroundImage: `url(${post})` }}>
                             </div>
-                            <h5 className='title-event my-3'>Festival Makanan Nusantara (Bintang tamu 3 juri masterchef)</h5>
+                            <h5 className='title-event my-3'>{props.title}</h5>
                             <Row className="time-event my-3 d-flex ">
                                 <Col xs={4}>
                                     <div className="calender d-flex align-items-center">
@@ -89,14 +90,14 @@ function LargeCrowdFinderCard() {
                                     </div>
                                 </Col>
                             </Row>
-                            <p className="fontSize">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed quaerat commodi reprehenderit similique ad soluta omnis nesciunt minima, sequi numquam et officia suscipit iusto minus libero ea reiciendis distinctio odit?</p>
+                            <p className="fontSize">{props.content}</p>
                             <div className="people-event mt-3 d-flex justify-content-between ">
                                 <div className="time-event  d-flex align-items-center ">
                                     <h4> <RiGroupFill className='me-4' style={{ color: '#BDBDBD' }} /></h4> <h5>129 people attend this</h5>
                                 </div>
 
                                 <div className="time d-flex align-items-center ">
-                                    <h5 >  <Link style={{ color: '#D82671', fontWeight: '400', fontSize: '16px' }} to="/eventdetail">See Detail</Link></h5>
+                                    <h5 style={{ color: '#D82671', fontWeight: '400', fontSize: '16px', cursor: 'pointer' }} onClick={props.action} >  See Detail</h5>
                                 </div>
                             </div>
                         </div>

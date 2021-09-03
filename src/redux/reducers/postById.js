@@ -1,39 +1,39 @@
-import { POST_EVENT_BEGIN, POST_EVENT_SUCCESS, POST_EVENT_FAIL } from "../action/type";
-
+import { GET_POST_BY_ID_SUCCESS, GET_POST_BY_ID_BEGIN, GET_POST_BY_ID_FAIL } from "../action/type";
 
 const initialState = {
-    listEvent: [],
+    postbyid: [],
     loading: false,
     error: null,
+
 }
 
-const events = (state = initialState, action) => {
+const postsId = (state = initialState, action) => {
     const { type, payload, error } = action;
     switch (type) {
-        case POST_EVENT_BEGIN:
+
+        case GET_POST_BY_ID_BEGIN:
             return {
                 ...state,
                 loading: true,
             };
-        case POST_EVENT_SUCCESS:
+        case GET_POST_BY_ID_SUCCESS:
             return {
                 ...state,
-                listEvent: payload,
+                postbyid: payload,
                 loading: false,
                 error: null,
-            };
-        case POST_EVENT_FAIL:
+            }
+        case GET_POST_BY_ID_FAIL:
             return {
                 ...state,
                 loading: false,
                 error: error,
-            };
+            }
         default:
             return {
                 ...state,
             };
     }
-
 }
 
-export default events
+export default postsId;

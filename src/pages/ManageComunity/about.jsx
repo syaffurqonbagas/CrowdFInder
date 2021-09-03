@@ -5,9 +5,12 @@ import ListCardPeople from '../../components/ListCardPeople';
 import { Link } from "react-router-dom"
 import MyPagination from '../../components/MyPagination/MyPagination';
 import { InputGroup, Button, FormControl } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 
 function About(props) {
+    const { user } = useSelector((state) => state.userData)
     const [show, setShow] = useState(false);
+
 
     return (
         <div>
@@ -29,7 +32,8 @@ function About(props) {
                 <FormControl aria-label="Example text with two button addons" />
             </InputGroup> : null}
 
-            <ListCardPeople />
+            {user.followers?.map((item) => (<ListCardPeople fullname={item.fullname} />))}
+
 
 
             <div className="pagination justify-content-center mt-5">
