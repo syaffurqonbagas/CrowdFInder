@@ -7,31 +7,32 @@ import { Form } from 'react-bootstrap'
 function FormCreateAnnouncementPage() {
     const dispatch = useDispatch()
     const announcement = useSelector((state) => state.announcements.listAnnouncement);
-    // const [title, setTitle] = useState();
-    // const [content, setContent] = useState();
-    // const [interest, setInterest] = useState();
-    // const [image, setImage] = useState();
+
     const [state, setState] = useState({
-        title : "",
         content : "",
         interest : "",
-        image : ""
+        image : "",
     });
 
-    
+    let formData = new FormData();
+
+    const imageFile = (e) => {
+        console.log(e.target.files[0]);
+        formData.append('file', e.target.files[0]);
+        setState({...state, image: formData});
+        
+    }
+
     const handlePostAnnouncement = (e) => {
         e.preventDefault();
         const data = state;
-        if(dispatch(postAnnouncement(data))) {
-            alert('waw anda berhasil');
-            window.location.replace("/home");
-        };
-        
+        dispatch(postAnnouncement(data))
     };
 
     console.log(state);
 
-    
+ 
+
     // const changeState = (e) => {
     //     setState({
     //         ...state,
@@ -56,13 +57,8 @@ function FormCreateAnnouncementPage() {
                    title={(e) => setState({...state, title: e.target.value})}
                    content={(e) => setState({...state, content: e.target.value})}
                    interest={(e) => setState({...state, interest: e.target.value})}
-                   image={(e) => setState({...state, image: e.target.value})}
+                   image={imageFile}
                    onClick={(e) => handlePostAnnouncement(e)}/>
-                </div>
-                <div className="input-image">
-                    <Form.Group controlId="formFile" className="mb-3 ">
-                        <Form.Control type="file" />
-                    </Form.Group>
                 </div>
             </div>
         </>

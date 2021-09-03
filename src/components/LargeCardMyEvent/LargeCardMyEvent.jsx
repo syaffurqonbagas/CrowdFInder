@@ -8,22 +8,35 @@ import user from '../../image/user.png'
 // import image from '../../img/largeCardDummy.jpeg'
 import { getComment, postComment } from "../../redux/action/comment";
 import { putLike } from "../../redux/action/like";
-import { getPost } from "../../redux/action/post";
+import { deletePost, getPost } from "../../redux/action/post";
+import ReactTimeAgo from 'react-time-ago'
 
 
 function LargeCardMyEvent(props) {
     const {
-        contentCard, image, interest, location, like, comment, userName, idPost, action
+        contentCard, image, time, interest, location, like, comment, userName, idPost, action
     } = props;
+
+    const [state, setState] = useState({
+        contentCard: contentCard,
+        image: image,
+        time: time,
+        interest: interest,
+        location: location,
+        like: like,
+        comment: comment,
+        userName: userName,
+        idPost: idPost,
+    })
 
     const dispatch = useDispatch();
     const { listComment, loading } = useSelector((state) => state.comments);
 
     useEffect(() => {
-        dispatch(getComment(idPost))
+        dispatch(getComment(state.idPost))
     }, [dispatch]);
 
-    //post comment
+    //post comment========================================
     const [body, setBody] = useState({
         content: "",
     });
@@ -35,27 +48,31 @@ function LargeCardMyEvent(props) {
 
     const handlePostComment = async (e) => {
         e.preventDefault();
-        await dispatch(postComment(idPost, body));
-        // await dispatch(getComment(idPost))
-    };
+        dispatch(postComment(state.idPost ,body));
+      };
+      
 
-    //like post
+    //like post===========================================
     const likes = useSelector((state) => state.likes.like);
-
     const handleLikes = async (e) => {
-        // e.preventDefault();
         await dispatch(putLike(idPost))
         await dispatch(getPost())
+    };
+
+    //delete post=========================================
+    const handleDelete = async () => {
+       await dispatch(deletePost(idPost))
+       await dispatch(postComment(idPost, body));
     }
 
     // console.log('ini id post',idPost)
 
-    // hide and show ellipsis menu
+    // hide and show ellipsis menu========================
     const [show, setShow] = useState(false);
     const ref = useRef();
     useOnClickOutside(ref, () => setShow(false));
 
-    //hide and show comment
+    //hide and show comment================================
     const [showComment, setShowComment] = useState(false);
     const commentRef = useRef();
     const toggleComment = () => {
@@ -75,7 +92,7 @@ function LargeCardMyEvent(props) {
 
                 <div onClick={action} className="d-flex">
                     <div className="imageAvatar mb-4 me-2">
-                        <img src={user} />
+                        <img src={`https://ui-avatars.com/api/?name=${state?.userName}&background=random&length=1&rounded=true&size=35`} />
                     </div>
                     <div className="headText container-fluid d-block mb-2">
 
@@ -85,8 +102,8 @@ function LargeCardMyEvent(props) {
                                 tabIndex="0"></i>
                             {show && (
                                 <div className="card position-absolute text-center stylingHover" style={{ width: '7rem' }}>
-                                    <div>Edit</div>
-                                    <div>Delete</div>
+                                    <label>Edit</label>
+                                    <label onClick={() => handleDelete()}>Delete</label>
                                 </div>
                             )}
                         </div>
@@ -96,10 +113,10 @@ function LargeCardMyEvent(props) {
                                 className="my-auto"
                                 style={{ fontSize: "20px", fontWeight: "400" }}
                             >
-                                {userName}
+                                {state.userName}
                             </label>
                             <label className="headTextBadge rounded-pill ms-3 me-auto">
-                                {interest}
+                                {state.interest}
                             </label>
                             <label
                                 style={{
@@ -108,13 +125,13 @@ function LargeCardMyEvent(props) {
                                     color: "#828282",
                                 }}
                             >
-                                <i className="fa fa-map-marker ms-auto me-0 fa-xs"></i> {location}
+                                <i class="fa fa-map-marker ms-auto me-0 fa-xs"></i> {state.location}
                             </label>
                         </div>
                         <label
                             style={{ fontSize: "16px", fontWeight: "400", color: "#4F4F4F" }}
                         >
-                            1 hours ago
+                            <ReactTimeAgo date={state.time} locale="en-US" />
                         </label>
                     </div>
                 </div>
@@ -123,9 +140,9 @@ function LargeCardMyEvent(props) {
                     <Card>
                         <div className="w-75 ms-3 mt-3 mb-4">
                             <p className="font-size">
-                                {contentCard}
+                               {state.contentCard}
                             </p>
-                            <img className="imageSize" src={image} alt="" />
+                            <img className="imageSize" src={state.image} alt="" />
                         </div>
 
                         <div className="btnGroup d-inline-flex">
@@ -133,7 +150,7 @@ function LargeCardMyEvent(props) {
                                 <i className="fa fa-thumbs-o-up" ></i>Like({like})
                             </button>
                             <button className="button-card flex-grow-1" onClick={() => toggleComment()}>
-                                <i className="fa fa-commenting-o"></i>Comment({comment})
+                                <i className="fa fa-commenting-o"></i>Comment({state.comment})
                             </button>
                             <button className="button-card flex-grow-1">
                                 <i className="fa fa-share-alt"></i>Share

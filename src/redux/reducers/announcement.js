@@ -1,6 +1,5 @@
 import { POST_ANNOUNCEMENT_BEGIN, POST_ANNOUNCEMENT_SUCCESS, POST_ANNOUNCEMENT_FAIL } from "../action/type";
 import { UPDATE_ANNOUNCEMENT_BEGIN, UPDATE_ANNOUNCEMENT_SUCCESS, UPDATE_ANNOUNCEMENT_FAIL } from "../action/type";
-import { DELETE_ANNOUNCEMENT_BEGIN, DELETE_ANNOUNCEMENT_SUCCESS, DELETE_ANNOUNCEMENT_FAIL } from "../action/type";
 
 
 const initialState = {
@@ -44,25 +43,6 @@ const announcements = (state = initialState, action) => {
                 error : null
             };
         case UPDATE_ANNOUNCEMENT_FAIL:
-            return {
-                ...state,
-                loading : false,
-                error : error,
-            };
-
-        case DELETE_ANNOUNCEMENT_BEGIN:
-            return {
-                ...state,
-                loading : true
-            };
-        case DELETE_ANNOUNCEMENT_SUCCESS:
-            return {
-                ...state,
-                listAnnouncement : payload,
-                loading : false,
-                error : null
-            };
-        case DELETE_ANNOUNCEMENT_FAIL:
             return {
                 ...state,
                 loading : false,
