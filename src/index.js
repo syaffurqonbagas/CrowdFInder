@@ -7,6 +7,9 @@ import store from "./redux/store";
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './custom.scss'
+import TimeAgo from 'javascript-time-ago'
+import en from 'javascript-time-ago/locale/en'
+TimeAgo.addDefaultLocale(en)
 
 ReactDOM.render(
   <React.StrictMode>

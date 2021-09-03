@@ -50,7 +50,7 @@ function HomePage() {
 
                         <div>
                             {listPost.length > 0 && posts?.reverse().filter(post => post.type[0] === 'announcement').map((post, id) => (
-                                <LargeCardMyEvent key={id} contentCard={post.content} image={post.image} interest={post.interest} location={post.user_id.location} like={post.like.length} userName={post.user_id.fullname} idPost={post.id} comment={post.comment.length}/>
+                                <LargeCardMyEvent key={id} contentCard={post.content} image={post.image} time={post.createdAt} interest={post.interest} location={post.user_id.location} like={post.like.length} userName={post.user_id.fullname} idPost={post.id} comment={post.comment.length}/>
                             ))}
                             <div className="text-center my-5">
                                 <MyPagination />

@@ -9,16 +9,18 @@ import user from '../../image/user.png'
 import { getComment, postComment } from "../../redux/action/comment";
 import { putLike } from "../../redux/action/like";
 import { deletePost, getPost } from "../../redux/action/post";
+import ReactTimeAgo from 'react-time-ago'
 
 
 function LargeCardMyEvent(props) {
     const {
-        contentCard, image, interest, location, like, comment, userName, idPost
+        contentCard, image, time, interest, location, like, comment, userName, idPost
     } = props;
 
     const [state, setState] = useState({
         contentCard: contentCard,
         image: image,
+        time: time,
         interest: interest,
         location: location,
         like: like,
@@ -47,15 +49,31 @@ function LargeCardMyEvent(props) {
         e.preventDefault();
         dispatch(postComment(state.idPost ,body));
       };
+      
 
     //like post===========================================
+    const [firstClick, setFirstClick] = useState(true)
     const handleLikes = (e) => {
-        dispatch(putLike(idPost))
-    }
+            if(firstClick) {
+                dispatch(putLike(idPost))
+                setState({...state, like: like + 1});
+                setFirstClick(false)
+                // console.log(state.like)
+            } else {
+                dispatch(putLike(idPost))
+                setState({...state, like: like});
+                setFirstClick(true)
+            }
+    };
+    // const handleUnlikes = (e) => {
+    //     dispatch(putLike(idPost))
+    //         setState({...state, like: like - 1});
+    //         setFirstClick(true)
+    // }
 
     //delete post=========================================
-    const handleDelete = () => {
-        dispatch(deletePost(idPost))
+    const handleDelete = async () => {
+       await dispatch(deletePost(idPost))
     }
 
     // hide and show ellipsis menu========================
@@ -73,6 +91,9 @@ function LargeCardMyEvent(props) {
         setShow(!show);
     };
 
+    //sinceTime=============================================
+  
+
     // console.log('likes', likes)
     // console.log('body gaes', body)
     // console.log('listcomment', listComment)
@@ -83,7 +104,7 @@ function LargeCardMyEvent(props) {
 
                 <div className="d-flex">
                     <div className="imageAvatar mb-4 me-2">
-                        <img src={user} />
+                        <img src={`https://ui-avatars.com/api/?name=${state?.userName}&background=random&length=1&rounded=true&size=35`} />
                     </div>
                     <div className="headText container-fluid d-block mb-2">
 
@@ -122,7 +143,7 @@ function LargeCardMyEvent(props) {
                         <label
                             style={{ fontSize: "16px", fontWeight: "400", color: "#4F4F4F" }}
                         >
-                            1 hours ago
+                            <ReactTimeAgo date={state.time} locale="en-US" />
                         </label>
                     </div>
                 </div>

@@ -42,6 +42,7 @@ function FormCreateAnnouncement(props) {
                             <p className="m-0 flex-grow-1" style={{ fontSize: '18px', fontWeight: '400' }}>What would you like to share today?</p>
                             {/* <div className="headText-badge rounded-pill ms-3">Design</div> */}
                             <select className="MyBadge flex-end" onChange={interest}>
+                                <option></option>
                                 {userInterest?.map((item, index) => (
                                     <option key={index} value={item}>{item}</option>
                                 ))}

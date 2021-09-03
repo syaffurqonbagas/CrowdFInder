@@ -11,7 +11,7 @@ function FormCreateAnnouncementPage() {
     const [state, setState] = useState({
         content : "",
         interest : "",
-        image : ""
+        image : "",
     });
 
     let formData = new FormData();

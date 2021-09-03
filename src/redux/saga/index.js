@@ -1,5 +1,5 @@
 import { all } from "@redux-saga/core/effects";
-import { watchPostAnnouncements } from "./announcement";
+import { watchPostAnnouncements, watchUpdateAnnouncement } from "./announcement";
 import { watchGetComments, watchPostComments } from "./comment";
 import { watchPostEvents } from "./event";
 import { watchDeletePosts, watchGetPosts } from "./post";
@@ -20,6 +20,7 @@ export default function* rootSaga() {
     watchPostComments(),
     watchPutLikes(),
     watchDeletePosts(),
+    watchUpdateAnnouncement(),
     
   ]);
 }

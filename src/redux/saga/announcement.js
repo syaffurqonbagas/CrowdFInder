@@ -40,22 +40,6 @@ function* UpdateAnnouncement (actions, id) {
 
 };
 
-function* DeleteAnnouncement (actions) {
-    const {data} = actions;
-    try {
-        const res = yield axios.delete(`${BASE_URL_CROWDFINDER}/post/:id`, data);
-        yield put ({
-            type : DELETE_ANNOUNCEMENT_SUCCESS,
-            payload : res.data,
-        });
-    } catch (err) {
-        yield put ({
-            type : DELETE_ANNOUNCEMENT_FAIL,
-            error : err,
-        });
-    };
-
-}
 
 export function* watchPostAnnouncements() {
     yield takeEvery(POST_ANNOUNCEMENT_BEGIN, PostAnnouncements);
@@ -65,6 +49,4 @@ export function* watchUpdateAnnouncement() {
     yield takeEvery(UPDATE_ANNOUNCEMENT_BEGIN, UpdateAnnouncement);
 };
 
-export function* watchDeleteAnnouncement() {
-    yield takeEvery(DELETE_ANNOUNCEMENT_BEGIN, DeleteAnnouncement);
-};
+
