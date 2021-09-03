@@ -30,24 +30,24 @@ function LargeCardMyEvent(props) {
 
     const changeComment = (e) => {
         setBody({ ...body, content: e.target.value });
+
     };
 
-    const handlePostComment = (e) => {
+    const handlePostComment = async (e) => {
         e.preventDefault();
-        dispatch(postComment(idPost, body));
+        await dispatch(postComment(idPost, body));
+        // await dispatch(getComment(idPost))
     };
 
     //like post
     const likes = useSelector((state) => state.likes.like);
 
-    const handleLikes = (e) => {
+    const handleLikes = async (e) => {
         // e.preventDefault();
-        dispatch(putLike(idPost))
+        await dispatch(putLike(idPost))
+        await dispatch(getPost())
     }
 
-    useEffect(() => {
-        dispatch(getPost(like))
-    }, [dispatch, like])
     // console.log('ini id post',idPost)
 
     // hide and show ellipsis menu
@@ -80,7 +80,7 @@ function LargeCardMyEvent(props) {
                     <div className="headText container-fluid d-block mb-2">
 
                         <div ref={ref} className="d-flex justify-content-end m-0 positionRelative">
-                            <i class="fa fa-ellipsis-h"
+                            <i className="fa fa-ellipsis-h"
                                 onClick={() => toggleDropDown()}
                                 tabIndex="0"></i>
                             {show && (
@@ -108,7 +108,7 @@ function LargeCardMyEvent(props) {
                                     color: "#828282",
                                 }}
                             >
-                                <i class="fa fa-map-marker ms-auto me-0 fa-xs"></i> {location}
+                                <i className="fa fa-map-marker ms-auto me-0 fa-xs"></i> {location}
                             </label>
                         </div>
                         <label
@@ -161,8 +161,8 @@ function LargeCardMyEvent(props) {
                             <Link className="text-decoration-none text-secondary">Load more comment</Link>
                         </div> */}
 
-                        {listComment.length > 0 && listComment?.filter((item) => item.post_id === idPost).map(item => (
-                            <div className="commentCard py-3 px-3">
+                        {listComment.length > 0 && listComment?.filter((item) => item.post_id === idPost).map((item, idx) => (
+                            <div key={idx} className="commentCard py-3 px-3">
                                 <div className="d-flex mb-2 fontCircular" style={{ fontWeight: '450', fontSize: '18px' }}>
                                     <div className="flex-grow-1" >{item.user_id.fullname}</div>
                                     <div style={{ color: '#828282' }}>3h ago</div>

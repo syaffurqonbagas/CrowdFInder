@@ -16,9 +16,9 @@ function HomePage() {
     const { listPost, loading } = useSelector((state) => state.posts);
     useEffect(() => {
         dispatch(getPost())
+    }, []);
 
-    }, [dispatch]);
-
+    console.log("ini data", listPost)
     return (
         <>
             <div className="container mt-5">

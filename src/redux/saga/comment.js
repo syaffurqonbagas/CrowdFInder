@@ -25,9 +25,10 @@ function* postComments(actions) {
     const Token = localStorage.getItem('user');
     try {
         const res = yield axios.post(`${BASE_URL_CROWDFINDER}/comment/${post_id}`, body, { headers: { Authorization: `Bearer ${Token}` } });
+        yield console.log("ini masuk", res.data.data)
         yield put({
             type: POST_COMMENT_SUCCESS,
-            payload: res.data,
+            payload: res.data.data
         });
     } catch (err) {
         yield put({

@@ -37,7 +37,7 @@ const comments = (state = initialState, action) => {
         case POST_COMMENT_SUCCESS:
             return {
                 ...state,
-                listComment: payload,
+                listComment: [payload, ...state.listComment],
                 loading: false,
                 error: null,
             };

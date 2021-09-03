@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+
 import { Container, Row, Col } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import AvatarCard from '../../components/AvatarCard';
 import Hero from '../../components/Hero';
+import { getPostById } from '../../redux/action/postById';
 import { getUser } from '../../redux/action/user';
 
 
@@ -17,9 +18,11 @@ import './index.scss'
 function MyProfile(props) {
     const user = useSelector((state) => state.userData.user)
     const [isAbout, setIsAbout] = useState(true)
+    const dispatch = useDispatch()
 
-
-
+    useEffect(() => {
+        dispatch(getPostById(1, user.id))
+    })
 
 
     return (
