@@ -1,25 +1,35 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './index.css'
 import { InputGroup, FormControl, Button, Form, Card } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux';
+import { getCurrentUser } from '../../redux/action/user';
 
 function FormCreateAnnouncement(props) {
     const {title, interest, content, image, onClick} = props;
     const [img, setImg] = useState(null);
     const [error, setError] = useState(false);
 
-    const imageHandler = (e) => {
-        const selected = e.target.files[0];
-        const allowedTypes = ["image/png", "image/jpeg", "image/jpg"];
-        if (selected && allowedTypes.includes(selected.type)) {
-            let reader = new FileReader();
-            reader.onloadend = () => {
-                setImg(reader.result);
-            };
-            reader.readAsDataURL(selected);
-        } else {
-            setError(true);
-        }
-    };
+    // const imageHandler = (e) => {
+    //     const selected = e.target.files[0];
+    //     const allowedTypes = ["image/png", "image/jpeg", "image/jpg"];
+    //     if (selected && allowedTypes.includes(selected.type)) {
+    //         let reader = new FileReader();
+    //         reader.onloadend = () => {
+    //             setImg(reader.result);
+    //         };
+    //         reader.readAsDataURL(selected);
+    //     } else {
+    //         setError(true);
+    //     }
+    // };
+
+    //getUserData=============================================
+    const dispatch = useDispatch();
+    const userInterest = useSelector((state) => state.userData.user.interest);
+
+    useEffect(() => {
+        dispatch(getCurrentUser());
+    }, [dispatch]);
 
     return (
         <>
@@ -32,10 +42,10 @@ function FormCreateAnnouncement(props) {
                             <p className="m-0 flex-grow-1" style={{ fontSize: '18px', fontWeight: '400' }}>What would you like to share today?</p>
                             {/* <div className="headText-badge rounded-pill ms-3">Design</div> */}
                             <select className="MyBadge flex-end" onChange={interest}>
-                                <option value="Design">Design</option>
-                                <option value="Art">Art</option>
-                                <option value="Politic">Politic</option>
-                                <option value="Sport">Sport</option>
+                                <option></option>
+                                {userInterest?.map((item, index) => (
+                                    <option key={index} value={item}>{item}</option>
+                                ))}
                             </select>
                         </div>
                         <InputGroup className="mb-3" controlId="exampleForm.ControlTextarea1">
@@ -48,13 +58,13 @@ function FormCreateAnnouncement(props) {
                         </InputGroup>
 
                         <Card className="imgContainer">
-                            {img ? <img src={img} alt="" /> : <div></div>}
+                            {img && <img src={img} alt="" />}
                             <input
                                 type="file"
                                 name="image-upload"
                                 id="input"
                                 accept="image/*"
-                                onChange={imageHandler}
+                                onChange={image}
                             />
 
                             {img ? (

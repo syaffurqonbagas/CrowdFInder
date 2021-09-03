@@ -1,4 +1,4 @@
-.font{
+.font {
     font-size: 11pt;
 }
 
@@ -6,15 +6,22 @@ label {
     font-size: 0.85rem;
 }
 
-i{
+i {
     color: #BDBDBD;
 }
 
-.sizeCard{
+.sizeCard {
     width: 15rem;
 }
 
-.dateTime{
+.dateTime {
     font-weight: 400;
     font-size: 12px;
+}
+
+.smallcard:hover {
+    background-color: rgba(32, 189, 224, 0.4);
+    color: rgb(88, 88, 88);
+    cursor: pointer;
+
 }

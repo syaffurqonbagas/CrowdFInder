@@ -84,6 +84,7 @@ const userData = (state = initialState, action) => {
         ...state,
         isLoggedIn: true,
         user: payload,
+        loading:false,
         error: null,
       };
     case GET_USER_FAIL:

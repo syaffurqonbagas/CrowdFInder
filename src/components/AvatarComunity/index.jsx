@@ -5,7 +5,7 @@ import './index.scss'
 import user from '../../image/user.png'
 import { TiLocation } from 'react-icons/ti';
 
-function AvatarComunity() {
+function AvatarComunity(props) {
     return (
 
         <Card className='AvatarCard'>
@@ -13,11 +13,11 @@ function AvatarComunity() {
                 <img src={user} />
             </div>
             <Card.Body className='title'>
-                <h4>Comunity Name</h4>
+                <h4>{props.comunityname}</h4>
                 <div className="comunity-badge my-2">
                     <h5>Comunity</h5>
                 </div>
-                <h5><TiLocation />Jakarta</h5>
+                <h5><TiLocation />{props.location}</h5>
             </Card.Body>
 
             <Card.Body className='cardbody d-flex align-items-center flex-column justify-content-lg-end'>

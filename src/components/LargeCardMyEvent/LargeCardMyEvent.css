@@ -168,7 +168,7 @@
     -o-transition: height ease-out 0.4s;
 }
 
-.stylingHover div:hover {
+.stylingHover label:hover {
     color: white;
     background-color: #D82671;
     transition: background-color ease-in 0.3s;

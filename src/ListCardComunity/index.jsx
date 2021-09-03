@@ -3,7 +3,7 @@ import { Card, Image, Button, Container } from "react-bootstrap"
 import user from '../image/user.png'
 import './index.scss'
 
-function ListCardComunity() {
+function ListCardComunity(props) {
     return (
         <div className='pb-3'>
             <Card className='ListCard' style={{ borderRadius: '10px' }}>
@@ -13,8 +13,8 @@ function ListCardComunity() {
                             <img src={user} />
                         </div>
                         <div className="user-title ms-4">
-                            <h5>Comunity Name</h5>
-                            <p>Comunity Manager</p>
+                            <h5>{props.comunityname}</h5>
+                            <p>Comunity</p>
                         </div>
                     </div>
                     <div>

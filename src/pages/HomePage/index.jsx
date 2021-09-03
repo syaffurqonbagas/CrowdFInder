@@ -8,20 +8,26 @@ import LargeCardMyEvent from '../../components/LargeCardMyEvent/LargeCardMyEvent
 import MyPagination from '../../components/MyPagination/MyPagination'
 import { getPost } from '../../redux/action/post'
 import { getComment } from '../../redux/action/comment'
+import { getPostById } from '../../redux/action/postById'
 
 
 function HomePage() {
+    const [posts, setPosts] = useState();
     const dispatch = useDispatch()
-    const {listPost, loading} = useSelector((state) => state.posts);
-    // const {listComment} = useSelector((state) => state.comments);
+    const { listPost, loading } = useSelector((state) => state.posts);
     
     useEffect(() => {
         dispatch(getPost())
-        // dispatch(getComment('61262a29c4a06af9d724211a'))
     }, [dispatch]);
 
+    useEffect(() => {
+        setPosts(listPost)
+    }, [listPost])
+
+
     // console.log('comment',listComment)
-    console.log('data', listPost)
+    // console.log('data', listPost)
+    // console.log("ini data", listPost)
 
     return (
         <>
@@ -37,15 +43,15 @@ function HomePage() {
                                 <p className="my-auto text-secondary" style={{ fontSize: '18px', fontWeight: '400' }}>See All Events</p>
                             </div>
                             <div className="wrapper mx-auto mb-5">
-                                {listPost.length > 0 && listPost?.filter(post => post.type[0] === 'event').filter((post, idx) => idx < 10).map((post, id) => (
+                                {listPost.length > 0 && posts?.reverse().filter(post => post.type[0] === 'event').filter((post, idx) => idx < 10).map((post, id) => (
                                     <SmallCardMyEvent key={id} title={post.title} />
                                 ))}
                             </div>
                         </div>
 
                         <div>
-                            {listPost.length > 0 && listPost?.filter(post => post.type[0] === 'announcement').map((post, id) => (
-                                <LargeCardMyEvent key={id} contentCard={post.content} image={post.image} interest={post.interest} location={post.location} like={post.like.length} userName={post.user_id.fullname} idPost={post.id} comment={post.comment.length}/>
+                            {listPost.length > 0 && posts?.reverse().filter(post => post.type[0] === 'announcement').map((post, id) => (
+                                <LargeCardMyEvent key={id} contentCard={post.content} image={post.image} time={post.createdAt} interest={post.interest} location={post.user_id.location} like={post.like.length} userName={post.user_id.fullname} idPost={post.id} comment={post.comment.length}/>
                             ))}
                             <div className="text-center my-5">
                                 <MyPagination />

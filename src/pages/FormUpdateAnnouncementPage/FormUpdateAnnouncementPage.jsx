@@ -7,10 +7,6 @@ import { Form } from 'react-bootstrap'
 function FormCreateAnnouncementPage() {
     const dispatch = useDispatch()
     const announcement = useSelector((state) => state.announcements.listAnnouncement);
-    // const [title, setTitle] = useState();
-    // const [content, setContent] = useState();
-    // const [interest, setInterest] = useState();
-    // const [image, setImage] = useState();
     const [state, setState] = useState({
         title : "",
         content : "",
@@ -26,22 +22,6 @@ function FormCreateAnnouncementPage() {
     }
 
     console.log(state)
-
-    
-    // const changeState = (e) => {
-    //     setState({
-    //         ...state,
-    //         [e.target.name] : e.target.value
-    //     })
-    // }
-    
-    // const handlePostAnnouncement = (e) => {
-    //     e.preventDefault();
-    //     const data = {...state}
-    //     dispatch(postAnnouncement(data));
-    // }
-
-    // console.log('state', state);
 
     return (
         <>

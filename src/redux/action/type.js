@@ -19,6 +19,10 @@ export const GET_POST_BEGIN = "GET_POST_BEGIN"
 export const GET_POST_SUCCESS = "GET_POST_SUCCESS"
 export const GET_POST_FAIL = "GET_POST_FAIL"
 
+export const GET_POST_BY_ID_BEGIN = "GET_POST_BY_ID_BEGIN"
+export const GET_POST_BY_ID_SUCCESS = "GET_POST_BY_ID_SUCCESS"
+export const GET_POST_BY_ID_FAIL = "GET_POST_BY_ID_FAIL"
+
 export const POST_EVENT_BEGIN = "POST_EVENT_BEGIN"
 export const POST_EVENT_SUCCESS = "POST_EVENT_SUCCESS"
 export const POST_EVENT_FAIL = "POST_EVENT_FAIL"
@@ -60,8 +64,11 @@ export const GET_SEARCH_SUCCESS = "GET_SEARCH_SUCCESS"
 export const GET_SEARCH_FAIL = "GET_SEARCH_FAIL"
 
 export const CLEAR = "CLEAR"
+export const DELETE_POST_BEGIN = "DELETE_POST_BEGIN"
+export const DELETE_POST_SUCCESS = "DELETE_POST_SUCCESS"
+export const DELETE_POST_FAIL = "DELETE_POST_FAIL"
 
 export const BASE_URL_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/api"
 export const GET_USER_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/api/user/me"
 export const GET_USER_DETAIL_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/api/user"
-export const BASE_URL_SEARCH_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/post/search/"
+export const BASE_URL_SEARCH_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/api/post/search/"

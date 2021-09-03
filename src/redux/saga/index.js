@@ -1,16 +1,12 @@
 import { all } from "@redux-saga/core/effects";
-import { watchPostAnnouncements } from "./announcement";
+import { watchPostAnnouncements, watchUpdateAnnouncement } from "./announcement";
 import { watchGetComments, watchPostComments } from "./comment";
 import { watchPostEvents } from "./event";
-import { watchGetPosts, watchSearchFunction } from "./post";
-import {
-  watchRegister,
-  watchLogin,
-  watchLogout,
-  watchGetUser,
-  watchUserUpdate,
-} from "./user";
+import { watchDeletePosts, watchGetPosts } from "./post";
+import { watchGetPostById } from "./postById";
+import { watchRegister, watchLogin, watchLogout, watchGetUser, watchUserUpdate } from "./user";
 import { watchPutLikes } from "./like";
+import {watchSearchFunction} from "./search"
 
 export default function* rootSaga() {
   yield all([
@@ -24,7 +20,11 @@ export default function* rootSaga() {
     watchPostAnnouncements(),
     watchGetComments(),
     watchPostComments(),
+    watchGetPostById(),
     watchPutLikes(),
+    watchDeletePosts(),
+    watchUpdateAnnouncement(),
     watchSearchFunction(),
+
   ]);
 }
