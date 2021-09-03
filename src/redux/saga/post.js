@@ -3,8 +3,11 @@ import {
     GET_POST_BEGIN,
     GET_POST_SUCCESS,
     GET_POST_FAIL,
+    GET_SEARCH_BEGIN,
+    GET_SEARCH_SUCCESS,
+    GET_SEARCH_FAIL
 } from "../action/type";
-import { BASE_URL_CROWDFINDER } from "../action/type";
+import { BASE_URL_CROWDFINDER, BASE_URL_SEARCH_CROWDFINDER } from "../action/type";
 import { put, takeEvery } from "@redux-saga/core/effects";
 
 function* getPosts(actions) {
@@ -27,6 +30,27 @@ function* getPosts(actions) {
     }
 };
 
+function* searchFunction(actions) {
+    const { body } = actions;
+    try {
+        const res = yield axios.get(`${BASE_URL_SEARCH_CROWDFINDER}${body}`);
+        yield put({
+            type: GET_SEARCH_SUCCESS,
+            payload: res.data,
+        });
+    } catch (err) {
+        yield put({
+            type: GET_SEARCH_FAIL,
+            error: err,
+        })
+    }
+};
+
+
 export function* watchGetPosts() {
     yield takeEvery(GET_POST_BEGIN, getPosts);
+}
+
+export function* watchSearchFunction() {
+    yield takeEvery(GET_SEARCH_BEGIN, searchFunction);
 }

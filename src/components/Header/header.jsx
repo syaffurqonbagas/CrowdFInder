@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 import { logout, getCurrentUser } from "../../redux/action/user";
 import { useSelector, useDispatch } from "react-redux";
+// import {searchFunction, clearPost} from "../../redux/action/post"
 import {
   Navbar,
   Container,
@@ -29,7 +30,24 @@ const Header = () => {
     dispatch(getCurrentUser());
   }, [])
 
+  // const searchPost = (e) => {
+  //   if (e.target.value) {
+  //     dispatch(searchFunction(e.target.value));
+  //   } else {
+  //     dispatch(clearPost());
+  //   }
+  // };
 
+  // const debounce = (func, timeout = 500) => {
+  //   let timer;
+  // return (...args)=>{
+  //   clearTimeout(timer);
+  //   timer = setTimeout(()=>{
+  //     func.apply(this, args);
+  //   }, timeout)
+  // }}
+
+  // const debounceSearch = debounce((e) => searchPost(e));
 
 //  console.log('testing',user)
   return (
@@ -51,6 +69,7 @@ const Header = () => {
                         type="search"
                         placeholder="Search"
                         aria-label="Search"
+                        // onChange={(e) => debounceSearch(e)}
                       />
                     </Form>
                   </Nav>

@@ -38,7 +38,7 @@ const Signin = () => {
                 src={Logo}
                 alt="logo"
               />
-              <h2>Let’s make your own crowd!</h2>
+              <h2 style={{ fontSize: "28px" }}>Let’s make your own crowd!</h2>
 
               <img
                 src={PlayStore}
