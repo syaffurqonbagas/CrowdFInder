@@ -41,12 +41,6 @@ export const getCurrentUser = () => {
   }
 }
 
-export const getUserDetail = () => {
-  return {
-    type: GET_USER_ID
-  }
-}
-
 export const updateUser = (interest, fullname, username, email, location, image, bio) => {
   return {
     type: UPDATE_USER_PROFILE,

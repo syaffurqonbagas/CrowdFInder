@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { InputGroup, FormControl, Button, Form, Card } from 'react-bootstrap'
 
 function FormCreateAnnouncement(props) {
-    const {title, interest, content, image, onClick} = props;
+    const { title, interest, content, image, onClick } = props;
     const [img, setImg] = useState(null);
     const [error, setError] = useState(false);
 
@@ -39,11 +39,11 @@ function FormCreateAnnouncement(props) {
                             </select>
                         </div>
                         <InputGroup className="mb-3" controlId="exampleForm.ControlTextarea1">
-                            <FormControl 
-                            as="textarea" 
-                            placeholder="Type something..."
-                            rows={3} 
-                            onChange={content}
+                            <FormControl
+                                as="textarea"
+                                placeholder="Type something..."
+                                rows={3}
+                                onChange={content}
                             />
                         </InputGroup>
 
@@ -62,11 +62,11 @@ function FormCreateAnnouncement(props) {
                                     className="rounded-pill btnStyle-announcement btnCenter"
                                     onClick={() => setImg(null)}
                                 >
-                                    <i class="far fa-image me-2"></i>remove image
+                                    <i className="far fa-image me-2"></i>remove image
                                 </button>
                             ) : (
                                 <label className="rounded-pill btnStyle-announcement btnCenter" htmlFor="input">
-                                    <i class="fa fa-picture-o me-2"></i>Add Image
+                                    <i className="fa fa-picture-o me-2"></i>Add Image
                                 </label>
                             )}
                         </Card>

@@ -9,7 +9,7 @@ import Activities from './activities';
 
 import './index.scss'
 
-function UserProfile(props) {
+function UserProfile() {
 
     const [isAbout, setIsAbout] = useState(true)
 
@@ -19,7 +19,7 @@ function UserProfile(props) {
                 <Hero />
                 <Row>
                     <Col xl={4}>
-                        <UserProfileCard />
+                        <UserProfileCard  />
                     </Col>
                     <Col>
                         <div className="button-menu d-flex">

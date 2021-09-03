@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.css";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Card, Button, InputGroup, FormControl } from "react-bootstrap";
 import { useState } from "react";
 
@@ -42,17 +42,17 @@ function CreateCommunityForm() {
               className="rounded-pill btnStyle centeringBtn"
               onClick={() => setImg(null)}
             >
-              <i class="far fa-image me-2"></i>remove image
+              <i className="far fa-image me-2"></i>remove image
             </button>
           ) : (
             <label
               className="rounded-pill btnStyle centeringBtn"
               htmlFor="input"
             >
-              <i class="far fa-image me-2"></i>Add Image
+              <i className="far fa-image me-2"></i>Add Image
             </label>
           )}
-          {/* <Button className="rounded-pill centeringBtn" htmlFor="input" variant="light"><i class="far fa-image me-2"></i>Add Image</Button> */}
+          {/* <Button className="rounded-pill centeringBtn" htmlFor="input" variant="light"><i className="far fa-image me-2"></i>Add Image</Button> */}
         </Card>
 
         <InputGroup className="mb-3">
@@ -95,7 +95,7 @@ function CreateCommunityForm() {
           />
         </InputGroup>
         <div className="d-flex justify-content-end">
-            <Button variant="secondary">Post event</Button>
+          <Button variant="secondary">Post event</Button>
         </div>
       </div>
     </>

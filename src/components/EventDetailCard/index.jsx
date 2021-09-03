@@ -6,14 +6,24 @@ import post from '../../image/postexamp.jpeg'
 import { AiFillCalendar, AiFillClockCircle } from "react-icons/ai";
 import { RiGroupFill } from 'react-icons/ri'
 import { TiLocation } from 'react-icons/ti'
-
+import { attendEvent } from "../../redux/action/attend";
 import './index.css'
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 function EventDetailCard(props) {
+    const dispatch = useDispatch()
+    const user = useSelector((state) => state.userData.user)
+    const { postbyid, loading } = useSelector((state) => state.postsId);
+
+
+    const handleAttendEvent = async (e) => {
+        e.preventDefault();
+        dispatch(attendEvent(props.postid))
+    };
+
 
     return (
-
         <>
             <div onClick={props.action} className="head-container">
                 <div>
@@ -52,10 +62,12 @@ function EventDetailCard(props) {
 
                             <p className="content-text mb-3">{props.content}</p>
 
+                            {user.id === postbyid[0].user_id.id ?
+                                null : <Button onClick={handleAttendEvent} className='my-4' style={{ width: '100%' }} variant="secondary" size="lg">
+                                    Join This Event
+                                </Button>
+                            }
 
-                            <Button className='my-4' style={{ width: '100%' }} variant="secondary" size="lg">
-                                Join This Event
-                            </Button>
                         </div>
                     </Card>
 

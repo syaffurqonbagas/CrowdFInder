@@ -10,18 +10,18 @@ function FormCreateEvent(props) {
     const [error, setError] = useState(false);
 
     const imageHandler = (e) => {
-    //   const selected = e.target.files[0];
-      const selected = {image};
-      const allowedTypes = ["image/png", "image/jpeg", "image/jpg"];
-      if (selected && allowedTypes.includes(selected.type)) {
-        let reader = new FileReader();
-        reader.onloadend = () => {
-          setImg(reader.result);
-        };
-        reader.readAsDataURL(selected);
-      } else {
-        setError(true);
-      }
+        //   const selected = e.target.files[0];
+        const selected = { image };
+        const allowedTypes = ["image/png", "image/jpeg", "image/jpg"];
+        if (selected && allowedTypes.includes(selected.type)) {
+            let reader = new FileReader();
+            reader.onloadend = () => {
+                setImg(reader.result);
+            };
+            reader.readAsDataURL(selected);
+        } else {
+            setError(true);
+        }
     };
 
     return (
@@ -45,11 +45,11 @@ function FormCreateEvent(props) {
                             className="rounded-pill btnStyle centeringBtn"
                             onClick={() => setImg(null)}
                         >
-                            <i class="fa fa-picture-o  me-2"></i>remove image
+                            <i className="fa fa-picture-o  me-2"></i>remove image
                         </button>
                     ) : (
                         <label className="rounded-pill btnStyle centeringBtn" htmlFor="input">
-                            <i class="fa fa-picture-o  me-2"></i>Add Image
+                            <i className="fa fa-picture-o  me-2"></i>Add Image
                         </label>
                     )}
                 </Card>

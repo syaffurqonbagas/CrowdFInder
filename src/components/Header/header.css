@@ -32,13 +32,13 @@
 
 .Feed-Notification {
     padding-top: 1rem;
-    font-size: 15px;
+    font-size: 18px;
     margin-right: 1rem;
     color: white;
     justify-content: center;
 }
 
 .Feed-Notification p {
-    margin-right: 1rem;
+    margin-top: 10px;
     color: white;
 }
