@@ -20,7 +20,7 @@ const Signin = () => {
       .email("Email is invalid")
       .required("This field is required"),
     password: yup.string()
-    .required("Enter youre password"),
+      .required("Enter youre password"),
   });
 
   if (isLoggendIn) {
@@ -63,9 +63,9 @@ const Signin = () => {
             <div className="box-signin my-auto" style={{ width: "25rem" }}>
               <Formik
                 validationSchema={schema}
-                onSubmit={(values)=>{
-                  const {email, password} = values;
-                  dispatch(Login(email,password))
+                onSubmit={(values) => {
+                  const { email, password } = values;
+                  dispatch(Login(email, password))
                 }}
                 initialValues={{
                   email: "",
@@ -102,7 +102,7 @@ const Signin = () => {
                           isInValid={!!errors.email}
                           placeholder="email@example.com"
                         />
-                        {<p style={{color:"red", fontSize:"15px"}}>{errors.email && touched.email && errors.email}</p>}
+                        {<p style={{ color: "red", fontSize: "15px" }}>{errors.email && touched.email && errors.email}</p>}
                       </Form.Group>
 
                       <Form.Group
@@ -120,7 +120,7 @@ const Signin = () => {
                           isInValid={!!errors.password}
                           placeholder="Password"
                         />
-                        {<p style={{color:"red", fontSize:"15px"}}>{errors.password && touched.password && errors.password}</p>}
+                        {<p style={{ color: "red", fontSize: "15px" }}>{errors.password && touched.password && errors.password}</p>}
                       </Form.Group>
 
                       <Form.Group>
