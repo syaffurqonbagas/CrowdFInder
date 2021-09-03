@@ -15,6 +15,7 @@ function* PostAnnouncements (actions) {
             type : POST_ANNOUNCEMENT_SUCCESS,
             payload : res.data,
         });
+        yield window.location.replace("/home")
     } catch (err) {
         yield put ({
             type : POST_ANNOUNCEMENT_FAIL,

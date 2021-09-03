@@ -10,12 +10,16 @@ import { getComment, postComment } from "../../redux/action/comment";
 import { putLike } from "../../redux/action/like";
 import { deletePost, getPost } from "../../redux/action/post";
 import ReactTimeAgo from 'react-time-ago'
+import { useParams } from "react-router";
 
 
 function LargeCardMyEvent(props) {
     const {
         contentCard, image, time, interest, location, like, comment, userName, idPost, action
     } = props;
+
+    // const {id} = useParams(idPost)
+    // console.log("ini id",id)
 
     const [state, setState] = useState({
         contentCard: contentCard,
@@ -63,6 +67,7 @@ function LargeCardMyEvent(props) {
     const handleDelete = async () => {
        await dispatch(deletePost(idPost))
        await dispatch(postComment(idPost, body));
+       await dispatch(getPost())
     }
 
     // console.log('ini id post',idPost)
@@ -102,7 +107,7 @@ function LargeCardMyEvent(props) {
                                 tabIndex="0"></i>
                             {show && (
                                 <div className="card position-absolute text-center stylingHover" style={{ width: '7rem' }}>
-                                    <label>Edit</label>
+                                    <Link to="/update-announcement">Edit</Link>
                                     <label onClick={() => handleDelete()}>Delete</label>
                                 </div>
                             )}

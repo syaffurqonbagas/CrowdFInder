@@ -43,7 +43,6 @@ const posts = (state = initialState, action) => {
         case DELETE_POST_SUCCESS :
             return {
                 ...state,
-                listPost : payload,
                 loading : false,
                 error : null,
             };

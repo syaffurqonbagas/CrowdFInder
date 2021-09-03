@@ -168,7 +168,13 @@
     -o-transition: height ease-out 0.4s;
 }
 
-.stylingHover label:hover {
+.stylingHover a, .stylingHover label {
+    text-decoration: none;
+    font-size: 12pt;
+    color: #4F4F4F;
+}
+
+.stylingHover label:hover, .stylingHover a:hover {
     color: white;
     background-color: #D82671;
     transition: background-color ease-in 0.3s;
@@ -177,3 +183,4 @@
     -ms-transition: background-color ease-in 0.3s;
     -o-transition: background-color ease-in 0.3s;
 }
+
