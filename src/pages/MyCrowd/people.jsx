@@ -3,6 +3,8 @@ import ListCardPeople from '../../components/ListCardPeople';
 
 
 function People(props) {
+    
+
     return (
         <div>
             <ListCardPeople />

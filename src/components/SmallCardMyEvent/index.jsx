@@ -4,10 +4,10 @@ import './index.css'
 import ImgDummy from '../../img/cardImgDummy.jpeg'
 
 function SmallCardMyEvent(props) {
-    const { title, image } = props;
+    const { title, image, action } = props;
     return (
         <>
-            <Card className="smallcard mx-1 sizeCard mt-2" style={{ minWidth: '16rem' }}>
+            <Card onClick={action} className="smallcard mx-1 sizeCard mt-2" style={{ minWidth: '16rem' }}>
                 <Card.Img variant="top" src={ImgDummy} />
                 <Card.Body>
                     <h6 className="font mb-3" style={{ fontSize: '14px', fontWeight: '700' }}>{title}</h6>
