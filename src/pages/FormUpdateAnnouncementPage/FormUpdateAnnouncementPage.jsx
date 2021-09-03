@@ -7,10 +7,6 @@ import { Form } from 'react-bootstrap'
 function FormCreateAnnouncementPage() {
     const dispatch = useDispatch()
     const announcement = useSelector((state) => state.announcements.listAnnouncement);
-    // const [title, setTitle] = useState();
-    // const [content, setContent] = useState();
-    // const [interest, setInterest] = useState();
-    // const [image, setImage] = useState();
     const [state, setState] = useState({
         title : "",
         content : "",

@@ -8,13 +8,13 @@ import LargeCardMyEvent from '../../components/LargeCardMyEvent/LargeCardMyEvent
 import MyPagination from '../../components/MyPagination/MyPagination'
 import { getPost } from '../../redux/action/post'
 import { getComment } from '../../redux/action/comment'
+import { getPostById } from '../../redux/action/postById'
 
 
 function HomePage() {
     const [posts, setPosts] = useState();
     const dispatch = useDispatch()
-    const {listPost, loading} = useSelector((state) => state.posts);
-    // const {listComment} = useSelector((state) => state.comments);
+    const { listPost, loading } = useSelector((state) => state.posts);
     
     useEffect(() => {
         dispatch(getPost())
@@ -26,7 +26,8 @@ function HomePage() {
 
 
     // console.log('comment',listComment)
-    console.log('data', listPost)
+    // console.log('data', listPost)
+    // console.log("ini data", listPost)
 
     return (
         <>

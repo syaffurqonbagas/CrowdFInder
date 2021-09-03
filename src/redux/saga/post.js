@@ -6,6 +6,9 @@ import {
     DELETE_POST_SUCCESS,
     DELETE_POST_FAIL,
     DELETE_POST_BEGIN,
+    GET_POST_BY_ID_SUCCESS,
+    GET_POST_BY_ID_BEGIN,
+    GET_POST_BY_ID_FAIL,
 } from "../action/type";
 import { BASE_URL_CROWDFINDER } from "../action/type";
 import { put, takeEvery } from "@redux-saga/core/effects";
@@ -21,11 +24,10 @@ function* getPosts(actions) {
             type: GET_POST_SUCCESS,
             payload: res.data.data,
         });
-        // yield window.location.replace("/home")<
-    } catch (err) {
+    } catch (error) {
         yield put({
             type: GET_POST_FAIL,
-            error: err,
+            error: error,
         })
     }
 };

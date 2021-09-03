@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect }  from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import useOnClickOutside from "./useOnClickOutside";
@@ -14,7 +14,7 @@ import ReactTimeAgo from 'react-time-ago'
 
 function LargeCardMyEvent(props) {
     const {
-        contentCard, image, time, interest, location, like, comment, userName, idPost
+        contentCard, image, time, interest, location, like, comment, userName, idPost, action
     } = props;
 
     const [state, setState] = useState({
@@ -30,7 +30,7 @@ function LargeCardMyEvent(props) {
     })
 
     const dispatch = useDispatch();
-    const {listComment, loading} = useSelector((state) => state.comments);
+    const { listComment, loading } = useSelector((state) => state.comments);
 
     useEffect(() => {
         dispatch(getComment(state.idPost))
@@ -38,43 +38,34 @@ function LargeCardMyEvent(props) {
 
     //post comment========================================
     const [body, setBody] = useState({
-        content : "",
+        content: "",
     });
 
     const changeComment = (e) => {
         setBody({ ...body, content: e.target.value });
-      };
 
-    const handlePostComment = (e) => {
+    };
+
+    const handlePostComment = async (e) => {
         e.preventDefault();
         dispatch(postComment(state.idPost ,body));
       };
       
 
     //like post===========================================
-    const [firstClick, setFirstClick] = useState(true)
-    const handleLikes = (e) => {
-            if(firstClick) {
-                dispatch(putLike(idPost))
-                setState({...state, like: like + 1});
-                setFirstClick(false)
-                // console.log(state.like)
-            } else {
-                dispatch(putLike(idPost))
-                setState({...state, like: like});
-                setFirstClick(true)
-            }
+    const likes = useSelector((state) => state.likes.like);
+    const handleLikes = async (e) => {
+        await dispatch(putLike(idPost))
+        await dispatch(getPost())
     };
-    // const handleUnlikes = (e) => {
-    //     dispatch(putLike(idPost))
-    //         setState({...state, like: like - 1});
-    //         setFirstClick(true)
-    // }
 
     //delete post=========================================
     const handleDelete = async () => {
        await dispatch(deletePost(idPost))
+       await dispatch(postComment(idPost, body));
     }
+
+    // console.log('ini id post',idPost)
 
     // hide and show ellipsis menu========================
     const [show, setShow] = useState(false);
@@ -91,25 +82,22 @@ function LargeCardMyEvent(props) {
         setShow(!show);
     };
 
-    //sinceTime=============================================
-  
-
     // console.log('likes', likes)
     // console.log('body gaes', body)
     // console.log('listcomment', listComment)
     return (
         <>
-            <div className="divider mt-5 mb-5"></div>
+            <div className="divider  my-3 mb-5"></div>
             <div className="headContainer">
 
-                <div className="d-flex">
+                <div onClick={action} className="d-flex">
                     <div className="imageAvatar mb-4 me-2">
                         <img src={`https://ui-avatars.com/api/?name=${state?.userName}&background=random&length=1&rounded=true&size=35`} />
                     </div>
                     <div className="headText container-fluid d-block mb-2">
 
                         <div ref={ref} className="d-flex justify-content-end m-0 positionRelative">
-                            <i class="fa fa-ellipsis-h"
+                            <i className="fa fa-ellipsis-h"
                                 onClick={() => toggleDropDown()}
                                 tabIndex="0"></i>
                             {show && (
@@ -159,7 +147,7 @@ function LargeCardMyEvent(props) {
 
                         <div className="btnGroup d-inline-flex">
                             <button className="button-card flex-grow-1" onClick={() => handleLikes()}>
-                                <i className="fa fa-thumbs-o-up" ></i>Like({state.like})
+                                <i className="fa fa-thumbs-o-up" ></i>Like({like})
                             </button>
                             <button className="button-card flex-grow-1" onClick={() => toggleComment()}>
                                 <i className="fa fa-commenting-o"></i>Comment({state.comment})
@@ -190,8 +178,8 @@ function LargeCardMyEvent(props) {
                             <Link className="text-decoration-none text-secondary">Load more comment</Link>
                         </div> */}
 
-                        {listComment.length > 0 && listComment?.filter((item) => item.post_id === idPost).map(item => (
-                            <div className="commentCard py-3 px-3">
+                        {listComment.length > 0 && listComment?.filter((item) => item.post_id === idPost).map((item, idx) => (
+                            <div key={idx} className="commentCard py-3 px-3">
                                 <div className="d-flex mb-2 fontCircular" style={{ fontWeight: '450', fontSize: '18px' }}>
                                     <div className="flex-grow-1" >{item.user_id.fullname}</div>
                                     <div style={{ color: '#828282' }}>3h ago</div>

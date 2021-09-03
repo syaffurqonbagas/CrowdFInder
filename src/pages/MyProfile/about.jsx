@@ -6,6 +6,7 @@ import { Link } from "react-router-dom"
 import './index.scss'
 import { useSelector } from 'react-redux';
 import { Badge } from 'react-bootstrap';
+import ListCardComunity from '../../ListCardComunity';
 
 function About(props) {
     const user = useSelector((state) => state.userData.user)
@@ -20,7 +21,9 @@ function About(props) {
                 <h5>My Crowd</h5>
                 <h5 >  <Link style={{ color: '#D82671', fontWeight: '400', textDecoration: 'none', fontSize: '16px' }} to="/mycrowd">See All</Link></h5>
             </div>
-            <ListCardPeople />
+
+            {user.following?.filter((item) => item.role === "community").map((item) => (<ListCardComunity comunityname={item.fullname} />))}
+
         </div>
     );
 }

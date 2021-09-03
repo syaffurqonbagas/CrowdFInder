@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import './index.css'
 import { Button, Card, Container, ListGroup } from 'react-bootstrap'
@@ -22,10 +22,10 @@ function TopicMe(props) {
                         <p>You will only see topics you selected. Go to Account menu to add more topics.</p>
                         <div>
                             {userInterest?.map((interest, index) => (
-                            <div className="d-flex mb-1">
-                                <input className="form-check-input me-1" type="checkbox" value="" />
-                                <label key={index} className="form-check-label">{interest}</label>
-                            </div>
+                                <div key={index} className="d-flex mb-1">
+                                    <input className="form-check-input me-1" type="checkbox" value="" />
+                                    <label className="form-check-label">{interest}</label>
+                                </div>
                             ))}
                             {/* <div className="d-flex mb-1">
                                 <input className="form-check-input me-1" type="checkbox" value="" />
