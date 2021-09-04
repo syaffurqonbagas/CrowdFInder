@@ -3,7 +3,11 @@ import {
   watchPostAnnouncements,
   watchUpdateAnnouncement,
 } from "./announcement";
-import { watchGetComments, watchPostComments } from "./comment";
+import { 
+  watchDeleteComments, 
+  watchGetComments, 
+  watchPostComments 
+} from "./comment";
 import { watchPostEvents } from "./event";
 import { watchDeletePosts, watchGetPosts } from "./post";
 import { watchGetPostById } from "./postById";
@@ -38,5 +42,6 @@ export default function* rootSaga() {
     watchSearchFunction(),
     watchGetUserById(),
     watchAttendEvent(),
+    watchDeleteComments(),
   ]);
 }
