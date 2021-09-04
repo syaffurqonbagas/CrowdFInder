@@ -7,17 +7,20 @@ import SmallCardMyEvent from '../../components/SmallCardMyEvent'
 import LargeCardMyEvent from '../../components/LargeCardMyEvent/LargeCardMyEvent.jsx'
 import MyPagination from '../../components/MyPagination/MyPagination'
 import { getPost } from '../../redux/action/post'
-import { getComment } from '../../redux/action/comment'
 import { getPostById } from '../../redux/action/postById'
+import { Link } from 'react-router-dom'
+import ReactLoading from 'react-loading';
 
 
 function HomePage() {
     const [posts, setPosts] = useState();
     const dispatch = useDispatch()
     const { listPost, loading } = useSelector((state) => state.posts);
-    
+    const user = useSelector((state) => state.userData.user)
+
     useEffect(() => {
         dispatch(getPost())
+        dispatch(getPostById(1, user.id))
     }, [dispatch]);
 
     useEffect(() => {
@@ -25,9 +28,10 @@ function HomePage() {
     }, [listPost])
 
 
+
     // console.log('comment',listComment)
     // console.log('data', listPost)
-    // console.log("ini data", listPost)
+    console.log("ini data", listPost)
 
     return (
         <>
@@ -43,15 +47,16 @@ function HomePage() {
                                 <p className="my-auto text-secondary" style={{ fontSize: '18px', fontWeight: '400' }}>See All Events</p>
                             </div>
                             <div className="wrapper mx-auto mb-5">
-                                {listPost.length > 0 && posts?.reverse().filter(post => post.type[0] === 'event').filter((post, idx) => idx < 10).map((post, id) => (
-                                    <SmallCardMyEvent key={id} title={post.title} />
+                                {listPost.length > 0 && posts?.reverse().filter(post => post.type[0] === 'event').filter((post, idx) => idx < 10).map((post, idx) => (
+                                    <Link style={{ textDecoration: "none" }} to={`/comunity-profile/${post.user_id.id}`}> <SmallCardMyEvent key={idx} title={post.title} /> </Link>
                                 ))}
                             </div>
                         </div>
 
                         <div>
-                            {listPost.length > 0 && posts?.reverse().filter(post => post.type[0] === 'announcement').map((post, id) => (
-                                <LargeCardMyEvent key={id} contentCard={post.content} image={post.image} time={post.createdAt} interest={post.interest} location={post.user_id.location} like={post.like.length} userName={post.user_id.fullname} idPost={post.id} comment={post.comment.length}/>
+                            { loading && <ReactLoading className="mx-auto" type={'cylon'} color={'#20BDE0'} height={64} width={64}/>}
+                            {listPost.length > 0 && posts?.reverse().filter(post => post.type[0] === 'announcement').map((post, idx) => (
+                                <LargeCardMyEvent key={idx} contentCard={post.content} image={post.image} time={post.createdAt} interest={post.interest} location={post.user_id.location} like={post.like.length} userName={post.user_id.fullname} idPost={post.id} comment={post.comment.length} />
                             ))}
                             <div className="text-center my-5">
                                 <MyPagination />

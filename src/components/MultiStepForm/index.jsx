@@ -62,7 +62,7 @@ export default function MultiStep() {
         form.location,
         form.interest
       )
-    )) 
+    ))
     // {
     //   alert("register successfully");
     //   window.location.replace("/signin");
@@ -216,7 +216,7 @@ export default function MultiStep() {
                       <div className="interest ms-3">
                         <div className="content-interest justify-content-center">
                           <p>
-                            <i class="fas fa-map-marker-alt"></i> Where is city
+                            <i className="fas fa-map-marker-alt"></i> Where is city
                             you live in?
                           </p>
                           <p>Let people find you greate thoughts</p>
@@ -235,7 +235,7 @@ export default function MultiStep() {
                               <Col>
                                 <div>
                                   <input
-                                    class="form-radio-input"
+                                    className="form-radio-input"
                                     type="radio"
                                     name="role"
                                     placeholder="User"
@@ -246,7 +246,7 @@ export default function MultiStep() {
                                 </div>
                                 <div>
                                   <input
-                                    class="form-radio-input"
+                                    className="form-radio-input"
                                     type="radio"
                                     name="role"
                                     placeholder="Community"
@@ -318,9 +318,9 @@ export default function MultiStep() {
                         {/* {Coll 1} */}
                         <Col>
                           <div className="Cekbox">
-                            <div class="form-check">
+                            <div className="form-check">
                               <input
-                                class="form-check-input"
+                                className="form-check-input"
                                 type="checkbox"
                                 placeholder="enter your interest"
                                 value="sports"
@@ -335,11 +335,11 @@ export default function MultiStep() {
                                       : false
                                 }
                               />
-                              <label class="form-check-label">sports</label>
+                              <label className="form-check-label">sports</label>
                             </div>
-                            <div class="form-check">
+                            <div className="form-check">
                               <input
-                                class="form-check-input"
+                                className="form-check-input"
                                 type="checkbox"
                                 placeholder="enter your interest"
                                 value="finance"
@@ -354,11 +354,11 @@ export default function MultiStep() {
                                       : false
                                 }
                               />
-                              <label class="form-check-label">finance</label>
+                              <label className="form-check-label">finance</label>
                             </div>
-                            <div class="form-check">
+                            <div className="form-check">
                               <input
-                                class="form-check-input"
+                                className="form-check-input"
                                 type="checkbox"
                                 placeholder="enter your interest"
                                 value="automotive"
@@ -373,11 +373,11 @@ export default function MultiStep() {
                                       : false
                                 }
                               />
-                              <label class="form-check-label">automotive</label>
+                              <label className="form-check-label">automotive</label>
                             </div>
-                            <div class="form-check">
+                            <div className="form-check">
                               <input
-                                class="form-check-input"
+                                className="form-check-input"
                                 type="checkbox"
                                 placeholder="enter your interest"
                                 value="politics"
@@ -392,11 +392,11 @@ export default function MultiStep() {
                                       : false
                                 }
                               />
-                              <label class="form-check-label">politics</label>
+                              <label className="form-check-label">politics</label>
                             </div>
-                            <div class="form-check">
+                            <div className="form-check">
                               <input
-                                class="form-check-input"
+                                className="form-check-input"
                                 type="checkbox"
                                 placeholder="enter your interest"
                                 value="design"
@@ -411,7 +411,7 @@ export default function MultiStep() {
                                       : false
                                 }
                               />
-                              <label class="form-check-label">design</label>
+                              <label className="form-check-label">design</label>
                             </div>
                           </div>
                         </Col>
@@ -419,9 +419,9 @@ export default function MultiStep() {
 
                         <Col>
                           <div className="Cekbox">
-                            <div class="form-check">
+                            <div className="form-check">
                               <input
-                                class="form-check-input"
+                                className="form-check-input"
                                 type="checkbox"
                                 placeholder="enter your interest"
                                 value="cook"
@@ -436,11 +436,11 @@ export default function MultiStep() {
                                       : false
                                 }
                               />
-                              <label class="form-check-label">cook</label>
+                              <label className="form-check-label">cook</label>
                             </div>
-                            <div class="form-check">
+                            <div className="form-check">
                               <input
-                                class="form-check-input"
+                                className="form-check-input"
                                 type="checkbox"
                                 placeholder="enter your interest"
                                 value="tech"
@@ -455,11 +455,11 @@ export default function MultiStep() {
                                       : false
                                 }
                               />
-                              <label class="form-check-label">tech</label>
+                              <label className="form-check-label">tech</label>
                             </div>
-                            <div class="form-check">
+                            <div className="form-check">
                               <input
-                                class="form-check-input"
+                                className="form-check-input"
                                 type="checkbox"
                                 placeholder="enter your interest"
                                 value="religion"
@@ -474,11 +474,11 @@ export default function MultiStep() {
                                       : false
                                 }
                               />
-                              <label class="form-check-label">religion</label>
+                              <label className="form-check-label">religion</label>
                             </div>
-                            <div class="form-check">
+                            <div className="form-check">
                               <input
-                                class="form-check-input"
+                                className="form-check-input"
                                 type="checkbox"
                                 placeholder="enter your interest"
                                 value="art"
@@ -493,11 +493,11 @@ export default function MultiStep() {
                                       : false
                                 }
                               />
-                              <label class="form-check-label">art</label>
+                              <label className="form-check-label">art</label>
                             </div>
-                            <div class="form-check">
+                            <div className="form-check">
                               <input
-                                class="form-check-input"
+                                className="form-check-input"
                                 type="checkbox"
                                 placeholder="enter your interest"
                                 value="music"
@@ -512,7 +512,7 @@ export default function MultiStep() {
                                       : false
                                 }
                               />
-                              <label class="form-check-label">music</label>
+                              <label className="form-check-label">music</label>
                             </div>
                           </div>
                         </Col>
@@ -520,9 +520,9 @@ export default function MultiStep() {
 
                         <Col>
                           <div className="Cekbox">
-                            <div class="form-check">
+                            <div className="form-check">
                               <input
-                                class="form-check-input"
+                                className="form-check-input"
                                 type="checkbox"
                                 placeholder="enter your interest"
                                 value="business"
@@ -537,11 +537,11 @@ export default function MultiStep() {
                                       : false
                                 }
                               />
-                              <label class="form-check-label">business</label>
+                              <label className="form-check-label">business</label>
                             </div>
-                            <div class="form-check">
+                            <div className="form-check">
                               <input
-                                class="form-check-input"
+                                className="form-check-input"
                                 type="checkbox"
                                 placeholder="enter your interest"
                                 value="psychology"
@@ -556,11 +556,11 @@ export default function MultiStep() {
                                       : false
                                 }
                               />
-                              <label class="form-check-label">psychology</label>
+                              <label className="form-check-label">psychology</label>
                             </div>
-                            <div class="form-check">
+                            <div className="form-check">
                               <input
-                                class="form-check-input"
+                                className="form-check-input"
                                 type="checkbox"
                                 placeholder="enter your interest"
                                 value="tourism"
@@ -575,11 +575,11 @@ export default function MultiStep() {
                                       : false
                                 }
                               />
-                              <label class="form-check-label">tourism</label>
+                              <label className="form-check-label">tourism</label>
                             </div>
-                            <div class="form-check">
+                            <div className="form-check">
                               <input
-                                class="form-check-input"
+                                className="form-check-input"
                                 type="checkbox"
                                 placeholder="enter your interest"
                                 value="bike"
@@ -594,11 +594,11 @@ export default function MultiStep() {
                                       : false
                                 }
                               />
-                              <label class="form-check-label">bike</label>
+                              <label className="form-check-label">bike</label>
                             </div>
-                            <div class="form-check">
+                            <div className="form-check">
                               <input
-                                class="form-check-input"
+                                className="form-check-input"
                                 type="checkbox"
                                 placeholder="enter your interest"
                                 value="science"
@@ -613,7 +613,7 @@ export default function MultiStep() {
                                       : false
                                 }
                               />
-                              <label class="form-check-label">science</label>
+                              <label className="form-check-label">science</label>
                             </div>
                           </div>
                         </Col>

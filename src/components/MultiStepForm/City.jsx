@@ -31,7 +31,7 @@ const City = ({ state, setState, setPage }) => {
                 <div className="interest ms-3">
                   <div className="content-interest justify-content-center">
                     <p>
-                      <i class="fas fa-map-marker-alt"></i> Where is city you
+                      <i className="fas fa-map-marker-alt"></i> Where is city you
                       live in?
                     </p>
                     <p>Let people find you greate thoughts</p>
@@ -55,7 +55,7 @@ const City = ({ state, setState, setPage }) => {
                           <Col>
                             <input
                               type="radio"
-                              class="btn-check"
+                              className="btn-check"
                               name="btnradio"
                               id="user"
                               autocomplete="off"
@@ -70,13 +70,13 @@ const City = ({ state, setState, setPage }) => {
                           <Col>
                             <input
                               type="radio"
-                              class="btn-check"
+                              className="btn-check"
                               name="btnradio"
                               id="comunity"
                               autocomplete="off"
                             />
                             <label
-                              class="btn btn-outline-primary"
+                              className="btn btn-outline-primary"
                               for="comunity"
                             >
                               Comunity

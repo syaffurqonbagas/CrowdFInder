@@ -31,7 +31,7 @@ const Header = () => {
   useEffect(() => {
     dispatch(getCurrentUser());
 
-  }, [])
+  }, [dispatch])
 
 
 
@@ -39,15 +39,16 @@ const Header = () => {
   return (
     <>
       <div className="header">
-        <Navbar>
+        <Navbar >
           <Container>
-            <Navbar.Brand className="header-logo" href="/home">
+            <Link to="/home"><Navbar.Brand className="header-logo">
               <LogoCrowdFinder />
-            </Navbar.Brand>
+            </Navbar.Brand></Link>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
+            <Navbar.Collapse id="navbarScroll" className="d-flex justify-content-around">
               {isLoggedIn && (
                 <>
+
                   <Nav className="me-auto">
                     <Form className="search-bar d-flex">
                       <FormControl
@@ -60,8 +61,25 @@ const Header = () => {
                   </Nav>
                   {/* {} */}
                   <Nav className="Feed-Notification">
-                    <Nav.Link><Link to="/home" style={{ textDecoration: 'none', color: 'black' }} ><i class="fa fa-home fa-lg"></i><Col><p>Feeds</p></Col></Link></Nav.Link>
-                    <Nav.Link href="#"><i class="fa fa-bell fa-lg"></i><Col><p>Notification</p></Col></Nav.Link>
+                    <Link to="/home"
+                      style={{
+                        textDecoration: 'none', color: 'black'
+                        , display: "flex", flexDirection: 'column',
+                        justifyContent: "center", alignItems: 'center', marginRight: "2rem"
+                      }} >
+                      <i style={{ color: "white" }} className="fa fa-home fa-lg"></i>
+                      <p>Feeds</p>
+                    </Link>
+                    <Link to="/home" style={{
+                      textDecoration: 'none', color: 'black'
+                      , display: "flex", flexDirection: 'column',
+                      justifyContent: "center", alignItems: 'center', marginRight: "2rem"
+                    }} >
+                      <i style={{ color: "white" }} className="fa fa-bell fa-lg">
+                      </i>
+                      <Col>
+                        <p>Notification</p></Col>
+                    </Link>
                   </Nav>
                   <Nav>
                     < NavDropdown style={{ padding: '0px', width: '61px', height: '80px' }} title={<div className="text-center avatar">

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import ReactLoading from 'react-loading';
 import useOnClickOutside from "./useOnClickOutside";
 import { Card, Button, FormControl, InputGroup } from 'react-bootstrap'
 import "./LargeCardMyEvent.css";
@@ -52,9 +53,9 @@ function LargeCardMyEvent(props) {
 
     const handlePostComment = async (e) => {
         e.preventDefault();
-        dispatch(postComment(state.idPost ,body));
-      };
-      
+        dispatch(postComment(state.idPost, body));
+    };
+
 
     //like post===========================================
     const likes = useSelector((state) => state.likes.like);
@@ -64,6 +65,7 @@ function LargeCardMyEvent(props) {
     };
 
     //delete post=========================================
+    const loadingDelete = useSelector((state) => state.posts.listPost.loading)
     const handleDelete = async () => {
        await dispatch(deletePost(idPost))
        await dispatch(postComment(idPost, body));
@@ -130,7 +132,7 @@ function LargeCardMyEvent(props) {
                                     color: "#828282",
                                 }}
                             >
-                                <i class="fa fa-map-marker ms-auto me-0 fa-xs"></i> {state.location}
+                                <i className="fa fa-map-marker ms-auto me-0 fa-xs"></i> {state.location}
                             </label>
                         </div>
                         <label
@@ -145,7 +147,7 @@ function LargeCardMyEvent(props) {
                     <Card>
                         <div className="w-75 ms-3 mt-3 mb-4">
                             <p className="font-size">
-                               {state.contentCard}
+                                {state.contentCard}
                             </p>
                             <img className="imageSize" src={state.image} alt="" />
                         </div>
@@ -175,7 +177,7 @@ function LargeCardMyEvent(props) {
                                 />
                             </InputGroup>
                             <div className="position-relative toTheLeft">
-                                <Button className="rounded-circle btnStyle-largeCard" variant="secondary" onClick={handlePostComment}><i class="fa fa-paper-plane"></i></Button>
+                                <Button className="rounded-circle btnStyle-largeCard" variant="secondary" onClick={handlePostComment}><i className="fa fa-paper-plane"></i></Button>
                             </div>
                         </div>
 
