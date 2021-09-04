@@ -1,9 +1,9 @@
 import axios from "axios";
 import { POST_ANNOUNCEMENT_BEGIN, POST_ANNOUNCEMENT_SUCCESS, POST_ANNOUNCEMENT_FAIL } from "../action/type";
 import {UPDATE_ANNOUNCEMENT_SUCCESS, UPDATE_ANNOUNCEMENT_FAIL, UPDATE_ANNOUNCEMENT_BEGIN} from "../action/type";
-import { DELETE_ANNOUNCEMENT_BEGIN, DELETE_ANNOUNCEMENT_SUCCESS, DELETE_ANNOUNCEMENT_FAIL } from "../action/type";
 import { BASE_URL_CROWDFINDER } from "../action/type";
 import { put, takeEvery } from "@redux-saga/core/effects";
+import Swal from "sweetalert2";
 
 const Token = localStorage.getItem('user');
 
@@ -15,12 +15,30 @@ function* PostAnnouncements (actions) {
             type : POST_ANNOUNCEMENT_SUCCESS,
             payload : res.data,
         });
+        yield (
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Done :)',
+            showConfirmButton: false,
+            timer: 1800
+          })
+        );
         yield window.location.replace("/home")
     } catch (err) {
         yield put ({
             type : POST_ANNOUNCEMENT_FAIL,
             error : err,
-        })
+        });
+        yield (
+            Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Filled the form, Please :(',
+            showConfirmButton: false,
+            timer: 1800
+          })
+        );
     }
 };
 

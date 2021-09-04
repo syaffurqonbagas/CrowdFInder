@@ -141,14 +141,9 @@
 
 .yes {
   position: absolute;
-  top: 45%;
-  left: 50%;
+  top: 50%;
+  left: 45%;
   transform: translate(-50%, -50%);
   justify-content: center;
   width: 50rem;
-}
-
-
-.marginTop {
-  margin-top: 7px;
 }
