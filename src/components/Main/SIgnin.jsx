@@ -38,7 +38,7 @@ const Signin = () => {
                 src={Logo}
                 alt="logo"
               />
-              <h2>Let’s make your own crowd!</h2>
+              <h2 style={{ fontSize: "28px" }}>Let’s make your own crowd!</h2>
 
               <img
                 src={PlayStore}
@@ -81,17 +81,17 @@ const Signin = () => {
                   isValid,
                   errors,
                 }) => (
-                  <Form noValidate onSubmit={handleSubmit}>
-                    <div>
-                      <Form.Group className="d-flex mt-3 justify-content-center">
-                        <h2 className="mt-auto">Login</h2>
+                  <Form style={{ height: "33rem"}} noValidate onSubmit={handleSubmit}>
+                    <div className="justify-content-center">
+                      <Form.Group className="d-flex mt-3 mb-2 justify-content-center">
+                        <h2 style={{ fontSize: "28px" }} className="mt-auto">Login</h2>
                       </Form.Group>
 
                       <Form.Group
                         className="mb-3 mx-4"
                         controlId="validataionFOrmik03"
                       >
-                        <Form.Label>Email address</Form.Label>
+                        <Form.Label style={{ fontSize: "18px" }}>Email address</Form.Label>
                         <Form.Control
                           name="email"
                           onBlur={handleBlur}
@@ -109,7 +109,7 @@ const Signin = () => {
                         className="mb-3 mx-4"
                         controlId="formBasicPassword"
                       >
-                        <Form.Label>Password</Form.Label>
+                        <Form.Label style={{ fontSize: "18px" }}>Password</Form.Label>
                         <Form.Control
                           name="password"
                           onBlur={handleBlur}
@@ -122,7 +122,6 @@ const Signin = () => {
                         />
                         {<p style={{ color: "red", fontSize: "15px" }}>{errors.password && touched.password && errors.password}</p>}
                       </Form.Group>
-
                       <Form.Group>
                         <Col>
                           <button
@@ -132,7 +131,7 @@ const Signin = () => {
                             Login
                           </button>
                         </Col>
-                        <p className="mt-4 text-muted text-center signFoot">
+                        <p style={{ fontSize: "16px" }} className="mt-4 text-muted text-center signFoot">
                           don't have an account? <Link to="/">Sign Up</Link>
                         </p>
                       </Form.Group>

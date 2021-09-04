@@ -115,6 +115,7 @@ function* userUpdate(action) {
 
 function* Logout() {
   yield localStorage.removeItem("user");
+  yield window.location.replace("/")
 }
 
 export function* watchRegister() {

@@ -6,6 +6,7 @@ import events from "./event";
 import announcements from "./announcement";
 import comments from "./comment";
 import likes from "./like";
+import searchData from "./search"
 import getUserById from "./userById"
 import attendEvent from "./attend";
 
@@ -17,6 +18,7 @@ export default combineReducers({
     announcements,
     comments,
     likes,
+    searchData,
     getUserById,
     attendEvent
 });

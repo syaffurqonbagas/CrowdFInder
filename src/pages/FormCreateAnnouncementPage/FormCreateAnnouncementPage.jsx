@@ -4,9 +4,11 @@ import FormCreateAnnouncement from '../../components/FormCreatePost'
 import { postAnnouncement } from '../../redux/action/announcement'
 import { Form } from 'react-bootstrap'
 
+
 function FormCreateAnnouncementPage() {
     const dispatch = useDispatch()
     const announcement = useSelector((state) => state.announcements.listAnnouncement);
+   
 
     const [state, setState] = useState({
         content : "",
@@ -23,13 +25,15 @@ function FormCreateAnnouncementPage() {
         
     }
 
-    const handlePostAnnouncement = (e) => {
+    const handlePostAnnouncement = async (e) => {
         e.preventDefault();
         const data = state;
-        dispatch(postAnnouncement(data))
+         await dispatch(postAnnouncement(data))
+        //  await window.location.replace("/home")
     };
 
     console.log(state);
+
 
  
 

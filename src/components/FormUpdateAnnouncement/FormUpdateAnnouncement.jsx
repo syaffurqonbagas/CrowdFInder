@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
 // import './index.css'
 import { InputGroup, FormControl, Button, Form, Card } from 'react-bootstrap'
+import { getCurrentUser } from '../../redux/action/user';
 
-function FormCreateAnnouncement(props) {
-    const { title, interest, content, image, onClick } = props;
+function FormUpdateAnnouncement(props) {
+    const {title, interest, content, image, onClick} = props;
     const [img, setImg] = useState(null);
     const [error, setError] = useState(false);
 
@@ -21,21 +23,29 @@ function FormCreateAnnouncement(props) {
         }
     };
 
+    //getUserData=============================================
+    const dispatch = useDispatch();
+    const userInterest = useSelector((state) => state.userData.user.interest);
+
+    useEffect(() => {
+        dispatch(getCurrentUser());
+    }, [dispatch]);
+
     return (
         <>
             <div className="head-container">
 
                 <div className="d-flex">
                     <div className="headText container-fluid" style={{ padding: '0 0' }}>
-                        <h5 style={{ fontSize: '22px', fontWeight: '700' }}>Create a announcement</h5>
+                        <h5 style={{ fontSize: '22px', fontWeight: '700' }}>Update your announcement</h5>
                         <div className="headText-main d-flex mb-3">
-                            <p className="m-0 flex-grow-1" style={{ fontSize: '18px', fontWeight: '400' }}>What would you like to share today?</p>
+                            <p className="m-0 flex-grow-1" style={{ fontSize: '18px', fontWeight: '400' }}>What would you like to change?</p>
                             {/* <div className="headText-badge rounded-pill ms-3">Design</div> */}
                             <select className="MyBadge flex-end" onChange={interest}>
-                                <option value="Design">Design</option>
-                                <option value="Art">Art</option>
-                                <option value="Politic">Politic</option>
-                                <option value="Sport">Sport</option>
+                                <option></option>
+                                {userInterest?.map((item, index) => (
+                                    <option key={index} value={item}>{item}</option>
+                                ))}
                             </select>
                         </div>
                         <InputGroup className="mb-3" controlId="exampleForm.ControlTextarea1">
@@ -71,7 +81,7 @@ function FormCreateAnnouncement(props) {
                             )}
                         </Card>
                         <div className="d-flex justify-content-end">
-                            <Button className="px-5" variant="secondary" onClick={onClick}>Post</Button>
+                            <Button className="px-5" variant="secondary" onClick={onClick}>Update</Button>
                         </div>
                     </div>
                 </div>
@@ -81,4 +91,4 @@ function FormCreateAnnouncement(props) {
     )
 }
 
-export default FormCreateAnnouncement
+export default FormUpdateAnnouncement

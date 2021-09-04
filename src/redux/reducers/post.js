@@ -1,18 +1,17 @@
-import { 
-    GET_POST_BEGIN, 
-    GET_POST_SUCCESS, 
-    GET_POST_FAIL, 
-    DELETE_POST_BEGIN, 
-    DELETE_POST_SUCCESS, 
-    DELETE_POST_FAIL 
+import {
+  GET_POST_BEGIN,
+  GET_POST_SUCCESS,
+  GET_POST_FAIL,
+  DELETE_POST_BEGIN,
+  DELETE_POST_SUCCESS,
+  DELETE_POST_FAIL,
 } from "../action/type";
 
 const initialState = {
-    listPost: [],
-    loading: false,
-    error: null,
-
-}
+  listPost: [],
+  loading: false,
+  error: null,
+};
 
 const posts = (state = initialState, action) => {
     const { type, payload, error } = action;
@@ -43,7 +42,6 @@ const posts = (state = initialState, action) => {
         case DELETE_POST_SUCCESS :
             return {
                 ...state,
-                listPost : payload,
                 loading : false,
                 error : null,
             };

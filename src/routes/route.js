@@ -14,6 +14,7 @@ import CreateCommunityForm from "../components/CreateCommunityForm/index"
 import FormCreateEventPage from "../pages/FormCreateEventPage/FormCreateEventPage";
 import FormCreateAnnouncementPage from "../pages/FormCreateAnnouncementPage/FormCreateAnnouncementPage";
 import ManageComunity from "../pages/ManageComunity";
+import FormUpdateAnnouncementPage from "../pages/FormUpdateAnnouncementPage/FormUpdateAnnouncementPage";
 
 
 
@@ -49,6 +50,9 @@ const Routers = () => {
         </Route>
         <Route exact path="/create-announcement">
           <FormCreateAnnouncementPage />
+        </Route>
+        <Route exact path="/update-announcement">
+          <FormUpdateAnnouncementPage />
         </Route>
         <Route exact path="/create-event">
           <FormCreateEventPage />

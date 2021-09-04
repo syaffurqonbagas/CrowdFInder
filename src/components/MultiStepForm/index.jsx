@@ -52,7 +52,7 @@ export default function MultiStep() {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    (dispatch(
+    dispatch(
       Register(
         form.role,
         form.email,
@@ -62,18 +62,14 @@ export default function MultiStep() {
         form.location,
         form.interest
       )
-    ))
-    // {
-    //   alert("register successfully");
-    //   window.location.replace("/signin");
-    // }
+    );
   };
 
   console.log("form", form);
 
   return (
     <>
-      <Form onSubmit={(e) => handleRegister(e)}>
+      <Form onSubmit={handleRegister}>
         {page === 1 ? (
           <div className="container-signup">
             <div className="d-flex">
@@ -85,7 +81,9 @@ export default function MultiStep() {
                       src={Logo}
                       alt="logo"
                     />
-                    <h2>Let’s make your own crowd!</h2>
+                    <h2 style={{ fontSize: "28px" }}>
+                      Let’s make your own crowd!
+                    </h2>
                     <img
                       src={PlayStore}
                       alt="playstore"
@@ -110,13 +108,17 @@ export default function MultiStep() {
                     <Form>
                       <div>
                         <Form.Group className="d-flex mt-3 justify-content-center">
-                          <h2 className="mt-auto">Sign Up</h2>
+                          <h2 style={{ fontSize: "28px" }} className="mt-auto">
+                            Sign Up
+                          </h2>
                         </Form.Group>
                         <Form.Group
                           className="mb-3 mx-4"
                           controlId="formBasicFullName"
                         >
-                          <Form.Label>Full Name</Form.Label>
+                          <Form.Label style={{ fontSize: "18px" }}>
+                            Full Name
+                          </Form.Label>
                           <Form.Control
                             type="text"
                             placeholder="Fullname"
@@ -129,7 +131,9 @@ export default function MultiStep() {
                           className="mb-3 mx-4"
                           controlId="formBasicUserName"
                         >
-                          <Form.Label>Username</Form.Label>
+                          <Form.Label style={{ fontSize: "18px" }}>
+                            Username
+                          </Form.Label>
                           <Form.Control
                             type="text"
                             placeholder="Username"
@@ -142,7 +146,9 @@ export default function MultiStep() {
                           className="mb-3 mx-4"
                           controlId="formBasicEmail"
                         >
-                          <Form.Label>Email address</Form.Label>
+                          <Form.Label style={{ fontSize: "18px" }}>
+                            Email address
+                          </Form.Label>
                           <Form.Control
                             type="text"
                             placeholder="example@gmail.com"
@@ -155,7 +161,9 @@ export default function MultiStep() {
                           className="mb-3 mx-4"
                           controlId="formBasicPassword"
                         >
-                          <Form.Label>Password</Form.Label>
+                          <Form.Label style={{ fontSize: "18px" }}>
+                            Password
+                          </Form.Label>
                           <Form.Control
                             type="password"
                             placeholder="Password"
@@ -175,7 +183,10 @@ export default function MultiStep() {
                               SignUp
                             </button>
                           </Col>
-                          <p className="text-center mt-3">
+                          <p
+                            style={{ fontSize: "16px" }}
+                            className="text-center mt-3"
+                          >
                             Already have an account ?{" "}
                             <Link to="/signin">Sign in</Link>
                           </p>
@@ -209,15 +220,18 @@ export default function MultiStep() {
             <div className="content-city">
               <div className="city">
                 <Container>
-                  <div className="content-form d-flex justify-content-center">
-                    <Form className="mt-5 mb-5">
+                  <div
+                    className="content-form d-flex justify-content-center"
+                    style={{ width: "43rem" }}
+                  >
+                    <Form className="mt-5 mb-5" style={{ width: "32rem" }}>
                       <h2>Welcome to CrowdFinder</h2>
                       <h3>Helps you to find right community</h3>
                       <div className="interest ms-3">
                         <div className="content-interest justify-content-center">
                           <p>
-                            <i className="fas fa-map-marker-alt"></i> Where is city
-                            you live in?
+                            <i className="fas fa-map-marker-alt"></i> Where is
+                            city you live in?
                           </p>
                           <p>Let people find you greate thoughts</p>
                           <div style={{ width: "85%" }}>
@@ -231,9 +245,9 @@ export default function MultiStep() {
                               />
                             </Form.Group>
                             <p>Create Acount as :</p>
-                            <Form.Group className="mb-3 ">
+                            <Form.Group>
                               <Col>
-                                <div>
+                                <div className="mb-1">
                                   <input
                                     className="form-radio-input"
                                     type="radio"
@@ -242,9 +256,11 @@ export default function MultiStep() {
                                     value="user"
                                     onChange={(e) => changeForm(e)}
                                   />
-                                  <label>User</label>
+                                  <label style={{ fontSize: "15px" }}>
+                                    User
+                                  </label>
                                 </div>
-                                <div>
+                                <div className="mb-2">
                                   <input
                                     className="form-radio-input"
                                     type="radio"
@@ -253,18 +269,22 @@ export default function MultiStep() {
                                     value="community"
                                     onChange={(e) => changeForm(e)}
                                   />
-                                  <label>Community</label>
+                                  <label style={{ fontSize: "15px" }}>
+                                    Community
+                                  </label>
                                 </div>
                               </Col>
                             </Form.Group>
-                            <div className="d-flex justify-content-center">
+                            <div className="d-flex justify-content-center my-2 mt-5">
                               <Button
+                                className="me-3"
                                 onClick={() => changeStep("prev")}
                                 style={{ width: "10rem" }}
                               >
                                 Prev
                               </Button>
                               <Button
+                                className="ms-3"
                                 onClick={() => changeStep("next")}
                                 style={{ width: "10rem" }}
                               >
@@ -303,330 +323,134 @@ export default function MultiStep() {
             <div className="yes">
               <div className="choose-interest">
                 <Container>
-                  <div className="content-interest mt-5 justify-content-center">
-                    <div className="interest my-3 mx-3">
-                      <h3>What topic are you interesting in?</h3>
-                      <p>
+                  <div
+                    className="content-interest justify-content-center"
+                    style={{ height: "35rem", width: "60rem" }}
+                  >
+                    <Form className="interest mx-5 my-5 justify-content-center">
+                      <h3 className="my-3">
+                        What topic are you interesting in?
+                      </h3>
+                      <p className="mb-4" style={{ fontSize: "20px" }}>
                         There a lot of people and community waiting you! Let's
                         be part of them
                       </p>
-                      <p>
+                      <p className="mb-4" style={{ fontSize: "18px" }}>
                         We will find you the communities and pople which fit
                         with your interesting topics. So let's find them
                       </p>
                       <Row>
                         {/* {Coll 1} */}
                         <Col>
-                          <div className="Cekbox">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
+                          {[
+                            "sports",
+                            "finance",
+                            "automotive",
+                            "politics",
+                            "design",
+                          ].map((type) => (
+                            <div
+                              key={`default-${type}`}
+                              className="mb-4"
+                              style={{ fontSize: "18px" }}
+                            >
+                              <Form.Check
                                 type="checkbox"
                                 placeholder="enter your interest"
-                                value="sports"
+                                id={`default-${type}`}
+                                label={` ${type}`}
+                                value={`${type}`}
                                 onChange={(e) => changeInterest(e)}
                                 disabled={
                                   form.interest.length < 5
                                     ? false
                                     : form.interest.filter(
-                                      (item) => item !== "sports"
-                                    ).length === 5
-                                      ? true
-                                      : false
+                                        (item) => item !== `${type}`
+                                      ).length === 5
+                                    ? true
+                                    : false
                                 }
                               />
-                              <label className="form-check-label">sports</label>
                             </div>
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                placeholder="enter your interest"
-                                value="finance"
-                                onChange={(e) => changeInterest(e)}
-                                disabled={
-                                  form.interest.length < 5
-                                    ? false
-                                    : form.interest.filter(
-                                      (item) => item !== "finance"
-                                    ).length === 5
-                                      ? true
-                                      : false
-                                }
-                              />
-                              <label className="form-check-label">finance</label>
-                            </div>
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                placeholder="enter your interest"
-                                value="automotive"
-                                onChange={(e) => changeInterest(e)}
-                                disabled={
-                                  form.interest.length < 5
-                                    ? false
-                                    : form.interest.filter(
-                                      (item) => item !== "automotive"
-                                    ).length === 5
-                                      ? true
-                                      : false
-                                }
-                              />
-                              <label className="form-check-label">automotive</label>
-                            </div>
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                placeholder="enter your interest"
-                                value="politics"
-                                onChange={(e) => changeInterest(e)}
-                                disabled={
-                                  form.interest.length < 5
-                                    ? false
-                                    : form.interest.filter(
-                                      (item) => item !== "politics"
-                                    ).length === 5
-                                      ? true
-                                      : false
-                                }
-                              />
-                              <label className="form-check-label">politics</label>
-                            </div>
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                placeholder="enter your interest"
-                                value="design"
-                                onChange={(e) => changeInterest(e)}
-                                disabled={
-                                  form.interest.length < 5
-                                    ? false
-                                    : form.interest.filter(
-                                      (item) => item !== "design"
-                                    ).length === 5
-                                      ? true
-                                      : false
-                                }
-                              />
-                              <label className="form-check-label">design</label>
-                            </div>
-                          </div>
+                          ))}
                         </Col>
-                        {/* {Col 2} */}
 
                         <Col>
-                          <div className="Cekbox">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                placeholder="enter your interest"
-                                value="cook"
-                                onChange={(e) => changeInterest(e)}
-                                disabled={
-                                  form.interest.length < 5
-                                    ? false
-                                    : form.interest.filter(
-                                      (item) => item !== "cook"
-                                    ).length === 5
+                          {["cook", "tech", "religion", "art", "music"].map(
+                            (type) => (
+                              <div
+                                key={`default-${type}`}
+                                className="mb-4"
+                                style={{ fontSize: "18px" }}
+                              >
+                                <Form.Check
+                                  type="checkbox"
+                                  placeholder="enter your interest"
+                                  id={`default-${type}`}
+                                  label={` ${type}`}
+                                  value={`${type}`}
+                                  onChange={(e) => changeInterest(e)}
+                                  disabled={
+                                    form.interest.length < 5
+                                      ? false
+                                      : form.interest.filter(
+                                          (item) => item !== `${type}`
+                                        ).length === 5
                                       ? true
                                       : false
-                                }
-                              />
-                              <label className="form-check-label">cook</label>
-                            </div>
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                placeholder="enter your interest"
-                                value="tech"
-                                onChange={(e) => changeInterest(e)}
-                                disabled={
-                                  form.interest.length < 5
-                                    ? false
-                                    : form.interest.filter(
-                                      (item) => item !== "tech"
-                                    ).length === 5
-                                      ? true
-                                      : false
-                                }
-                              />
-                              <label className="form-check-label">tech</label>
-                            </div>
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                placeholder="enter your interest"
-                                value="religion"
-                                onChange={(e) => changeInterest(e)}
-                                disabled={
-                                  form.interest.length < 5
-                                    ? false
-                                    : form.interest.filter(
-                                      (item) => item !== "religion"
-                                    ).length === 5
-                                      ? true
-                                      : false
-                                }
-                              />
-                              <label className="form-check-label">religion</label>
-                            </div>
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                placeholder="enter your interest"
-                                value="art"
-                                onChange={(e) => changeInterest(e)}
-                                disabled={
-                                  form.interest.length < 5
-                                    ? false
-                                    : form.interest.filter(
-                                      (item) => item !== "art"
-                                    ).length === 5
-                                      ? true
-                                      : false
-                                }
-                              />
-                              <label className="form-check-label">art</label>
-                            </div>
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                placeholder="enter your interest"
-                                value="music"
-                                onChange={(e) => changeInterest(e)}
-                                disabled={
-                                  form.interest.length < 5
-                                    ? false
-                                    : form.interest.filter(
-                                      (item) => item !== "music"
-                                    ).length === 5
-                                      ? true
-                                      : false
-                                }
-                              />
-                              <label className="form-check-label">music</label>
-                            </div>
-                          </div>
+                                  }
+                                />
+                              </div>
+                            )
+                          )}
                         </Col>
-                        {/* {Coll 3} */}
 
                         <Col>
-                          <div className="Cekbox">
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
+                          {[
+                            "business",
+                            "psychology",
+                            "tourism",
+                            "bike",
+                            "science",
+                          ].map((type) => (
+                            <div
+                              key={`default-${type}`}
+                              className="mb-4"
+                              style={{ fontSize: "18px" }}
+                            >
+                              <Form.Check
                                 type="checkbox"
                                 placeholder="enter your interest"
-                                value="business"
+                                id={`default-${type}`}
+                                label={` ${type}`}
+                                value={`${type}`}
                                 onChange={(e) => changeInterest(e)}
                                 disabled={
                                   form.interest.length < 5
                                     ? false
                                     : form.interest.filter(
-                                      (item) => item !== "business"
-                                    ).length === 5
-                                      ? true
-                                      : false
+                                        (item) => item !== `${type}`
+                                      ).length === 5
+                                    ? true
+                                    : false
                                 }
                               />
-                              <label className="form-check-label">business</label>
                             </div>
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                placeholder="enter your interest"
-                                value="psychology"
-                                onChange={(e) => changeInterest(e)}
-                                disabled={
-                                  form.interest.length < 5
-                                    ? false
-                                    : form.interest.filter(
-                                      (item) => item !== "psychology"
-                                    ).length === 5
-                                      ? true
-                                      : false
-                                }
-                              />
-                              <label className="form-check-label">psychology</label>
-                            </div>
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                placeholder="enter your interest"
-                                value="tourism"
-                                onChange={(e) => changeInterest(e)}
-                                disabled={
-                                  form.interest.length < 5
-                                    ? false
-                                    : form.interest.filter(
-                                      (item) => item !== "tourism"
-                                    ).length === 5
-                                      ? true
-                                      : false
-                                }
-                              />
-                              <label className="form-check-label">tourism</label>
-                            </div>
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                placeholder="enter your interest"
-                                value="bike"
-                                onChange={(e) => changeInterest(e)}
-                                disabled={
-                                  form.interest.length < 5
-                                    ? false
-                                    : form.interest.filter(
-                                      (item) => item !== "bike"
-                                    ).length === 5
-                                      ? true
-                                      : false
-                                }
-                              />
-                              <label className="form-check-label">bike</label>
-                            </div>
-                            <div className="form-check">
-                              <input
-                                className="form-check-input"
-                                type="checkbox"
-                                placeholder="enter your interest"
-                                value="science"
-                                onChange={(e) => changeInterest(e)}
-                                disabled={
-                                  form.interest.length < 5
-                                    ? false
-                                    : form.interest.filter(
-                                      (item) => item !== "science"
-                                    ).length === 5
-                                      ? true
-                                      : false
-                                }
-                              />
-                              <label className="form-check-label">science</label>
-                            </div>
-                          </div>
+                          ))}
                         </Col>
                       </Row>
-                      <div className="">
-                        <p>You can choose Max 5 Interest</p>
+                      <div className="mt-3">
+                        <i class="fas fa-exclamation-triangle">
+                          <p>You can choose Max 5 Interest</p>
+                        </i>
+
                         <div className="button-choseiterest">
                           <Row>
-                            <Col>
+                            <Col className="mt-3">
                               <div className="d-flex">
                                 <Button
                                   onClick={() => changeStep("prev")}
-                                  className="mb-4"
+                                  className="me-3"
                                   style={{ width: "10rem" }}
                                 >
                                   Prev
@@ -634,7 +458,7 @@ export default function MultiStep() {
                                 {/* <Link to="/signin"> */}
                                 <Button
                                   type="submit"
-                                  className="mb-4"
+                                  className="ms-3"
                                   style={{ width: "10rem" }}
                                   onClick={handleRegister}
                                 >
@@ -646,7 +470,7 @@ export default function MultiStep() {
                           </Row>
                         </div>
                       </div>
-                    </div>
+                    </Form>
                   </div>
                 </Container>
               </div>

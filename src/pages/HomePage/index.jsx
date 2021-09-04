@@ -9,13 +9,15 @@ import MyPagination from '../../components/MyPagination/MyPagination'
 import { getPost } from '../../redux/action/post'
 import { getPostById } from '../../redux/action/postById'
 import { Link } from 'react-router-dom'
-
+import ReactLoading from 'react-loading';
 
 
 function HomePage() {
     const [posts, setPosts] = useState();
     const dispatch = useDispatch()
     const { listPost, loading } = useSelector((state) => state.posts);
+    const {search} = useSelector((state) => state.searchData)
+
     const user = useSelector((state) => state.userData.user)
 
     useEffect(() => {
@@ -31,8 +33,9 @@ function HomePage() {
 
     // console.log('comment',listComment)
     // console.log('data', listPost)
-    // console.log("ini data", listPost)
+    console.log("ini data", listPost)
 
+    console.log("searchdata", search?.data?.length)
     return (
         <>
             <div className="container mt-5">
@@ -46,16 +49,22 @@ function HomePage() {
                                 <h5 className="flex-grow-1 my-auto" style={{ fontSize: '22px', fontWeight: '700' }}>Your Events</h5>
                                 <p className="my-auto text-secondary" style={{ fontSize: '18px', fontWeight: '400' }}>See All Events</p>
                             </div>
-                            <div className="wrapper mx-auto mb-5">
-                                {listPost.length > 0 && posts?.reverse().filter(post => post.type[0] === 'event').filter((post, idx) => idx < 10).map((post, idx) => (
-                                    <Link style={{ textDecoration: "none" }} to={`/comunity-profile/${post.user_id.id}`}> <SmallCardMyEvent key={idx} title={post.title} /> </Link>
+                            {!loading && <div className="wrapper mx-auto mb-5">
+                                {search?.data?.length > 0? search?.data?.reverse?.().filter(post => post?.type?.[0] === 'event').filter((post, idx) => idx < 10).map((post, id) => (
+                                   <Link style={{ textDecoration: "none" }} to={`/comunity-profile/${post?.user_id?.id}`}> <SmallCardMyEvent key={id} title={post?.title} /></Link>
+                                )) :  listPost.length > 0 && posts?.reverse?.().filter(post => post?.type?.[0] === 'event').filter((post, idx) => idx < 10).map((post, id) => (
+                                    <Link style={{ textDecoration: "none" }} to={`/comunity-profile/${post?.user_id?.id}`}><SmallCardMyEvent key={id} title={post?.title} /></Link>
+                                
                                 ))}
-                            </div>
+                            </div>}
                         </div>
 
                         <div>
-                            {listPost.length > 0 && posts?.reverse().filter(post => post.type[0] === 'announcement').map((post, idx) => (
-                                <LargeCardMyEvent key={idx} contentCard={post.content} image={post.image} time={post.createdAt} interest={post.interest} location={post.user_id.location} like={post.like.length} userName={post.user_id.fullname} idPost={post.id} comment={post.comment.length} />
+                            {loading && <ReactLoading className="mx-auto" type={'cylon'} color={'#20BDE0'} height={300} width={150} />}
+                            {search?.data?.length > 0? search?.data?.reverse?.().filter(post => post?.type?.[0] === 'announcement').map((post, id) => (
+                                <LargeCardMyEvent key={id} contentCard={post?.content} image={post?.image} time={post?.createdAt} interest={post?.interest} location={post?.user_id?.location} like={post?.like?.length} userName={post?.user_id?.fullname} idPost={post?.id} comment={post?.comment?.length}/>
+                            )) : listPost.length > 0 && posts?.reverse?.().filter(post => post?.type?.[0] === 'announcement').map((post, id) => (
+                                <LargeCardMyEvent key={id} contentCard={post?.content} image={post?.image} time={post?.createdAt} interest={post?.interest} location={post?.user_id?.location} like={post?.like?.length} userName={post?.user_id?.fullname} idPost={post?.id} comment={post?.comment?.length}/>
                             ))}
                             <div className="text-center my-5">
                                 <MyPagination />
