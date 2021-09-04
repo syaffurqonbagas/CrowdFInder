@@ -1,6 +1,6 @@
 import { GET_COMMENT_BEGIN, GET_COMMENT_SUCCESS, GET_COMMENT_FAIL } from "../action/type";
 import { POST_COMMENT_BEGIN, POST_COMMENT_SUCCESS, POST_COMMENT_FAIL } from "../action/type";
-
+import { DELETE_COMMENT_BEGIN, DELETE_COMMENT_SUCCESS, DELETE_COMMENT_FAIL } from "../action/type";
 const initialState = {
     listComment: [],
     loading: false,
@@ -46,6 +46,23 @@ const comments = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 error: error,
+            };
+        case DELETE_COMMENT_BEGIN :
+            return {
+                ...state,
+                loading : true,
+            };
+        case DELETE_COMMENT_SUCCESS :
+            return {
+                ...state,
+                loading : false,
+                error : null,
+            };
+        case DELETE_COMMENT_FAIL :
+            return {
+                ...state,
+                loading : false,
+                error : error,
             }
         default:
             return {

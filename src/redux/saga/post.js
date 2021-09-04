@@ -55,7 +55,16 @@ function* deletePosts(actions) {
         yield put({
             type: DELETE_POST_FAIL,
             error: err,
-        })
+        });
+        yield (
+            Swal.fire({
+            position: 'center',
+            icon: 'warning',
+            title: 'this is not your post',
+            showConfirmButton: false,
+            timer: 1800
+          })
+        )
     }
 };
 

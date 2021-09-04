@@ -6,7 +6,7 @@ import useOnClickOutside from "./useOnClickOutside";
 import { Card, Button, FormControl, InputGroup } from 'react-bootstrap'
 import "./LargeCardMyEvent.css";
 // import image from '../../img/largeCardDummy.jpeg'
-import { getComment, postComment } from "../../redux/action/comment";
+import { deleteComment, getComment, postComment } from "../../redux/action/comment";
 import { putLike } from "../../redux/action/like";
 import { deletePost, getPost } from "../../redux/action/post";
 import ReactTimeAgo from 'react-time-ago'
@@ -15,7 +15,15 @@ import { useParams } from "react-router";
 
 function LargeCardMyEvent(props) {
     const {
-        contentCard, image, time, interest, location, like, comment, userName, idPost, action
+        contentCard, 
+        image, 
+        time, 
+        interest, 
+        location, 
+        like, 
+        comment, 
+        userName, 
+        idPost, 
     } = props;
 
     // const {id} = useParams(idPost)
@@ -37,8 +45,12 @@ function LargeCardMyEvent(props) {
     const { listComment, loading } = useSelector((state) => state.comments);
 
     useEffect(() => {
-        dispatch(getComment(idPost))
+        dispatch(getComment(idPost));
     }, [dispatch]);
+
+    //get current user and user id====================================
+    const {user} = useSelector((state) => state.userData);
+    const idUser = user.id;
 
     //post comment========================================
     const [body, setBody] = useState({
@@ -54,8 +66,19 @@ function LargeCardMyEvent(props) {
         e.preventDefault();
         dispatch(postComment(idPost ,body));
       };
-      
 
+    //delete comment======================================
+    const [idComment, setIdComment] = useState();
+    useEffect(() => {
+        listComment.map(item => {
+            setIdComment(item.user_id.id)
+         });
+    }, [listComment]);
+    const handleDeleteComment = async () => {
+        await dispatch(deleteComment(idComment));
+    }
+      
+ 
     //like post===========================================
     const likes = useSelector((state) => state.likes.like);
     const handleLikes = async (e) => {
@@ -91,12 +114,13 @@ function LargeCardMyEvent(props) {
     // console.log('likes', likes)
     // console.log('body gaes', body)
     // console.log('listcomment', listComment)
+    
     return (
         <>
             <div className="divider  my-3 mb-5"></div>
             <div className="headContainer">
 
-                <div onClick={action} className="d-flex">
+                <div className="d-flex">
                     <div className="imageAvatar mb-4 me-2">
                         <img src={`https://ui-avatars.com/api/?name=${userName}&background=random&length=1&rounded=true&size=35`} alt=""/>
                     </div>
@@ -190,7 +214,14 @@ function LargeCardMyEvent(props) {
                                     <div className="flex-grow-1" >{item.user_id.fullname}</div>
                                     <div style={{ color: '#828282' }}>3h ago</div>
                                 </div>
-                                <div style={{ fontWeight: '400', fontSize: '16px' }}>{item.content}</div>
+                            <div className="d-flex align-items-center">
+                                <div className="flex-grow-1" style={{ fontWeight: '400', fontSize: '16px' }}>{item.content}</div>
+                                {idUser === item.user_id.id && 
+                                    <label onClick={handleDeleteComment}>
+                                        <i className="fa fa-trash fa-2x"></i>
+                                    </label>
+                                }
+                                </div>
                             </div>
                         ))}
                     </div>
