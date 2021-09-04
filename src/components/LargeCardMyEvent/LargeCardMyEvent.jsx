@@ -17,23 +17,11 @@ function LargeCardMyEvent(props) {
         contentCard, image, time, interest, location, like, comment, userName, idPost, action
     } = props;
 
-    const [state, setState] = useState({
-        contentCard: contentCard,
-        image: image,
-        time: time,
-        interest: interest,
-        location: location,
-        like: like,
-        comment: comment,
-        userName: userName,
-        idPost: idPost,
-    })
-
     const dispatch = useDispatch();
     const { listComment, loading } = useSelector((state) => state.comments);
 
     useEffect(() => {
-        dispatch(getComment(state.idPost))
+        dispatch(getComment(idPost))
     }, [dispatch]);
 
     //post comment========================================
@@ -48,7 +36,7 @@ function LargeCardMyEvent(props) {
 
     const handlePostComment = async (e) => {
         e.preventDefault();
-        dispatch(postComment(state.idPost ,body));
+        dispatch(postComment(idPost ,body));
       };
       
 
@@ -92,7 +80,7 @@ function LargeCardMyEvent(props) {
 
                 <div onClick={action} className="d-flex">
                     <div className="imageAvatar mb-4 me-2">
-                        <img src={`https://ui-avatars.com/api/?name=${state?.userName}&background=random&length=1&rounded=true&size=35`} />
+                        <img src={`https://ui-avatars.com/api/?name=${userName}&background=random&length=1&rounded=true&size=35`} />
                     </div>
                     <div className="headText container-fluid d-block mb-2">
 
@@ -113,10 +101,10 @@ function LargeCardMyEvent(props) {
                                 className="my-auto"
                                 style={{ fontSize: "20px", fontWeight: "400" }}
                             >
-                                {state.userName}
+                                {userName}
                             </label>
                             <label className="headTextBadge rounded-pill ms-3 me-auto">
-                                {state.interest}
+                                {interest}
                             </label>
                             <label
                                 style={{
@@ -125,13 +113,13 @@ function LargeCardMyEvent(props) {
                                     color: "#828282",
                                 }}
                             >
-                                <i class="fa fa-map-marker ms-auto me-0 fa-xs"></i> {state.location}
+                                <i class="fa fa-map-marker ms-auto me-0 fa-xs"></i> {location}
                             </label>
                         </div>
                         <label
                             style={{ fontSize: "16px", fontWeight: "400", color: "#4F4F4F" }}
                         >
-                            <ReactTimeAgo date={state.time} locale="en-US" />
+                            <ReactTimeAgo date={time} locale="en-US" />
                         </label>
                     </div>
                 </div>
@@ -140,9 +128,9 @@ function LargeCardMyEvent(props) {
                     <Card>
                         <div className="w-75 ms-3 mt-3 mb-4">
                             <p className="font-size">
-                               {state.contentCard}
+                               {contentCard}
                             </p>
-                            <img className="imageSize" src={state.image} alt="" />
+                            <img className="imageSize" src={image} alt="" />
                         </div>
 
                         <div className="btnGroup d-inline-flex">
@@ -150,7 +138,7 @@ function LargeCardMyEvent(props) {
                                 <i className="fa fa-thumbs-o-up" ></i>Like({like})
                             </button>
                             <button className="button-card flex-grow-1" onClick={() => toggleComment()}>
-                                <i className="fa fa-commenting-o"></i>Comment({state.comment})
+                                <i className="fa fa-commenting-o"></i>Comment({comment})
                             </button>
                             <button className="button-card flex-grow-1">
                                 <i className="fa fa-share-alt"></i>Share

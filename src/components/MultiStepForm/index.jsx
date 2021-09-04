@@ -440,10 +440,10 @@ export default function MultiStep() {
                         </Col>
                       </Row>
                       <div className="mt-3">
-                        <Row>
-                        <i class="fas fa-exclamation-triangle fa-lg" ></i>
-                          <p>You can choose Max 5 Interest</p>
-                          </Row>
+                        
+                        <i class="fas fa-exclamation-triangle"><p>You can choose Max 5 Interest</p></i>
+                         
+                         
                         <div className="button-choseiterest">
                           <Row>
                             <Col className="mt-3">
