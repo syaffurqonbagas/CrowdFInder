@@ -11,7 +11,10 @@ export const LOGOUT = "LOGOUT";
 export const GET_USER_BEGIN = "GET_USER_BEGIN";
 export const GET_USER_SUCCESS = "GET_USER_SUCCESS";
 export const GET_USER_FAIL = "GET_USER_FAIL"
-export const GET_USER_ID = "GET_USER_ID"
+
+export const GET_USER_BY_ID_BEGIN = "GET_USER_BY_ID_BEGIN"
+export const GET_USER_BY_ID_SUCCESS = "GET_USER_BY_ID_SUCCESS"
+export const GET_USER_BY_ID_FAIL = "GET_USER_BY_ID_FAIL"
 
 export const UPDATE_USER_PROFILE = "UPDATE_USER_PROFILE"
 
@@ -67,6 +70,10 @@ export const CLEAR = "CLEAR"
 export const DELETE_POST_BEGIN = "DELETE_POST_BEGIN"
 export const DELETE_POST_SUCCESS = "DELETE_POST_SUCCESS"
 export const DELETE_POST_FAIL = "DELETE_POST_FAIL"
+
+export const PUT_ATTEND_BEGIN = "PUT_ATTEND_BEGIN"
+export const PUT_ATTEND_SUCCESS = "PUT_ATTEND_SUCCESS"
+export const PUT_ATTEND_FAIL = "PUT_ATTEND_FAIL"
 
 export const BASE_URL_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/api"
 export const GET_USER_CROWDFINDER = "https://crowdfinder.gabatch13.my.id/api/user/me"

@@ -5,10 +5,10 @@ import { put, takeEvery } from "@redux-saga/core/effects";
 
 function* putLikes(actions) {
     const Token = localStorage.getItem('user');
-    const {id} = actions;
+    const { id } = actions;
 
     try {
-        const res = yield axios.put(`${BASE_URL_CROWDFINDER}/post/like/${id}`,{}, {headers: {Authorization : `Bearer ${Token}`}});
+        const res = yield axios.put(`${BASE_URL_CROWDFINDER}/post/like/${id}`, {}, { headers: { Authorization: `Bearer ${Token}` } });
         yield put({
             type: PUT_LIKE_SUCCESS,
             payload: res.data,

@@ -53,13 +53,13 @@ const Header = () => {
   return (
     <>
       <div className="header">
-        <Navbar>
+        <Navbar >
           <Container>
-            <Navbar.Brand className="header-logo" href="/home">
+            <Link to="/home"><Navbar.Brand className="header-logo">
               <LogoCrowdFinder />
-            </Navbar.Brand>
+            </Navbar.Brand></Link>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
+            <Navbar.Collapse id="navbarScroll" className="d-flex justify-content-around">
               {isLoggedIn && (
                 <>
                   <Nav className="me-auto">

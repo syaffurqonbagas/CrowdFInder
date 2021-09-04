@@ -94,13 +94,6 @@ const userData = (state = initialState, action) => {
         user: [],
         error: error,
       };
-    case GET_USER_ID:
-      return {
-        ...state,
-        isLoggedIn: true,
-        user: payload,
-        error: error,
-      };
     case UPDATE_USER_PROFILE:
       return {
         ...state,

@@ -6,6 +6,7 @@ import user from '../../image/user.png'
 import { TiLocation } from 'react-icons/ti';
 import { useDispatch } from "react-redux"
 import { logout } from "../../redux/action/user"
+import './responsive.scss'
 
 function AvatarCard(props) {
     const dispatch = useDispatch();

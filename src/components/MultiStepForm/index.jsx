@@ -230,8 +230,8 @@ export default function MultiStep() {
                       <div className="interest ms-3">
                         <div className="content-interest justify-content-center">
                           <p>
-                            <i class="fas fa-map-marker-alt"></i> Where is city
-                            you live in?
+                            <i className="fas fa-map-marker-alt"></i> Where is
+                            city you live in?
                           </p>
                           <p>Let people find you greate thoughts</p>
                           <div style={{ width: "85%" }}>
@@ -249,7 +249,7 @@ export default function MultiStep() {
                               <Col>
                                 <div className="mb-1">
                                   <input
-                                    class="form-radio-input"
+                                    className="form-radio-input"
                                     type="radio"
                                     name="role"
                                     placeholder="User"
@@ -262,7 +262,7 @@ export default function MultiStep() {
                                 </div>
                                 <div className="mb-2">
                                   <input
-                                    class="form-radio-input"
+                                    className="form-radio-input"
                                     type="radio"
                                     name="role"
                                     placeholder="Community"
@@ -440,10 +440,10 @@ export default function MultiStep() {
                         </Col>
                       </Row>
                       <div className="mt-3">
-                        
-                        <i class="fas fa-exclamation-triangle"><p>You can choose Max 5 Interest</p></i>
-                         
-                         
+                        <i class="fas fa-exclamation-triangle">
+                          <p>You can choose Max 5 Interest</p>
+                        </i>
+
                         <div className="button-choseiterest">
                           <Row>
                             <Col className="mt-3">

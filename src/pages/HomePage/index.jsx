@@ -7,8 +7,9 @@ import SmallCardMyEvent from '../../components/SmallCardMyEvent'
 import LargeCardMyEvent from '../../components/LargeCardMyEvent/LargeCardMyEvent.jsx'
 import MyPagination from '../../components/MyPagination/MyPagination'
 import { getPost } from '../../redux/action/post'
-import { getComment } from '../../redux/action/comment'
 import { getPostById } from '../../redux/action/postById'
+import { Link } from 'react-router-dom'
+
 
 
 function HomePage() {
@@ -17,14 +18,17 @@ function HomePage() {
     const { listPost, loading } = useSelector((state) => state.posts);
     const {search} = useSelector((state) => state.searchData)
 
+    const user = useSelector((state) => state.userData.user)
 
     useEffect(() => {
         dispatch(getPost())
+        dispatch(getPostById(1, user.id))
     }, [dispatch]);
 
     useEffect(() => {
         setPosts(listPost)
     }, [listPost])
+
 
 
     // console.log('comment',listComment)
@@ -47,9 +51,10 @@ function HomePage() {
                             </div>
                             <div className="wrapper mx-auto mb-5">
                                 {search?.data?.length > 0? search?.data?.reverse?.().filter(post => post?.type?.[0] === 'event').filter((post, idx) => idx < 10).map((post, id) => (
-                                    <SmallCardMyEvent key={id} title={post?.title} />
+                                   <Link style={{ textDecoration: "none" }} to={`/comunity-profile/${post?.user_id?.id}`}> <SmallCardMyEvent key={id} title={post?.title} /></Link>
                                 )) :  listPost.length > 0 && posts?.reverse?.().filter(post => post?.type?.[0] === 'event').filter((post, idx) => idx < 10).map((post, id) => (
-                                    <SmallCardMyEvent key={id} title={post?.title} />
+                                    <Link style={{ textDecoration: "none" }} to={`/comunity-profile/${post?.user_id?.id}`}><SmallCardMyEvent key={id} title={post?.title} /></Link>
+                                
                                 ))}
                             </div>
                         </div>

@@ -1,9 +1,10 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import { Card, Container, Button } from "react-bootstrap"
-import './index.scss'
 import user from '../../image/user.png'
 import { TiLocation } from 'react-icons/ti';
+import '../AvatarCard/index.scss'
+import '../AvatarCard/responsive.scss'
 
 function UserProfileCard() {
     return (

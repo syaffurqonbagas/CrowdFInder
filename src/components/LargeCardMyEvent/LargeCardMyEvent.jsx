@@ -1,10 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import useOnClickOutside from "./useOnClickOutside";
 import { Card, Button, FormControl, InputGroup } from 'react-bootstrap'
 import "./LargeCardMyEvent.css";
-import user from '../../image/user.png'
 // import image from '../../img/largeCardDummy.jpeg'
 import { getComment, postComment } from "../../redux/action/comment";
 import { putLike } from "../../redux/action/like";
@@ -49,8 +47,8 @@ function LargeCardMyEvent(props) {
 
     //delete post=========================================
     const handleDelete = async () => {
-       await dispatch(deletePost(idPost))
-       await dispatch(postComment(idPost, body));
+        await dispatch(deletePost(idPost))
+        await dispatch(postComment(idPost, body));
     }
 
     // console.log('ini id post',idPost)
@@ -80,7 +78,7 @@ function LargeCardMyEvent(props) {
 
                 <div onClick={action} className="d-flex">
                     <div className="imageAvatar mb-4 me-2">
-                        <img src={`https://ui-avatars.com/api/?name=${userName}&background=random&length=1&rounded=true&size=35`} />
+                        <img src={`https://ui-avatars.com/api/?name=${userName}&background=random&length=1&rounded=true&size=35`} alt=""/>
                     </div>
                     <div className="headText container-fluid d-block mb-2">
 
@@ -113,7 +111,7 @@ function LargeCardMyEvent(props) {
                                     color: "#828282",
                                 }}
                             >
-                                <i class="fa fa-map-marker ms-auto me-0 fa-xs"></i> {location}
+                                <i className="fa fa-map-marker ms-auto me-0 fa-xs"></i> {location}
                             </label>
                         </div>
                         <label
@@ -158,7 +156,7 @@ function LargeCardMyEvent(props) {
                                 />
                             </InputGroup>
                             <div className="position-relative toTheLeft">
-                                <Button className="rounded-circle btnStyle-largeCard" variant="secondary" onClick={handlePostComment}><i class="fa fa-paper-plane"></i></Button>
+                                <Button className="rounded-circle btnStyle-largeCard" variant="secondary" onClick={handlePostComment}><i className="fa fa-paper-plane"></i></Button>
                             </div>
                         </div>
 

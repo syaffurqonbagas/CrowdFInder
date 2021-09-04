@@ -10,31 +10,47 @@ import { getPostById } from '../../redux/action/postById';
 
 
 function Activities(props) {
+    const [posts, setPosts] = useState();
     const user = useSelector((state) => state.userData.user)
     const { postbyid, loading } = useSelector((state) => state.postsId);
     const [show, setShow] = useState(true)
     const [detailcard, setDetailCard] = useState({ title: "", content: "" })
     const [data, setData] = useState({ name: "", id: "" })
+    const { listPost } = useSelector((state) => state.posts);
 
+
+    useEffect(() => {
+        setPosts(postbyid)
+    }, [postbyid])
     // console.log('ini type', postbyid[0].id)
 
     return (
         <div>
             {show ?
                 [
-                    postbyid.filter((item) => item.type[0] === "event").map((item) =>
-                    (<LargeCrowdFinderCard username={item.user_id.fullname} title={item.title} content={item.content}
+                    postbyid.length > 0 && posts?.reverse().filter(post => post.type[0] === 'event').filter((post, idx) => idx < 10).map((post, idx) =>
+                    (<LargeCrowdFinderCard key={idx} userName={post.user_id.username} title={post.title} content={post.content} time={post.createdAt}
                         action={() => {
                             setShow(false)
                             setDetailCard({
-                                title: item.title,
-                                content: item.content
+                                title: post.title,
+                                content: post.content
                             })
                         }
-                        } eventId={item.id} />)),
-
-                    postbyid.map((item) =>
-                        (<LargeCardMyEvent contentCard={item.content} image={item.image} interest={item.interest} location={item.location} like={item.like.length} userName={item.user_id.fullname} idPost={item.id} />)),
+                        } eventId={post.id} />)),
+                    postbyid.length > 0 && posts?.reverse().filter(post => post.type[0] === 'announcement').map((post, idx) => (
+                        <LargeCardMyEvent
+                            key={idx}
+                            contentCard={post.content}
+                            image={post.image}
+                            time={post.createdAt}
+                            interest={post.interest}
+                            location={post.user_id.location}
+                            like={post.like.length}
+                            userName={post.user_id.fullname}
+                            idPost={post.id}
+                            comment={post.comment.length} />
+                    )),
                     <div className="pagination justify-content-center mt-5">
                         <MyPagination />
                     </div>

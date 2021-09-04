@@ -90,13 +90,7 @@ function* getUser() {
   }
 }
 
-function* getUserDetail() {
-  const res = yield axios.get(`${GET_USER_DETAIL_CROWDFINDER}`);
-  yield put({
-    type: GET_USER_ID,
-    payload: res.data,
-  });
-}
+
 
 function* userUpdate(action) {
   const Token = localStorage.getItem("user");
@@ -138,10 +132,6 @@ export function* watchLogout() {
 
 export function* watchGetUser() {
   yield takeLatest(GET_USER_BEGIN, getUser);
-}
-
-export function* watchGetUserDetail() {
-  yield takeEvery(GET_USER_ID, getUserDetail);
 }
 
 export function* watchUserUpdate() {

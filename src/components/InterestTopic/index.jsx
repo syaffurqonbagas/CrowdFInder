@@ -33,53 +33,53 @@ function InterstTopic(props) {
                             <div className="d-flex justify-content-between my-4">
                                 <div>
                                     <div className="Cekbox">
-                                        <div class="form-check">
+                                        <div className="form-check">
                                             <input
-                                                class="form-check-input"
+                                                className="form-check-input"
                                                 type="checkbox"
                                                 value="sports"
                                             />
-                                            <label class="form-check-label" for="flexCheckDefault">
+                                            <label className="form-check-label" for="flexCheckDefault">
                                                 sports
                                             </label>
                                         </div>
-                                        <div class="form-check">
+                                        <div className="form-check">
                                             <input
-                                                class="form-check-input"
+                                                className="form-check-input"
                                                 type="checkbox"
                                                 value="finance"
                                             />
-                                            <label class="form-check-label" for="flexCheckDefault">
+                                            <label className="form-check-label" for="flexCheckDefault">
                                                 finance
                                             </label>
                                         </div>
-                                        <div class="form-check">
+                                        <div className="form-check">
                                             <input
-                                                class="form-check-input"
+                                                className="form-check-input"
                                                 type="checkbox"
                                                 value="automotive"
                                             />
-                                            <label class="form-check-label" for="flexCheckDefault">
+                                            <label className="form-check-label" for="flexCheckDefault">
                                                 automotivee
                                             </label>
                                         </div>
-                                        <div class="form-check">
+                                        <div className="form-check">
                                             <input
-                                                class="form-check-input"
+                                                className="form-check-input"
                                                 type="checkbox"
                                                 value="politics"
                                             />
-                                            <label class="form-check-label" for="flexCheckDefault">
+                                            <label className="form-check-label" for="flexCheckDefault">
                                                 politics
                                             </label>
                                         </div>
-                                        <div class="form-check">
+                                        <div className="form-check">
                                             <input
-                                                class="form-check-input"
+                                                className="form-check-input"
                                                 type="checkbox"
                                                 value="design"
                                             />
-                                            <label class="form-check-label" for="flexCheckDefault">
+                                            <label className="form-check-label" for="flexCheckDefault">
                                                 design
                                             </label>
                                         </div>
@@ -89,53 +89,53 @@ function InterstTopic(props) {
 
                                 <div>
                                     <div className="Cekbox">
-                                        <div class="form-check">
+                                        <div className="form-check">
                                             <input
-                                                class="form-check-input"
+                                                className="form-check-input"
                                                 type="checkbox"
                                                 value="cook"
                                             />
-                                            <label class="form-check-label" for="flexCheckDefault">
+                                            <label className="form-check-label" for="flexCheckDefault">
                                                 cook
                                             </label>
                                         </div>
-                                        <div class="form-check">
+                                        <div className="form-check">
                                             <input
-                                                class="form-check-input"
+                                                className="form-check-input"
                                                 type="checkbox"
                                                 value="tech"
                                             />
-                                            <label class="form-check-label" for="flexCheckDefault">
+                                            <label className="form-check-label" for="flexCheckDefault">
                                                 tech
                                             </label>
                                         </div>
-                                        <div class="form-check">
+                                        <div className="form-check">
                                             <input
-                                                class="form-check-input"
+                                                className="form-check-input"
                                                 type="checkbox"
                                                 value="religion"
                                             />
-                                            <label class="form-check-label" for="flexCheckDefault">
+                                            <label className="form-check-label" for="flexCheckDefault">
                                                 religion
                                             </label>
                                         </div>
-                                        <div class="form-check">
+                                        <div className="form-check">
                                             <input
-                                                class="form-check-input"
+                                                className="form-check-input"
                                                 type="checkbox"
                                                 value="art"
                                             />
-                                            <label class="form-check-label" for="flexCheckDefault">
+                                            <label className="form-check-label" for="flexCheckDefault">
                                                 art
                                             </label>
                                         </div>
-                                        <div class="form-check">
+                                        <div className="form-check">
                                             <input
-                                                class="form-check-input"
+                                                className="form-check-input"
                                                 type="checkbox"
                                                 value="music"
                                             />
-                                            <label class="form-check-label" for="flexCheckDefault">
+                                            <label className="form-check-label" for="flexCheckDefault">
                                                 music
                                             </label>
                                         </div>
@@ -145,53 +145,53 @@ function InterstTopic(props) {
 
                                 <div>
                                     <div className="Cekbox">
-                                        <div class="form-check">
+                                        <div className="form-check">
                                             <input
-                                                class="form-check-input"
+                                                className="form-check-input"
                                                 type="checkbox"
                                                 value="business"
                                             />
-                                            <label class="form-check-label" for="flexCheckDefault">
+                                            <label className="form-check-label" for="flexCheckDefault">
                                                 business
                                             </label>
                                         </div>
-                                        <div class="form-check">
+                                        <div className="form-check">
                                             <input
-                                                class="form-check-input"
+                                                className="form-check-input"
                                                 type="checkbox"
                                                 value="psychology"
                                             />
-                                            <label class="form-check-label" for="flexCheckDefault">
+                                            <label className="form-check-label" for="flexCheckDefault">
                                                 psychology
                                             </label>
                                         </div>
-                                        <div class="form-check">
+                                        <div className="form-check">
                                             <input
-                                                class="form-check-input"
+                                                className="form-check-input"
                                                 type="checkbox"
                                                 value="tourism"
                                             />
-                                            <label class="form-check-label" for="flexCheckDefault">
+                                            <label className="form-check-label" for="flexCheckDefault">
                                                 tourism
                                             </label>
                                         </div>
-                                        <div class="form-check">
+                                        <div className="form-check">
                                             <input
-                                                class="form-check-input"
+                                                className="form-check-input"
                                                 type="checkbox"
                                                 value="bike"
                                             />
-                                            <label class="form-check-label" for="flexCheckDefault">
+                                            <label className="form-check-label" for="flexCheckDefault">
                                                 bike
                                             </label>
                                         </div>
-                                        <div class="form-check">
+                                        <div className="form-check">
                                             <input
-                                                class="form-check-input"
+                                                className="form-check-input"
                                                 type="checkbox"
                                                 value="science"
                                             />
-                                            <label class="form-check-label" for="flexCheckDefault">
+                                            <label className="form-check-label" for="flexCheckDefault">
                                                 science
                                             </label>
                                         </div>
