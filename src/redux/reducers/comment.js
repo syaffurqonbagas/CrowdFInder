@@ -47,22 +47,22 @@ const comments = (state = initialState, action) => {
                 loading: false,
                 error: error,
             };
-        case DELETE_COMMENT_BEGIN :
+        case DELETE_COMMENT_BEGIN:
             return {
                 ...state,
-                loading : true,
+                loading: true,
             };
-        case DELETE_COMMENT_SUCCESS :
+        case DELETE_COMMENT_SUCCESS:
             return {
                 ...state,
-                loading : false,
-                error : null,
+                loading: false,
+                error: null,
             };
-        case DELETE_COMMENT_FAIL :
+        case DELETE_COMMENT_FAIL:
             return {
                 ...state,
-                loading : false,
-                error : error,
+                loading: false,
+                error: error,
             }
         default:
             return {

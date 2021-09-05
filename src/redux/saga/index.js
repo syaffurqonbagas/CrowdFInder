@@ -3,10 +3,10 @@ import {
   watchPostAnnouncements,
   watchUpdateAnnouncement,
 } from "./announcement";
-import { 
-  watchDeleteComments, 
-  watchGetComments, 
-  watchPostComments 
+import {
+  watchDeleteComments,
+  watchGetComments,
+  watchPostComments
 } from "./comment";
 import { watchPostEvents } from "./event";
 import { watchDeletePosts, watchGetPosts } from "./post";
@@ -16,12 +16,13 @@ import {
   watchLogin,
   watchLogout,
   watchGetUser,
-  watchUserUpdate,
 } from "./user";
 import { watchPutLikes } from "./like";
 import { watchSearchFunction } from "./search";
 import { watchGetUserById } from "./userById";
 import { watchAttendEvent } from "./attend";
+import { watchFollowUser } from "./followUser";
+import { watchUserUpdate } from "./updateUser";
 
 export default function* rootSaga() {
   yield all([
@@ -29,7 +30,6 @@ export default function* rootSaga() {
     watchLogin(),
     watchLogout(),
     watchGetUser(),
-    watchUserUpdate(),
     watchGetPosts(),
     watchPostEvents(),
     watchPostAnnouncements(),
@@ -43,5 +43,7 @@ export default function* rootSaga() {
     watchGetUserById(),
     watchAttendEvent(),
     watchDeleteComments(),
+    watchFollowUser(),
+    watchUserUpdate()
   ]);
 }

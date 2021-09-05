@@ -14,7 +14,7 @@ function ListCardPeople(props) {
                         </div>
                         <div className="user-title ms-4">
                             <h5>{props.fullname}</h5>
-                            <p>Comunity Manager</p>
+                            <p>{props.role}</p>
                         </div>
                     </div>
                     <div>

@@ -16,7 +16,7 @@ function HomePage() {
     const [posts, setPosts] = useState();
     const dispatch = useDispatch()
     const { listPost, loading } = useSelector((state) => state.posts);
-    const {search} = useSelector((state) => state.searchData)
+    const { search } = useSelector((state) => state.searchData)
 
     const user = useSelector((state) => state.userData.user)
 
@@ -34,9 +34,9 @@ function HomePage() {
 
     // console.log('comment',listComment)
     // console.log('data', listPost)
-    console.log("ini data", listPost)
+    // console.log("ini data", listPost)
 
-    console.log("searchdata", search?.data?.length)
+    // console.log("searchdata", search?.data?.length)
     return (
         <>
             <div className="container mt-5">
@@ -51,18 +51,18 @@ function HomePage() {
                                 <p className="my-auto text-secondary" style={{ fontSize: '18px', fontWeight: '400' }}>See All Events</p>
                             </div>
                             {!loading && <div className="wrapper mx-auto mb-5">
-                                {search?.data?.length > 0? search?.data?.reverse?.().filter(post => post?.type?.[0] === 'event').filter((post, idx) => idx < 10).map((post, id) => (
-                                   <Link style={{ textDecoration: "none" }} to={`/comunity-profile/${post?.user_id?.id}`}> <SmallCardMyEvent key={id} title={post?.title} /></Link>
-                                )) :  listPost.length > 0 && posts?.reverse?.().filter(post => post?.type?.[0] === 'event').filter((post, idx) => idx < 10).map((post, id) => (
+                                {search?.data?.length > 0 ? search?.data?.reverse?.().filter(post => post?.type?.[0] === 'event').filter((post, idx) => idx < 10).map((post, id) => (
+                                    <Link style={{ textDecoration: "none" }} to={`/comunity-profile/${post?.user_id?.id}`}> <SmallCardMyEvent key={id} title={post?.title} /></Link>
+                                )) : listPost.length > 0 && posts?.reverse?.().filter(post => post?.type?.[0] === 'event').filter((post, idx) => idx < 10).map((post, id) => (
                                     <Link style={{ textDecoration: "none" }} to={`/comunity-profile/${post?.user_id?.id}`}><SmallCardMyEvent key={id} title={post?.title} /></Link>
-                                
+
                                 ))}
                             </div>}
                         </div>
 
                         <div>
-                            {loading && <ReactLoading  className="mx-auto" type={'cylon'} color={'#20BDE0'} height={300} width={150} />}
-                            {search?.data?.length > 0? search?.data?.reverse?.().filter(post => post?.type?.[0] === 'announcement').map((post, id) => (
+                            {loading && <ReactLoading className="mx-auto" type={'cylon'} color={'#20BDE0'} height={300} width={150} />}
+                            {search?.data?.length > 0 ? search?.data?.reverse?.().filter(post => post?.type?.[0] === 'announcement').map((post, id) => (
                                 <LargeCardMyEvent key={id} contentCard={post?.content} image={post?.image} time={post?.createdAt} interest={post?.interest} location={post?.user_id?.location} like={post?.like?.length} userName={post?.user_id?.fullname} idPost={post?.id} comment={post?.comment?.length} />
                             )) : listPost.length > 0 && posts?.reverse?.().filter(post => post?.type?.[0] === 'announcement').map((post, id) => (
                                 <LargeCardMyEvent key={id} contentCard={post?.content} image={post?.image} time={post?.createdAt} interest={post?.interest} location={post?.user_id?.location} like={post?.like?.length} userName={post?.user_id?.fullname} idPost={post?.id} comment={post?.comment?.length} />

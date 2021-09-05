@@ -9,6 +9,8 @@ import likes from "./like";
 import searchData from "./search"
 import getUserById from "./userById"
 import attendEvent from "./attend";
+import followUser from "./followUser";
+import updateUser from "./updateUser";
 
 export default combineReducers({
     userData,
@@ -20,5 +22,7 @@ export default combineReducers({
     likes,
     searchData,
     getUserById,
-    attendEvent
+    attendEvent,
+    followUser,
+    updateUser
 });

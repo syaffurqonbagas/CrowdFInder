@@ -27,7 +27,7 @@ function* postComments(actions) {
     const Token = localStorage.getItem('user');
     try {
         const res = yield axios.post(`${BASE_URL_CROWDFINDER}/comment/${post_id}`, body, { headers: { Authorization: `Bearer ${Token}` } });
-        yield console.log("ini masuk", res.data.data)
+        // yield console.log("ini masuk", res.data.data)
         yield put({
             type: POST_COMMENT_SUCCESS,
             payload: res.data.data
@@ -53,12 +53,12 @@ function* deleteComments(actions) {
         });
         yield (
             Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Deleted',
-            showConfirmButton: false,
-            timer: 1800
-          })
+                position: 'center',
+                icon: 'success',
+                title: 'Deleted',
+                showConfirmButton: false,
+                timer: 1800
+            })
         );
         // yield window.location.replace("/home")<
     } catch (err) {
@@ -68,12 +68,12 @@ function* deleteComments(actions) {
         });
         yield (
             Swal.fire({
-            position: 'center',
-            icon: 'warning',
-            title: 'this is not your post',
-            showConfirmButton: false,
-            timer: 1800
-          })
+                position: 'center',
+                icon: 'warning',
+                title: 'this is not your post',
+                showConfirmButton: false,
+                timer: 1800
+            })
         )
     }
 };

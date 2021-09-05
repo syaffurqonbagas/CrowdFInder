@@ -11,6 +11,7 @@ import {
   LOGOUT,
   GET_USER_ID,
   UPDATE_USER_PROFILE,
+  UPDATE_USER_PROFILE_BEGIN,
 } from "../action/type";
 
 // const users = JSON.parse(localStorage.getItem("user"));
@@ -84,7 +85,7 @@ const userData = (state = initialState, action) => {
         ...state,
         isLoggedIn: true,
         user: payload,
-        loading:false,
+        loading: false,
         error: null,
       };
     case GET_USER_FAIL:
@@ -94,14 +95,6 @@ const userData = (state = initialState, action) => {
         user: [],
         error: error,
       };
-    case UPDATE_USER_PROFILE:
-      return {
-        ...state,
-        isLoggedIn: true,
-        user: payload,
-        error: error,
-
-      }
 
     default:
       return state;

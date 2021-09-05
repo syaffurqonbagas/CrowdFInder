@@ -8,10 +8,10 @@ export const getPost = (page = 1) => {
 };
 
 
-  export const deletePost = (id) => {
-    return {
-      type: DELETE_POST_BEGIN,
-      id,
-    };
+export const deletePost = (id) => {
+  return {
+    type: DELETE_POST_BEGIN,
+    id,
   };
+};
 
