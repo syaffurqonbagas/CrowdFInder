@@ -42,19 +42,38 @@ function* PostAnnouncements(actions) {
     }
 };
 
-function* UpdateAnnouncement(actions, id) {
-    const { data } = actions;
+function* UpdateAnnouncement(actions) {
+    const { data, id } = actions;
     try {
         const res = yield axios.put(`${BASE_URL_CROWDFINDER}/post/announcement/${id}`, data, { headers: { Authorization: `Bearer ${Token}` } });
         yield put({
             type: UPDATE_ANNOUNCEMENT_SUCCESS,
             payload: res.data,
         });
+        yield (
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Done :)',
+                showConfirmButton: false,
+                timer: 1800
+            })
+        );
+        yield window.location.replace("/home")
     } catch (err) {
         yield put({
             type: UPDATE_ANNOUNCEMENT_FAIL,
             error: err,
         });
+        yield (
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'Filled the form, Please :(',
+                showConfirmButton: false,
+                timer: 1800
+            })
+        );
     };
 
 };

@@ -24,6 +24,8 @@ function LargeCardMyEvent(props) {
         comment,
         userName,
         idPost,
+        idComment,
+        idUserPost,
     } = props;
 
     // const {id} = useParams(idPost)
@@ -68,14 +70,9 @@ function LargeCardMyEvent(props) {
     };
 
     //delete comment======================================
-    const [idComment, setIdComment] = useState();
-    useEffect(() => {
-        listComment.map(item => {
-            setIdComment(item.user_id.id)
-        });
-    }, [listComment]);
-    const handleDeleteComment = async () => {
-        await dispatch(deleteComment(idComment));
+    const handleDeleteComment = async (idCommentDel) => {
+        await dispatch(deleteComment(idCommentDel));
+        await dispatch(getPost)
     }
 
 
@@ -127,9 +124,10 @@ function LargeCardMyEvent(props) {
                     <div className="headText container-fluid d-block mb-2">
 
                         <div ref={ref} className="d-flex justify-content-end m-0 positionRelative">
-                            <i className="fa fa-ellipsis-h"
+                            { idUser === idUserPost && <i className="fa fa-ellipsis-h"
                                 onClick={() => toggleDropDown()}
                                 tabIndex="0"></i>
+                            }
                             {show && (
                                 <div className="card position-absolute text-center stylingHover" style={{ width: '7rem' }}>
                                     <Link to={`/update-announcement/${idPost}`}>Edit</Link>
@@ -217,7 +215,7 @@ function LargeCardMyEvent(props) {
                                 <div className="d-flex align-items-center">
                                     <div className="flex-grow-1" style={{ fontWeight: '400', fontSize: '16px' }}>{item.content}</div>
                                     {idUser === item.user_id.id &&
-                                        <label onClick={handleDeleteComment}>
+                                        <label onClick={() => handleDeleteComment(item.id)}>
                                             <i className="fa fa-trash fa-2x"></i>
                                         </label>
                                     }
