@@ -1,4 +1,4 @@
-import { REGISTER_BEGIN, LOGIN_BEGIN, LOGOUT, GET_USER_BEGIN, GET_USER_ID, UPDATE_USER_PROFILE } from "./type";
+import { REGISTER_BEGIN, LOGIN_BEGIN, LOGOUT, GET_USER_BEGIN, PUT_UPDATE_USER_PROFILE_BEGIN, } from "./type";
 
 export const Register = (
   role,
@@ -43,7 +43,7 @@ export const getCurrentUser = () => {
 
 export const updateUser = (interest, fullname, username, email, location, image, bio) => {
   return {
-    type: UPDATE_USER_PROFILE,
+    type: PUT_UPDATE_USER_PROFILE_BEGIN,
     interest,
     fullname,
     username,

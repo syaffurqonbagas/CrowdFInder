@@ -15,15 +15,15 @@ import { useParams } from "react-router";
 
 function LargeCardMyEvent(props) {
     const {
-        contentCard, 
-        image, 
-        time, 
-        interest, 
-        location, 
-        like, 
-        comment, 
-        userName, 
-        idPost, 
+        contentCard,
+        image,
+        time,
+        interest,
+        location,
+        like,
+        comment,
+        userName,
+        idPost,
     } = props;
 
     // const {id} = useParams(idPost)
@@ -49,7 +49,7 @@ function LargeCardMyEvent(props) {
     }, [dispatch]);
 
     //get current user and user id====================================
-    const {user} = useSelector((state) => state.userData);
+    const { user } = useSelector((state) => state.userData);
     const idUser = user.id;
 
     //post comment========================================
@@ -64,21 +64,21 @@ function LargeCardMyEvent(props) {
 
     const handlePostComment = async (e) => {
         e.preventDefault();
-        dispatch(postComment(idPost ,body));
-      };
+        dispatch(postComment(idPost, body));
+    };
 
     //delete comment======================================
     const [idComment, setIdComment] = useState();
     useEffect(() => {
         listComment.map(item => {
             setIdComment(item.user_id.id)
-         });
+        });
     }, [listComment]);
     const handleDeleteComment = async () => {
         await dispatch(deleteComment(idComment));
     }
-      
- 
+
+
     //like post===========================================
     const likes = useSelector((state) => state.likes.like);
     const handleLikes = async (e) => {
@@ -89,9 +89,9 @@ function LargeCardMyEvent(props) {
     //delete post=========================================
     const loadingDelete = useSelector((state) => state.posts.listPost.loading)
     const handleDelete = async () => {
-       await dispatch(deletePost(idPost))
-       await dispatch(postComment(idPost, body));
-       await dispatch(getPost())
+        await dispatch(deletePost(idPost))
+        await dispatch(postComment(idPost, body));
+        await dispatch(getPost())
     }
 
     // console.log('ini id post',idPost)
@@ -114,7 +114,7 @@ function LargeCardMyEvent(props) {
     // console.log('likes', likes)
     // console.log('body gaes', body)
     // console.log('listcomment', listComment)
-    
+
     return (
         <>
             <div className="divider  my-3 mb-5"></div>
@@ -122,7 +122,7 @@ function LargeCardMyEvent(props) {
 
                 <div className="d-flex">
                     <div className="imageAvatar mb-4 me-2">
-                        <img src={`https://ui-avatars.com/api/?name=${userName}&background=random&length=1&rounded=true&size=35`} alt=""/>
+                        <img src={`https://ui-avatars.com/api/?name=${userName}&background=random&length=1&rounded=true&size=35`} alt="" />
                     </div>
                     <div className="headText container-fluid d-block mb-2">
 
@@ -132,7 +132,7 @@ function LargeCardMyEvent(props) {
                                 tabIndex="0"></i>
                             {show && (
                                 <div className="card position-absolute text-center stylingHover" style={{ width: '7rem' }}>
-                                    <Link to="/update-announcement">Edit</Link>
+                                    <Link to={`/update-announcement/${idPost}`}>Edit</Link>
                                     <label onClick={() => handleDelete()}>Delete</label>
                                 </div>
                             )}
@@ -170,7 +170,7 @@ function LargeCardMyEvent(props) {
                     <Card>
                         <div className="w-75 ms-3 mt-3 mb-4">
                             <p className="font-size">
-                               {contentCard}
+                                {contentCard}
                             </p>
                             <img className="imageSize" src={image} alt="" />
                         </div>
@@ -214,13 +214,13 @@ function LargeCardMyEvent(props) {
                                     <div className="flex-grow-1" >{item.user_id.fullname}</div>
                                     <div style={{ color: '#828282' }}>3h ago</div>
                                 </div>
-                            <div className="d-flex align-items-center">
-                                <div className="flex-grow-1" style={{ fontWeight: '400', fontSize: '16px' }}>{item.content}</div>
-                                {idUser === item.user_id.id && 
-                                    <label onClick={handleDeleteComment}>
-                                        <i className="fa fa-trash fa-2x"></i>
-                                    </label>
-                                }
+                                <div className="d-flex align-items-center">
+                                    <div className="flex-grow-1" style={{ fontWeight: '400', fontSize: '16px' }}>{item.content}</div>
+                                    {idUser === item.user_id.id &&
+                                        <label onClick={handleDeleteComment}>
+                                            <i className="fa fa-trash fa-2x"></i>
+                                        </label>
+                                    }
                                 </div>
                             </div>
                         ))}

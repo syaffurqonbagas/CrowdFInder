@@ -51,7 +51,7 @@ const Routers = () => {
         <Route exact path="/create-announcement">
           <FormCreateAnnouncementPage />
         </Route>
-        <Route exact path="/update-announcement">
+        <Route exact path="/update-announcement/:idPost">
           <FormUpdateAnnouncementPage />
         </Route>
         <Route exact path="/create-event">
