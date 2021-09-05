@@ -8,10 +8,11 @@ export const postAnnouncement = (data) => {
     };
   };
 
-export const updateAnnouncement = (data) => {
+export const updateAnnouncement = (data, id) => {
   return {
     type: UPDATE_ANNOUNCEMENT_BEGIN,
-    data
+    data,
+    id,
   };
 };
 

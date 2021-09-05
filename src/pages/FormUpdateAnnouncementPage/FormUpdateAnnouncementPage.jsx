@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import FormUpdateAnnouncement from '../../components/FormUpdateAnnouncement/FormUpdateAnnouncement'
-import { postAnnouncement } from '../../redux/action/announcement'
+import { updateAnnouncement } from '../../redux/action/announcement'
 import { Form } from 'react-bootstrap'
 import { useParams } from 'react-router'
 
@@ -10,9 +10,9 @@ function FormUpdateAnnouncementPage() {
     const { listPost, loading } = useSelector((state) => state.posts);
     let { idPost } = useParams()
 
-    const dataPostini = listPost?.filter(post => post?.id === idPost)
+    const idPostUPdate = listPost?.filter(post => post?.id === idPost)
 
-    console.log("data dari halaman update", dataPostini)
+    console.log("data dari halaman update", idPost)
 
 
     const [state, setState] = useState({
@@ -25,7 +25,7 @@ function FormUpdateAnnouncementPage() {
     const handleUpdateAnnouncement = (e) => {
         e.preventDefault();
         const data = state;
-        dispatch(postAnnouncement(data));
+        dispatch(updateAnnouncement(data, idPost));
     }
 
     console.log(state)
