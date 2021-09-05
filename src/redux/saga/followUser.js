@@ -7,7 +7,7 @@ function* followUser(action) {
     const Token = localStorage.getItem('user');
     // yield console.log("masuk token dan fungsi masuk", Token)
     try {
-        const res = yield axios.post(`https://crowdfinder.gabatch13.my.id/api/post/follow/${id}`, { headers: { Authorization: `Bearer ${Token}` } })
+        const res = yield axios.post(`https://crowdfinder.gabatch13.my.id/api/user/follow/${id}`,{} , { headers: { Authorization: `Bearer ${Token}` } })
         yield {
             put: FOLLOW_USER_SUCCESS,
             payload: res.data
