@@ -107,7 +107,7 @@ export default function MultiStep() {
                   <div className="box my-auto" style={{ width: "25rem" }}>
                     <Form>
                       <div>
-                        <Form.Group className="d-flex mt-3 justify-content-center">
+                        <Form.Group className="d-flex mt-3 mb-3 justify-content-center">
                           <h2 style={{ fontSize: "28px" }} className="mt-auto">
                             Sign Up
                           </h2>
@@ -116,12 +116,12 @@ export default function MultiStep() {
                           className="mb-3 mx-4"
                           controlId="formBasicFullName"
                         >
-                          <Form.Label style={{ fontSize: "18px" }}>
+                          <label className="d-flex justify-content-rigth mb-2" style={{ fontSize: "18px" }}>
                             Full Name
-                          </Form.Label>
+                          </label>
                           <Form.Control
                             type="text"
-                            placeholder="Fullname"
+                            placeholder="Crowd Finder"
                             value={form.name}
                             name="fullname"
                             onChange={(e) => changeForm(e)}
@@ -131,12 +131,12 @@ export default function MultiStep() {
                           className="mb-3 mx-4"
                           controlId="formBasicUserName"
                         >
-                          <Form.Label style={{ fontSize: "18px" }}>
+                          <label className="d-flex justify-content-rigth mb-2" style={{ fontSize: "18px" }}>
                             Username
-                          </Form.Label>
+                          </label>
                           <Form.Control
                             type="text"
-                            placeholder="Username"
+                            placeholder="crowdfinder"
                             value={form.username}
                             name="username"
                             onChange={(e) => changeForm(e)}
@@ -146,9 +146,9 @@ export default function MultiStep() {
                           className="mb-3 mx-4"
                           controlId="formBasicEmail"
                         >
-                          <Form.Label style={{ fontSize: "18px" }}>
+                          <label className="d-flex justify-content-rigth mb-2" style={{ fontSize: "18px" }}>
                             Email address
-                          </Form.Label>
+                          </label>
                           <Form.Control
                             type="text"
                             placeholder="example@gmail.com"
@@ -161,12 +161,12 @@ export default function MultiStep() {
                           className="mb-3 mx-4"
                           controlId="formBasicPassword"
                         >
-                          <Form.Label style={{ fontSize: "18px" }}>
+                          <label className="d-flex justify-content-rigth mb-2" style={{ fontSize: "18px" }}>
                             Password
-                          </Form.Label>
+                          </label>
                           <Form.Control
                             type="password"
-                            placeholder="Password"
+                            placeholder="enter you're password here"
                             value={form.password}
                             name="password"
                             onChange={(e) => changeForm(e)}

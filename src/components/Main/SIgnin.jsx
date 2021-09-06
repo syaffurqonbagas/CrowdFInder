@@ -60,8 +60,8 @@ const Signin = () => {
           </div>
         </div>
 
-        <div className="Signinbg-right justify-content-center w-100">
-          <div className="Right-signin d-flex justify-content-center">
+        <div className="Signinbg-right w-100">
+          <div className="Right-signin d-flex">
             <div className="box-signin my-auto" style={{ width: "25rem" }}>
               <Formik
                 validationSchema={schema}
@@ -84,8 +84,8 @@ const Signin = () => {
                   errors,
                 }) => (
                   <Form style={{ height: "33rem"}} noValidate onSubmit={handleSubmit}>
-                    <div className="justify-content-center">
-                      <Form.Group className="d-flex mt-3 mb-2 justify-content-center">
+                    <div>
+                      <Form.Group className="d-flex mt-3 mb-4 justify-content-center">
                         <h2 style={{ fontSize: "28px" }} className="mt-auto">Login</h2>
                       </Form.Group>
 
@@ -93,7 +93,7 @@ const Signin = () => {
                         className="mb-3 mx-4"
                         controlId="validataionFOrmik03"
                       >
-                        <Form.Label style={{ fontSize: "18px" }}>Email address</Form.Label>
+                        <label className="d-flex justify-content-rigth mb-3" style={{ fontSize: "18px" }}>Email address</label>
                         <Form.Control
                           name="email"
                           onBlur={handleBlur}
@@ -111,7 +111,7 @@ const Signin = () => {
                         className="mb-3 mx-4"
                         controlId="formBasicPassword"
                       >
-                        <Form.Label style={{ fontSize: "18px" }}>Password</Form.Label>
+                        <label className="d-flex justify-content-rigth mb-3" style={{ fontSize: "18px" }}>Password</label>
                         <Form.Control
                           name="password"
                           onBlur={handleBlur}
@@ -120,7 +120,7 @@ const Signin = () => {
                           value={values.password}
                           isValid={touched.password && !errors.password}
                           // isinvalid={!!errors.password}
-                          placeholder="Password"
+                          placeholder="enter you're password here"
                         />
                         {<p style={{ color: "red", fontSize: "15px" }}>{errors.password && touched.password && errors.password}</p>}
                       </Form.Group>
