@@ -1,26 +1,58 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import ReactLoading from 'react-loading';
 import useOnClickOutside from "./useOnClickOutside";
 import { Card, Button, FormControl, InputGroup } from 'react-bootstrap'
 import "./LargeCardMyEvent.css";
 // import image from '../../img/largeCardDummy.jpeg'
-import { getComment, postComment } from "../../redux/action/comment";
+import { deleteComment, getComment, postComment } from "../../redux/action/comment";
 import { putLike } from "../../redux/action/like";
 import { deletePost, getPost } from "../../redux/action/post";
 import ReactTimeAgo from 'react-time-ago'
+import { useParams } from "react-router";
 
 
 function LargeCardMyEvent(props) {
     const {
-        contentCard, image, time, interest, location, like, comment, userName, idPost, action
+        contentCard,
+        image,
+        time,
+        interest,
+        location,
+        like,
+        comment,
+        userName,
+        idPost,
+        idComment,
+        idUserPost,
     } = props;
+
+    // const {id} = useParams(idPost)
+    // console.log("ini id",id)
+
+    const [state, setState] = useState({
+        contentCard: contentCard,
+        image: image,
+        time: time,
+        interest: interest,
+        location: location,
+        like: like,
+        comment: comment,
+        userName: userName,
+        idPost: idPost,
+    })
 
     const dispatch = useDispatch();
     const { listComment, loading } = useSelector((state) => state.comments);
 
     useEffect(() => {
-        dispatch(getComment(idPost))
+        dispatch(getComment(idPost));
     }, [dispatch]);
+
+    //get current user and user id====================================
+    const { user } = useSelector((state) => state.userData);
+    const idUser = user.id;
 
     //post comment========================================
     const [body, setBody] = useState({
@@ -34,9 +66,15 @@ function LargeCardMyEvent(props) {
 
     const handlePostComment = async (e) => {
         e.preventDefault();
-        dispatch(postComment(idPost ,body));
-      };
-      
+        dispatch(postComment(idPost, body));
+    };
+
+    //delete comment======================================
+    const handleDeleteComment = async (idCommentDel) => {
+        await dispatch(deleteComment(idCommentDel));
+        await dispatch(getPost)
+    }
+
 
     //like post===========================================
     const likes = useSelector((state) => state.likes.like);
@@ -46,9 +84,11 @@ function LargeCardMyEvent(props) {
     };
 
     //delete post=========================================
+    const loadingDelete = useSelector((state) => state.posts.listPost.loading)
     const handleDelete = async () => {
         await dispatch(deletePost(idPost))
         await dispatch(postComment(idPost, body));
+        await dispatch(getPost())
     }
 
     // console.log('ini id post',idPost)
@@ -71,24 +111,26 @@ function LargeCardMyEvent(props) {
     // console.log('likes', likes)
     // console.log('body gaes', body)
     // console.log('listcomment', listComment)
+
     return (
         <>
             <div className="divider  my-3 mb-5"></div>
             <div className="headContainer">
 
-                <div onClick={action} className="d-flex">
+                <div className="d-flex">
                     <div className="imageAvatar mb-4 me-2">
-                        <img src={`https://ui-avatars.com/api/?name=${userName}&background=random&length=1&rounded=true&size=35`} alt=""/>
+                        <img src={`https://ui-avatars.com/api/?name=${userName}&background=random&length=1&rounded=true&size=35`} alt="" />
                     </div>
                     <div className="headText container-fluid d-block mb-2">
 
                         <div ref={ref} className="d-flex justify-content-end m-0 positionRelative">
-                            <i className="fa fa-ellipsis-h"
+                            { idUser === idUserPost && <i className="fa fa-ellipsis-h"
                                 onClick={() => toggleDropDown()}
                                 tabIndex="0"></i>
+                            }
                             {show && (
                                 <div className="card position-absolute text-center stylingHover" style={{ width: '7rem' }}>
-                                    <label>Edit</label>
+                                    <Link to={`/update-announcement/${idPost}`}>Edit</Link>
                                     <label onClick={() => handleDelete()}>Delete</label>
                                 </div>
                             )}
@@ -126,7 +168,7 @@ function LargeCardMyEvent(props) {
                     <Card>
                         <div className="w-75 ms-3 mt-3 mb-4">
                             <p className="font-size">
-                               {contentCard}
+                                {contentCard}
                             </p>
                             <img className="imageSize" src={image} alt="" />
                         </div>
@@ -170,7 +212,14 @@ function LargeCardMyEvent(props) {
                                     <div className="flex-grow-1" >{item.user_id.fullname}</div>
                                     <div style={{ color: '#828282' }}>3h ago</div>
                                 </div>
-                                <div style={{ fontWeight: '400', fontSize: '16px' }}>{item.content}</div>
+                                <div className="d-flex align-items-center">
+                                    <div className="flex-grow-1" style={{ fontWeight: '400', fontSize: '16px' }}>{item.content}</div>
+                                    {idUser === item.user_id.id &&
+                                        <label onClick={() => handleDeleteComment(item.id)}>
+                                            <i className="fa fa-trash fa-2x"></i>
+                                        </label>
+                                    }
+                                </div>
                             </div>
                         ))}
                     </div>

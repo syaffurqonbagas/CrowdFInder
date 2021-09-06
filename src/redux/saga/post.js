@@ -6,12 +6,10 @@ import {
     DELETE_POST_SUCCESS,
     DELETE_POST_FAIL,
     DELETE_POST_BEGIN,
-    GET_POST_BY_ID_SUCCESS,
-    GET_POST_BY_ID_BEGIN,
-    GET_POST_BY_ID_FAIL,
 } from "../action/type";
 import { BASE_URL_CROWDFINDER} from "../action/type";
 import { put, takeEvery } from "@redux-saga/core/effects";
+import Swal from "sweetalert2";
 
 function* getPosts(actions) {
     const Token = localStorage.getItem('user');
@@ -43,12 +41,30 @@ function* deletePosts(actions) {
             type: DELETE_POST_SUCCESS,
             payload: res.data,
         });
+        yield (
+            Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Deleted',
+            showConfirmButton: false,
+            timer: 1800
+          })
+        );
         // yield window.location.replace("/home")<
     } catch (err) {
         yield put({
             type: DELETE_POST_FAIL,
             error: err,
-        })
+        });
+        yield (
+            Swal.fire({
+            position: 'center',
+            icon: 'warning',
+            title: 'this is not your post',
+            showConfirmButton: false,
+            timer: 1800
+          })
+        )
     }
 };
 

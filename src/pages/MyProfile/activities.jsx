@@ -6,7 +6,7 @@ import LargeCardMyEvent from '../../components/LargeCardMyEvent/LargeCardMyEvent
 import LargeCrowdFinderCard from '../../components/LargeCrowdFinderCard';
 import MyPagination from '../../components/MyPagination/MyPagination';
 import { getPostById } from '../../redux/action/postById';
-
+import { getPost } from "../../redux/action/post";
 
 
 function Activities(props) {
@@ -17,10 +17,12 @@ function Activities(props) {
     const [detailcard, setDetailCard] = useState({ title: "", content: "" })
     const [data, setData] = useState({ name: "", id: "" })
     const { listPost } = useSelector((state) => state.posts);
+    const dispatch = useDispatch()
 
 
     useEffect(() => {
         setPosts(postbyid)
+        dispatch(getPost())
     }, [postbyid])
     // console.log('ini type', postbyid[0].id)
 
@@ -37,7 +39,7 @@ function Activities(props) {
                                 content: post.content
                             })
                         }
-                        } eventId={post.id} />)),
+                        } idPost={post.id} />)),
                     postbyid.length > 0 && posts?.reverse().filter(post => post.type[0] === 'announcement').map((post, idx) => (
                         <LargeCardMyEvent
                             key={idx}

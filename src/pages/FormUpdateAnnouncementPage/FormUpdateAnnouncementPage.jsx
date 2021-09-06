@@ -1,24 +1,31 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import FormUpdateAnnouncement from '../../components/FormUpdateAnnouncement'
-import { postAnnouncement } from '../../redux/action/announcement'
+import FormUpdateAnnouncement from '../../components/FormUpdateAnnouncement/FormUpdateAnnouncement'
+import { updateAnnouncement } from '../../redux/action/announcement'
 import { Form } from 'react-bootstrap'
+import { useParams } from 'react-router'
 
-function FormCreateAnnouncementPage() {
+function FormUpdateAnnouncementPage() {
     const dispatch = useDispatch()
-    const announcement = useSelector((state) => state.announcements.listAnnouncement);
+    const { listPost, loading } = useSelector((state) => state.posts);
+    let { idPost } = useParams()
+
+    const idPostUPdate = listPost?.filter(post => post?.id === idPost)
+
+    console.log("data dari halaman update", idPost)
+
+
     const [state, setState] = useState({
-        title : "",
-        content : "",
-        interest : "",
-        image : ""
+        content: "",
+        interest: "",
+        image: ""
     });
 
-    
-    const handlePostAnnouncement = (e) => {
+
+    const handleUpdateAnnouncement = (e) => {
         e.preventDefault();
         const data = state;
-        dispatch(postAnnouncement(data));
+        dispatch(updateAnnouncement(data, idPost));
     }
 
     console.log(state)
@@ -27,22 +34,17 @@ function FormCreateAnnouncementPage() {
         <>
             <div className="container">
                 <div className="mt-4 mb-5">
-                {/* <h5 style={{ fontSize: '22px', fontWeight: '700' }}>Create a announcement</h5> */}
-                   <FormUpdateAnnouncement
-                   title={(e) => setState({...state, title: e.target.value})}
-                   content={(e) => setState({...state, content: e.target.value})}
-                   interest={(e) => setState({...state, interest: e.target.value})}
-                   image={(e) => setState({...state, image: e.target.value})}
-                   onClick={(e) => handlePostAnnouncement(e)}/>
-                </div>
-                <div className="input-image">
-                    <Form.Group controlId="formFile" className="mb-3 ">
-                        <Form.Control type="file" />
-                    </Form.Group>
+                    {/* <h5 style={{ fontSize: '22px', fontWeight: '700' }}>Create a announcement</h5> */}
+                    <FormUpdateAnnouncement
+                        title={(e) => setState({ ...state, title: e.target.value })}
+                        content={(e) => setState({ ...state, content: e.target.value })}
+                        interest={(e) => setState({ ...state, interest: e.target.value })}
+                        image={(e) => setState({ ...state, image: e.target.value })}
+                        onClick={(e) => handleUpdateAnnouncement(e)} />
                 </div>
             </div>
         </>
     )
 }
 
-export default FormCreateAnnouncementPage
+export default FormUpdateAnnouncementPage

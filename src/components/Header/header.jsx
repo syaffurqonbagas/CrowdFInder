@@ -112,7 +112,7 @@ const Header = () => {
                             to="/manage-comunity"
                             style={{ textDecoration: "none", color: "black" }}
                           >
-                            Profile cm
+                            Profile
                           </Link>
                         </NavDropdown.Item>
                       ) : (

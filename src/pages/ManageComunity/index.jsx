@@ -33,7 +33,7 @@ function ManageComunity(props) {
                 <Hero />
                 <Row>
                     <Col xl={4}>
-                        <AvatarManageCm comunityname={user.username} location={user.location} />
+                        <AvatarManageCm comunityname={user.username} location={user.location} photo={`https://ui-avatars.com/api/?name=${user?.fullname}&background=random&length=1&rounded=true&size=35`} />
                     </Col>
                     <Col>
                         <div className="button-menu d-flex">

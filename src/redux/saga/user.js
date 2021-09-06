@@ -15,6 +15,7 @@ import {
   GET_USER_BEGIN,
   GET_USER_FAIL,
   UPDATE_USER_PROFILE,
+  UPDATE_USER_PROFILE_SUCCESS,
 } from "../action/type";
 import { put, takeEvery, takeLatest } from "redux-saga/effects";
 
@@ -90,28 +91,6 @@ function* getUser() {
 }
 
 
-
-function* userUpdate(action) {
-  const Token = localStorage.getItem("user");
-
-  const { interest, fullname, username, email, location, image, bio } = action;
-  try {
-    const res = yield axios.put(
-      `${GET_USER_DETAIL_CROWDFINDER}`,
-      { interest, fullname, username, email, location, image, bio },
-      { headers: { Authorization: `Bearer ${Token}` } }
-    );
-    yield put({
-      type: UPDATE_USER_PROFILE,
-      payload: res.data,
-    });
-  } catch (error) {
-    yield put({
-      error: error,
-    });
-  }
-}
-
 function* Logout() {
   yield localStorage.removeItem("user");
   yield window.location.replace("/")
@@ -131,8 +110,4 @@ export function* watchLogout() {
 
 export function* watchGetUser() {
   yield takeLatest(GET_USER_BEGIN, getUser);
-}
-
-export function* watchUserUpdate() {
-  yield takeEvery(UPDATE_USER_PROFILE, userUpdate);
 }

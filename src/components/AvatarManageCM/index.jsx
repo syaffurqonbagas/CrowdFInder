@@ -11,7 +11,7 @@ function AvatarManageCm(props) {
 
         <Card className='AvatarCard'>
             <div className="image-avatar">
-                <img src={user} />
+                <img src={props.photo} />
             </div>
             <Card.Body className='title-cm'>
                 <h4>{props.comunityname}</h4>

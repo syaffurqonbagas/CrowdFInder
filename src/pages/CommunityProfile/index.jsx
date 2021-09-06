@@ -23,9 +23,6 @@ function ComunityProfile(props) {
 
     useEffect(() => {
         dispatch(getPostById(1, userId))
-    }, [dispatch])
-
-    useEffect(() => {
         dispatch(getUserById(userId))
     }, [dispatch])
 
@@ -40,7 +37,7 @@ function ComunityProfile(props) {
                 <Hero />
                 <Row>
                     <Col xl={4}>
-                        <AvatarComunity comunityname={postbyid[0].user_id.username} />
+                        <AvatarComunity idUser={postbyid[0].user_id.id} comunityname={postbyid[0].user_id.username} photo={`https://ui-avatars.com/api/?name=${postbyid[0].user_id.fullname}&background=random&length=1&rounded=true&size=35`} />
                     </Col>
                     <Col xl={1}></Col>
                     <Col>

@@ -9,14 +9,14 @@ import MyPagination from '../../components/MyPagination/MyPagination'
 import { getPost } from '../../redux/action/post'
 import { getPostById } from '../../redux/action/postById'
 import { Link } from 'react-router-dom'
-
+import ReactLoading from 'react-loading';
 
 
 function HomePage() {
     const [posts, setPosts] = useState();
     const dispatch = useDispatch()
     const { listPost, loading } = useSelector((state) => state.posts);
-    const {search} = useSelector((state) => state.searchData)
+    const { search } = useSelector((state) => state.searchData)
 
     const user = useSelector((state) => state.userData.user)
 
@@ -27,6 +27,7 @@ function HomePage() {
 
     useEffect(() => {
         setPosts(listPost)
+        setTimeout(2000)
     }, [listPost])
 
 
@@ -35,7 +36,7 @@ function HomePage() {
     // console.log('data', listPost)
     // console.log("ini data", listPost)
 
-    console.log("searchdata", search?.data?.length)
+    // console.log("searchdata", search?.data?.length)
     return (
         <>
             <div className="container mt-5">
@@ -54,7 +55,7 @@ function HomePage() {
                                    <Link style={{ textDecoration: "none" }} to={`/comunity-profile/${post?.user_id?.id}`}> <SmallCardMyEvent key={id} title={post?.title} /></Link>
                                 )) :  listPost?.length > 0 && posts?.reverse?.().filter(post => post?.type?.[0] === 'event').filter((post, idx) => idx < 10).map((post, id) => (
                                     <Link style={{ textDecoration: "none" }} to={`/comunity-profile/${post?.user_id?.id}`}><SmallCardMyEvent key={id} title={post?.title} /></Link>
-                                
+
                                 ))}
                             </div>
                         </div>

@@ -22,7 +22,6 @@ function Event(props) {
         setPosts(postbyid)
     }, [postbyid])
 
-    console.log("postid event", detailcard.post_id)
     return (
         <div>
             {show ?
@@ -37,7 +36,7 @@ function Event(props) {
                                 post_id: post.id
                             })
                         }
-                        } eventId={post.id} />)),
+                        } idPost={post.id} />)),
                     <div className="pagination justify-content-center mt-5">
                         <MyPagination />
                     </div>

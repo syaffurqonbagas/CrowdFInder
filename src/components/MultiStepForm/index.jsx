@@ -272,7 +272,7 @@ export default function MultiStep() {
                                 </div>
                               </Col>
                             </Form.Group>
-                            <div className="d-flex justify-content-center my-2">
+                            <div className="d-flex justify-content-center my-2 mt-5">
                               <Button
                                 className="me-3"
                                 onClick={() => changeStep("prev")}

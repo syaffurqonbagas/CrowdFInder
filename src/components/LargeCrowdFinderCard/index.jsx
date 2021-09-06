@@ -7,14 +7,20 @@ import { AiFillCalendar, AiFillClockCircle } from "react-icons/ai";
 import { RiGroupFill } from 'react-icons/ri'
 import { Link } from "react-router-dom";
 import ReactTimeAgo from 'react-time-ago'
+import { useDispatch, useSelector } from "react-redux";
+import { deletePost, getPost } from "../../redux/action/post";
 
 import './index.css'
 
 function LargeCrowdFinderCard(props) {
     const [show, setShow] = useState(false);
     const eventid = props
+    const dispatch = useDispatch()
     const ref = useRef();
     useOnClickOutside(ref, () => setShow(false));
+
+
+
     const {
         contentCard, image, time, location, userName, idPost, action, title
     } = props;
@@ -28,7 +34,7 @@ function LargeCrowdFinderCard(props) {
         userName: userName,
         action: action,
         title: title,
-        idPost: idPost
+
     })
 
     const toggleDropDown = () => {
@@ -56,6 +62,12 @@ function LargeCrowdFinderCard(props) {
         );
     }
 
+    const handleDelete = async () => {
+        await dispatch(deletePost(props.idPost))
+        await dispatch(getPost())
+    }
+
+
     return (
 
         <>
@@ -74,8 +86,8 @@ function LargeCrowdFinderCard(props) {
                                 tabIndex="0"></i>
                             {show && (
                                 <div className="card position-absolute text-center stylingHover" style={{ width: '7rem' }}>
-                                    <div>Edit</div>
-                                    <div>Delete</div>
+                                    <label>Edit</label>
+                                    <label onClick={() => handleDelete()}>Delete</label>
                                 </div>
                             )}
                         </div>

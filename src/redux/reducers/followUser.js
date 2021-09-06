@@ -1,28 +1,28 @@
-import { GET_POST_BY_ID_SUCCESS, GET_POST_BY_ID_BEGIN, GET_POST_BY_ID_FAIL } from "../action/type";
+import { FOLLOW_USER_BEGIN, FOLLOW_USER_FAIL, FOLLOW_USER_SUCCESS } from "../action/type";
 
-const initialState = {
-    postbyid: [],
+const intialState = {
+    dataFollow: [],
     loading: false,
     error: null,
 }
 
-const postsId = (state = initialState, action) => {
+const followUser = (state = intialState, action) => {
     const { type, payload, error } = action;
     switch (type) {
 
-        case GET_POST_BY_ID_BEGIN:
+        case FOLLOW_USER_BEGIN:
             return {
                 ...state,
                 loading: true,
             };
-        case GET_POST_BY_ID_SUCCESS:
+        case FOLLOW_USER_SUCCESS:
             return {
                 ...state,
-                postbyid: payload,
+                dataFollow: payload,
                 loading: false,
-                error: null,
+                error: null
             }
-        case GET_POST_BY_ID_FAIL:
+        case FOLLOW_USER_FAIL:
             return {
                 ...state,
                 loading: false,
@@ -34,5 +34,4 @@ const postsId = (state = initialState, action) => {
             };
     }
 }
-
-export default postsId;
+export default followUser;

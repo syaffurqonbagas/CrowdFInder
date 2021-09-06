@@ -21,6 +21,7 @@ function MyCrowd(props) {
                     <Col xl={4}>
                         <AvatarCard username={user.username} location={user.location} photo={`https://ui-avatars.com/api/?name=${user?.fullname}&background=random&length=1&rounded=true&size=35`} />
                     </Col>
+                    <Col xl={1}></Col>
                     <Col>
                         <div className="button-menu d-flex">
 
