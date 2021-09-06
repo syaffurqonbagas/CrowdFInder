@@ -46,15 +46,15 @@ const Signin = () => {
                 src={PlayStore}
                 alt="playstore"
                 width="175"
-                height="60"
-                className="d-inline-block"
+                height="59"
+                className="d-inline-block align-top"
               />
               <img
                 src={AppStore}
                 alt="appstore"
                 width="175"
-                height="62"
-                className="d-inline-block marginTop"
+                height="65"
+                className="d-inline-block align-top"
               />
             </div>
           </div>
@@ -83,7 +83,7 @@ const Signin = () => {
                   isValid,
                   errors,
                 }) => (
-                  <Form style={{ height: "33rem"}} noValidate onSubmit={handleSubmit}>
+                  <Form className="align-center" style={{ height: "33rem"}} noValidate onSubmit={handleSubmit}>
                     <div>
                       <Form.Group className="d-flex mt-3 mb-4 justify-content-center">
                         <h2 style={{ fontSize: "28px" }} className="mt-auto">Login</h2>

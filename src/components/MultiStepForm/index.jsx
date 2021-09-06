@@ -88,7 +88,7 @@ export default function MultiStep() {
                       src={PlayStore}
                       alt="playstore"
                       width="175"
-                      height="55"
+                      height="59"
                       className="d-inline-block align-top"
                     />
                     <img
@@ -116,7 +116,10 @@ export default function MultiStep() {
                           className="mb-3 mx-4"
                           controlId="formBasicFullName"
                         >
-                          <label className="d-flex justify-content-rigth mb-2" style={{ fontSize: "18px" }}>
+                          <label
+                            className="d-flex justify-content-rigth mb-2"
+                            style={{ fontSize: "18px" }}
+                          >
                             Full Name
                           </label>
                           <Form.Control
@@ -131,7 +134,10 @@ export default function MultiStep() {
                           className="mb-3 mx-4"
                           controlId="formBasicUserName"
                         >
-                          <label className="d-flex justify-content-rigth mb-2" style={{ fontSize: "18px" }}>
+                          <label
+                            className="d-flex justify-content-rigth mb-2"
+                            style={{ fontSize: "18px" }}
+                          >
                             Username
                           </label>
                           <Form.Control
@@ -146,7 +152,10 @@ export default function MultiStep() {
                           className="mb-3 mx-4"
                           controlId="formBasicEmail"
                         >
-                          <label className="d-flex justify-content-rigth mb-2" style={{ fontSize: "18px" }}>
+                          <label
+                            className="d-flex justify-content-rigth mb-2"
+                            style={{ fontSize: "18px" }}
+                          >
                             Email address
                           </label>
                           <Form.Control
@@ -161,7 +170,10 @@ export default function MultiStep() {
                           className="mb-3 mx-4"
                           controlId="formBasicPassword"
                         >
-                          <label className="d-flex justify-content-rigth mb-2" style={{ fontSize: "18px" }}>
+                          <label
+                            className="d-flex justify-content-rigth mb-2"
+                            style={{ fontSize: "18px" }}
+                          >
                             Password
                           </label>
                           <Form.Control
@@ -224,14 +236,14 @@ export default function MultiStep() {
                     className="content-form d-flex justify-content-center"
                     style={{ width: "43rem" }}
                   >
-                    <Form className="mt-5 mb-5" style={{ width: "32rem" }}>
+                    <Form className="mx-3 my-3" style={{ width: "31rem" }}>
                       <h2>Welcome to CrowdFinder</h2>
                       <h3>Helps you to find right community</h3>
                       <p>Where is city you live in?</p>
                       <p>Let people find you greate thoughts</p>
-                      <div className="interest ms-3">
+                      <div className="interest">
                         <div className="content-interest justify-content-center">
-                          <div style={{ width: "85%" }}>
+                          <div>
                             <Form.Group className="mb-4" controlId="interest">
                               <Form.Control
                                 type="text"
@@ -321,21 +333,21 @@ export default function MultiStep() {
               <div className="choose-interest">
                 <Container>
                   <div
-                    className="content-interest justify-content-center"
-                    style={{ height: "35rem", width: "60rem" }}
+                    className="content-interest"
+                    style={{width: "60rem" }}
                   >
                     <Form className="interest mx-5 my-5 justify-content-center">
-                      <h3 className="my-3">
-                        What topic are you interesting in?
-                      </h3>
-                      <p className="mb-4" style={{ fontSize: "20px" }}>
+                      <Row>
+                      <h2 className="mt-3">What topic are you interesting in?</h2>
+                      <p className="mb-3" style={{ fontSize: "20px" }}>
                         There a lot of people and community waiting you! Let's
                         be part of them
                       </p>
-                      <p className="mb-4" style={{ fontSize: "18px" }}>
+                      <p className="mb-3" style={{ fontSize: "18px" }}>
                         We will find you the communities and pople which fit
                         with your interesting topics. So let's find them
                       </p>
+                      </Row>
                       <Row>
                         {/* {Coll 1} */}
                         <Col>
@@ -440,7 +452,7 @@ export default function MultiStep() {
                         <p>You can choose Max 5 Interest</p>
                         <div className="button-choseiterest">
                           <Row>
-                            <Col className="mt-3">
+                            <Col className="mt-3 mb-4">
                               <div className="d-flex">
                                 <Button
                                   onClick={() => changeStep("prev")}
