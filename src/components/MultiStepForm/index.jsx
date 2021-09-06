@@ -227,15 +227,12 @@ export default function MultiStep() {
                     <Form className="mt-5 mb-5" style={{ width: "32rem" }}>
                       <h2>Welcome to CrowdFinder</h2>
                       <h3>Helps you to find right community</h3>
+                      <p>Where is city you live in?</p>
+                      <p>Let people find you greate thoughts</p>
                       <div className="interest ms-3">
                         <div className="content-interest justify-content-center">
-                          <p>
-                            <i className="fas fa-map-marker-alt"></i> Where is
-                            city you live in?
-                          </p>
-                          <p>Let people find you greate thoughts</p>
                           <div style={{ width: "85%" }}>
-                            <Form.Group className="mb-3" controlId="interest">
+                            <Form.Group className="mb-4" controlId="interest">
                               <Form.Control
                                 type="text"
                                 placeholder="Type a city’s name"
@@ -260,7 +257,7 @@ export default function MultiStep() {
                                     User
                                   </label>
                                 </div>
-                                <div className="mb-2">
+                                <div className="mb-3">
                                   <input
                                     className="form-radio-input"
                                     type="radio"
@@ -440,10 +437,7 @@ export default function MultiStep() {
                         </Col>
                       </Row>
                       <div className="mt-3">
-                        <i class="fas fa-exclamation-triangle">
-                          <p>You can choose Max 5 Interest</p>
-                        </i>
-
+                        <p>You can choose Max 5 Interest</p>
                         <div className="button-choseiterest">
                           <Row>
                             <Col className="mt-3">
@@ -455,7 +449,6 @@ export default function MultiStep() {
                                 >
                                   Prev
                                 </Button>
-                                {/* <Link to="/signin"> */}
                                 <Button
                                   type="submit"
                                   className="ms-3"
@@ -464,7 +457,6 @@ export default function MultiStep() {
                                 >
                                   Next
                                 </Button>
-                                {/* </Link> */}
                               </div>
                             </Col>
                           </Row>

@@ -27,6 +27,8 @@ const Signin = () => {
     return <Link to="/home" />;
   }
 
+  console.log("signIn", )
+
   return (
     <div className="container-Signin">
       <div className="d-flex">
@@ -99,7 +101,7 @@ const Signin = () => {
                           type="text"
                           value={values.email}
                           isValid={touched.email && !errors.email}
-                          isInValid={!!errors.email}
+                          // isInValid={!!errors.email}
                           placeholder="email@example.com"
                         />
                         {<p style={{ color: "red", fontSize: "15px" }}>{errors.email && touched.email && errors.email}</p>}
@@ -117,7 +119,7 @@ const Signin = () => {
                           type="password"
                           value={values.password}
                           isValid={touched.password && !errors.password}
-                          isInValid={!!errors.password}
+                          // isinvalid={!!errors.password}
                           placeholder="Password"
                         />
                         {<p style={{ color: "red", fontSize: "15px" }}>{errors.password && touched.password && errors.password}</p>}
