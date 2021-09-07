@@ -1,13 +1,80 @@
 .AvatarCard {
-    margin-top: 100px;
+    font-family: 'Mulish', sans-serif;
     text-align: center;
-    width: 344px;
+    // width: ;
     height: 457px;
     position: relative;
     border-radius: 10px;
 
+    .title-cm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 80px;
+        margin-top: 90px;
+
+
+        h4 {
+            font-size: 20px;
+            color: #4F4F4F;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        h5 {
+            font-size: 18px;
+            font-weight: 400;
+            color: #828282;
+
+        }
+
+        .comunity-badge {
+            width: 50%;
+
+            h5 {
+                padding: 5px;
+                border-radius: 10px;
+                background-color: #189AB0;
+                color: white;
+            }
+        }
+
+    }
+
     .title {
-        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 90px;
+        margin-bottom: 0px;
+
+        h4 {
+            font-size: 20px;
+            color: #4F4F4F;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        h5 {
+            font-size: 18px;
+            font-weight: 400;
+            color: #828282;
+
+        }
+
+        .comunity-badge {
+            width: 50%;
+
+            h5 {
+                padding: 5px;
+                border-radius: 10px;
+                background-color: #189AB0;
+                color: white;
+            }
+
+        }
     }
 
     .image-avatar {
@@ -16,8 +83,10 @@
         border-radius: 50%;
         border: solid 5px white;
         position: absolute;
-        top: -100px;
-        left: 80px;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
 
         img {
             width: 100%;

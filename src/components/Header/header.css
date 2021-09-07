@@ -1,0 +1,44 @@
+.header {
+    background-color: #D82671;
+    /* height: 70px; */
+    height: 100%;
+    justify-content: center;
+    top: 50%;
+}
+
+.search-bar {
+    width: 35rem;
+    margin-left: 2rem;
+    max-height: 100%;
+}
+
+.header-logo {
+    margin-right: 2rem;
+}
+
+.avatar {
+    width: 61px;
+    height: 61px;
+    border-radius: 50%;
+    border: solid 3px white;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.Feed-Notification {
+    padding-top: 1rem;
+    font-size: 18px;
+    margin-right: 1rem;
+    color: white;
+    justify-content: center;
+}
+
+.Feed-Notification p {
+    margin-top: 10px;
+    color: white;
+}
